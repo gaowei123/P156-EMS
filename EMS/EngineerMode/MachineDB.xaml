@@ -1,0 +1,213 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:Custom="http://schemas.microsoft.com/wpf/2008/toolkit" 
+            xmlns:EMS_Views="clr-namespace:EMS.Views" x:Class="EMS.EngineerMode.MachineDB" 
+             mc:Ignorable="d" 
+             d:DesignHeight="588" d:DesignWidth="825">
+    <Grid>
+    	<Grid.RowDefinitions>
+    		<RowDefinition/>
+    	</Grid.RowDefinitions>
+    	<Custom:DataGrid IsReadOnly="True" x:Name="dg_list" Margin="0,0,0,268.536" AlternatingRowBackground="#FFC1F5EA" AutoGenerateColumns="False" Background="{DynamicResource Linear_RainySky}">
+    		<Custom:DataGrid.Columns>
+    			<Custom:DataGridTextColumn Binding="{Binding EQUIP_ID}" Header="Equip ID" SortMemberPath="EQUIP_ID"/>
+				<Custom:DataGridTextColumn Binding="{Binding DEPARTMENT}" Header="Department" SortMemberPath="DEPARTMENT"/>
+				<Custom:DataGridTextColumn Binding="{Binding EQUIP_MAKER}" Header="Equip Maker" SortMemberPath="EQUIP_MAKER"/>
+				<Custom:DataGridTextColumn Binding="{Binding EQUIP_MODEL}" Header="Equip Model" SortMemberPath="EQUIP_MODEL"/>
+				<Custom:DataGridTextColumn Binding="{Binding LOCID}" Header="LOCID" SortMemberPath="LOCID"/>
+				<Custom:DataGridTextColumn Binding="{Binding UPDATED_TIME}" Header="Updated Time" SortMemberPath="UPDATED_TIME"/>
+				<Custom:DataGridTextColumn Binding="{Binding UPDATED_BY}" Header="Updated By" SortMemberPath="UPDATED_BY"/>
+    		</Custom:DataGrid.Columns>
+    	</Custom:DataGrid>
+    	<Path Data="M16,67.5 L1232.5083,67.5" Fill="#FFF4F4F5" Height="2" Margin="0,0,0,176.388" Stretch="Fill" VerticalAlignment="Bottom" StrokeThickness="2" Stroke="{DynamicResource Linear_Blue}">
+    		<Path.Effect>
+    			<DropShadowEffect Color="#FFB2B2B2" ShadowDepth="2"/>
+    		</Path.Effect>
+    	</Path>
+    	<Label Content="Equip ID :" HorizontalAlignment="Left" Margin="36,0,0,207.923" FontSize="14.667" Foreground="#FF020202" VerticalAlignment="Bottom"/>
+    	<TextBox x:Name="txt_equipID_Search" HorizontalAlignment="Left" Margin="116.486,0,0,210.62" TextWrapping="NoWrap" Width="130.487" VerticalAlignment="Bottom" GotFocus="TextBox_GotFocus">
+    		<TextBox.Effect>
+    			<DropShadowEffect ShadowDepth="0" BlurRadius="8"/>
+    		</TextBox.Effect>
+    	</TextBox>
+        <StackPanel Margin="343,0,0,183.408" Orientation="Horizontal" Height="74.72" VerticalAlignment="Bottom">
+			        <Button x:Name="btn_search" Style="{DynamicResource ButtonStyle-Zoom}" Width="100" FontSize="13.333" BorderThickness="1,1,1,1" Margin="0" HorizontalAlignment="Right" Height="72" VerticalAlignment="Top" Cursor="Hand" Background="{DynamicResource ButtonNormalBackground}" Foreground="#FFF3F2F2" Click="btn_search_Click">
+        		<Button.Effect>
+        			<DropShadowEffect ShadowDepth="0" BlurRadius="8"/>
+        		</Button.Effect>
+        		<Grid Height="63.874" Width="92">
+        			<Image  Margin="2,0,1.333,16" Source="/EMS;component/Resources/Image/search.png"/>
+        			<Label Content="{DynamicResource EP_search}" Margin="2,0,-2,-4" HorizontalContentAlignment="Center" FontSize="16" Height="27.968" VerticalAlignment="Bottom" Foreground="#FF020202"/>
+        		</Grid>
+        	</Button>
+        	<Button x:Name="btn_add" Style="{DynamicResource ButtonStyle-Zoom}" Width="100" FontSize="13.333" BorderThickness="1,1,1,1" Margin="20,0,0,0" HorizontalAlignment="Right" Grid.Row="1" Height="72" VerticalAlignment="Top" Cursor="Hand" Background="{DynamicResource ButtonNormalBackground}" Foreground="{DynamicResource ButtonNormalBackground}" Click="btn_add_Click">
+        		<Button.Effect>
+        			<DropShadowEffect ShadowDepth="0" BlurRadius="8"/>
+        		</Button.Effect>
+        		<Grid Height="63.874" Width="92">
+        			<Image  Margin="2,0,-0.667,16" Source="/EMS;component/Resources/Image/Add.png"/>
+        			<Label Content="{DynamicResource EP_add}" Margin="0,0,0,-4" HorizontalContentAlignment="Center" FontSize="16" Height="27.968" VerticalAlignment="Bottom" Foreground="#FF020202"/>
+        		</Grid>
+        	</Button>
+        	<Button x:Name="btn_update" Style="{DynamicResource ButtonStyle-Zoom}" Width="100" FontSize="13.333" BorderThickness="1,1,20,1" Margin="20,0,0,0" HorizontalAlignment="Right" Grid.Row="1" Height="72" VerticalAlignment="Top" Cursor="Hand" Background="{DynamicResource ButtonNormalBackground}" Foreground="#FFF3F2F2" Click="btn_update_Click">
+        		<Button.Effect>
+        			<DropShadowEffect ShadowDepth="0" BlurRadius="8"/>
+        		</Button.Effect>
+        		<Grid Height="63.874" Width="92">
+        			<Image  Margin="6,-1,4.667,16" Source="/EMS;component/Resources/Image/Update.png"/>
+        			<Label Content="{DynamicResource EP_update}" Margin="0.667,0,-0.667,-6.334" HorizontalContentAlignment="Center" FontSize="16" Height="31.968" VerticalAlignment="Bottom" Foreground="#FF020202"/>
+        		</Grid>
+        	</Button>
+        	<Button x:Name="btn_Delete" Style="{DynamicResource ButtonStyle-Zoom}" Width="100" FontSize="13.333" BorderThickness="1,1,20,1" Margin="20,0,0,0" HorizontalAlignment="Right" Grid.Row="1" Height="72" VerticalAlignment="Top" Cursor="Hand" Background="{DynamicResource ButtonNormalBackground}" Foreground="#FFF3F2F2" Click="btn_Delete_Click">
+        		<Button.Effect>
+        			<DropShadowEffect ShadowDepth="0" BlurRadius="8"/>
+        		</Button.Effect>
+        		<Grid Height="63.874" Width="92">
+        			<Image  Margin="0,-2,4,16" Source="/EMS;component/Resources/Image/Close.png"/>
+        			<Label Content="{DynamicResource EP_delete}" Margin="0,0,0,-4.334" HorizontalContentAlignment="Center" FontSize="16" Height="27.968" VerticalAlignment="Bottom" Foreground="#FF020202"/>
+        		</Grid>
+        	</Button>
+        </StackPanel>
+        <Grid x:Name="MaskActionPage" Margin="0,0,0,179.14" Visibility="Collapsed">
+        	<Grid.Background>
+        		<RadialGradientBrush>
+        			<GradientStop Color="#00000000"/>
+        			<GradientStop Color="#7E020202" Offset="1"/>
+        		</RadialGradientBrush>
+        	</Grid.Background>
+        	<Grid x:Name="grid_add" Margin="86,78.5,96,70.193">
+        		<Grid.Effect>
+        			<DropShadowEffect ShadowDepth="20"/>
+        		</Grid.Effect>
+        		<Rectangle Stroke="Black" Margin="8,0,8,-2" Fill="{DynamicResource ButtonNormalBackground}"/>
+        		<StackPanel HorizontalAlignment="Left" Margin="21.5,58,0,0" Width="120" Height="137.333" VerticalAlignment="Top">
+        			<TextBlock FontSize="15" TextWrapping="NoWrap" Text="Equip ID :" Foreground="#FF0A0A0A"/>
+        			<TextBlock Margin="0,28,0,0" FontSize="15" TextWrapping="NoWrap" Text="Equip Model :" d:LayoutOverrides="Width" Foreground="#FF0A0A0A"/>
+        			<TextBlock Margin="0,28,0,0" FontSize="15" TextWrapping="NoWrap" Text="{DynamicResource EP_department}" d:LayoutOverrides="Width" Foreground="#FF0A0A0A"/>
+        		</StackPanel>
+        		<StackPanel Margin="138.83,57,0,0" HorizontalAlignment="Left" Width="175" Height="136" VerticalAlignment="Top">
+        			<TextBox x:Name="txt_equipID" TextWrapping="NoWrap" FontSize="13" GotFocus="TextBox_GotFocus">
+        				<TextBox.Effect>
+        					<DropShadowEffect ShadowDepth="0" BlurRadius="8"/>
+        				</TextBox.Effect>
+        			</TextBox>
+        			<TextBox x:Name="txt_equipModel" TextWrapping="NoWrap" CharacterCasing="Upper" FontSize="13" Margin="0,25,0,0" GotFocus="TextBox_GotFocus">
+        				<TextBox.Effect>
+        					<DropShadowEffect ShadowDepth="0" BlurRadius="8"/>
+        				</TextBox.Effect>
+        			</TextBox>
+        			<ComboBox x:Name="cbb_department" Margin="0,25,0,0" FontSize="13">
+        				<ComboBox.Effect>
+        					<DropShadowEffect ShadowDepth="0" BlurRadius="8"/>
+        				</ComboBox.Effect>
+        			</ComboBox>
+        		</StackPanel>
+        		<Grid x:Name="grid" Margin="173.5,0,132.098,3" RenderTransformOrigin="0.5,0.5" Height="56" VerticalAlignment="Bottom">
+        			<Grid.RenderTransform>
+        				<TransformGroup>
+        					<ScaleTransform/>
+        					<SkewTransform/>
+        					<RotateTransform/>
+        					<TranslateTransform/>
+        				</TransformGroup>
+        			</Grid.RenderTransform>
+        			<Button Margin="17,10,0,9" x:Name="btn_confirm" Style="{DynamicResource ButtonStyle-Zoom}" HorizontalContentAlignment="Right" FontSize="16" HorizontalAlignment="Left" Width="107" RenderTransformOrigin="0.5,0.5" FontWeight="Bold" Foreground="{DynamicResource ButtonNormalBackground}" Cursor="Hand" TabIndex="3" Focusable="False" Background="{DynamicResource ButtonNormalBackground}" d:LayoutOverrides="HorizontalAlignment, GridBox" Click="btn_confirm_Click">
+        				<Button.RenderTransform>
+        					<TransformGroup>
+        						<ScaleTransform/>
+        						<SkewTransform/>
+        						<RotateTransform/>
+        						<TranslateTransform/>
+        					</TransformGroup>
+        				</Button.RenderTransform>
+        				<Button.ContextMenu>
+        					<ContextMenu/>
+        				</Button.ContextMenu>
+        				<Button.Effect>
+        					<DropShadowEffect ShadowDepth="0"/>
+        				</Button.Effect>
+        				<Grid Height="36" Width="99">
+        					<Image x:Name="image2" Stretch="Fill" RenderTransformOrigin="0.851,-0.281" HorizontalAlignment="Left" Width="30" Margin="-1,1,0,7" Source="/EMS;component/Resources/Image/confirm.png" >
+        						<Image.RenderTransform>
+        							<TransformGroup>
+        								<ScaleTransform/>
+        								<SkewTransform/>
+        								<RotateTransform/>
+        								<TranslateTransform/>
+        							</TransformGroup>
+        						</Image.RenderTransform>
+        					</Image>
+        					<Label Content="{DynamicResource EP_confirm}" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="31" Margin="0,0,-2.668,6"/>
+        				</Grid>
+        			</Button>
+        			<Button Margin="171,10,0,9" x:Name="btn_cancel" Style="{DynamicResource ButtonStyle-Zoom}" HorizontalContentAlignment="Right" FontWeight="Bold" FontSize="16" RenderTransformOrigin="0.5,0.5" Cursor="Hand" Foreground="Black" Focusable="False" Background="{DynamicResource ButtonNormalBackground}" Width="107" Click="btn_cancel_Click" HorizontalAlignment="Left" d:LayoutOverrides="Width">
+        				<Button.ContextMenu>
+        					<ContextMenu/>
+        				</Button.ContextMenu>
+        				<Button.Effect>
+        					<DropShadowEffect ShadowDepth="0"/>
+        				</Button.Effect>
+        				<Button.RenderTransform>
+        					<TransformGroup>
+        						<ScaleTransform/>
+        						<SkewTransform/>
+        						<RotateTransform/>
+        						<TranslateTransform/>
+        					</TransformGroup>
+        				</Button.RenderTransform>
+        				<Grid Height="29" Width="99">
+        					<Image x:Name="image1" Stretch="Fill" RenderTransformOrigin="0.851,-0.281" HorizontalAlignment="Left" Width="32" Margin="0,2,0,-1" Source="/EMS;component/Resources/Image/confirm.png" >
+        						<Image.RenderTransform>
+        							<TransformGroup>
+        								<ScaleTransform/>
+        								<SkewTransform/>
+        								<RotateTransform/>
+        								<TranslateTransform/>
+        							</TransformGroup>
+        						</Image.RenderTransform>
+        					</Image>
+        					<Label Content="{DynamicResource EP_cancel}" HorizontalAlignment="Right" Margin="0,0,-3.002,0.001" VerticalAlignment="Bottom" Height="31"/>
+        				</Grid>
+        			</Button>
+        		</Grid>
+        		<Label x:Name="lb_title" Content="Add Equipment" HorizontalAlignment="Right" HorizontalContentAlignment="Center" Margin="0,-7.5,156.043,0" FontSize="36" FontWeight="Bold" Width="335.402" Height="57" VerticalAlignment="Top">
+        			<Label.Foreground>
+        				<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+        					<GradientStop Color="#FF90F9F9" Offset="0.767"/>
+        					<GradientStop Color="#FF048B80"/>
+        				</LinearGradientBrush>
+        			</Label.Foreground>
+        		<TextBlock.Foreground>
+        			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+        				<GradientStop Color="#FFF7F9F9" Offset="0.767"/>
+       					<GradientStop Color="#FF00A799" Offset="0.013"/>
+       				</LinearGradientBrush>
+       			</TextBlock.Foreground>
+        		<Label.Effect>
+        			<DropShadowEffect BlurRadius="3" ShadowDepth="3"/>
+        		</Label.Effect>
+        	    </Label>
+        		<StackPanel HorizontalAlignment="Right" Margin="0,58,196.825,122.167" Width="104.333">
+        			<TextBlock FontSize="15" TextWrapping="NoWrap" Text="Equip Maker :" Foreground="#FF0A0A0A"/>
+        			<TextBlock Margin="0,28,0,0" FontSize="15" TextWrapping="NoWrap" Text="LOCID :" d:LayoutOverrides="Width" Foreground="#FF0A0A0A"/>
+        		</StackPanel>
+        		<StackPanel Margin="0,58,21,0" HorizontalAlignment="Right" Width="175" Height="88.667" VerticalAlignment="Top">
+        			<TextBox x:Name="txt_equipMaker" TextWrapping="NoWrap" FontSize="13" GotFocus="TextBox_GotFocus">
+        				<TextBox.Effect>
+        					<DropShadowEffect ShadowDepth="0" BlurRadius="8"/>
+        				</TextBox.Effect>
+        			</TextBox>
+        			<TextBox x:Name="txt_locID" TextWrapping="NoWrap" CharacterCasing="Upper" FontSize="13" Margin="0,25,0,0" GotFocus="TextBox_GotFocus">
+        				<TextBox.Effect>
+        					<DropShadowEffect ShadowDepth="0" BlurRadius="8"/>
+        				</TextBox.Effect>
+        			</TextBox>
+        		</StackPanel>
+        	</Grid>
+        </Grid>
+        <EMS_Views:KeyBoard x:Name="kb" Margin="4,0,11,2" VerticalAlignment="Bottom" d:LayoutOverrides="Height" />  	
+    </Grid>
+</UserControl>

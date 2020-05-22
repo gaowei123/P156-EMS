@@ -1,0 +1,1491 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                     xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    <!--================================================== MainWinodw - Start ================================================-->
+    <sys:String x:Key="MW_SystemName">
+        Epoxy Management System
+    </sys:String>
+	<sys:String x:Key="MW_Load">
+        Load
+    </sys:String>
+	<sys:String x:Key="MW_Remove">
+        Remove
+    </sys:String>
+	<sys:String x:Key="MW_Unload">
+        Unload
+    </sys:String>
+    <sys:String x:Key="MW_Mix">
+        Mix
+    </sys:String>
+    <sys:String x:Key="MW_Return">
+        Return
+    </sys:String>
+    <sys:String x:Key="MW_adminMode">
+        Admin Mode
+    </sys:String>
+    <sys:String x:Key="MW_engineerMode">
+        Engineer Mode
+    </sys:String>
+    <sys:String x:Key="MW_maintMode">
+        Maint Mode
+    </sys:String>
+    <sys:String x:Key="MW_Inventory">
+        Inventory
+    </sys:String>
+    <sys:String x:Key="MW_logFile">
+        Log File
+    </sys:String>
+    <sys:String x:Key="MW_Report">
+        Report
+    </sys:String>
+    <sys:String x:Key="MW_Home">
+        Home
+    </sys:String>
+    <sys:String x:Key="MW_Exit">
+        Exit
+    </sys:String>
+    <sys:String x:Key="EA_Print">
+        Print
+    </sys:String>
+    <sys:String x:Key="EA_Remind Later">
+        Remind Later
+    </sys:String>
+    <!--================================================== MainWinodw - End ================================================-->
+    <!--*********************************************************************************************************************-->
+    <!--================================================== HomingPage - Start ================================================-->
+    <sys:String x:Key="HP_startHoming">
+        Start Homing
+    </sys:String>
+    <sys:String x:Key="HP_stopHoming">
+        Stop Homing
+    </sys:String>
+    <sys:String x:Key="HP_Close">
+        Close
+    </sys:String>
+    <!--================================================== HomingPage - End ================================================-->
+    <!--*********************************************************************************************************************-->
+	<!--================================================== LoginPage - Start ================================================-->
+	<sys:String x:Key="LP_userLogin">
+        User Login
+    </sys:String>
+	<sys:String x:Key="LP_userID">
+        User ID :
+    </sys:String>
+	<sys:String x:Key="LP_password">
+        Password :
+    </sys:String>
+	<sys:String x:Key="LP_login">
+        Login
+    </sys:String>
+	<sys:String x:Key="LP_cancel">
+        Cancel
+    </sys:String>
+	<sys:String x:Key="LP_registed">
+        Registed
+    </sys:String>
+	<sys:String x:Key="LP_capture">
+        FingerPrinter Capature
+    </sys:String>
+	<!--================================================== LoginPage - End ================================================-->
+	<!--*********************************************************************************************************************-->
+	<!--================================================== UserAccess - Start ================================================-->
+	<sys:String x:Key="UA_currentUser">
+        Current User :
+    </sys:String>
+	<sys:String x:Key="UA_adminMode">
+        Admin Mode
+    </sys:String>
+	<sys:String x:Key="UA_engineerMode">
+        Engineer Mode
+    </sys:String>
+	<sys:String x:Key="UA_maintMode">
+        Maint Mode
+    </sys:String>
+	<sys:String x:Key="UA_home">
+        Homing
+    </sys:String>
+	<sys:String x:Key="UA_load">
+        Load
+    </sys:String>
+	<sys:String x:Key="UA_unload">
+        Unload
+    </sys:String>
+	<sys:String x:Key="UA_return">
+        Return
+    </sys:String>
+	<sys:String x:Key="UA_remove">
+        Remove
+    </sys:String>
+	<!--================================================== UserAccess - End ================================================-->
+    <!--*********************************************************************************************************************-->
+    <!--================================================== TransactionPage - Start ================================================-->
+    <sys:String x:Key="TS_loadPage">
+        EMS Load Page
+    </sys:String>
+    <sys:String x:Key="TS_unloadPage">
+        EMS Unload Page
+    </sys:String>
+    <sys:String x:Key="TS_returnPage">
+        EMS Return Page
+    </sys:String>
+    <sys:String x:Key="TS_removePage">
+        EMS Remove Page
+    </sys:String>
+
+    <sys:String x:Key="TS_mixPage">
+        EMS Mix Page
+    </sys:String>
+
+    <sys:String x:Key="TS_userInfor">
+        User Information
+    </sys:String>
+    <sys:String x:Key="TS_inputInfor">
+        Input Information
+    </sys:String>
+    <sys:String x:Key="TS_materialInfor">
+        Material Information
+    </sys:String>
+    <sys:String x:Key="TS_userID">
+        User ID :
+    </sys:String>
+    <sys:String x:Key="TS_userName">
+        User Name :
+    </sys:String>
+    <sys:String x:Key="TS_userGroup">
+        User Group :
+    </sys:String>
+    <sys:String x:Key="TS_department">
+        Department :
+    </sys:String>
+    <sys:String x:Key="TS_sapcode">
+        SAP Code :
+    </sys:String>
+    <sys:String x:Key="TS_batchNo">
+        Batch No :
+    </sys:String>
+    <sys:String x:Key="TS_weight">
+        Weight(g) :
+    </sys:String>
+    <sys:String x:Key="TS_slotNo">
+        Slot No :
+    </sys:String>
+    <sys:String x:Key="TS_partID">
+        Part ID :
+    </sys:String>
+    <sys:String x:Key="TS_description">
+        Description :
+    </sys:String>
+    <sys:String x:Key="TS_materialType">
+        Material Type :
+    </sys:String>
+    <sys:String x:Key="TS_thawTime">
+        Thawing Time :
+    </sys:String>
+    <sys:String x:Key="TS_readyTime">
+        Ready Time :
+    </sys:String>
+    <sys:String x:Key="TS_expiryTime">
+        Expiry Time :
+    </sys:String>
+    <sys:String x:Key="TS_maxWeight">
+        Max Weight(g) :
+    </sys:String>
+    <sys:String x:Key="TS_minWeight">
+        Min Weight(g) :
+    </sys:String>
+    <sys:String x:Key="TS_containerWeight">
+        Container WT(g) :
+    </sys:String>
+    <sys:String x:Key="TS_startLoad">
+        Start Load
+    </sys:String>
+    <sys:String x:Key="TS_startMix">
+        Start Mix
+    </sys:String>
+    <sys:String x:Key="TS_stop">
+        Stop
+    </sys:String>
+    <sys:String x:Key="TS_mcID">
+        MC ID :
+    </sys:String>
+    <sys:String x:Key="TS_mcModel">
+        MC Model :
+    </sys:String>
+    <sys:String x:Key="TS_mcType">
+        MC Type :
+    </sys:String>
+    <sys:String x:Key="TS_lotNo">
+        Lot No :
+    </sys:String>
+    <sys:String x:Key="TS_mesDevice">
+        MES Device :
+    </sys:String>
+    <sys:String x:Key="TS_currentWeight">
+        Current WT :
+    </sys:String>
+    <sys:String x:Key="TS_startUnload">
+        Start Unload
+    </sys:String>
+    <sys:String x:Key="TS_returnType">
+        Return Type :
+    </sys:String>
+    <sys:String x:Key="TS_remark">
+        Remark :
+    </sys:String>
+    <sys:String x:Key="TS_startWeight">
+        Start Weight :
+    </sys:String>
+    <sys:String x:Key="TS_scrapWeight">
+        Scrap Weight :
+    </sys:String>
+    <sys:String x:Key="TS_startReturn">
+        Start Return
+    </sys:String>
+    <sys:String x:Key="TS_startRemove">
+        Start Remove
+    </sys:String>
+    <!--================================================== TransactionPage - End ================================================-->
+    <!--*********************************************************************************************************************-->
+    <!--================================================== AdminPage - Start ================================================-->
+    <sys:String x:Key="AP_adminPage">
+        EMS Admin Mode
+    </sys:String>
+    <sys:String x:Key="AP_SAPDB">
+        SAP DB
+    </sys:String>
+    <sys:String x:Key="AP_Department DB">
+        Department DB
+    </sys:String>
+    <sys:String x:Key="AP_systemSet">
+        System Setting
+    </sys:String>
+    <sys:String x:Key="DP_Department :">
+        Department :
+    </sys:String>
+    <sys:String x:Key="SP_Sapcode :">
+        Sapcode :
+    </sys:String>
+    <sys:String x:Key="SP_Thawing Time :">
+        Thawing Time :
+    </sys:String>
+    <sys:String x:Key="SP_New Min Weight :">
+        New Min Weight :
+    </sys:String>
+    <sys:String x:Key="SP_Empty Syringe Weight :">
+        Empty Syringe Weight :
+    </sys:String>
+    <sys:String x:Key="SP_Scrap Weight :">
+        Scrap Weight :
+    </sys:String>
+    <sys:String x:Key="SP_On Hold :">
+        On Hold:
+    </sys:String>
+    <sys:String x:Key="SP_Description :">
+        Description :
+    </sys:String>
+    <sys:String x:Key="SP_Usage Life :">
+        Usage Life :
+    </sys:String>
+    <sys:String x:Key="SP_New Max Weight :">
+        New Max Weight :
+    </sys:String>
+    <sys:String x:Key="SP_Department :">
+        Department :
+    </sys:String>
+    <sys:String x:Key="SP_Capacity :">
+        Capacity :
+    </sys:String>
+    <sys:String x:Key="ST_Name :">
+        Name  :
+    </sys:String>
+    <sys:String x:Key="ST_Value :">
+        Value :
+    </sys:String>
+    <sys:String x:Key="ST_Category :">
+        Category :
+    </sys:String>
+    <sys:String x:Key="ST_Unit :">
+        Unit :
+    </sys:String>
+    <sys:String x:Key="SP_Default Value :">
+        Default Value :
+    </sys:String>
+
+
+
+    <!--================================================== AdminPage - End ================================================-->
+    <!--*********************************************************************************************************************-->
+    <!--================================================== EngineerPage - Start ================================================-->
+    <sys:String x:Key="EP_engineerPage">
+        EMS Engineer Mode
+    </sys:String>
+    <sys:String x:Key="EP_userManagement">
+        User Management
+    </sys:String>
+    <sys:String x:Key="EP_sapManagement">
+        SAP Management
+    </sys:String>
+    <sys:String x:Key="EP_historyDB">
+        History DB Search
+    </sys:String>
+    <sys:String x:Key="EP_trackingDB">
+        Tracking DB Search
+    </sys:String>
+    <sys:String x:Key="EP_equipmentDB">
+        Equipment DB Search
+    </sys:String>
+    <sys:String x:Key="EP_userID">
+        User ID :
+    </sys:String>
+    <sys:String x:Key="EP_search">
+        Search
+    </sys:String>
+    <sys:String x:Key="EP_add">
+        Add
+    </sys:String>
+    <sys:String x:Key="EP_update">
+        Update
+    </sys:String>
+    <sys:String x:Key="EP_delete">
+        Delete
+    </sys:String>
+    <sys:String x:Key="EP_sapcode">
+        SAP Code :
+    </sys:String>
+    <sys:String x:Key="EP_dateFrom">
+        Date From :
+    </sys:String>
+    <sys:String x:Key="EP_dateTo">
+        Date To :
+    </sys:String>
+    <sys:String x:Key="EP_partID">
+        Part ID :
+    </sys:String>
+    <sys:String x:Key="EP_mcID">
+        Machine ID :
+    </sys:String>
+    <sys:String x:Key="EP_mcModel">
+        Machine Model :
+    </sys:String>
+    <sys:String x:Key="EP_department">
+        Department :
+    </sys:String>
+    <sys:String x:Key="EP_process">
+        Process :
+    </sys:String>
+    <sys:String x:Key="EP_vendor">
+        Vendor :
+    </sys:String>
+    <sys:String x:Key="EP_serialNo">
+        Serial No :
+    </sys:String>
+    <sys:String x:Key="EP_materialType">
+        Material Type :
+    </sys:String>
+    <sys:String x:Key="EP_assetNo">
+        Asset No :
+    </sys:String>
+    <sys:String x:Key="EP_confirm">
+        Confirm
+    </sys:String>
+    <sys:String x:Key="EP_cancel">
+        Cancel
+    </sys:String>
+    <sys:String x:Key="EP_thawTime">
+        Thawing Time :
+    </sys:String>
+    <sys:String x:Key="EP_usageLife">
+        Usage Life :
+    </sys:String>
+    <sys:String x:Key="EP_shelfLife">
+        Shelf Life :
+    </sys:String>
+    <sys:String x:Key="EP_description">
+        Description :
+    </sys:String>
+	<sys:String x:Key="EP_capacity">
+        Capacity :
+    </sys:String>
+    <sys:String x:Key="EP_containerWeight">
+        Container Weight :
+    </sys:String>
+    <sys:String x:Key="EP_scrapWeight">
+        Scrap Weight :
+    </sys:String>
+    <sys:String x:Key="EP_incomeMinWT">
+        Income Min WT :
+    </sys:String>
+    <sys:String x:Key="EP_incomeMaxWT">
+        Income Max WT :
+    </sys:String>
+    <sys:String x:Key="EP_materialCategory">
+        MAT Category :
+    </sys:String>
+    <sys:String x:Key="EP_min">
+        min
+    </sys:String>
+    <sys:String x:Key="EP_month">
+        mth
+    </sys:String>
+    <sys:String x:Key="EP_g">
+        g
+    </sys:String>
+    <sys:String x:Key="EP_userName">
+        User Name :
+    </sys:String>
+    <sys:String x:Key="EP_userGroup">
+        User Group :
+    </sys:String>
+    <sys:String x:Key="EP_password">
+        Password :
+    </sys:String>
+    <sys:String x:Key="EP_register">
+        Register
+    </sys:String>
+    <!--================================================== EngineerPage - End ================================================-->
+    <!--*********************************************************************************************************************-->
+    <!--================================================== SensorList - Start ================================================-->
+    <sys:String x:Key="CT_Print">
+        Print
+    </sys:String>
+    <sys:String x:Key="CT_Handle Scanner">
+       Handle Scanner
+    </sys:String>
+    <sys:String x:Key="CT_Weighing Scale">
+        Weighing Scale
+    </sys:String>
+    <sys:String x:Key="CT_Barcode Printer">
+        Barcode Printer
+    </sys:String>
+    <sys:String x:Key="CT_Got Weight Data">
+        Got Weight Data
+    </sys:String>
+    <sys:String x:Key="Open Scanner">
+        Open_Scanner
+    </sys:String>
+    <sys:String x:Key="CT_ COM Test:">
+        COM Test:
+    </sys:String>
+    <sys:String x:Key="CT_Part ID:">
+        Part ID :
+    </sys:String>
+    <sys:String x:Key="CT_Got Part ID Detail">
+        Got Part ID Detail
+    </sys:String>
+    <sys:String x:Key="CT_MC ID :">
+        MC ID :
+    </sys:String>
+    <sys:String x:Key="CT_Thawing Time :">
+        Thawing Time :
+    </sys:String>
+    <sys:String x:Key=" CT_Sapcode :">
+        CT_Sapcode :
+    </sys:String>
+    <sys:String x:Key="CT_Ready Time :">
+        Ready Time :
+    </sys:String>
+    <sys:String x:Key="CT_Expiry Time :">
+        Expiry Time :
+    </sys:String>
+    <sys:String x:Key="CT_Sapcode">
+        Sapcode
+    </sys:String>
+    <sys:String x:Key="X100">
+        Emengency Stop
+    </sys:String>
+    <sys:String x:Key="X101">
+        Gate A Closed
+    </sys:String>
+    <sys:String x:Key="X102">
+        Scrap Drawer 1 Closed
+    </sys:String>
+    <sys:String x:Key="X103">
+        Ejector A Up
+    </sys:String>
+    <sys:String x:Key="X104">
+        Pressure Switch CDA
+    </sys:String>
+    <sys:String x:Key="X105">
+        Gate A Opened
+    </sys:String>
+    <sys:String x:Key="X106">
+        Scrap Drawer 2 Closed
+    </sys:String>
+    <sys:String x:Key="X107">
+        Ejector A Down
+    </sys:String>
+    <sys:String x:Key="X108">
+        Loading Door Closed
+    </sys:String>
+    <sys:String x:Key="X109">
+        Gate B Closed
+    </sys:String>
+    <sys:String x:Key="X110">
+        Scrap Chute Drawer 1
+    </sys:String>
+    <sys:String x:Key="X111">
+        Ejector B Up
+    </sys:String>
+    <sys:String x:Key="X112">
+        Thawing Door Closed
+    </sys:String>
+    <sys:String x:Key="X113">
+        Gate B Opened
+    </sys:String>
+    <sys:String x:Key="X114">
+        Scrap Chute Drawer 2
+    </sys:String>
+    <sys:String x:Key="X115">
+        Ejector B Down
+    </sys:String>
+    <sys:String x:Key="X200">
+        Syringe A Present
+    </sys:String>
+    <sys:String x:Key="X201">
+        Gate C Closed
+    </sys:String>
+    <sys:String x:Key="X202">
+        Weighing Tray CYL FWD
+    </sys:String>
+    <sys:String x:Key="X203">
+        Ejector C Up
+    </sys:String>
+    <sys:String x:Key="X204">
+        Syringe B Present
+    </sys:String>
+    <sys:String x:Key="X205">
+        Gate C Opened
+    </sys:String>
+    <sys:String x:Key="X206">
+        Weighing Tray CYL BWD
+    </sys:String>
+    <sys:String x:Key="X207">
+        Ejector C Down
+    </sys:String>
+    <sys:String x:Key="X208">
+        Syringe C Present
+    </sys:String>
+    <sys:String x:Key="X209">
+        Gate D Closed
+    </sys:String>
+    <sys:String x:Key="X210">
+        Mix Cover On
+    </sys:String>
+    <sys:String x:Key="X211">
+        Ejector D Up
+    </sys:String>
+    <sys:String x:Key="X212">
+        Syringe D Present
+    </sys:String>
+    <sys:String x:Key="X213">
+        Gate D Opened
+    </sys:String>
+    <sys:String x:Key="X214">
+        Mix Material In
+    </sys:String>
+    <sys:String x:Key="X215">
+        Ejector D Down
+    </sys:String>
+    <sys:String x:Key="X300">
+        Weighing Door Opened
+    </sys:String>
+    <sys:String x:Key="X301">
+        Spare
+    </sys:String>
+    <sys:String x:Key="X302">
+        Spare
+    </sys:String>
+    <sys:String x:Key="X303">
+        Spare
+    </sys:String>
+    <sys:String x:Key="X304">
+        Weighing Door Closed
+    </sys:String>
+    <sys:String x:Key="X305">
+        Spare
+    </sys:String>
+    <sys:String x:Key="X306">
+        Spare
+    </sys:String>
+    <sys:String x:Key="X307">
+        Spare
+    </sys:String>
+    <sys:String x:Key="X308">
+        Syringe TopCover Present
+    </sys:String>
+    <sys:String x:Key="X309">
+        Spare
+    </sys:String>
+    <sys:String x:Key="X310">
+        Spare
+    </sys:String>
+    <sys:String x:Key="X311">
+        Spare
+    </sys:String>
+    <sys:String x:Key="X312">
+        30cc Syringe Cap Present
+    </sys:String>
+    <sys:String x:Key="X313">
+        Spare
+    </sys:String>
+    <sys:String x:Key="X314">
+        Spare
+    </sys:String>
+    <sys:String x:Key="X315">
+        Spare
+    </sys:String>
+    <sys:String x:Key="X400">
+        10cc Syringe Cap Present
+    </sys:String>
+    <sys:String x:Key="X401">
+        Spare
+    </sys:String>
+    <sys:String x:Key="X402">
+        Spare
+    </sys:String>
+    <sys:String x:Key="X403">
+        Spare
+    </sys:String>
+    <sys:String x:Key="X404">
+        5cc Syringe Cap Present
+    </sys:String>
+    <sys:String x:Key="X405">
+        Spare
+    </sys:String>
+    <sys:String x:Key="X406">
+        Spare
+    </sys:String>
+    <sys:String x:Key="X407">
+        Spare
+    </sys:String>
+    <sys:String x:Key="X408">
+        Syringe Present
+    </sys:String>
+    <sys:String x:Key="X409">
+        Spare
+    </sys:String>
+    <sys:String x:Key="X410">
+        Spare
+    </sys:String>
+    <sys:String x:Key="X411">
+        Spare
+    </sys:String>
+    <sys:String x:Key="X412">
+        Spare
+    </sys:String>
+    <sys:String x:Key="X413">
+        Spare
+    </sys:String>
+    <sys:String x:Key="X414">
+        Spare
+    </sys:String>
+    <sys:String x:Key="X415">
+        Spare
+    </sys:String>
+    <sys:String x:Key="Y100">
+        Green Light On/Off
+    </sys:String>
+    <sys:String x:Key="Y101">
+        Spare
+    </sys:String>
+    <sys:String x:Key="Y102">
+        Ejecotr A Up/Down
+    </sys:String>
+    <sys:String x:Key="Y103">
+        Spare
+    </sys:String>
+    <sys:String x:Key="Y104">
+        Yellow Light On/Off
+    </sys:String>
+    <sys:String x:Key="Y105">
+        Weighing Door Open/Close
+    </sys:String>
+    <sys:String x:Key="Y106">
+        Ejector B Up/Down
+    </sys:String>
+    <sys:String x:Key="Y107">
+        Spare
+    </sys:String>
+    <sys:String x:Key="Y108">
+        Red Light On/Off
+    </sys:String>
+    <sys:String x:Key="Y109">
+        "Weighing Tray FWD/BWD
+    </sys:String>
+    <sys:String x:Key="Y110">
+        Ejector C Up/Down
+    </sys:String>
+    <sys:String x:Key="Y111">
+        Spare
+    </sys:String>
+    <sys:String x:Key="Y112">
+        Tower Buzzer On/Off
+    </sys:String>
+    <sys:String x:Key="Y113">
+        Scrap Chute 1/2 Open
+    </sys:String>
+    <sys:String x:Key="Y114">
+        Ejector D Up/Down
+    </sys:String>
+    <sys:String x:Key="Y115">
+        Spare
+    </sys:String>
+    <sys:String x:Key="Y200">
+        Gate A Open/Close
+    </sys:String>
+    <sys:String x:Key="Y201">
+        Thawing Cover Open/Close
+    </sys:String>
+    <sys:String x:Key="Y202">
+        Mix Power On/Off
+    </sys:String>
+    <sys:String x:Key="Y203">
+        Spare
+    </sys:String>
+    <sys:String x:Key="Y204">
+        Gate B Open/Close
+    </sys:String>
+    <sys:String x:Key="Y205">
+        Scrap Drawer 1 Open/Close
+    </sys:String>
+    <sys:String x:Key="Y206">
+        Spare
+    </sys:String>
+    <sys:String x:Key="Y207">
+        Spare
+    </sys:String>
+    <sys:String x:Key="Y208">
+        Gate C Open/Close
+    </sys:String>
+    <sys:String x:Key="Y209">
+        Scrap Drawer 2 Open/Close
+    </sys:String>
+    <sys:String x:Key="Y210">
+        Spare
+    </sys:String>
+    <sys:String x:Key="Y211">
+        Spare
+    </sys:String>
+    <sys:String x:Key="Y212">
+        Gate D Open/Close
+    </sys:String>
+    <sys:String x:Key="Y213">
+        Spare
+    </sys:String>
+    <sys:String x:Key="Y214">
+        Spare
+    </sys:String>
+    <sys:String x:Key="Y215">
+        Spare
+    </sys:String>
+    <sys:String x:Key="Y300">
+        Spare
+    </sys:String>
+    <sys:String x:Key="Y301">
+        Spare
+    </sys:String>
+    <sys:String x:Key="Y302">
+        Spare
+    </sys:String>
+    <sys:String x:Key="Y303">
+        Spare
+    </sys:String>
+    <sys:String x:Key="Y304">
+        Spare
+    </sys:String>
+    <sys:String x:Key="Y305">
+        Spare
+    </sys:String>
+    <sys:String x:Key="Y306">
+        Spare
+    </sys:String>
+    <sys:String x:Key="Y307">
+        Spare
+    </sys:String>
+    <sys:String x:Key="Y308">
+        Spare
+    </sys:String>
+    <sys:String x:Key="Y309">
+        Spare
+    </sys:String>
+    <sys:String x:Key="Y310">
+        Spare
+    </sys:String>
+    <sys:String x:Key="Y311">
+        Spare
+    </sys:String>
+    <sys:String x:Key="Y312">
+        Spare
+    </sys:String>
+    <sys:String x:Key="Y313">
+        Spare
+    </sys:String>
+    <sys:String x:Key="Y314">
+        Spare
+    </sys:String>
+    <sys:String x:Key="Y315">
+        Spare
+    </sys:String>
+    <sys:String x:Key="Y400">
+        Spare
+    </sys:String>
+    <sys:String x:Key="Y401">
+        Spare
+    </sys:String>
+    <sys:String x:Key="Y402">
+        Spare
+    </sys:String>
+    <sys:String x:Key="Y403">
+        Spare
+    </sys:String>
+    <sys:String x:Key="Y404">
+        Spare
+    </sys:String>
+    <sys:String x:Key="Y405">
+        Spare
+    </sys:String>
+    <sys:String x:Key="Y406">
+        Spare
+    </sys:String>
+    <sys:String x:Key="Y407">
+        Spare
+    </sys:String>
+    <sys:String x:Key="Y408">
+        Spare
+    </sys:String>
+    <sys:String x:Key="Y409">
+        Spare
+    </sys:String>
+    <sys:String x:Key="Y410">
+        Spare
+    </sys:String>
+    <sys:String x:Key="Y411">
+        Spare
+    </sys:String>
+    <sys:String x:Key="Y412">
+        Spare
+    </sys:String>
+    <sys:String x:Key="Y413">
+        Spare
+    </sys:String>
+    <sys:String x:Key="Y414">
+        Spare
+    </sys:String>
+    <sys:String x:Key="Y415">
+        
+        Spare
+    </sys:String>
+  
+    
+    <!--================================================== SensorList - Start ================================================-->
+    <!--*********************************************************************************************************************-->
+    <!--================================================== Trouble Shooting List Start =======================================-->
+    <sys:String x:Key="Error1_Name">
+        Emergency Stop !! (X100)
+    </sys:String>
+    <sys:String x:Key="Error1_Description">
+        Emergency Stop !! (X100)
+    </sys:String>
+    <sys:String x:Key="Error1_TroubleShooting">
+        1. Release the Emergency Stop Switch.
+        2. Check electrical wiring maybe disconnected.
+    </sys:String>
+
+    <sys:String x:Key="Error2_Name">
+        CDA Low Air Pressure is ON !! (X101)
+    </sys:String>
+    <sys:String x:Key="Error2_Description">
+        CDA Low Air Pressure is ON !! (X101)
+    </sys:String>
+    <sys:String x:Key="Error2_TroubleShooting">
+        1. Check air pressure gauge reading
+        2. Turn On CDA Supply Valve
+    </sys:String>
+
+    <sys:String x:Key="Error3_Name">
+        Loading Door not Closed !! (X102)
+    </sys:String>
+    <sys:String x:Key="Error3_Description">
+        Loading Door not Closed !! (X102)
+    </sys:String>
+    <sys:String x:Key="Error3_TroubleShooting">
+        1. Check loading door whether close
+        2. Check sensor X102 whether damaged
+    </sys:String>
+
+    <sys:String x:Key="Error5_Name">
+        Thawing Door not Closed !! (X103)
+    </sys:String>
+    <sys:String x:Key="Error5_Description">
+        Thawing Door not Closed !! (X103)
+    </sys:String>
+    <sys:String x:Key="Error5_TroubleShooting">
+        1. Check thawing door whether close
+        2. Check sensor X103 whether damaged
+    </sys:String>
+
+    <sys:String x:Key="Error6_Name">
+        Syringe A present !! (X104)
+    </sys:String>
+    <sys:String x:Key="Error6_Description">
+        Syringe A present !! (X104)
+    </sys:String>
+    <sys:String x:Key="Error6_TroubleShooting">
+        1. Please take out syringe from slot A
+        2. Check X104 sensor whether damaged
+    </sys:String>
+
+    <sys:String x:Key="Error7_Name">
+        Syringe A not present !! (X104)
+    </sys:String>
+    <sys:String x:Key="Error7_Description">
+        Syringe A not present !! (X104)
+    </sys:String>
+    <sys:String x:Key="Error7_TroubleShooting">
+        1. Please put syringe into slot A
+        2. Check X104 sensor whether damaged
+    </sys:String>
+
+    <sys:String x:Key="Error8_Name">
+        Syringe B present !! (X105)
+    </sys:String>
+    <sys:String x:Key="Error8_Description">
+        Syringe B present !! (X105)
+    </sys:String>
+    <sys:String x:Key="Error8_TroubleShooting">
+        1. Please take out syringe from slot B
+        2. Check X105 sensor whether damaged
+    </sys:String>
+
+    <sys:String x:Key="Error4_Name">
+        Syringe B not present !! (X105)
+    </sys:String>
+    <sys:String x:Key="Error4_Description">
+        Syringe B not present !! (X105)
+    </sys:String>
+    <sys:String x:Key="Error4_TroubleShooting">
+        1. Please put syringe into slot B
+        2. Check X105 sensor whether damaged
+    </sys:String>
+
+    <sys:String x:Key="Error9_Name">
+        Syringe C present !! (X106)
+    </sys:String>
+    <sys:String x:Key="Error9_Description">
+        Syringe C present !! (X106)
+    </sys:String>
+    <sys:String x:Key="Error9_TroubleShooting">
+        1. Please take out syringe from slot C
+        2. Check X106 sensor whether damaged
+    </sys:String>
+
+    <sys:String x:Key="Error10_Name">
+        Syringe C not present !! (X106)
+    </sys:String>
+    <sys:String x:Key="Error10_Description">
+        Syringe C not present !! (X106)
+    </sys:String>
+    <sys:String x:Key="Error10_TroubleShooting">
+        1. Please put syringe into slot C
+        2. Check X106 sensor whether damaged
+    </sys:String>
+
+    <sys:String x:Key="Error11_Name">
+        Syringe D present !! (X107)
+    </sys:String>
+    <sys:String x:Key="Error11_Description">
+        Syringe D present !! (X107)
+    </sys:String>
+    <sys:String x:Key="Error11_TroubleShooting">
+        1. Please take out syringe from slot D
+        2. Check X107 sensor whether damaged
+    </sys:String>
+
+    <sys:String x:Key="Error12_Name">
+        Syringe D not present !! (X107)
+    </sys:String>
+    <sys:String x:Key="Error12_Description">
+        Syringe D not present !! (X107)
+    </sys:String>
+    <sys:String x:Key="Error12_TroubleShooting">
+        1. Please put syringe into slot D
+        2. Check X107 sensor whether damaged
+    </sys:String>
+
+    <sys:String x:Key="Error13_Name">
+        Gate A not closed !! (X108)
+    </sys:String>
+    <sys:String x:Key="Error13_Description">
+        Gate A not closed !! (X108)
+    </sys:String>
+    <sys:String x:Key="Error13_TroubleShooting">
+        1. Please check Gate A whether closed
+        2. Please check X108 sensor whether damaged
+    </sys:String>
+
+    <sys:String x:Key="Error14_Name">
+        Gate A not opened !! (X019)
+    </sys:String>
+    <sys:String x:Key="Error14_Description">
+        Gate A not opened !! (X109)
+    </sys:String>
+    <sys:String x:Key="Error14_TroubleShooting">
+        1. Please check Gate A whether open
+        2. Please check X109 sensor whether damaged
+    </sys:String>
+
+    <sys:String x:Key="Error15_Name">
+        Gate B not closed !! (X110)
+    </sys:String>
+    <sys:String x:Key="Error15_Description">
+        Gate B not closed !! (X110)
+    </sys:String>
+    <sys:String x:Key="Error15_TroubleShooting">
+        1. Please check Gate B whether closed
+        2. Please check X110 sensor whether damaged
+    </sys:String>
+
+    <sys:String x:Key="Error16_Name">
+        Gate B not opened !! (X111)
+    </sys:String>
+    <sys:String x:Key="Error16_Description">
+        Gate B not opened !! (X111)
+    </sys:String>
+    <sys:String x:Key="Error16_TroubleShooting">
+        1. Please check Gate B whether opened
+        2. Please check X111 sensor whether damaged
+    </sys:String>
+
+    <sys:String x:Key="Error17_Name">
+        Gate C not closed !! (X112)
+    </sys:String>
+    <sys:String x:Key="Error17_Description">
+        Gate C not closed !! (X112)
+    </sys:String>
+    <sys:String x:Key="Error17_TroubleShooting">
+        1. Please check Gate C whether closed
+        2. Please check X112 sensor whether damaged
+    </sys:String>
+
+    <sys:String x:Key="Error18_Name">
+        Gate C not opened !! (X113)
+    </sys:String>
+    <sys:String x:Key="Error18_Description">
+        Gate C not opened !! (X113)
+    </sys:String>
+    <sys:String x:Key="Error18_TroubleShooting">
+        1. Please check Gate C whether opened
+        2. Please check X113 sensor whether damaged
+    </sys:String>
+
+    <sys:String x:Key="Error19_Name">
+        Gate D not closed !! (X114)
+    </sys:String>
+    <sys:String x:Key="Error19_Description">
+        Gate D not closed !! (X114)
+    </sys:String>
+    <sys:String x:Key="Error19_TroubleShooting">
+        1. Please check Gate D whether closed
+        2. Please check X114 sensor whether damaged
+    </sys:String>
+
+    <sys:String x:Key="Error20_Name">
+        Gate D not opened !! (X115)
+    </sys:String>
+    <sys:String x:Key="Error20_Description">
+        Gate D not opened !! (X115)
+    </sys:String>
+    <sys:String x:Key="Error20_TroubleShooting">
+        1. Please check Gate D whether opened
+        2. Please check X115 sensor whether damaged
+    </sys:String>
+
+    <sys:String x:Key="Error21_Name">
+        Scrap drawer 1 not closed !! (X200)
+    </sys:String>
+    <sys:String x:Key="Error21_Description">
+        Scrap drawer 1 not closed !! (X200)
+    </sys:String>
+    <sys:String x:Key="Error21_TroubleShooting">
+        1. Please check scrap drawer whether closed
+        2. Please check X200 sensor whether damaged
+    </sys:String>
+
+    <sys:String x:Key="Error22_Name">
+        Scrap drawer 2 not closed !! (X201)
+    </sys:String>
+    <sys:String x:Key="Error22_Description">
+        Scrap drawer 2 not closed !! (X201)
+    </sys:String>
+    <sys:String x:Key="Error22_TroubleShooting">
+        1. Please check scrap drawer whether closed
+        2. Please check X201 sensor whether damaged
+    </sys:String>
+
+    <sys:String x:Key="Error23_Name">
+        Scrap chut cylinder to drawer 1 failed !! (X202)
+    </sys:String>
+    <sys:String x:Key="Error23_Description">
+        Scrap chut cylinder to drawer 1 failed !! (X202)
+    </sys:String>
+    <sys:String x:Key="Error23_TroubleShooting">
+        1. Check scrap shut whether opened
+        2. Check X202 sensor whether damaged
+    </sys:String>
+
+    <sys:String x:Key="Error24_Name">
+        Scrap chut cylinder to drawer 2 failed !! (X203)
+    </sys:String>
+    <sys:String x:Key="Error24_Description">
+        Scrap chut cylinder to drawer 2 failed !! (X203)
+    </sys:String>
+    <sys:String x:Key="Error24_TroubleShooting">
+        1. Check scrap shut whether closed
+        2. Check X203 sensor whether damaged
+    </sys:String>
+
+    <sys:String x:Key="Error25_Name">
+        Weighing tray cylinder forward failed !! (X204)
+    </sys:String>
+    <sys:String x:Key="Error25_Description">
+        Weighing tray cylinder forward failed !! (X204)
+    </sys:String>
+    <sys:String x:Key="Error25_TroubleShooting">
+        1. Check weighing tray cylinder whether forward
+        2. Check sensor X204 whether damaged
+    </sys:String>
+
+    <sys:String x:Key="Error26_Name">
+        Weighing tray cylinder backward failed !! (X205)
+    </sys:String>
+    <sys:String x:Key="Error26_Description">
+        Weighing tray cylinder backward failed !! (X205)
+    </sys:String>
+    <sys:String x:Key="Error26_TroubleShooting">
+        1. Check weighing tray cylinder whether backward
+        2. Check sensor X205 whether damaged
+    </sys:String>
+
+    <sys:String x:Key="Error27_Name">
+        Scrap drawer 1 not present !! (X206)
+    </sys:String>
+    <sys:String x:Key="Error27_Description">
+        Scrap drawer 1 not present !! (X206)
+    </sys:String>
+    <sys:String x:Key="Error27_TroubleShooting">
+        1. Syringe not drop down to drawer
+        2. Check sensor X206 whether damaged
+    </sys:String>
+
+    <sys:String x:Key="Error28_Name">
+        Scrap drawer 1 full !! (X206)
+    </sys:String>
+    <sys:String x:Key="Error28_Description">
+        Scrap drawer 1 full !! (X206)
+    </sys:String>
+    <sys:String x:Key="Error28_TroubleShooting">
+        1. Please clear drawer 1
+        2. Please check sensor X206 whether damaged
+    </sys:String>
+
+    <sys:String x:Key="Error29_Name">
+        Scrap drawer 2 not present !! (X207)
+    </sys:String>
+    <sys:String x:Key="Error29_Description">
+        Scrap drawer 2 not present !! (X207)
+    </sys:String>
+    <sys:String x:Key="Error29_TroubleShooting">
+        1. Syringe not drop down to drawer
+        2. Check sensor X207 whether damaged
+    </sys:String>
+
+    <sys:String x:Key="Error30_Name">
+        Scrap drawer 2 full !! X(207)
+    </sys:String>
+    <sys:String x:Key="Error30_Description">
+        Scrap drawer 2 full !! X(207)
+    </sys:String>
+    <sys:String x:Key="Error30_TroubleShooting">
+        1. Please clear drawer 2
+        2. Please check sensor X207 whether damaged
+    </sys:String>
+
+    <sys:String x:Key="Error31_Name">
+        Ejector A not UP !! (X208)
+    </sys:String>
+    <sys:String x:Key="Error31_Description">
+        Ejector A not UP !! (X208)
+    </sys:String>
+    <sys:String x:Key="Error31_TroubleShooting">
+        1. Please check ejector A whether UP
+        2. Please check sensor X208 whether damaged
+    </sys:String>
+
+    <sys:String x:Key="Error32_Name">
+        Ejector A not DOWN !! (X209)
+    </sys:String>
+    <sys:String x:Key="Error32_Description">
+        Ejector A not DOWN !! (X209)
+    </sys:String>
+    <sys:String x:Key="Error32_TroubleShooting">
+        1. Please check ejector A whether DOWN
+        2. Please check sensor X209 whether damaged
+    </sys:String>
+
+    <sys:String x:Key="Error33_Name">
+        Ejector B not UP !! (X210)
+    </sys:String>
+    <sys:String x:Key="Error33_Description">
+        Ejector B not UP !! (X210)
+    </sys:String>
+    <sys:String x:Key="Error33_TroubleShooting">
+        1. Please check ejector B whether UP
+        2. Please check sensor X210 whether damaged
+    </sys:String>
+
+    <sys:String x:Key="Error34_Name">
+        Ejector B not DOWN !! (X211)
+    </sys:String>
+    <sys:String x:Key="Error34_Description">
+        Ejector B not DOWN !! (X211)
+    </sys:String>
+    <sys:String x:Key="Error34_TroubleShooting">
+        1. Please check ejector B whether DOWN
+        2. Please check sensor X211 whether damaged
+    </sys:String>
+
+    <sys:String x:Key="Error35_Name">
+        Ejector C not UP !! (X212)
+    </sys:String>
+    <sys:String x:Key="Error35_Description">
+        Ejector C not UP !! (X212)
+    </sys:String>
+    <sys:String x:Key="Error35_TroubleShooting">
+        1. Please check ejector C whether UP
+        2. Please check sensor X212 whether damaged
+    </sys:String>
+
+    <sys:String x:Key="Error36_Name">
+        Ejector C not DOWN !! (X213)
+    </sys:String>
+    <sys:String x:Key="Error36_Description">
+        Ejector C not DOWN !! (X213)
+    </sys:String>
+    <sys:String x:Key="Error36_TroubleShooting">
+        1. Please check ejector C whether DOWN
+        2. Please check sensor X213 whether damaged
+    </sys:String>
+
+    <sys:String x:Key="Error37_Name">
+        Ejector D not UP !! (X214)
+    </sys:String>
+    <sys:String x:Key="Error37_Description">
+        Ejector D not UP !! (X214)
+    </sys:String>
+    <sys:String x:Key="Error37_TroubleShooting">
+        1. Please check ejector D whether UP
+        2. Please check sensor X214 whether damaged
+    </sys:String>
+
+    <sys:String x:Key="Error38_Name">
+        Ejector D not DOWN !! (X215)
+    </sys:String>
+    <sys:String x:Key="Error38_Description">
+        Ejector D not DOWN !! (X215)
+    </sys:String>
+    <sys:String x:Key="Error38_TroubleShooting">
+        1. Please check ejector D whether DOWN
+        2. Please check sensor X215 whether damaged
+    </sys:String>
+
+    <sys:String x:Key="Error39_Name">
+        Weighing door not opened !! (X300)
+    </sys:String>
+    <sys:String x:Key="Error39_Description">
+        Weighing door not opened !! (X300)
+    </sys:String>
+    <sys:String x:Key="Error39_TroubleShooting">
+        1. Please check weighing door whether open
+        2. Please check sensor X300 whether damaged
+    </sys:String>
+
+    <sys:String x:Key="Error40_Name">
+        Weighing door not closed !! (X301)
+    </sys:String>
+    <sys:String x:Key="Error40_Description">
+        Weighing door not closed !! (X301)
+    </sys:String>
+    <sys:String x:Key="Error40_TroubleShooting">
+        1. Please check weighing door whether close
+        2. Please check sensor X301 whether damaged
+    </sys:String>
+
+    <sys:String x:Key="Error41_Name">
+        Syringe top cover present !! (X302)
+    </sys:String>
+    <sys:String x:Key="Error41_Description">
+        Syringe top cover present !! (X302)
+    </sys:String>
+    <sys:String x:Key="Error41_TroubleShooting">
+        1. Pleaes remove syringe from weighing module
+        2. Please check X302 sensor whether damage
+    </sys:String>
+
+    <sys:String x:Key="Error42_Name">
+        Syringe top cover not present !! (X302)
+    </sys:String>
+    <sys:String x:Key="Error42_Description">
+        Syringe top cover not present !! (X302)
+    </sys:String>
+    <sys:String x:Key="Error42_TroubleShooting">
+        1. Pleaes check syringe whether have top cover
+        2. Please check X302 sensor whether damaged
+    </sys:String>
+
+    <sys:String x:Key="Error43_Name">
+        Syringe 30 CC Cap present !! (X303)
+    </sys:String>
+    <sys:String x:Key="Error43_Description">
+        Syringe 30 CC Cap present !! (X303)
+    </sys:String>
+    <sys:String x:Key="Error43_TroubleShooting">
+        1. Pleaes remove syringe from weighing module
+        2. Please check X303 sensor whether damage
+    </sys:String>
+
+    <sys:String x:Key="Error44_Name">
+        Syringe 30 CC Cap not present !! (X303)
+    </sys:String>
+    <sys:String x:Key="Error44_Description">
+        Syringe 30 CC Cap not present !! (X303)
+    </sys:String>
+    <sys:String x:Key="Error44_TroubleShooting">
+        1. Pleaes check 30 CC syringe whether have Cap
+        2. Please check X303 sensor whether damaged
+    </sys:String>
+
+    <sys:String x:Key="Error45_Name">
+        Syringe 10 CC Cap present !! (X304)
+    </sys:String>
+    <sys:String x:Key="Error45_Description">
+        Syringe 10 CC Cap present !! (X304)
+    </sys:String>
+    <sys:String x:Key="Error45_TroubleShooting">
+        1. Pleaes remove syringe from weighing module
+        2. Please check X304 sensor whether damage
+    </sys:String>
+
+    <sys:String x:Key="Error46_Name">
+        Syringe 10 CC Cap not present !! (X304)
+    </sys:String>
+    <sys:String x:Key="Error46_Description">
+        Syringe 10 CC Cap not present !! (X304)
+    </sys:String>
+    <sys:String x:Key="Error46_TroubleShooting">
+        1. Pleaes check 10 CC syringe whether have Cap
+        2. Please check X304 sensor whether damaged
+    </sys:String>
+
+    <sys:String x:Key="Error47_Name">
+        Syringe 5 CC Cap present !! (X305)
+    </sys:String>
+    <sys:String x:Key="Error47_Description">
+        Syringe 5 CC Cap present !! (X305)
+    </sys:String>
+    <sys:String x:Key="Error47_TroubleShooting">
+        1. Pleaes remove syringe from weighing module
+        2. Please check X305 sensor whether damage
+    </sys:String>
+
+    <sys:String x:Key="Error48_Name">
+        Syringe 5 CC Cap not present !! (X305)
+    </sys:String>
+    <sys:String x:Key="Error48_Description">
+        Syringe 5 CC Cap not present !! (X305)
+    </sys:String>
+    <sys:String x:Key="Error48_TroubleShooting">
+        1. Pleaes check 5 CC syringe whether have Cap
+        2. Please check X305 sensor whether damaged
+    </sys:String>
+
+    <sys:String x:Key="Error49_Name">
+        Syringe body present !! (X306)
+    </sys:String>
+    <sys:String x:Key="Error49_Description">
+        Syringe body present !! (X306)
+    </sys:String>
+    <sys:String x:Key="Error49_TroubleShooting">
+        1. Pleaes check wheterh have syringe on weighing module
+        2. Please check X306 sensor whether damaged
+    </sys:String>
+
+    <sys:String x:Key="Error50_Name">
+        Syringe body not present !! (X306)
+    </sys:String>
+    <sys:String x:Key="Error50_Description">
+        Syringe body not present !! (X306)
+    </sys:String>
+    <sys:String x:Key="Error50_TroubleShooting">
+        1. Pleaes put syringe on weighing module
+        2. Please check X306 sensor whether damaged
+    </sys:String>
+
+    <sys:String x:Key="Error51_Name">
+        Motion Failed !!
+    </sys:String>
+    <sys:String x:Key="Error51_Description">
+        Motion Failed !!
+    </sys:String>
+    <sys:String x:Key="Error51_TroubleShooting">
+        1. Please check position whether correct
+        2. Please check motor drive whether has error
+    </sys:String>
+
+    <sys:String x:Key="Error52_Name">
+        Rotary Homing failed !!
+    </sys:String>
+    <sys:String x:Key="Error52_Description">
+        Rotary Homing failed !!
+    </sys:String>
+    <sys:String x:Key="Error52_TroubleShooting">
+        1. Please check homing plate whether stop correct position
+        2. Please check motor drive whether has error
+        3. Please check homing sensor whether damaged
+    </sys:String>
+
+    <sys:String x:Key="Error53_Name">
+        Please homing first !!
+    </sys:String>
+    <sys:String x:Key="Error53_Description">
+        Please homing first !!
+    </sys:String>
+    <sys:String x:Key="Error53_TroubleShooting">
+        1. Please homing first becuase motor lost position
+    </sys:String>
+
+    <sys:String x:Key="Error54_Name">
+        Weighing failed !!
+    </sys:String>
+    <sys:String x:Key="Error54_Description">
+        Weighing failed !!
+    </sys:String>
+    <sys:String x:Key="Error54_TroubleShooting">
+        1. Please check whether scale whether power on 
+        2. Please check parameter setting of syringe whether is correct
+    </sys:String>
+
+    <sys:String x:Key="Error55_Name">
+        Update database failed !!
+    </sys:String>
+    <sys:String x:Key="Error55_Description">
+        Update database failed !!
+    </sys:String>
+    <sys:String x:Key="Error55_TroubleShooting">
+        1. Please check network issue
+        2. Contact with admin
+    </sys:String>
+
+    <!--================================================== Trouble Shooting List End ================================================-->
+
+</ResourceDictionary>

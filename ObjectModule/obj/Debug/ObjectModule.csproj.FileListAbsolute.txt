@@ -1,0 +1,5 @@
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\ObjectModule\bin\Debug\ObjectModule.dll
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\ObjectModule\bin\Debug\ObjectModule.pdb
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\ObjectModule\obj\Debug\ObjectModule.dll
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\ObjectModule\obj\Debug\ObjectModule.pdb
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\ObjectModule\obj\Debug\ObjectModule.csprojResolveAssemblyReference.cache

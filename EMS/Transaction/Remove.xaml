@@ -1,0 +1,158 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        xmlns:EMS_Views="clr-namespace:EMS.Views" xmlns:Custom="http://schemas.microsoft.com/wpf/2008/toolkit" x:Class="EMS.Transaction.Remove" 
+        mc:Ignorable="d"
+        Title= "" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" Background="#4C000000" AllowsTransparency="True" Width="982" Height="650" Topmost="True" >
+    <Grid Margin="0,0,8,0">
+    	<Grid.RowDefinitions>
+    		<RowDefinition/>
+    	</Grid.RowDefinitions>
+    	<Rectangle Margin="10,8,-2,8" Stroke="Black" Fill="{DynamicResource ButtonNormalBackground}"/>
+    	<TextBlock Margin="13,7,284.903,0" TextWrapping="Wrap" Text="EMS Remove Page" FontSize="50.667" VerticalAlignment="Top" FontFamily="Arial">
+    		<TextBlock.Foreground>
+    			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+    				<GradientStop Color="#FF009B97" Offset="0"/>
+    				<GradientStop Color="#FF7BFDF5" Offset="1"/>
+    			</LinearGradientBrush>
+
+    		</TextBlock.Foreground>
+    		<TextBlock.Effect>
+    			<DropShadowEffect ShadowDepth="3"/>
+    		</TextBlock.Effect>
+    	</TextBlock>
+    	<GroupBox Header="{DynamicResource TS_userInfor}" Margin="14.5,279.966,0,190.79" Foreground="#FF101010" HorizontalAlignment="Left" Width="203.437" BorderBrush="{DynamicResource Linear_Blue}">
+    		<GroupBox.Effect>
+    			<DropShadowEffect/>
+    		</GroupBox.Effect>
+    	</GroupBox>
+		<StackPanel Margin="23.217,300.011,0,194.79" HorizontalAlignment="Left" Width="89.437">
+			<TextBlock TextWrapping="Wrap" Text="{DynamicResource TS_userID}" Height="19.837" Foreground="#FF060606" FontSize="14.667"/>
+			<TextBlock TextWrapping="Wrap" Text="{DynamicResource TS_userName}" Height="19.837" Foreground="#FF060606" Margin="0,23,0,0" FontSize="14.667"/>
+			<TextBlock TextWrapping="Wrap" Text="{DynamicResource TS_userGroup}" Height="19.837" Foreground="#FF060606" Margin="0,23,0,0" FontSize="14.667"/>
+			<TextBlock TextWrapping="Wrap" Text="{DynamicResource TS_department}" Height="19.837" Foreground="#FF060606" Margin="0,23,0,0" FontSize="14.667"/>
+		</StackPanel>
+		<StackPanel Margin="106.654,297.011,0,195.79" HorizontalAlignment="Left" Width="105.771">
+			<TextBlock x:Name="txt_userID" TextWrapping="NoWrap" Height="19.837" FontSize="14.667" Foreground="#FF080808"/>
+			<TextBlock x:Name="txt_userName" TextWrapping="NoWrap" Height="19.837" Margin="0,25,0,0" FontSize="14.667" Foreground="#FF080808"/>
+			<TextBlock x:Name="txt_userGroup" TextWrapping="NoWrap" Height="19.837" Margin="0,25,0,0" FontSize="14.667" Foreground="#FF080808"/>
+			<TextBlock x:Name="txt_userDepartment" TextWrapping="NoWrap" Height="19.837" Margin="0,25,0,0" FontSize="14.667" Foreground="#FF080808"/>
+		</StackPanel>
+		<GroupBox Header="{DynamicResource TS_inputInfor}" Margin="227,279.71,260.563,243.928" Foreground="#FF0C0C0C" BorderBrush="{DynamicResource Linear_Blue}">
+			<GroupBox.Effect>
+				<DropShadowEffect/>
+			</GroupBox.Effect>
+		</GroupBox>
+                <Path Data="M16,67.5 L1232.5083,67.5" Fill="#FFF4F4F5" Height="2" Margin="12,0,-2,180.534" Stretch="Fill" VerticalAlignment="Bottom" StrokeThickness="2" Stroke="{DynamicResource Linear_Blue}">
+                	<Path.Effect>
+                		<DropShadowEffect Color="#FFB2B2B2" ShadowDepth="2"/>
+                	</Path.Effect>
+                </Path>
+                <StackPanel Margin="238.55,298.374,0,246.76" HorizontalAlignment="Left" Width="77.103">
+                	<TextBlock TextWrapping="Wrap" Text="{DynamicResource TS_mcID}" Height="19.837" Foreground="#FF060606" FontSize="14.667"/>
+                	<TextBlock TextWrapping="Wrap" Text="Remark :" Height="19.837" Foreground="#FF060606" Margin="0,8,0,0" FontSize="14.667"/>
+                	<TextBlock TextWrapping="Wrap" Text="Part ID :" Height="19.837" Foreground="#FF060606" Margin="0,8,0,0" FontSize="14.667"/>
+					<TextBlock TextWrapping="Wrap" Text="SAP Code :" Height="19.837" Foreground="#FF060606" Margin="0,8,0,0" FontSize="14.667"/>
+                </StackPanel>
+                <StackPanel Margin="315.654,297.873,0,247.928" HorizontalAlignment="Left" Width="147.771">
+                	<TextBox x:Name="txt_mcID" TextWrapping="NoWrap" CharacterCasing="Upper" d:LayoutOverrides="Width" KeyDown="txt_mcID_KeyDown">
+                		<TextBox.Effect>
+                			<DropShadowEffect ShadowDepth="0" BlurRadius="8"/>
+                		</TextBox.Effect>
+                	</TextBox>
+                	<TextBox TextWrapping="NoWrap" x:Name="txt_remark" CharacterCasing="Upper" Margin="0,7,0,0" KeyDown="txt_remark_KeyDown" IsEnabled="False" d:LayoutOverrides="Width">
+                		<TextBox.Effect>
+                			<DropShadowEffect ShadowDepth="0" BlurRadius="8"/>
+                		</TextBox.Effect>
+                	</TextBox>
+                	<TextBlock TextWrapping="NoWrap" x:Name="txt_partID" Height="19.837" Margin="0,6,0,0" FontSize="14.667" Foreground="#FF0E0E0E"/>
+                	<TextBlock TextWrapping="NoWrap" x:Name="txt_sapcode" Height="19.837" Margin="0,6,0,0" FontSize="14.667" Foreground="#FF0E0E0E"/>
+                </StackPanel>
+			<Button x:Name="btn_unload" IsEnabled="False" Margin="433.437,0,395.563,188.427" Style="{DynamicResource ButtonStyle-Zoom}" Cursor="Hand" Height="46" VerticalAlignment="Bottom" d:LayoutOverrides="GridBox" Background="{x:Null}" Click="btn_unload_Click">
+    		<Button.Effect>
+    			<DropShadowEffect ShadowDepth="0" BlurRadius="8"/>
+    		</Button.Effect>
+    		<Grid Height="38" Width="135">
+    			<Image  Margin="0,2,96,2" Source="/EMS;component/Resources/Image/confirm.png"/>
+    			<Label Content="{DynamicResource TS_startRemove}" HorizontalContentAlignment="Right" FontSize="14" Margin="34,4,-4,6" FontWeight="Bold" d:LayoutOverrides="VerticalAlignment"/>
+    		</Grid>
+    	</Button>
+			<Button x:Name="btn_stop" IsEnabled="False" Margin="0,0,260.958,188.428" Style="{DynamicResource ButtonStyle-Zoom}" Cursor="Hand" HorizontalAlignment="Right" Width="125" Height="47" VerticalAlignment="Bottom" d:LayoutOverrides="GridBox" Background="{x:Null}" Click="btn_stop_Click">
+				<Button.Effect>
+					<DropShadowEffect ShadowDepth="0" BlurRadius="8"/>
+				</Button.Effect>
+				<Grid Height="44" Width="126">
+					<Image  Margin="4,4,82,5" Source="/EMS;component/Resources/Image/Stop.png"/>
+					<Label Content="{DynamicResource TS_stop}" HorizontalContentAlignment="Right" FontSize="14" Margin="61.332,6,7.668,9" FontWeight="Bold" d:LayoutOverrides="VerticalAlignment"/>
+				</Grid>
+			</Button>
+			<Button x:Name="btn_close" Width="63" HorizontalAlignment="Right" Margin="0,12.966,10,0" Background="{x:Null}" Style="{DynamicResource ButtonStyle-Zoom}" BorderBrush="Black" Focusable="False" IsTabStop="False" Click="btn_close_Click" Cursor="Hand" Height="50" VerticalAlignment="Top">
+				<Image Height="42" Width="55" Source="/EMS;component/Resources/Image/Close.png"/>
+			</Button>
+    	<EMS_Views:KeyBoard x:Name="kb" Margin="12,0,20,8.428" VerticalAlignment="Bottom" d:LayoutOverrides="Height" UndoClick="kb_UndoClick" EnterClick="kb_EnterClick"/>
+    	<Path Data="M16,67.5 L1232.5083,67.5" Fill="#FFF4F4F5" Height="2" Margin="12,70.966,-2,0" Stretch="Fill" VerticalAlignment="Top" StrokeThickness="2" Stroke="{DynamicResource Linear_Blue}">
+    		<Path.Effect>
+    			<DropShadowEffect Color="#FFB2B2B2" ShadowDepth="2"/>
+    		</Path.Effect>
+    	</Path>
+    	<ProgressBar x:Name="pb" Margin="0,412.983,21.868,190.183" Value="0" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Right" Width="217.633">
+    		<ProgressBar.Effect>
+    			<DropShadowEffect/>
+    		</ProgressBar.Effect>
+    		<ProgressBar.RenderTransform>
+    			<TransformGroup>
+    				<ScaleTransform/>
+    				<SkewTransform AngleX="1.102"/>
+    				<RotateTransform Angle="-0.106"/>
+    				<TranslateTransform Y="-0.481"/>
+    			</TransformGroup>
+    		</ProgressBar.RenderTransform>
+    	</ProgressBar>
+    	<GroupBox Header="Real Time Message" Margin="0,72.632,7.594,244.428" Foreground="#FF181817" BorderBrush="{DynamicResource Linear_Blue}" Width="245" HorizontalAlignment="Right">
+    		<GroupBox.Effect>
+    			<DropShadowEffect/>
+    		</GroupBox.Effect>
+    		<ListBox x:Name="event_list" Margin="6,5,4,3" Background="{DynamicResource Linear_RainySky}" Foreground="#FFF9F5F5"/>
+    	</GroupBox>
+    	<Custom:DataGrid x:Name="dg_list" Margin="17,75.756,260,0" Height="205.028" VerticalAlignment="Top" AlternatingRowBackground="#FFB7F5EB" SelectionChanged="dg_list_SelectionChanged" AutoGenerateColumns="False" FontSize="14" FontFamily="YouYuan" IsReadOnly="True" Background="{DynamicResource Linear_RainySky}">
+    		<Custom:DataGrid.Effect>
+    			<DropShadowEffect/>
+    		</Custom:DataGrid.Effect>
+    		<Custom:DataGrid.Columns>
+    			<Custom:DataGridTextColumn Binding="{Binding SLOT_ID}" Header="Slot ID" SortMemberPath="SLOT_ID"/>
+    			<Custom:DataGridTextColumn Binding="{Binding SLOT_INDEX}" Header="Slot Index" SortMemberPath="SLOT_INDEX"/>
+    			<Custom:DataGridTextColumn Binding="{Binding CAPACITY}" Header="Capacity" SortMemberPath="CAPACITY"/>
+    			<Custom:DataGridTextColumn Binding="{Binding PART_ID}" Header="Part ID" SortMemberPath="PART_ID"/>
+    			<Custom:DataGridTextColumn Binding="{Binding SAPCODE}" Header="Sapcode" SortMemberPath="SAPCODE"/>
+    			<Custom:DataGridTextColumn Binding="{Binding DESCRIPTION}" Header="Description" SortMemberPath="DESCRIPTION"/>
+                <Custom:DataGridTextColumn Binding="{Binding BATCH_NO}" Header="Batch No" SortMemberPath="BATCH_NO"/>
+                <Custom:DataGridTextColumn Binding="{Binding STATUS}" Header="Status" SortMemberPath="STATUS"/>
+    			<Custom:DataGridTextColumn Binding="{Binding START_WEIGHT}" Header="Start Weight" SortMemberPath="START_WEIGHT"/>
+    			<Custom:DataGridTextColumn Binding="{Binding CURRENT_WEIGHT}" Header="Current Weight" SortMemberPath="CURRENT_WEIGHT"/>
+    			<Custom:DataGridTextColumn Binding="{Binding THAWING_DATETIME}" Header="Thawing Datetime" SortMemberPath="THAWING_DATETIME"/>
+    			<Custom:DataGridTextColumn Binding="{Binding READY_DATETIME}" Header="Ready Datetime" SortMemberPath="READY_DATETIME"/>
+                <Custom:DataGridTextColumn Binding="{Binding EXPIRY_DATETIME}" Header="Expiry Datetime" SortMemberPath="EXPIRY_DATETIME"/>
+                <Custom:DataGridTextColumn Binding="{Binding MF_EXPIRY_DATE}" Header="Manufacture Expiry Date" SortMemberPath="MF_EXPIRY_DATE"/>
+				<Custom:DataGridTextColumn Binding="{Binding USER_ID}" Header="User ID" SortMemberPath="USER_ID"/>
+				<Custom:DataGridTextColumn Binding="{Binding USER_NAME}" Header="User Name" SortMemberPath="USER_NAME"/>
+                <Custom:DataGridTextColumn Binding="{Binding DEPARTMENT}" Header="Department" SortMemberPath="DEPARTMENT"/>
+                <Custom:DataGridTextColumn Binding="{Binding UPDATED_TIME}" Header="Updated Time" SortMemberPath="UPDATED_TIME"/>
+            </Custom:DataGrid.Columns>
+    	</Custom:DataGrid>
+    	<StackPanel Margin="468.55,299.374,421.347,245.76">
+    		<TextBlock TextWrapping="Wrap" Text="Slot ID :" Height="19.837" Foreground="#FF060606" FontSize="14.667"/>
+    		<TextBlock TextWrapping="Wrap" Text="Slot Index :" Height="19.837" Foreground="#FF060606" Margin="0,7,0,0" FontSize="14.667"/>
+    		<TextBlock TextWrapping="Wrap" Text="Ready Time :" Height="19.837" Foreground="#FF060606" Margin="0,7,0,0" FontSize="14.667"/>
+    		<TextBlock TextWrapping="Wrap" Text="Expiry Time :" Height="19.837" Foreground="#FF060606" Margin="0,7,0,0" FontSize="14.667"/>
+    	</StackPanel>
+    	<StackPanel Margin="0,299.873,269.575,245.928" HorizontalAlignment="Right" Width="151.771">
+    		<TextBlock TextWrapping="NoWrap" x:Name="txt_slotID" Height="19.837" Margin="0,0,0,0" FontSize="14.667" Foreground="#FF0E0E0E"/>
+    		<TextBlock TextWrapping="NoWrap" x:Name="txt_slotIndex" Height="19.837" Margin="0,7,0,0" FontSize="14.667" Foreground="#FF0E0E0E"/>
+    		<TextBlock TextWrapping="NoWrap" x:Name="txt_readyTime" Height="19.837" Margin="0,7,0,0" FontSize="14.667" Foreground="#FF0E0E0E"/>
+    		<TextBlock TextWrapping="NoWrap" x:Name="txt_expiryTime" Height="19.837" Margin="0,7,0,0" FontSize="14.667" Foreground="#FF0E0E0E"/>
+    	</StackPanel>
+    	<CheckBox x:Name="cb_bypassMCcheck" Content="Bypass MC Check" Margin="234.44,0,0,198.56" VerticalAlignment="Bottom" FontSize="18.667" HorizontalAlignment="Left" Width="168.717" Click="cb_bypassMCcheck_Click"/>
+    </Grid>
+</Window>

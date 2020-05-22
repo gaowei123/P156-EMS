@@ -1,0 +1,5 @@
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\Model\bin\Debug\Model.dll
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\Model\bin\Debug\Model.pdb
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\Model\obj\Debug\Model.dll
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\Model\obj\Debug\Model.pdb
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache

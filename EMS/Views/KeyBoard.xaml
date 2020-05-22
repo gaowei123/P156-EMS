@@ -1,0 +1,230 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	mc:Ignorable="d"
+	x:Class="EMS.Views.KeyBoard"
+	x:Name="UserControl"
+	Width="810" Height="175">
+
+	<Border x:Name="LayoutRoot" BorderThickness="0,1,0,0">
+		<WrapPanel Height="175" Margin="6,0,-5,-1">
+			<Button Width="48" Height="48" Style="{DynamicResource ButtonStyle-Zoom}" Content="Q" Focusable="False" Margin="5,7,0,0" Click="btn_KeyBoard_Click" FontSize="13.333" FontWeight="Bold" Background="#FFBAB9B9" Cursor="Hand">
+				<Button.Effect>
+					<DropShadowEffect/>
+				</Button.Effect>
+			</Button>
+			<Button Width="48" Height="48" Style="{DynamicResource ButtonStyle-Zoom}" Content="W" Focusable="False" Margin="2,7,0,0" Click="btn_KeyBoard_Click" FontSize="13.333" FontWeight="Bold" Background="#FFBAB9B9" Cursor="Hand">
+				<Button.Effect>
+					<DropShadowEffect/>
+				</Button.Effect>
+			</Button>
+			<Button Width="48" Height="48" Style="{DynamicResource ButtonStyle-Zoom}" Content="E" Focusable="False" Margin="2,7,0,0" Click="btn_KeyBoard_Click" FontSize="13.333" FontWeight="Bold" Background="#FFBAB9B9" Cursor="Hand">
+				<Button.Effect>
+					<DropShadowEffect/>
+				</Button.Effect>
+			</Button>
+			<Button Width="48" Height="48" Style="{DynamicResource ButtonStyle-Zoom}" Content="R" Focusable="False" Margin="2,7,0,0" Click="btn_KeyBoard_Click" FontSize="13.333" FontWeight="Bold" Background="#FFBAB9B9" Cursor="Hand">
+				<Button.Effect>
+					<DropShadowEffect/>
+				</Button.Effect>
+			</Button>
+			<Button Width="48" Height="48" Style="{DynamicResource ButtonStyle-Zoom}" Content="T" Focusable="False" Margin="2,7,0,0" Click="btn_KeyBoard_Click" FontSize="13.333" FontWeight="Bold" Background="#FFBAB9B9" Cursor="Hand">
+				<Button.Effect>
+					<DropShadowEffect/>
+				</Button.Effect>
+			</Button>
+			<Button Width="48" Height="48" Style="{DynamicResource ButtonStyle-Zoom}" Content="Y" Focusable="False" Margin="2,7,0,0" Click="btn_KeyBoard_Click" FontSize="13.333" FontWeight="Bold" Background="#FFBAB9B9" Cursor="Hand">
+				<Button.Effect>
+					<DropShadowEffect/>
+				</Button.Effect>
+			</Button>
+			<Button Height="48" Content="U" Style="{DynamicResource ButtonStyle-Zoom}" Focusable="False" Width="48" Margin="2,7,0,0" Click="btn_KeyBoard_Click" FontSize="13.333" FontWeight="Bold" Background="#FFBAB9B9" Cursor="Hand">
+				<Button.Effect>
+					<DropShadowEffect/>
+				</Button.Effect>
+			</Button>
+			<Button Width="48" Height="48" Style="{DynamicResource ButtonStyle-Zoom}" Content="I" Focusable="False" Margin="2,7,0,0" Click="btn_KeyBoard_Click" FontSize="13.333" FontWeight="Bold" Background="#FFBAB9B9" Cursor="Hand">
+				<Button.Effect>
+					<DropShadowEffect/>
+				</Button.Effect>
+			</Button>
+			<Button Height="48" Content="O" Style="{DynamicResource ButtonStyle-Zoom}" Width="48" Focusable="False" Margin="2,7,0,0" Click="btn_KeyBoard_Click" FontSize="13.333" FontWeight="Bold" Background="#FFBAB9B9" Cursor="Hand">
+				<Button.Effect>
+					<DropShadowEffect/>
+				</Button.Effect>
+			</Button>
+			<Button Height="48" Content="P" Style="{DynamicResource ButtonStyle-Zoom}" Width="48" Focusable="False" Margin="2,7,0,0" Click="btn_KeyBoard_Click" FontSize="13.333" FontWeight="Bold" Background="#FFBAB9B9" Cursor="Hand">
+				<Button.Effect>
+					<DropShadowEffect/>
+				</Button.Effect>
+			</Button>
+			<Button Height="48" Content="1" Style="{DynamicResource ButtonStyle-Zoom}" Width="48" Focusable="False" Margin="2,7,0,0" Click="btn_KeyBoard_Click" FontSize="13.333" FontWeight="Bold" Background="#FFBAB9B9" Cursor="Hand">
+				<Button.Effect>
+					<DropShadowEffect/>
+				</Button.Effect>
+			</Button>
+			<Button Height="48" Content="2" Style="{DynamicResource ButtonStyle-Zoom}" Width="48" Focusable="False" Margin="2,7,0,0" Click="btn_KeyBoard_Click" FontSize="13.333" FontWeight="Bold" Background="#FFBAB9B9" Cursor="Hand">
+				<Button.Effect>
+					<DropShadowEffect/>
+				</Button.Effect>
+			</Button>
+			<Button Height="48" Content="3" Style="{DynamicResource ButtonStyle-Zoom}" Width="48" Focusable="False" Margin="2,7,0,0" Click="btn_KeyBoard_Click" FontSize="13.333" FontWeight="Bold" Background="#FFBAB9B9" Cursor="Hand">
+				<Button.Effect>
+					<DropShadowEffect/>
+				</Button.Effect>
+			</Button>
+			<Button Height="48" Content="0" Style="{DynamicResource ButtonStyle-Zoom}" Width="48" Focusable="False" Margin="2,7,0,0" Click="btn_KeyBoard_Click" FontSize="13.333" FontWeight="Bold" Background="#FFBAB9B9" Cursor="Hand">
+				<Button.Effect>
+					<DropShadowEffect/>
+				</Button.Effect>
+			</Button>
+			<Button Height="50" Content="&lt;-BackSpace" Style="{DynamicResource ButtonStyle-Zoom}" Width="92" Focusable="False" Margin="2,7,0,0" Click="btn_KeyBoard_Click" FontSize="13.333" FontWeight="Bold" Background="#FFBAB9B9" Cursor="Hand">
+				<Button.Effect>
+					<DropShadowEffect/>
+				</Button.Effect>
+			</Button>
+			<Button Width="48" Content="A" Style="{DynamicResource ButtonStyle-Zoom}" Focusable="False" Height="48" Margin="5,5,0,0" Click="btn_KeyBoard_Click" FontSize="13.333" FontWeight="Bold" Background="#FFBAB9B9" Cursor="Hand">
+				<Button.Effect>
+					<DropShadowEffect/>
+				</Button.Effect>
+			</Button>
+			<Button Width="48" Content="S" Style="{DynamicResource ButtonStyle-Zoom}" Focusable="False" Height="48" Margin="2,5,0,0" Click="btn_KeyBoard_Click" FontSize="13.333" FontWeight="Bold" Background="#FFBAB9B9" Cursor="Hand">
+				<Button.Effect>
+					<DropShadowEffect/>
+				</Button.Effect>
+			</Button>
+			<Button Width="48" Focusable="False" Style="{DynamicResource ButtonStyle-Zoom}" Height="48" Margin="2,5,0,0" Click="btn_KeyBoard_Click" Content="D" FontSize="13.333" FontWeight="Bold" Background="#FFBAB9B9" Cursor="Hand" >
+				<Button.Effect>
+					<DropShadowEffect/>
+				</Button.Effect>
+			</Button>
+			<Button Content="F" Width="48" Style="{DynamicResource ButtonStyle-Zoom}" Focusable="False" Height="48" Margin="2,5,0,0" Click="btn_KeyBoard_Click" FontSize="13.333" FontWeight="Bold" Background="#FFBAB9B9" Cursor="Hand">
+				<Button.Effect>
+					<DropShadowEffect/>
+				</Button.Effect>
+			</Button>
+			<Button Width="48" Content="G" Style="{DynamicResource ButtonStyle-Zoom}" Focusable="False" Height="48" Margin="2,5,0,0" Click="btn_KeyBoard_Click" FontSize="13.333" FontWeight="Bold" Background="#FFBAB9B9" Cursor="Hand">
+				<Button.Effect>
+					<DropShadowEffect/>
+				</Button.Effect>
+			</Button>
+			<Button Width="48" Content="H" Style="{DynamicResource ButtonStyle-Zoom}" Focusable="False" Height="48" Margin="2,5,0,0" Click="btn_KeyBoard_Click" FontSize="13.333" FontWeight="Bold" Background="#FFBAB9B9" Cursor="Hand">
+				<Button.Effect>
+					<DropShadowEffect/>
+				</Button.Effect>
+			</Button>
+			<Button Width="48" Content="J" Style="{DynamicResource ButtonStyle-Zoom}" Focusable="False" Height="48" Margin="2,5,0,0" Click="btn_KeyBoard_Click" FontSize="13.333" FontWeight="Bold" Background="#FFBAB9B9" Cursor="Hand">
+				<Button.Effect>
+					<DropShadowEffect/>
+				</Button.Effect>
+			</Button>
+			<Button Width="48" Content="K" Style="{DynamicResource ButtonStyle-Zoom}" Focusable="False" Height="48" Margin="2,5,0,0" Click="btn_KeyBoard_Click" FontSize="13.333" FontWeight="Bold" Background="#FFBAB9B9" Cursor="Hand">
+				<Button.Effect>
+					<DropShadowEffect/>
+				</Button.Effect>
+			</Button>
+			<Button Width="48" Content="L" Style="{DynamicResource ButtonStyle-Zoom}" Focusable="False" Height="48" Margin="2,5,0,0" Click="btn_KeyBoard_Click" FontSize="13.333" FontWeight="Bold" Background="#FFBAB9B9" Cursor="Hand">
+				<Button.Effect>
+					<DropShadowEffect/>
+				</Button.Effect>
+			</Button>
+			<Button Content="+" Focusable="False" Style="{DynamicResource ButtonStyle-Zoom}" Width="48" Height="48" Margin="2,5,0,0" Click="btn_KeyBoard_Click" FontSize="13.333" FontWeight="Bold" Background="#FFBAB9B9" Cursor="Hand">
+				<Button.Effect>
+					<DropShadowEffect/>
+				</Button.Effect>
+			</Button>
+			<Button Width="48" Content="4" Style="{DynamicResource ButtonStyle-Zoom}" Focusable="False" Height="48" Margin="2,5,0,0" Click="btn_KeyBoard_Click" FontSize="13.333" FontWeight="Bold" Background="#FFBAB9B9" Cursor="Hand">
+				<Button.Effect>
+					<DropShadowEffect/>
+				</Button.Effect>
+			</Button>
+			<Button Content="5" Width="48" Style="{DynamicResource ButtonStyle-Zoom}" Focusable="False" Height="48" Margin="2,5,0,0" Click="btn_KeyBoard_Click" FontSize="13.333" FontWeight="Bold" Background="#FFBAB9B9" Cursor="Hand">
+				<Button.Effect>
+					<DropShadowEffect/>
+				</Button.Effect>
+			</Button>
+			<Button Content="6" Width="48" Style="{DynamicResource ButtonStyle-Zoom}" Focusable="False" Height="48" Margin="2,5,0,0" Click="btn_KeyBoard_Click" FontSize="13.333" FontWeight="Bold" Background="#FFBAB9B9" Cursor="Hand">
+				<Button.Effect>
+					<DropShadowEffect/>
+				</Button.Effect>
+			</Button>
+			<Button Content="." Width="48" Style="{DynamicResource ButtonStyle-Zoom}" Focusable="False" Height="48" Margin="2,5,0,0" Click="btn_KeyBoard_Click" FontSize="13.333" FontWeight="Bold" Background="#FFBAB9B9" Cursor="Hand">
+				<Button.Effect>
+					<DropShadowEffect/>
+				</Button.Effect>
+			</Button>
+			<Button Content="Enter" Style="{DynamicResource ButtonStyle-Zoom}" Width="91" Focusable="False" Height="50" Margin="2,5,0,0" Click="btn_KeyBoard_Click" FontSize="13.333" FontWeight="Bold" Background="#FFBAB9B9" Cursor="Hand">
+				<Button.Effect>
+					<DropShadowEffect/>
+				</Button.Effect>
+			</Button>
+			<Button Width="98" Content="Undo" Style="{DynamicResource ButtonStyle-Zoom}" Height="48" Focusable="False" Margin="5,5,0,0" Click="btn_KeyBoard_Click" FontSize="13.333" FontWeight="Bold" Background="#FFBAB9B9" Cursor="Hand">
+				<Button.Effect>
+					<DropShadowEffect/>
+				</Button.Effect>
+			</Button>
+			<Button Width="48" Content="Z" Style="{DynamicResource ButtonStyle-Zoom}" Height="48" Focusable="False" Margin="2,5,0,0" Click="btn_KeyBoard_Click" FontSize="13.333" FontWeight="Bold" Background="#FFBAB9B9" Cursor="Hand">
+				<Button.Effect>
+					<DropShadowEffect/>
+				</Button.Effect>
+			</Button>
+			<Button Content="X" Width="48" Style="{DynamicResource ButtonStyle-Zoom}" Height="48" Focusable="False" Margin="2,5,0,0" Click="btn_KeyBoard_Click" FontSize="13.333" FontWeight="Bold" Background="#FFBAB9B9" Cursor="Hand">
+				<Button.Effect>
+					<DropShadowEffect/>
+				</Button.Effect>
+			</Button>
+			<Button Width="48" Content="C" Style="{DynamicResource ButtonStyle-Zoom}" Height="48" Focusable="False" Margin="2,5,0,0" Click="btn_KeyBoard_Click" FontSize="13.333" FontWeight="Bold" Background="#FFBAB9B9" Cursor="Hand">
+				<Button.Effect>
+					<DropShadowEffect/>
+				</Button.Effect>
+			</Button>
+			<Button Width="48" Content="V" Style="{DynamicResource ButtonStyle-Zoom}" Height="48" Focusable="False" Margin="2,5,0,0" Click="btn_KeyBoard_Click" FontSize="13.333" FontWeight="Bold" Background="#FFBAB9B9" Cursor="Hand">
+				<Button.Effect>
+					<DropShadowEffect/>
+				</Button.Effect>
+			</Button>
+			<Button Width="48" Content="B" Style="{DynamicResource ButtonStyle-Zoom}" Height="48" Focusable="False" Margin="2,5,0,0" Click="btn_KeyBoard_Click" FontSize="13.333" FontWeight="Bold" Background="#FFBAB9B9" Cursor="Hand">
+				<Button.Effect>
+					<DropShadowEffect/>
+				</Button.Effect>
+			</Button>
+			<Button Width="48" Content="N" Style="{DynamicResource ButtonStyle-Zoom}" Height="48" Focusable="False" Margin="2,5,0,0" Click="btn_KeyBoard_Click" FontSize="13.333" FontWeight="Bold" Background="#FFBAB9B9" Cursor="Hand">
+				<Button.Effect>
+					<DropShadowEffect/>
+				</Button.Effect>
+			</Button>
+			<Button Width="48" Content="M" Style="{DynamicResource ButtonStyle-Zoom}" Height="48" Focusable="False" Margin="2,5,0,0" Click="btn_KeyBoard_Click" FontSize="13.333" FontWeight="Bold" Background="#FFBAB9B9" Cursor="Hand">
+				<Button.Effect>
+					<DropShadowEffect/>
+				</Button.Effect>
+			</Button>
+			<Button Content="-" Height="48" Style="{DynamicResource ButtonStyle-Zoom}" Focusable="False" Width="48" Margin="2,5,0,0" Click="btn_KeyBoard_Click" FontSize="13.333" FontWeight="Bold" Background="#FFBAB9B9" Cursor="Hand">
+				<Button.Effect>
+					<DropShadowEffect/>
+				</Button.Effect>
+			</Button>
+			<Button Width="48" Content="7" Style="{DynamicResource ButtonStyle-Zoom}" Height="48" Focusable="False" Margin="2,5,0,0" Click="btn_KeyBoard_Click" FontSize="13.333" FontWeight="Bold" Background="#FFBAB9B9" Cursor="Hand">
+				<Button.Effect>
+					<DropShadowEffect/>
+				</Button.Effect>
+			</Button>
+			<Button Content="8" Width="48" Style="{DynamicResource ButtonStyle-Zoom}" Height="48" Focusable="False" Margin="2,5,0,0" Click="btn_KeyBoard_Click" FontSize="13.333" FontWeight="Bold" Background="#FFBAB9B9" Cursor="Hand">
+				<Button.Effect>
+					<DropShadowEffect/>
+				</Button.Effect>
+			</Button>
+			<Button Content="9" Width="48" Style="{DynamicResource ButtonStyle-Zoom}" Height="48" Focusable="False" Margin="2,5,0,0" Click="btn_KeyBoard_Click" FontSize="13.333" FontWeight="Bold" Background="#FFBAB9B9" Cursor="Hand">
+				<Button.Effect>
+					<DropShadowEffect/>
+				</Button.Effect>
+			</Button>
+			<Button Content="Space" Style="{DynamicResource ButtonStyle-Zoom}" Width="141" Height="50" Focusable="False" Margin="2,5,0,0" Click="btn_KeyBoard_Click" FontSize="13.333" FontWeight="Bold" Background="#FFBAB9B9" Cursor="Hand">
+				<Button.Effect>
+					<DropShadowEffect/>
+				</Button.Effect>
+			</Button>
+		</WrapPanel>
+	</Border>
+</UserControl>

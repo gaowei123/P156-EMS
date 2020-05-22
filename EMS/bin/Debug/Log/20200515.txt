@@ -1,0 +1,20 @@
+20200515 10:08:35 上午 -- Start System, Version 1 Revision 1 (2019.03.25 A)
+20200515 10:08:55 上午 -- Start System , Error:“HardwareControl.Initial_Hardware”的类型初始值设定项引发异常。
+20200515 10:09:28 上午 -- Open COM
+20200515 10:10:40 上午 -- Start System, Version 1 Revision 1 (2019.03.25 A)
+20200515 10:10:59 上午 -- Start System , Error:“HardwareControl.Initial_Hardware”的类型初始值设定项引发异常。
+20200515 10:11:29 上午 -- Open COM
+20200515 15:15:48 下午 -- Start System, Version 1 Revision 1 (2019.03.25 A)
+20200515 15:16:32 下午 -- Start System , Error:“HardwareControl.Initial_Hardware”的类型初始值设定项引发异常。
+20200515 15:32:50 下午 -- Start System, Version 1 Revision 1 (2019.03.25 A)
+20200515 15:32:51 下午 -- Start System , Error:“HardwareControl.Initial_Hardware”的类型初始值设定项引发异常。
+20200515 15:32:57 下午 -- Open COM
+20200515 15:33:18 下午 -- Close COM
+20200515 15:33:18 下午 -- Enter homing page , user: UBCT
+20200515 15:35:38 下午 -- Enter homing page , user: UBCT
+20200515 15:35:44 下午 -- Open COM
+20200515 15:35:52 下午 -- Close COM
+20200515 15:35:52 下午 -- Entry maintenance mode page , user: UBCT
+20200515 15:35:53 下午 -- Open COM port error in COM test page :要求正数。
+参数名: BaudRate
+20200515 15:35:54 下午 -- Open COM

@@ -1,0 +1,1 @@
+﻿1. Update history summary search function  in history search page -- YP 2016.02.25

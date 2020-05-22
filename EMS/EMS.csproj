@@ -1,0 +1,574 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{751F839A-E69F-4817-9F4C-01348AE95260}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EMS</RootNamespace>
+    <AssemblyName>EMS</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <ExpressionBlendVersion>4.0.20621.0</ExpressionBlendVersion>
+    <Utf8Output>true</Utf8Output>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>test.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Expression.Interactions" />
+    <Reference Include="PresentationFramework.Aero" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Printing" />
+    <Reference Include="System.Windows.Controls.DataVisualization.Toolkit, Version=3.5.40128.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WPFToolkit, Version=3.5.40128.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\WPFToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="WPFToolkit.VisualStudio.Design, Version=3.5.40128.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="WPFVisifire.Charts, Version=4.0.2.2, Culture=neutral, PublicKeyToken=9f1c752402bc35c9">
+      <HintPath>..\..\..\WPFVisifire.Charts.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="AdminMode\AdminPage.xaml.cs">
+      <DependentUpon>AdminPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AdminMode\DepartmentDB.xaml.cs">
+      <DependentUpon>DepartmentDB.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AdminMode\SystemSet.xaml.cs">
+      <DependentUpon>SystemSet.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AlarmWindow.xaml.cs">
+      <DependentUpon>AlarmWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Singleton\MixSingleton.cs" />
+    <Compile Include="EngineerMode\EngineerPage.xaml.cs">
+      <DependentUpon>EngineerPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EngineerMode\EventDB.xaml.cs">
+      <DependentUpon>EventDB.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EngineerMode\HistoryDB.xaml.cs">
+      <DependentUpon>HistoryDB.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EngineerMode\MachineDB.xaml.cs">
+      <DependentUpon>MachineDB.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AdminMode\SapDB.xaml.cs">
+      <DependentUpon>SapDB.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EngineerMode\TrackingDB.xaml.cs">
+      <DependentUpon>TrackingDB.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EngineerMode\UserDB.xaml.cs">
+      <DependentUpon>UserDB.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HomingPage.xaml.cs">
+      <DependentUpon>HomingPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MaintMode\ComTest.xaml.cs">
+      <DependentUpon>ComTest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MaintMode\InputPage.xaml.cs">
+      <DependentUpon>InputPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MaintMode\InputTemp.xaml.cs">
+      <DependentUpon>InputTemp.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MaintMode\LoadSlotTeach.xaml.cs">
+      <DependentUpon>LoadSlotTeach.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MaintMode\MaintPage.xaml.cs">
+      <DependentUpon>MaintPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MaintMode\OutputPage.xaml.cs">
+      <DependentUpon>OutputPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MaintMode\OutputTemp.xaml.cs">
+      <DependentUpon>OutputTemp.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Report\logFile.xaml.cs">
+      <DependentUpon>logFile.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Report\N2_Report.xaml.cs">
+      <DependentUpon>N2_Report.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Report\SlotTemp.xaml.cs">
+      <DependentUpon>SlotTemp.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Slot_Status.xaml.cs">
+      <DependentUpon>Slot_Status.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Report\usage.xaml.cs">
+      <DependentUpon>usage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\Load.xaml.cs">
+      <DependentUpon>Load.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\Mix.xaml.cs">
+      <DependentUpon>Mix.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\Return.xaml.cs">
+      <DependentUpon>Return.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\ScrapClean.xaml.cs">
+      <DependentUpon>ScrapClean.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\Unload.xaml.cs">
+      <DependentUpon>Unload.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExpiryAlarm.xaml.cs">
+      <DependentUpon>ExpiryAlarm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\KeyBoard.xaml.cs">
+      <DependentUpon>KeyBoard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Login_cancel.xaml.cs">
+      <DependentUpon>Login_cancel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NumberKeyboard.xaml.cs">
+      <DependentUpon>NumberKeyboard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\Remove.xaml.cs">
+      <DependentUpon>Remove.xaml</DependentUpon>
+    </Compile>
+    <Page Include="AdminMode\AdminPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AdminMode\DepartmentDB.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AdminMode\SystemSet.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AlarmWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="EngineerMode\EngineerPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EngineerMode\EventDB.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="EngineerMode\HistoryDB.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EngineerMode\MachineDB.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AdminMode\SapDB.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EngineerMode\TrackingDB.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="EngineerMode\UserDB.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="HomingPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Language\Chinese.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Language\English.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MaintMode\ComTest.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MaintMode\InputPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MaintMode\InputTemp.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MaintMode\LoadSlotTeach.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MaintMode\MaintPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MaintMode\OutputPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MaintMode\OutputTemp.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Properties\DesignTimeResources.xaml" Condition="'$(DesignTime)'=='true' OR ('$(SolutionPath)'!='' AND Exists('$(SolutionPath)') AND '$(BuildingInsideVisualStudio)'!='true' AND '$(BuildingInsideExpressionBlend)'!='true')">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <ContainsDesignTimeResources>true</ContainsDesignTimeResources>
+    </Page>
+    <Page Include="Report\logFile.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Report\N2_Report.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Report\SlotTemp.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Report\Slot_Status.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Report\usage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\ColorResource.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\ControlStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Transaction\Load.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Transaction\Mix.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Transaction\Return.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Transaction\ScrapClean.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Transaction\Unload.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ExpiryAlarm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\KeyBoard.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Login.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Login_cancel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\NumberKeyboard.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Transaction\Remove.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+    <None Include="Resources\Image\back_mark.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\Add.png" />
+    <Resource Include="Resources\Image\Arrow_H.png" />
+    <Resource Include="Resources\Image\confirm.png" />
+    <Resource Include="Resources\Image\date.png" />
+    <Resource Include="Resources\Image\exit.png" />
+    <Resource Include="Resources\Image\Left.png" />
+    <Resource Include="Resources\Image\BackGround.jpg" />
+    <Resource Include="Resources\Image\MainPicture.JPG" />
+    <Resource Include="Resources\Image\Right.png" />
+    <Resource Include="Resources\Image\save.png" />
+    <Resource Include="Resources\Image\search.png" />
+    <Resource Include="Resources\Image\Stop.png" />
+    <Resource Include="Resources\Image\ubct.png" />
+    <Resource Include="Resources\Image\Update.png" />
+    <Resource Include="Resources\Image\administrator.png" />
+    <Resource Include="Resources\Image\Close.png" />
+    <Resource Include="Resources\Image\engr.png" />
+    <Resource Include="Resources\Image\home.png" />
+    <Resource Include="Resources\Image\Load.png" />
+    <Resource Include="Resources\Image\remove.png" />
+    <Resource Include="Resources\Image\scrap.png" />
+    <Resource Include="Resources\Image\tooling.png" />
+    <Resource Include="Resources\Image\Unload.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\cha.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\Eng.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\Error1.JPG" />
+    <Resource Include="Resources\Image\Error2.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{947d8c0f-67af-44ba-940d-8d1af301924d}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{07AAE6BE-2BAD-49D4-A765-C7B1E6060C17}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataProvider\DataProvider.csproj">
+      <Project>{35AB21D2-9CA1-469F-9C96-C884A3D05B26}</Project>
+      <Name>DataProvider</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HardwareControl\HardwareControl.csproj">
+      <Project>{97A91A3E-2F05-4743-8719-5FCCBD75AE5C}</Project>
+      <Name>HardwareControl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Hardware\Hardware.csproj">
+      <Project>{2B63BB27-02A6-4B37-B75E-108A09423FBE}</Project>
+      <Name>Hardware</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logic\Logic.csproj">
+      <Project>{78567554-F366-4BCF-9522-0308BF6080FE}</Project>
+      <Name>Logic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{9b168eff-998f-42df-9043-72edfe09b32b}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ObjectModule\ObjectModule.csproj">
+      <Project>{D387A622-3909-4D96-AC0A-4EFABE5DFA6C}</Project>
+      <Name>ObjectModule</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\StaticRes\StaticRes.csproj">
+      <Project>{0AF99380-D78F-45DA-9451-6957BC590183}</Project>
+      <Name>StaticRes</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ubct.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="test.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\printer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\scrapRemind.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\Error3.JPG" />
+    <Resource Include="Resources\Image\Error4.JPG" />
+    <Resource Include="Resources\Image\Error41.JPG" />
+    <Resource Include="Resources\Image\Error42.JPG" />
+    <Resource Include="Resources\Image\Error43.JPG" />
+    <Resource Include="Resources\Image\Error44.JPG" />
+    <Resource Include="Resources\Image\Error45.JPG" />
+    <Resource Include="Resources\Image\Error46.JPG" />
+    <Resource Include="Resources\Image\Error47.JPG" />
+    <Resource Include="Resources\Image\Error48.JPG" />
+    <Resource Include="Resources\Image\Error49.JPG" />
+    <Resource Include="Resources\Image\Error5.JPG" />
+    <Resource Include="Resources\Image\Error50.JPG" />
+    <Resource Include="Resources\Image\Error54.JPG" />
+    <Resource Include="Resources\Image\Error6.JPG" />
+    <Resource Include="Resources\Image\Error7.JPG" />
+    <Resource Include="Resources\Image\Error8.JPG" />
+    <Resource Include="Resources\Image\Error10.JPG" />
+    <Resource Include="Resources\Image\Error11.JPG" />
+    <Resource Include="Resources\Image\Error12.JPG" />
+    <Resource Include="Resources\Image\Error13.JPG" />
+    <Resource Include="Resources\Image\Error14.JPG" />
+    <Resource Include="Resources\Image\Error15.JPG" />
+    <Resource Include="Resources\Image\Error16.JPG" />
+    <Resource Include="Resources\Image\Error17.JPG" />
+    <Resource Include="Resources\Image\Error18.JPG" />
+    <Resource Include="Resources\Image\Error19.JPG" />
+    <Resource Include="Resources\Image\Error20.JPG" />
+    <Resource Include="Resources\Image\Error21.JPG" />
+    <Resource Include="Resources\Image\Error22.JPG" />
+    <Resource Include="Resources\Image\Error23.JPG" />
+    <Resource Include="Resources\Image\Error24.JPG" />
+    <Resource Include="Resources\Image\Error25.JPG" />
+    <Resource Include="Resources\Image\Error26.JPG" />
+    <Resource Include="Resources\Image\Error31.JPG" />
+    <Resource Include="Resources\Image\Error32.JPG" />
+    <Resource Include="Resources\Image\Error33.JPG" />
+    <Resource Include="Resources\Image\Error34.JPG" />
+    <Resource Include="Resources\Image\Error35.JPG" />
+    <Resource Include="Resources\Image\Error36.JPG" />
+    <Resource Include="Resources\Image\Error37.JPG" />
+    <Resource Include="Resources\Image\Error38.JPG" />
+    <Resource Include="Resources\Image\Error39.JPG" />
+    <Resource Include="Resources\Image\Error40.JPG" />
+    <Resource Include="Resources\Image\Error51.JPG" />
+    <Resource Include="Resources\Image\Error52.JPG" />
+    <Resource Include="Resources\Image\Error53.JPG" />
+    <Resource Include="Resources\Image\Error9.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Log\Update_List.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

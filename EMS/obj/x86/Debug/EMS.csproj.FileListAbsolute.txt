@@ -1,0 +1,220 @@
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\obj\x86\Debug\EMS.csprojResolveAssemblyReference.cache
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\obj\x86\Debug\AlarmWindow.baml
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\obj\x86\Debug\HomingPage.baml
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\obj\x86\Debug\Language\Chinese.baml
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\obj\x86\Debug\Language\English.baml
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\obj\x86\Debug\MaintMode\InputTemp.baml
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\obj\x86\Debug\MaintMode\OutputTemp.baml
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\obj\x86\Debug\Report\SlotTemp.baml
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\obj\x86\Debug\Resources\ColorResource.baml
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\obj\x86\Debug\Resources\ControlStyles.baml
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\obj\x86\Debug\ExpiryAlarm.baml
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\obj\x86\Debug\Views\KeyBoard.baml
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\obj\x86\Debug\Views\NumberKeyboard.baml
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\obj\x86\Debug\App.baml
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\obj\x86\Debug\AdminMode\AdminPage.g.cs
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\obj\x86\Debug\AlarmWindow.g.cs
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\obj\x86\Debug\EngineerMode\EngineerPage.g.cs
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\obj\x86\Debug\HomingPage.g.cs
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\obj\x86\Debug\MaintMode\ComTest.g.cs
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\obj\x86\Debug\MaintMode\InputPage.g.cs
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\obj\x86\Debug\MaintMode\InputTemp.g.cs
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\obj\x86\Debug\MaintMode\MaintPage.g.cs
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\obj\x86\Debug\MaintMode\OutputPage.g.cs
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\obj\x86\Debug\MaintMode\OutputTemp.g.cs
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\obj\x86\Debug\MainWindow.g.cs
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\obj\x86\Debug\Report\SlotTemp.g.cs
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\obj\x86\Debug\Transaction\Return.g.cs
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\obj\x86\Debug\Transaction\ScrapClean.g.cs
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\obj\x86\Debug\Transaction\Unload.g.cs
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\obj\x86\Debug\ExpiryAlarm.g.cs
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\obj\x86\Debug\Views\KeyBoard.g.cs
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\obj\x86\Debug\Views\Login.g.cs
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\obj\x86\Debug\Views\Login_cancel.g.cs
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\obj\x86\Debug\Views\NumberKeyboard.g.cs
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\obj\x86\Debug\App.g.cs
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\obj\x86\Debug\EMS_MarkupCompile.cache
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\obj\x86\Debug\EMS_MarkupCompile.lref
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\bin\Debug\Resources\Image\back_mark.jpg
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\bin\Debug\EMS.exe
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\bin\Debug\EMS.pdb
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\bin\Debug\Common.dll
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\bin\Debug\DataProvider.dll
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\bin\Debug\Hardware.dll
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\bin\Debug\HardwareControl.dll
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\bin\Debug\Logic.dll
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\bin\Debug\ObjectModule.dll
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\bin\Debug\StaticRes.dll
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\bin\Debug\AdsNET.dll
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\bin\Debug\AdvMotAPI.dll
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\bin\Debug\Common.pdb
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\bin\Debug\DataProvider.pdb
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\bin\Debug\HardwareControl.pdb
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\bin\Debug\Hardware.pdb
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\bin\Debug\Logic.pdb
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\bin\Debug\ObjectModule.pdb
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\bin\Debug\StaticRes.pdb
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\obj\x86\Debug\EngineerMode\EventDB.baml
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\obj\x86\Debug\EngineerMode\HistoryDB.baml
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\obj\x86\Debug\Report\logFile.baml
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\obj\x86\Debug\Report\N2_Report.baml
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\obj\x86\Debug\Report\usage.baml
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\obj\x86\Debug\AdminMode\DepartmentDB.g.cs
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\obj\x86\Debug\AdminMode\SystemSet.g.cs
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\obj\x86\Debug\EngineerMode\EventDB.g.cs
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\obj\x86\Debug\EngineerMode\HistoryDB.g.cs
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\obj\x86\Debug\EngineerMode\MachineDB.g.cs
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\obj\x86\Debug\AdminMode\SapDB.g.cs
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\obj\x86\Debug\EngineerMode\TrackingDB.g.cs
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\obj\x86\Debug\EngineerMode\UserDB.g.cs
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\obj\x86\Debug\MaintMode\LoadSlotTeach.g.cs
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\obj\x86\Debug\Report\logFile.g.cs
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\obj\x86\Debug\Report\N2_Report.g.cs
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\obj\x86\Debug\Report\Slot_Status.g.cs
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\obj\x86\Debug\Report\usage.g.cs
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\obj\x86\Debug\Transaction\Load.g.cs
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\obj\x86\Debug\Transaction\Remove.g.cs
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\obj\x86\Debug\AdminMode\AdminPage.baml
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\obj\x86\Debug\AdminMode\DepartmentDB.baml
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\obj\x86\Debug\AdminMode\SystemSet.baml
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\obj\x86\Debug\EngineerMode\EngineerPage.baml
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\obj\x86\Debug\EngineerMode\MachineDB.baml
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\obj\x86\Debug\AdminMode\SapDB.baml
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\obj\x86\Debug\EngineerMode\TrackingDB.baml
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\obj\x86\Debug\EngineerMode\UserDB.baml
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\obj\x86\Debug\MaintMode\ComTest.baml
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\obj\x86\Debug\MaintMode\InputPage.baml
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\obj\x86\Debug\MaintMode\LoadSlotTeach.baml
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\obj\x86\Debug\MaintMode\MaintPage.baml
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\obj\x86\Debug\MaintMode\OutputPage.baml
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\obj\x86\Debug\MainWindow.baml
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\obj\x86\Debug\Report\Slot_Status.baml
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\obj\x86\Debug\Transaction\Load.baml
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\obj\x86\Debug\Transaction\Return.baml
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\obj\x86\Debug\Transaction\ScrapClean.baml
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\obj\x86\Debug\Transaction\Unload.baml
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\obj\x86\Debug\Views\Login.baml
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\obj\x86\Debug\Views\Login_cancel.baml
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\obj\x86\Debug\Transaction\Remove.baml
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\obj\x86\Debug\EMS.g.resources
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\obj\x86\Debug\EMS.Properties.Resources.resources
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\obj\x86\Debug\EMS.csproj.GenerateResource.Cache
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\obj\x86\Debug\EMS.exe
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\obj\x86\Debug\EMS.pdb
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\obj\x86\Debug\Transaction\Mix.g.cs
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\obj\x86\Debug\Transaction\Mix.baml
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\bin\Debug\Resources\Image\back_mark.jpg
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\bin\Debug\EMS.exe
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\bin\Debug\EMS.pdb
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\bin\Debug\Common.dll
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\bin\Debug\DataProvider.dll
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\bin\Debug\Hardware.dll
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\bin\Debug\HardwareControl.dll
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\bin\Debug\Logic.dll
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\bin\Debug\ObjectModule.dll
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\bin\Debug\StaticRes.dll
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\bin\Debug\AdsNET.dll
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\bin\Debug\AdvMotAPI.dll
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\bin\Debug\Common.pdb
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\bin\Debug\DataProvider.pdb
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\bin\Debug\HardwareControl.pdb
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\bin\Debug\Hardware.pdb
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\bin\Debug\Logic.pdb
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\bin\Debug\ObjectModule.pdb
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\bin\Debug\StaticRes.pdb
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\obj\x86\Debug\EMS.csprojResolveAssemblyReference.cache
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\obj\x86\Debug\AlarmWindow.baml
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\obj\x86\Debug\EngineerMode\EventDB.baml
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\obj\x86\Debug\EngineerMode\HistoryDB.baml
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\obj\x86\Debug\HomingPage.baml
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\obj\x86\Debug\Language\Chinese.baml
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\obj\x86\Debug\Language\English.baml
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\obj\x86\Debug\MaintMode\InputTemp.baml
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\obj\x86\Debug\MaintMode\OutputTemp.baml
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\obj\x86\Debug\Report\logFile.baml
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\obj\x86\Debug\Report\N2_Report.baml
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\obj\x86\Debug\Report\SlotTemp.baml
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\obj\x86\Debug\Report\usage.baml
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\obj\x86\Debug\Resources\ColorResource.baml
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\obj\x86\Debug\Resources\ControlStyles.baml
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\obj\x86\Debug\ExpiryAlarm.baml
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\obj\x86\Debug\Views\KeyBoard.baml
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\obj\x86\Debug\Views\NumberKeyboard.baml
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\obj\x86\Debug\App.baml
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\obj\x86\Debug\AdminMode\AdminPage.g.cs
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\obj\x86\Debug\AdminMode\DepartmentDB.g.cs
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\obj\x86\Debug\AdminMode\SystemSet.g.cs
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\obj\x86\Debug\AlarmWindow.g.cs
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\obj\x86\Debug\EngineerMode\EngineerPage.g.cs
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\obj\x86\Debug\EngineerMode\EventDB.g.cs
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\obj\x86\Debug\EngineerMode\HistoryDB.g.cs
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\obj\x86\Debug\EngineerMode\MachineDB.g.cs
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\obj\x86\Debug\AdminMode\SapDB.g.cs
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\obj\x86\Debug\EngineerMode\TrackingDB.g.cs
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\obj\x86\Debug\EngineerMode\UserDB.g.cs
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\obj\x86\Debug\HomingPage.g.cs
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\obj\x86\Debug\MaintMode\ComTest.g.cs
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\obj\x86\Debug\MaintMode\InputPage.g.cs
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\obj\x86\Debug\MaintMode\InputTemp.g.cs
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\obj\x86\Debug\MaintMode\LoadSlotTeach.g.cs
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\obj\x86\Debug\MaintMode\MaintPage.g.cs
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\obj\x86\Debug\MaintMode\OutputPage.g.cs
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\obj\x86\Debug\MaintMode\OutputTemp.g.cs
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\obj\x86\Debug\MainWindow.g.cs
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\obj\x86\Debug\Report\logFile.g.cs
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\obj\x86\Debug\Report\N2_Report.g.cs
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\obj\x86\Debug\Report\SlotTemp.g.cs
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\obj\x86\Debug\Report\Slot_Status.g.cs
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\obj\x86\Debug\Report\usage.g.cs
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\obj\x86\Debug\Transaction\Load.g.cs
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\obj\x86\Debug\Transaction\Mix.g.cs
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\obj\x86\Debug\Transaction\Return.g.cs
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\obj\x86\Debug\Transaction\ScrapClean.g.cs
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\obj\x86\Debug\Transaction\Unload.g.cs
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\obj\x86\Debug\ExpiryAlarm.g.cs
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\obj\x86\Debug\Views\KeyBoard.g.cs
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\obj\x86\Debug\Views\Login.g.cs
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\obj\x86\Debug\Views\Login_cancel.g.cs
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\obj\x86\Debug\Views\NumberKeyboard.g.cs
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\obj\x86\Debug\Transaction\Remove.g.cs
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\obj\x86\Debug\App.g.cs
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\obj\x86\Debug\EMS_MarkupCompile.cache
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\obj\x86\Debug\EMS_MarkupCompile.lref
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\obj\x86\Debug\AdminMode\AdminPage.baml
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\obj\x86\Debug\AdminMode\DepartmentDB.baml
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\obj\x86\Debug\AdminMode\SystemSet.baml
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\obj\x86\Debug\EngineerMode\EngineerPage.baml
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\obj\x86\Debug\EngineerMode\MachineDB.baml
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\obj\x86\Debug\AdminMode\SapDB.baml
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\obj\x86\Debug\EngineerMode\TrackingDB.baml
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\obj\x86\Debug\EngineerMode\UserDB.baml
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\obj\x86\Debug\MaintMode\ComTest.baml
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\obj\x86\Debug\MaintMode\InputPage.baml
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\obj\x86\Debug\MaintMode\LoadSlotTeach.baml
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\obj\x86\Debug\MaintMode\MaintPage.baml
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\obj\x86\Debug\MaintMode\OutputPage.baml
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\obj\x86\Debug\MainWindow.baml
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\obj\x86\Debug\Report\Slot_Status.baml
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\obj\x86\Debug\Transaction\Load.baml
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\obj\x86\Debug\Transaction\Mix.baml
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\obj\x86\Debug\Transaction\Return.baml
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\obj\x86\Debug\Transaction\ScrapClean.baml
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\obj\x86\Debug\Transaction\Unload.baml
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\obj\x86\Debug\Views\Login.baml
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\obj\x86\Debug\Views\Login_cancel.baml
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\obj\x86\Debug\Transaction\Remove.baml
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\obj\x86\Debug\EMS.g.resources
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\obj\x86\Debug\EMS.Properties.Resources.resources
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\obj\x86\Debug\EMS.csproj.GenerateResource.Cache
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\obj\x86\Debug\EMS.exe
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS - bk\EMS\obj\x86\Debug\EMS.pdb
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\bin\Debug\BLL.dll
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\bin\Debug\Model.dll
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\bin\Debug\DAL.dll
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\bin\Debug\BLL.pdb
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\bin\Debug\Model.pdb
+D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\EMS\bin\Debug\DAL.pdb
+D:\Git SourceCode Storage\VISHAY\P156-EMS\EMS\obj\x86\Debug\EMS.exe
+D:\Git SourceCode Storage\VISHAY\P156-EMS\EMS\obj\x86\Debug\EMS.pdb

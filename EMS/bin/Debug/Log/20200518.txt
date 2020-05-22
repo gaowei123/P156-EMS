@@ -1,0 +1,91 @@
+20200518 10:25:50 上午 -- Start System, Version 1 Revision 1 (2019.03.25 A)
+20200518 10:25:51 上午 -- Start System , Error:“HardwareControl.Initial_Hardware”的类型初始值设定项引发异常。
+20200518 10:26:52 上午 -- Start System, Version 1 Revision 1 (2019.03.25 A)
+20200518 10:26:52 上午 -- Start System , Error:“HardwareControl.Initial_Hardware”的类型初始值设定项引发异常。
+20200518 10:27:49 上午 -- Start System, Version 1 Revision 1 (2019.03.25 A)
+20200518 10:27:49 上午 -- Start System , Error:“HardwareControl.Initial_Hardware”的类型初始值设定项引发异常。
+20200518 10:37:12 上午 -- Start System, Version 1 Revision 1 (2019.03.25 A)
+20200518 10:37:13 上午 -- Start System , Error:“HardwareControl.Initial_Hardware”的类型初始值设定项引发异常。
+20200518 10:57:31 上午 -- Start System, Version 1 Revision 1 (2019.03.25 A)
+20200518 10:57:31 上午 -- Start System , Error:“HardwareControl.Initial_Hardware”的类型初始值设定项引发异常。
+20200518 11:30:55 上午 -- Start System, Version 1 Revision 1 (2019.03.25 A)
+20200518 11:30:55 上午 -- Start System , Error:“HardwareControl.Initial_Hardware”的类型初始值设定项引发异常。
+20200518 13:24:44 下午 -- Start System, Version 1 Revision 1 (2019.03.25 A)
+20200518 13:24:44 下午 -- Start System , Error:“HardwareControl.Initial_Hardware”的类型初始值设定项引发异常。
+20200518 13:25:09 下午 -- Open COM
+20200518 13:25:12 下午 -- Close COM
+20200518 13:25:12 下午 -- Exit system , user: UBCT
+20200518 13:26:25 下午 -- Start System, Version 1 Revision 1 (2019.03.25 A)
+20200518 13:26:26 下午 -- Start System , Error:“HardwareControl.Initial_Hardware”的类型初始值设定项引发异常。
+20200518 13:27:09 下午 -- Start System, Version 1 Revision 1 (2019.03.25 A)
+20200518 13:27:09 下午 -- Start System , Error:“HardwareControl.Initial_Hardware”的类型初始值设定项引发异常。
+20200518 13:30:27 下午 -- Start System, Version 1 Revision 1 (2019.03.25 A)
+20200518 13:30:27 下午 -- Start System , Error:“HardwareControl.Initial_Hardware”的类型初始值设定项引发异常。
+20200518 13:30:52 下午 -- Start System, Version 1 Revision 1 (2019.03.25 A)
+20200518 13:30:52 下午 -- Start System , Error:“HardwareControl.Initial_Hardware”的类型初始值设定项引发异常。
+20200518 13:35:52 下午 -- Start System, Version 1 Revision 1 (2019.03.25 A)
+20200518 13:35:53 下午 -- Start System , Error:“HardwareControl.Initial_Hardware”的类型初始值设定项引发异常。
+20200518 13:37:43 下午 -- Start System, Version 1 Revision 1 (2019.03.25 A)
+20200518 13:37:44 下午 -- Start System , Error:“HardwareControl.Initial_Hardware”的类型初始值设定项引发异常。
+20200518 13:39:17 下午 -- Start System, Version 1 Revision 1 (2019.03.25 A)
+20200518 13:39:17 下午 -- Start System , Error:“HardwareControl.Initial_Hardware”的类型初始值设定项引发异常。
+20200518 13:43:17 下午 -- Start System, Version 1 Revision 1 (2019.03.25 A)
+20200518 13:43:17 下午 -- Start System , Error:“HardwareControl.Initial_Hardware”的类型初始值设定项引发异常。
+20200518 13:43:39 下午 -- Start System, Version 1 Revision 1 (2019.03.25 A)
+20200518 13:43:40 下午 -- Start System , Error:“HardwareControl.Initial_Hardware”的类型初始值设定项引发异常。
+20200518 13:44:57 下午 -- Start System, Version 1 Revision 1 (2019.03.25 A)
+20200518 13:44:58 下午 -- Start System , Error:“HardwareControl.Initial_Hardware”的类型初始值设定项引发异常。
+20200518 13:54:05 下午 -- Start System, Version 1 Revision 1 (2019.03.25 A)
+20200518 13:54:06 下午 -- Start System , Error:“HardwareControl.Initial_Hardware”的类型初始值设定项引发异常。
+20200518 13:56:13 下午 -- Start System, Version 1 Revision 1 (2019.03.25 A)
+20200518 13:56:14 下午 -- Start System , Error:“HardwareControl.Initial_Hardware”的类型初始值设定项引发异常。
+20200518 13:58:17 下午 -- Start System, Version 1 Revision 1 (2019.03.25 A)
+20200518 13:58:18 下午 -- Start System , Error:“HardwareControl.Initial_Hardware”的类型初始值设定项引发异常。
+20200518 14:32:34 下午 -- Start System, Version 1 Revision 1 (2019.03.25 A)
+20200518 14:32:35 下午 -- Start System , Error:“HardwareControl.Initial_Hardware”的类型初始值设定项引发异常。
+20200518 14:44:07 下午 -- Start System, Version 1 Revision 1 (2019.03.25 A)
+20200518 14:44:08 下午 -- Start System , Error:“HardwareControl.Initial_Hardware”的类型初始值设定项引发异常。
+20200518 15:43:41 下午 -- Start System, Version 1 Revision 1 (2019.03.25 A)
+20200518 15:43:42 下午 -- Start System , Error:“HardwareControl.Initial_Hardware”的类型初始值设定项引发异常。
+20200518 15:46:05 下午 -- Start System, Version 1 Revision 1 (2019.03.25 A)
+20200518 15:46:05 下午 -- Start System , Error:“HardwareControl.Initial_Hardware”的类型初始值设定项引发异常。
+20200518 15:46:30 下午 -- Open COM
+20200518 15:46:31 下午 -- Close COM
+20200518 15:48:30 下午 -- Open COM
+20200518 15:48:37 下午 -- Close COM
+20200518 15:48:37 下午 -- Exit system , user: UBCT
+20200518 16:11:08 下午 -- Start System, Version 1 Revision 1 (2019.03.25 A)
+20200518 16:11:08 下午 -- Start System , Error:“HardwareControl.Initial_Hardware”的类型初始值设定项引发异常。
+20200518 16:16:40 下午 -- Start System, Version 1 Revision 1 (2019.03.25 A)
+20200518 16:16:40 下午 -- Start System , Error:“HardwareControl.Initial_Hardware”的类型初始值设定项引发异常。
+20200518 16:17:30 下午 -- Start System, Version 1 Revision 1 (2019.03.25 A)
+20200518 16:17:30 下午 -- Start System , Error:“HardwareControl.Initial_Hardware”的类型初始值设定项引发异常。
+20200518 16:18:49 下午 -- Start System, Version 1 Revision 1 (2019.03.25 A)
+20200518 16:18:50 下午 -- Start System , Error:“HardwareControl.Initial_Hardware”的类型初始值设定项引发异常。
+20200518 16:20:41 下午 -- Start System, Version 1 Revision 1 (2019.03.25 A)
+20200518 16:20:41 下午 -- Start System , Error:“HardwareControl.Initial_Hardware”的类型初始值设定项引发异常。
+20200518 16:22:47 下午 -- Start System, Version 1 Revision 1 (2019.03.25 A)
+20200518 16:22:48 下午 -- Start System , Error:“HardwareControl.Initial_Hardware”的类型初始值设定项引发异常。
+20200518 16:25:48 下午 -- Start System, Version 1 Revision 1 (2019.03.25 A)
+20200518 16:25:48 下午 -- Start System , Error:“HardwareControl.Initial_Hardware”的类型初始值设定项引发异常。
+20200518 16:26:29 下午 -- Start System, Version 1 Revision 1 (2019.03.25 A)
+20200518 16:26:30 下午 -- Start System , Error:“HardwareControl.Initial_Hardware”的类型初始值设定项引发异常。
+20200518 16:28:54 下午 -- Start System, Version 1 Revision 1 (2019.03.25 A)
+20200518 16:28:55 下午 -- Start System , Error:“HardwareControl.Initial_Hardware”的类型初始值设定项引发异常。
+20200518 16:30:15 下午 -- Start System, Version 1 Revision 1 (2019.03.25 A)
+20200518 16:30:15 下午 -- Start System , Error:“HardwareControl.Initial_Hardware”的类型初始值设定项引发异常。
+20200518 16:31:17 下午 -- Start System, Version 1 Revision 1 (2019.03.25 A)
+20200518 16:31:17 下午 -- Start System , Error:“HardwareControl.Initial_Hardware”的类型初始值设定项引发异常。
+20200518 16:48:04 下午 -- Start System, Version 1 Revision 1 (2019.03.25 A)
+20200518 16:48:04 下午 -- Start System , Error:“HardwareControl.Initial_Hardware”的类型初始值设定项引发异常。
+20200518 16:48:29 下午 -- Open COM
+20200518 16:49:18 下午 -- Start System, Version 1 Revision 1 (2019.03.25 A)
+20200518 16:49:18 下午 -- Start System , Error:“HardwareControl.Initial_Hardware”的类型初始值设定项引发异常。
+20200518 16:49:43 下午 -- Open COM
+20200518 16:49:47 下午 -- Close COM
+20200518 16:49:47 下午 -- Enter homing page , user: UBCT
+20200518 16:50:00 下午 -- Open COM
+20200518 16:50:02 下午 -- Close COM
+20200518 16:50:02 下午 -- Exit system , user: UBCT
+20200518 16:56:44 下午 -- Start System, Version 1 Revision 1 (2019.03.25 A)
+20200518 16:56:44 下午 -- Start System , Error:“HardwareControl.Initial_Hardware”的类型初始值设定项引发异常。

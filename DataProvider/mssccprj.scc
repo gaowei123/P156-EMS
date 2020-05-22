@@ -1,0 +1,5 @@
+SCC = This is a Source Code Control file
+
+[DataProvider.csproj]
+SCC_Aux_Path = "\\10.0.0.200\vssdata"
+SCC_Project_Name = "$/Vishay/P156-EMS/EMS.root/EMS/DataProvider", QKEDAAAA

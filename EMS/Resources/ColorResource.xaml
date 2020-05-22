@@ -1,0 +1,250 @@
+﻿<ResourceDictionary 	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    mc:Ignorable="d" xmlns:Microsoft_Windows_Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero" >
+    <LinearGradientBrush x:Key="Linear_Blue" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#FFBAE4FF" Offset="0"/>
+        <GradientStop Color="#FF398FDF" Offset="0.41800001263618469"/>
+        <GradientStop Color="#FF006DD4" Offset="0.418"/>
+        <GradientStop Color="#FF0B85EA" Offset="1"/>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="Linear_BlackSilver" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#FFBBBBBB"/>
+        <GradientStop Color="#FF737373" Offset="0.38"/>
+        <GradientStop Color="#FF646464" Offset="0.384"/>
+        <GradientStop Color="Black" Offset="1"/>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="Linear_Silver" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#FFE1E1E1" Offset="0"/>
+        <GradientStop Color="#FFC9C9C9" Offset="0.41800001263618469"/>
+        <GradientStop Color="#FFA8A8A8" Offset="0.418"/>
+        <GradientStop Color="#FFBEBEBE" Offset="1"/>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="Linear_Yellow" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#FFFFF7A5" Offset="0"/>
+        <GradientStop Color="#FFF4E33C" Offset="0.41800001263618469"/>
+        <GradientStop Color="#FFDBC80C" Offset="0.418"/>
+        <GradientStop Color="#FFFFED22" Offset="1"/>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="Linear_Red" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#FFFFBABA" Offset="0"/>
+        <GradientStop Color="#FFDF3939" Offset="0.41800001263618469"/>
+        <GradientStop Color="#FFD40000" Offset="0.418"/>
+        <GradientStop Color="#FFFE4F4F" Offset="1"/>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="Linear_RainySky" EndPoint="0.5,0" StartPoint="0.5,1">
+        <GradientStop Color="#FF8496AA"/>
+        <GradientStop Color="#FF2B3138" Offset="1"/>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="Linear_Green" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#FFC5FFBA" Offset="0"/>
+        <GradientStop Color="#FF62DF39" Offset="0.41800001263618469"/>
+        <GradientStop Color="#FF3ED400" Offset="0.418"/>
+        <GradientStop Color="#FF92FE4F" Offset="1"/>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="ButtonNormalBackground" EndPoint="0,1" StartPoint="0,0">
+        <GradientStop Color="#F3F3F3" Offset="0"/>
+        <GradientStop Color="#EBEBEB" Offset="0.5"/>
+        <GradientStop Color="#DDDDDD" Offset="0.5"/>
+        <GradientStop Color="#CDCDCD" Offset="1"/>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="Linear_Tital" EndPoint="0.5,1" StartPoint="0.5,0">
+    	<GradientStop Color="#FF036376" Offset="0"/>
+    	<GradientStop Color="#FF98A9A8" Offset="1"/>
+    </LinearGradientBrush>
+
+    <!-- Button 动态内容ToolTip 样式 -->
+
+    <Style x:Key="ShowcaseBtn" BasedOn="{x:Null}" TargetType="{x:Type Button}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <ControlTemplate.Resources>
+                        <Storyboard x:Key="over">
+                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="grid" Storyboard.TargetProperty="(UIElement.Opacity)">
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.2000000" Value="1"/>
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="grid" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)">
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.2000000" Value="-16.335"/>
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="pointTop" Storyboard.TargetProperty="(UIElement.Opacity)">
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.2000000" Value="1"/>
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="pointTop" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)">
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.2000000" Value="9.672"/>
+                            </DoubleAnimationUsingKeyFrames>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="pointTop">
+                                <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}"/>
+                                <DiscreteObjectKeyFrame KeyTime="0:0:0.2" Value="{x:Static Visibility.Visible}"/>
+                            </ObjectAnimationUsingKeyFrames>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="grid">
+                                <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}"/>
+                                <DiscreteObjectKeyFrame KeyTime="0:0:0.2" Value="{x:Static Visibility.Visible}"/>
+                            </ObjectAnimationUsingKeyFrames>
+                        </Storyboard>
+                        <Storyboard x:Key="out">
+                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="grid" Storyboard.TargetProperty="(UIElement.Opacity)">
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.2000000" Value="0"/>
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="grid" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)">
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.2000000" Value="3.337"/>
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="pointTop" Storyboard.TargetProperty="(UIElement.Opacity)">
+                                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1"/>
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.2000000" Value="0"/>
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="pointTop" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)">
+                                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="6.666"/>
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.2000000" Value="0"/>
+                            </DoubleAnimationUsingKeyFrames>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="grid">
+                                <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}"/>
+                                <DiscreteObjectKeyFrame KeyTime="0:0:0.2" Value="{x:Static Visibility.Collapsed}"/>
+                            </ObjectAnimationUsingKeyFrames>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="pointTop">
+                                <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}"/>
+                                <DiscreteObjectKeyFrame KeyTime="0:0:0.2" Value="{x:Static Visibility.Collapsed}"/>
+                            </ObjectAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </ControlTemplate.Resources>
+                    <Grid ClipToBounds="False">
+                        <Rectangle Stroke="{DynamicResource Linear_ButtonBorder}"/>
+                        <ContentPresenter x:Name="image" Margin="3"/>
+                        <Grid
+                        		Height="8"
+                        		Width="17"
+                        		Background="#00ffffff"
+                        		Visibility="Hidden"
+                        		x:Name="pointTop"
+                        		Opacity="0"
+                        		RenderTransformOrigin="0.5,0.5"
+                        		d:LayoutOverrides="Width, Height"
+                        		Margin="0,-15,0,0"
+                        		VerticalAlignment="Top" HorizontalAlignment="Center">
+                            <Grid.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="1" ScaleY="1"/>
+                                    <SkewTransform AngleX="0" AngleY="0"/>
+                                    <RotateTransform Angle="0"/>
+                                    <TranslateTransform X="0" Y="0"/>
+                                </TransformGroup>
+                            </Grid.RenderTransform>
+                            <Path
+                        			Margin="0,0,0,0"
+                        			HorizontalAlignment="Left"
+                        			VerticalAlignment="Top"
+                        			Height="8"
+                        			Width="17"
+                        			Stretch="Fill"
+                        			Opacity="1"
+                        			Data="M 17,0 C17,0 8.5,8 8.5,8 8.5,8 0,0 0,0 0,0 17,0 17,0 z"
+                        			Stroke="#ffffff"
+                        			StrokeThickness="1">
+                                <Path.Fill>
+                                    <LinearGradientBrush StartPoint="0.29651058421415444,0.07143020629882812" EndPoint="0.29651058421415444,0.8571434020996094">
+                                        <LinearGradientBrush.GradientStops>
+                                            <GradientStopCollection>
+                                                <GradientStop Color="#FFD2D2D2" Offset="0"/>
+                                                <GradientStop Color="#FF333333" Offset="0.9888888597488403"/>
+                                            </GradientStopCollection>
+                                        </LinearGradientBrush.GradientStops>
+                                    </LinearGradientBrush>
+                                </Path.Fill>
+                            </Path>
+                        </Grid>
+                        <Grid
+                        		Opacity="0"
+                        		RenderTransformOrigin="0.5,0.5"
+                        		Margin="-28,0,-28,-60"
+                        		x:Name="grid"
+                        		VerticalAlignment="Bottom"
+                        		Height="45" HorizontalAlignment="Center" Width="Auto" Visibility="Collapsed">
+                            <Grid.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="1" ScaleY="1"/>
+                                    <SkewTransform AngleX="0" AngleY="0"/>
+                                    <RotateTransform Angle="0"/>
+                                    <TranslateTransform X="0" Y="0"/>
+                                </TransformGroup>
+                            </Grid.RenderTransform>
+                            <Path
+                        			Height="Auto"
+                        			Width="Auto"
+                        			Stretch="Fill"
+                        			Opacity="1"
+                        			Data="M 4.464996337890625,9 C1.9990234375,9 0,10.9990234375 0,13.46502685546875 0,13.46502685546875 0,51.53497314453125 0,51.53497314453125 0,54.0009765625 1.9990234375,56 4.464996337890625,56 4.464996337890625,56 167.53500366210938,56 167.53500366210938,56 170.0009765625,56 172,54.0009765625 172,51.53497314453125 172,51.53497314453125 172,13.46502685546875 172,13.46502685546875 172,10.9990234375 170.0009765625,9 167.53500366210938,9 167.53500366210938,9 95,9 95,9 95,9 86,0 86,0 86,0 77,9 77,9 77,9 4.464996337890625,9 4.464996337890625,9 z"
+                        			Stroke="#ffffff"
+                        			StrokeThickness="1">
+                                <Path.Fill>
+                                    <LinearGradientBrush StartPoint="0.29651162790697677,0.07142857142857142" EndPoint="0.29651162790697677,0.8571428571428571">
+                                        <LinearGradientBrush.GradientStops>
+                                            <GradientStopCollection>
+                                                <GradientStop Color="#FFCACACA" Offset="0"/>
+                                                <GradientStop Color="#FF333333" Offset="0.9888888597488403"/>
+                                            </GradientStopCollection>
+                                        </LinearGradientBrush.GradientStops>
+                                    </LinearGradientBrush>
+                                </Path.Fill>
+                            </Path>
+                            <Path
+                        			Height="Auto"
+                        			Width="Auto"
+                        			Stretch="Fill"
+                        			Opacity="1"
+                        			Data="M 1,24 C1,24 1,50.53497314453125 1,50.53497314453125 1,53.0009765625 2.9990234375,55 5.464996337890625,55 5.464996337890625,55 166.53500366210938,55 166.53500366210938,55 169.0009765625,55 171,53.0009765625 171,50.53497314453125 171,50.53497314453125 171,24 171,24 171,24 118,35.00006103515625 85,35.66668701171875 52,36.33331298828125 1,24 1,24 z"
+                        			Margin="1,24,1,1">
+                                <Path.Fill>
+                                    <LinearGradientBrush StartPoint="0.40588235294117647,0.9354838709677419" EndPoint="0.40588235294117647,-0.06451612903225806">
+                                        <LinearGradientBrush.GradientStops>
+                                            <GradientStopCollection>
+                                                <GradientStop Color="#FF000000" Offset="0"/>
+                                                <GradientStop Color="#ba333333" Offset="0.9777777791023254"/>
+                                            </GradientStopCollection>
+                                        </LinearGradientBrush.GradientStops>
+                                    </LinearGradientBrush>
+                                </Path.Fill>
+                            </Path>
+                            <TextBlock
+                        			RenderTransformOrigin="0.5,0.5"
+                        			Width="Auto"
+                        			Height="Auto"
+                        			FontFamily="Futura Md BT"
+                        			FontSize="14"
+                        			Foreground="#FFF9F6F6"
+                        			Text="{TemplateBinding Tag}"
+                        			TextAlignment="Center"
+                        			TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,5,0,0">
+                        			<TextBlock.RenderTransform>
+                        				<TransformGroup>
+                        					<ScaleTransform ScaleX="1" ScaleY="1"/>
+                        					<SkewTransform AngleX="0" AngleY="0"/>
+                        					<RotateTransform Angle="0"/>
+                        					<TranslateTransform X="0" Y="0"/>
+                        				</TransformGroup>
+                        			</TextBlock.RenderTransform>
+                            </TextBlock>
+                        </Grid>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsFocused" Value="True"/>
+                        <Trigger Property="IsDefaulted" Value="True"/>
+                        <Trigger Property="IsMouseOver" Value="True" SourceName="image">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard x:Name="over_BeginStoryboard" Storyboard="{StaticResource over}"/>
+                                <StopStoryboard BeginStoryboardName="out_BeginStoryboard"/>
+                            </Trigger.EnterActions>
+                            <Setter Property="Cursor" TargetName="grid" Value="Hand"/>
+                        </Trigger>
+                        <EventTrigger RoutedEvent="Mouse.MouseLeave" SourceName="image">
+                            <BeginStoryboard x:Name="out_BeginStoryboard" Storyboard="{StaticResource out}"/>
+                            <RemoveStoryboard BeginStoryboardName="over_BeginStoryboard"/>
+                        </EventTrigger>
+                        <Trigger Property="IsPressed" Value="True"/>
+                        <Trigger Property="IsEnabled" Value="False"/>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

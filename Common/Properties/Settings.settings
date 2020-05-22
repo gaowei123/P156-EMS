@@ -1,0 +1,27 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="SBMS.Common.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="SBMS_SQL_SBMSEE" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Data Source=.\SQLEXPRESS;Initial Catalog=WeightingSystem;Integrated Security=True</Value>
+    </Setting>
+    <Setting Name="CS_Oracle_SBMSEE" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Data Source=wboee.world;User ID=SBMSee;Password=SBMS#0324;Unicode=True</Value>
+    </Setting>
+    <Setting Name="CS_Oracle_UBCT" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Data Source=wboee.world;User ID=ubct;Password=ubct01;Unicode=True</Value>
+    </Setting>
+    <Setting Name="SBMS_Oracle_OEETEST" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Data Source=oeetest;User ID=shangrila;Password=paradise;Unicode=True</Value>
+    </Setting>
+    <Setting Name="SBMS_OleDb_Shangrila" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Provider=Microsoft.Jet.Oledb.4.0;Data Source=c:\App1\你的数据库名.mdb;</Value>
+    </Setting>
+    <Setting Name="CS_Oracle_SHANGRILA" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Data Source=oeetest;User ID=shangrila;Password=paradise;Unicode=True</Value>
+    </Setting>
+    <Setting Name="SBMS_SQL_SBMSEE2" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Data Source=CARDTEST-PC1\SQLEXPRESS;Initial Catalog=WeightingSystem;User Id=sa;Password=SBMS12345 ;Integrated Security=True</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

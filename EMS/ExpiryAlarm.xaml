@@ -1,0 +1,56 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        mc:Ignorable="d" x:Class="EMS.ExpiryWindow"
+        Title="ExpiryWindow" WindowStyle="None" Background="{x:Null}" AllowsTransparency="True" Width="526" Height="355" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Topmost="True">
+    <Window.Effect>
+        <DropShadowEffect ShadowDepth="0" BlurRadius="30"/>
+    </Window.Effect>
+    <Grid Width="522" Height="354" HorizontalAlignment="Left" VerticalAlignment="Top">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Rectangle Stroke="Black" Fill="{DynamicResource ButtonNormalBackground}" Margin="4,6,8,10">
+            <Rectangle.Effect>
+                <DropShadowEffect/>
+            </Rectangle.Effect>
+        </Rectangle>
+        <Button x:Name="btn_remindLate" Style="{DynamicResource ButtonStyle-Zoom}" HorizontalAlignment="Right" Width="148.5" Margin="0,290.834,81.333,21.166" FontWeight="Bold" Click="btn_remindLate_Click" Cursor="Hand" Background="{DynamicResource ButtonNormalBackground}" Content="{DynamicResource EA_Remind Later}" FontSize="18">
+            <Button.Effect>
+                <DropShadowEffect BlurRadius="10" ShadowDepth="0"/>
+            </Button.Effect>
+        </Button>
+        <Path Data="M16,67.5 L1232.5083,67.5" Fill="#FFF4F4F5" Height="2" Margin="-4.006,58.864,12.006,0" Stretch="Fill" VerticalAlignment="Top" StrokeThickness="2" Stroke="{DynamicResource Linear_Blue}">
+            <Path.Effect>
+                <DropShadowEffect Color="#FFB2B2B2" ShadowDepth="2"/>
+            </Path.Effect>
+        </Path>
+        <TextBlock Margin="63.985,5.167,73.918,0" TextWrapping="Wrap" Text="Near Expiry Epoxy" FontSize="45" FontFamily="Arial" Height="61" VerticalAlignment="Top" Foreground="{DynamicResource Linear_Red}" d:LayoutOverrides="HorizontalAlignment">
+    		<TextBlock.Effect>
+    			<DropShadowEffect ShadowDepth="3"/>
+    		</TextBlock.Effect>
+        </TextBlock>
+        <Button x:Name="btn_print" Style="{DynamicResource ButtonStyle-Zoom}" Margin="0,289.668,318.5,20.832" FontWeight="Bold" Cursor="Hand" Background="{DynamicResource ButtonNormalBackground}" HorizontalAlignment="Right" Width="144.833" Content="{DynamicResource EA_Print}" FontSize="18" Click="btn_print_Click" >
+            <Button.Effect>
+                <DropShadowEffect ShadowDepth="0" BlurRadius="10"/>
+            </Button.Effect>
+        </Button>
+        <Label Content="Part ID :" HorizontalAlignment="Left" Margin="63.999,63.332,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="13.333"/>
+        <Label x:Name="txt_partID" Margin="173.332,63.998,27.118,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="13.333" Height="24"/>
+        <Label Content="SAP Code :" HorizontalAlignment="Left" Margin="63.665,129.297,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="13.333"/>
+        <Label x:Name="txt_sapcode" Margin="173.998,130.015,26.452,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="13.333" Height="30"/>
+        <Label Content="Batch No :" HorizontalAlignment="Left" Margin="63.664,162.964,0,163.282" FontWeight="Bold" FontSize="13.333" d:LayoutOverrides="Height"/>
+        <Label x:Name="txt_batchNo" Margin="174.998,163.681,25.452,163.652" FontWeight="Bold" FontSize="13.333"/>
+        <Label Content="Thawing Time :" HorizontalAlignment="Left" Margin="63.664,0,0,131.587" FontWeight="Bold" FontSize="13.333" VerticalAlignment="Bottom"/>
+        <Label x:Name="txt_thawingTime" Margin="174.998,0,25.452,130.921" FontWeight="Bold" FontSize="13.333" VerticalAlignment="Bottom" Height="28"/>
+        <Label Content="Ready Time :" HorizontalAlignment="Left" Margin="64.331,0,0,102.59" FontWeight="Bold" FontSize="13.333" VerticalAlignment="Bottom"/>
+        <Label x:Name="txt_readyTime" Margin="174.998,0,25.452,101.924" FontWeight="Bold" FontSize="13.333" VerticalAlignment="Bottom" Height="27.333"/>
+        <Label Content="Expiry Time :" HorizontalAlignment="Left" Margin="65.665,0,0,73.594" FontWeight="Bold" FontSize="13.333" VerticalAlignment="Bottom"/>
+        <Label x:Name="txt_expiryTime" Margin="174.998,0,25.452,72.928" FontWeight="Bold" FontSize="13.333" VerticalAlignment="Bottom" Height="26.667"/>
+        <Label Content="Machine ID :" HorizontalAlignment="Left" Margin="63.999,95.994,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="13.333"/>
+        <Label x:Name="txt_mcID" Margin="173.332,96.667,27.118,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="13.333" Height="24"/>
+
+    </Grid>
+</Window>

@@ -1,0 +1,46 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:Custom="http://schemas.microsoft.com/wpf/2008/toolkit"
+              x:Class="EMS.EngineerMode.HistoryDB" 
+             mc:Ignorable="d" 
+             d:DesignHeight="588" d:DesignWidth="825">
+    <Grid>
+
+        <Custom:DataGrid IsReadOnly="True" x:Name="dg_list" Margin="0,0,0,84.667" Background="{DynamicResource Linear_RainySky}" AlternatingRowBackground="#FFC1F5EA"/>
+        <StackPanel Margin="0,0,4.666,14.331" Orientation="Horizontal" Height="44.794" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="219.333">
+            <Button x:Name="btn_search" Style="{DynamicResource ButtonStyle-Zoom}" Width="100" FontSize="13.333" BorderThickness="1,1,1,1" Margin="0" HorizontalAlignment="Right" Height="38" VerticalAlignment="Top" Cursor="Hand" Background="{DynamicResource ButtonNormalBackground}" Foreground="#FFF3F2F2" Click="btn_search_Click">
+                <Button.Effect>
+                    <DropShadowEffect ShadowDepth="0" BlurRadius="8"/>
+                </Button.Effect>
+                <Grid Height="31.874" Width="93.832">
+                    <Label Content="{DynamicResource EP_search}" Margin="38.334,-1.425,-2.168,4.664" HorizontalContentAlignment="Center" FontSize="16" Foreground="#FF060606" d:LayoutOverrides="HorizontalAlignment"/>
+                    <Image Margin="2.166,1.898,0,1.602" HorizontalAlignment="Left" Width="38.5" Source="/EMS;component/Resources/Image/search.png"/>
+                </Grid>
+            </Button>
+            <Button x:Name="btn_save" Style="{DynamicResource ButtonStyle-Zoom}" Width="100" FontSize="13.333" BorderThickness="1,1,1,1" Margin="17,0,0,0" HorizontalAlignment="Right" Height="38.667" VerticalAlignment="Top" Cursor="Hand" Background="{DynamicResource ButtonNormalBackground}" Foreground="#FFF3F2F2" Click="btn_save_Click">
+                <Button.Effect>
+                    <DropShadowEffect ShadowDepth="0" BlurRadius="8"/>
+                </Button.Effect>
+                <Grid Height="33.874" Width="94.667">
+                    <Label Content="Save" Margin="0,0,0.334,5.167" HorizontalContentAlignment="Center" FontSize="16" Height="29.968" VerticalAlignment="Bottom" Foreground="#FF060606" HorizontalAlignment="Right" Width="45.667"/>
+                    <Image Margin="2.166,1.898,0,3.269" Source="/EMS;component/Resources/Image/save.png" HorizontalAlignment="Left" Width="32.167"/>
+                </Grid>
+            </Button>
+        </StackPanel>
+        <TextBlock TextWrapping="Wrap" Text="{DynamicResource EP_dateFrom}" FontSize="16" Foreground="#FF060606" HorizontalAlignment="Left" Margin="2,0,0,43" VerticalAlignment="Bottom" Width="112"/>
+        <TextBlock TextWrapping="Wrap" Text="{DynamicResource EP_dateTo}" Margin="20,0,0,8" FontSize="16" Foreground="#FF060606" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="85"/>
+        <Custom:DatePicker x:Name="dp_to" Margin="99.167,0,0,7.627" VerticalAlignment="Bottom" FontSize="16" Height="30.28" HorizontalAlignment="Left" Width="146"/>
+        <Custom:DatePicker x:Name="dp_from" Height="31" IsTodayHighlighted="True" Margin="99.5,0,0,43.129" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="146" FontSize="16"/>
+        <Image HorizontalAlignment="Right" Height="2" Margin="0,0,369,31" VerticalAlignment="Bottom" Width="0"/>
+        <TextBlock TextWrapping="Wrap" Text="" FontSize="16" Foreground="#FF060606" HorizontalAlignment="Left" Margin="260.833,0,0,69" VerticalAlignment="Bottom" Width="4" Height="0" />
+        <TextBox x:Name="txt_partID" Margin="323.999,0,0,46.706" TextWrapping="Wrap" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="0"/>
+        <TextBlock TextWrapping="Wrap" Text="" FontSize="16" Foreground="#FF060606" HorizontalAlignment="Left" Margin="265,0,0,32" VerticalAlignment="Bottom" Width="0" Height="3" />
+        <TextBox x:Name="txt_equipID" Margin="323.999,0,0,12.038" TextWrapping="Wrap" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="0"/>
+        <CheckBox x:Name="ck_returnWithExpiry" Content="Return when Expiried" HorizontalAlignment="Right" Margin="0,0,356,49.039" VerticalAlignment="Bottom" FontSize="16"/>
+        <CheckBox x:Name="ck_summaryReport" Content="Summary Report" HorizontalAlignment="Right" Margin="0,0,387,12.039" VerticalAlignment="Bottom" FontSize="16"/>
+
+    </Grid>
+</UserControl>

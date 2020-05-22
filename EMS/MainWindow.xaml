@@ -1,0 +1,217 @@
+﻿<Window
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:System="clr-namespace:System;assembly=mscorlib"
+    xmlns:my="clr-namespace:Visifire.Charts;assembly=WPFVisifire.Charts"
+    xmlns:EMS_Report="clr-namespace:EMS.Report"
+    x:Class="EMS.MainWindow"
+    Title="EMS" mc:Ignorable="d" 
+    d:DesignWidth="1024" d:DesignHeight="768"   
+    Width="1024" Height="768"
+    WindowStartupLocation="CenterScreen" WindowStyle="None" Topmost="False" WindowState="Maximized">
+
+    <Window.Background>
+        <ImageBrush/>
+    </Window.Background>
+
+
+
+    <!--WindowStartupLocation="CenterScreen" WindowState="Maximized" WindowStyle="None" Topmost="True"-->
+    <Grid x:Name="ROOT" Background="#FFFBFAFA" >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.5*"/>
+            <ColumnDefinition Width="1000"/>
+            <ColumnDefinition Width="0.5*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="125"/>
+            <RowDefinition Height="25"/>
+        </Grid.RowDefinitions>
+
+
+        <Path Data="M16,67.5 L1232.5083,67.5" Fill="{DynamicResource Linear_Blue}" Height="2" Margin="0.918,-0.748,-0.918,0" Stretch="Fill" VerticalAlignment="Top" Stroke="{DynamicResource Linear_Blue}" StrokeThickness="2" Grid.ColumnSpan="3" Grid.Row="2">
+            <Path.Effect>
+                <DropShadowEffect Color="#FFB2B2B2" ShadowDepth="2"/>
+            </Path.Effect>
+        </Path>
+        <Grid x:Name="Banner" Margin="1,0,-1,0" Grid.ColumnSpan="3">
+            <Image HorizontalAlignment="Right" Margin="0,0,8,6" RenderTransformOrigin="0.5,0.5" Width="82.265" Source="Resources/Image/ubct.png">
+                <Image.Effect>
+                    <DropShadowEffect Color="#FF959595"/>
+                </Image.Effect>
+            </Image>
+            <Path Data="M16,67.5 L1232.5083,67.5" Fill="{DynamicResource Linear_Blue}" Height="2" Margin="0" Stretch="Fill" VerticalAlignment="Bottom" Stroke="{DynamicResource Linear_Blue}" StrokeThickness="2">
+                <Path.Effect>
+                    <DropShadowEffect Color="#FFB2B2B2" ShadowDepth="2"/>
+                </Path.Effect>
+            </Path>
+        </Grid>
+        <Grid x:Name="StatusBar" Grid.Row="3" Background="#4C000000" Margin="-0.5,0,0.5,0" VerticalAlignment="Bottom" Grid.ColumnSpan="3">
+            <TextBlock x:Name="txt_clock" HorizontalAlignment="Right" FontFamily="Quartz MS" FontWeight="Bold" FontSize="21.333" Foreground="#FF141413" RenderTransformOrigin="0.5,0.5" Width="281" d:LayoutOverrides="Height" Margin="0,0,-33,0" />
+            <TextBlock x:Name="txt_version" Margin="3.168,4.936,638.832,-1" TextWrapping="Wrap" Text="V2014.11.03" FontSize="15" FontFamily="Arial" Foreground="Black" d:LayoutOverrides="GridBox"/>
+            <Path Data="M16,67.5 L1232.5083,67.5" Fill="#FFF4F4F5" Height="13" Margin="0" Stretch="Fill" VerticalAlignment="Top" Stroke="Black" StrokeThickness="2">
+                <Path.Effect>
+                    <DropShadowEffect Color="#FFB2B2B2" ShadowDepth="2"/>
+                </Path.Effect>
+            </Path>
+            <TextBlock x:Name="txt_language"  FontFamily="Arial" FontSize="16" Foreground="#FF141413" RenderTransformOrigin="0.5,0.5" Margin="399,4.666,0,-1.667" Text="Language(语言) :" HorizontalAlignment="Left" Width="123.5" />
+            <ComboBox x:Name="cbb_language" SelectedIndex="1" HorizontalAlignment="Left" Margin="524.543,3.242,0,2.052" Width="121" DropDownClosed="cbb_language_DropDownClosed">
+                <ComboBox.Effect>
+                    <DropShadowEffect BlurRadius="8" ShadowDepth="0"/>
+                </ComboBox.Effect>
+                <ComboBoxItem Content="English"/>
+                <ComboBoxItem Content="Chinese(中文)"/>
+            </ComboBox>
+        </Grid>
+        <TextBlock Margin="1.5,3.936,341.5,5" TextWrapping="Wrap" Text="{DynamicResource MW_SystemName}" FontSize="45" FontFamily="Arial" Grid.ColumnSpan="2">
+            <TextBlock.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF047C8B"/>
+                    <GradientStop Color="#FF85F7F7" Offset="0.722"/>
+                </LinearGradientBrush>
+            </TextBlock.Foreground>
+            <TextBlock.Effect>
+                <DropShadowEffect ShadowDepth="3"/>
+            </TextBlock.Effect>
+        </TextBlock>
+
+
+        <Grid x:Name="contentBar" Margin="-0.04,-0.936,1.452,0.517" Grid.Row="1" Grid.Column="1"/>
+
+
+
+        <!--菜单按钮-->
+        <Grid  Grid.Row="2" Grid.Column="1" d:LayoutOverrides="GridBox">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="0.1*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+
+
+            <!--菜单按钮样式-->
+            <Grid.Resources>
+                <Style TargetType="Button" x:Key="MenuBtnStyle"
+                    BasedOn="{StaticResource ButtonStyle-Zoom}"> <!--在原本btn style的基础上 追加style-->
+
+                    <Setter Property="Cursor" Value="Hand"/>
+                    <Setter Property="RenderTransformOrigin" Value="0.369,0.501"/>
+                    <Setter Property="Width" Value="120"/>
+                    <Setter Property="Height" Value="45"/>
+                    <Setter Property="VerticalAlignment" Value="Center"/>
+                    <Setter Property="FontSize" Value="15"/>
+                    <Setter Property="FontWeight" Value="Bold"/>
+                </Style>
+            </Grid.Resources>
+
+
+            <Button  x:Name="btn_load" Grid.Column="1" Grid.Row="0"  Click="btn_load_Click" Content="{DynamicResource MW_Load}" 
+                     Style="{DynamicResource  MenuBtnStyle}"  Background="{DynamicResource ButtonNormalBackground}">
+                <Button.Effect>
+                    <DropShadowEffect BlurRadius="10" ShadowDepth="3"/>
+                </Button.Effect>
+            </Button>
+            <Button  x:Name="btn_unload" Grid.Column="2" Grid.Row="0" Click="btn_unload_Click"  Content="{DynamicResource MW_Unload}"
+                     Style="{DynamicResource  MenuBtnStyle}"  Background="{DynamicResource ButtonNormalBackground}">
+                <Button.Effect>
+                    <DropShadowEffect BlurRadius="10" ShadowDepth="3"/>
+                </Button.Effect>
+            </Button>
+            <Button  x:Name="btn_mix" Grid.Column="3" Grid.Row="0" Click="btn_mix_Click" 
+                     Style="{DynamicResource  MenuBtnStyle}"  Background="{DynamicResource ButtonNormalBackground}">
+                <Button.Effect>
+                    <DropShadowEffect BlurRadius="10" ShadowDepth="3"/>
+                </Button.Effect>
+                <Grid Width="110" Height="38">
+                    <TextBlock TextWrapping="Wrap" Text="{DynamicResource MW_Mix}" FontSize="15" VerticalAlignment="Center" Block.TextAlignment="Center"/>
+                    <ProgressBar x:Name="pbMainwindowMixing" Width="90" Height="12" Margin="0,26,0,0"></ProgressBar>
+                </Grid>
+            </Button>
+            <Button  x:Name="btn_adminMode" Grid.Column="4" Grid.Row="0" Click="btn_adminMode_Click"  Content="{DynamicResource MW_adminMode}"
+                     Style="{DynamicResource  MenuBtnStyle}"  Background="{DynamicResource ButtonNormalBackground}">
+                <Button.Effect>
+                    <DropShadowEffect BlurRadius="10" ShadowDepth="3"/>
+                </Button.Effect>
+            </Button>
+            <Button  x:Name="btn_maintMode" Grid.Column="5" Grid.Row="0" Click="btn_maintMode_Click" Content="{DynamicResource MW_maintMode}"
+                     Style="{DynamicResource  MenuBtnStyle}"  Background="{DynamicResource ButtonNormalBackground}">
+                <Button.Effect>
+                    <DropShadowEffect BlurRadius="10" ShadowDepth="3"/>
+                </Button.Effect>
+            </Button>
+            <Button  x:Name="btn_logFile" Grid.Column="6" Grid.Row="0"  Click="btn_logFile_Click" Content="{DynamicResource MW_logFile}"
+                    Style="{DynamicResource  MenuBtnStyle}"  Background="{DynamicResource ButtonNormalBackground}">
+                <Button.Effect>
+                    <DropShadowEffect BlurRadius="10" ShadowDepth="3"/>
+                </Button.Effect>
+            </Button>
+            <Button  x:Name="btn_homing" Grid.Column="7" Grid.Row="0"  Click="btn_homing_Click" Content="{DynamicResource MW_Home}"
+                     Style="{DynamicResource  MenuBtnStyle}"  Background="{DynamicResource ButtonNormalBackground}">
+                <Button.Effect>
+                    <DropShadowEffect BlurRadius="10" ShadowDepth="3"/>
+                </Button.Effect>
+            </Button>
+
+            <Button  x:Name="btn_remove" Grid.Column="1" Grid.Row="1"  Click="btn_remove_Click" Content="{DynamicResource MW_Remove}" 
+                    Style="{DynamicResource  MenuBtnStyle}"  Background="{DynamicResource ButtonNormalBackground}">
+                <Button.Effect>
+                    <DropShadowEffect BlurRadius="10" ShadowDepth="3"/>
+                </Button.Effect>
+            </Button>
+            <Button  x:Name="btn_return" Grid.Column="2" Grid.Row="1" Click="btn_return_Click"  Content="{DynamicResource MW_Return}" 
+                    Style="{DynamicResource  MenuBtnStyle}"  Background="{DynamicResource ButtonNormalBackground}">
+                <Button.Effect>
+                    <DropShadowEffect BlurRadius="10" ShadowDepth="3"/>
+                </Button.Effect>
+            </Button>
+            <Button  x:Name="btn_engineerMode" Grid.Column="3" Grid.Row="1" Click="btn_engineerMode_Click"  Content="{DynamicResource MW_engineerMode}"
+                    Style="{DynamicResource  MenuBtnStyle}"  Background="{DynamicResource ButtonNormalBackground}">
+                <Button.Effect>
+                    <DropShadowEffect BlurRadius="10" ShadowDepth="3"/>
+                </Button.Effect>
+            </Button>
+            <Button  x:Name="btn_inventory" Grid.Column="4" Grid.Row="1" Content="{DynamicResource MW_Inventory}"  Click="btn_inventory_Click"
+                   Style="{DynamicResource  MenuBtnStyle}"  Background="{DynamicResource ButtonNormalBackground}">
+                <Button.Effect>
+                    <DropShadowEffect BlurRadius="10" ShadowDepth="3"/>
+                </Button.Effect>
+            </Button>
+            <Button  x:Name="btn_report" Grid.Column="5" Grid.Row="1" Click="btn_report_Click" Content="{DynamicResource MW_Report}"
+                     Style="{DynamicResource  MenuBtnStyle}"  Background="{DynamicResource ButtonNormalBackground}">
+                <Button.Effect>
+                    <DropShadowEffect BlurRadius="10" ShadowDepth="3"/>
+                </Button.Effect>
+            </Button>
+            <Button  x:Name="btn_exit" Grid.Column="6" Grid.Row="1" Click="btn_exit_Click" Content="{DynamicResource MW_Exit}"
+                     Style="{DynamicResource  MenuBtnStyle}"  Background="{DynamicResource ButtonNormalBackground}">
+                <Button.Effect>
+                    <DropShadowEffect BlurRadius="10" ShadowDepth="3"/>
+                </Button.Effect>
+            </Button>
+        </Grid>
+        
+        
+        <Grid x:Name="MaskActionPage" Margin="0,-3,-3,3" Grid.RowSpan="4" Grid.ColumnSpan="3" Visibility="Collapsed">
+            <Grid.Background>
+                <RadialGradientBrush>
+                    <GradientStop Color="#00000000"/>
+                    <GradientStop Color="#66000000" Offset="1"/>
+                </RadialGradientBrush>
+            </Grid.Background>
+        </Grid>
+    </Grid>
+</Window>

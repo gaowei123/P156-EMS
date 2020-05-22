@@ -1,0 +1,112 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:EMS_Views="clr-namespace:EMS.Views" x:Class="EMS.MaintMode.ComTest" 
+             mc:Ignorable="d" 
+             d:DesignWidth="825" d:DesignHeight="588" Unloaded="UserControl_Unloaded">
+    <Grid>
+    	<Grid.RowDefinitions>
+    		<RowDefinition Height="0.094*"/>
+    		<RowDefinition Height="0.906*"/>
+    	</Grid.RowDefinitions>
+        <Label Content="{DynamicResource CT_ COM Test:}" HorizontalAlignment="Left" Margin="2,3.843,0,-4.408" FontSize="32" Width="195.957">
+    		<Label.Foreground>
+    			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+    				<GradientStop Color="#FF037B83" Offset="0"/>
+    				<GradientStop Color="#FF95F2F9" Offset="0.713"/>
+    			</LinearGradientBrush>
+    		</Label.Foreground>
+    		<Label.Effect>
+    			<DropShadowEffect ShadowDepth="3"/>
+    		</Label.Effect>
+    	</Label>
+    	<Grid Margin="289,2,252,183" Grid.Row="1">
+    		<Grid Height="51" Margin="46,10,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="193">
+    			<Rectangle Fill="{DynamicResource Linear_Blue}" Stroke="{DynamicResource Linear_BlackSilver}" RadiusY="11.228" RadiusX="11.228" StrokeThickness="2" Margin="8,0,15.442,0"/>
+                <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="{DynamicResource CT_Weighing Scale}" FontWeight="Bold" Foreground="White" FontSize="18" Margin="0,2.5,0,23.581" Width="136.306"/>
+    			<TextBlock x:Name="txt_weighingScale_comPort" TextWrapping="Wrap" Text="COM1" VerticalAlignment="Bottom" Foreground="White" FontSize="12" Margin="73.465,0,85.81,5.769" d:LayoutOverrides="Width"/>
+    		</Grid>
+            <Button x:Name="btn_gotWeightData" Style="{DynamicResource ButtonStyle-Zoom}" Content="{DynamicResource CT_Got Weight Data}" Margin="23.445,0,28.555,11" VerticalAlignment="Bottom" Height="34.837" Background="{DynamicResource ButtonNormalBackground}" Click="btn_gotWeightData_Click">
+    			<Button.Effect>
+    				<DropShadowEffect ShadowDepth="0" BlurRadius="8"/>
+    			</Button.Effect>
+    		</Button>
+    		<ListBox x:Name="lb_weightscaler" Margin="7,68.728,8,54"/>
+            <Button x:Name="btn_CapturePartID" Style="{DynamicResource ButtonStyle-Zoom}" Content="{DynamicResource CT_Got Part ID Detail}" Margin="0,102,-191.445,0" VerticalAlignment="Top" Height="34.837" Background="{DynamicResource ButtonNormalBackground}" Click="btn_CapturePartID_Click" HorizontalAlignment="Right" Width="144.5">
+    			<Button.Effect>
+    				<DropShadowEffect ShadowDepth="0" BlurRadius="8"/>
+    			</Button.Effect>
+    		</Button>
+    	</Grid>
+    	<Rectangle Fill="{DynamicResource Linear_Blue}" Stroke="{DynamicResource Linear_BlackSilver}" RadiusY="12.507" RadiusX="12.507" StrokeThickness="2" HorizontalAlignment="Right" Margin="0,10.221,29,0" Width="179.255" Height="52" Grid.Row="1" VerticalAlignment="Top"/>
+        <TextBlock TextWrapping="Wrap" Text="{DynamicResource CT_Part ID:}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="593,71,0,0" FontSize="16" Grid.Row="1" Foreground="#FF020202"/>
+    	<TextBox x:Name="txt_part_id" Margin="0,72,26.999,0" CharacterCasing="Upper" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Right" Grid.Row="1" Width="144.537" GotFocus="TextBox_GotFocus">
+    		<TextBox.Effect>
+    			<DropShadowEffect ShadowDepth="0" BlurRadius="8"/>
+    		</TextBox.Effect>
+    	</TextBox>
+        <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="{DynamicResource CT_Barcode Printer}" VerticalAlignment="Top" FontWeight="Bold" Foreground="White" FontSize="18" Margin="0,14.999,50.477,0" Grid.Row="1"/>
+        <Label x:Name="lb_sapcode_Copy1" Content="{DynamicResource CT_MC ID :}" HorizontalAlignment="Right" Margin="0,142,147,0" Grid.Row="1" VerticalAlignment="Top" Width="54.406" Background="Transparent" Foreground="#FF080808" FontSize="13.333"/>
+    	<Button x:Name="btn_print" Style="{DynamicResource ButtonStyle-Zoom}" Margin="0,295,49,194" FontWeight="Bold" Click="btn_print_Click" Cursor="Hand" HorizontalAlignment="Right" Grid.Row="1" Width="140.504">
+    		<Button.Effect>
+    			<DropShadowEffect ShadowDepth="0" BlurRadius="8"/>
+    		</Button.Effect>
+    		<Grid Height="51.866" Width="123.504">
+    			<Image Stretch="Fill" Margin="3,0,0,13" Source="/EMS;component/Resources/Image/printer.png" HorizontalAlignment="Left" Width="41"/>
+                <Label Content="{DynamicResource CT_Print}" Margin="0,5,15,15" FontSize="16" HorizontalAlignment="Right" Width="50.088" RenderTransformOrigin="0.482,0.458"/>
+    		</Grid>
+    	</Button>
+         
+    	<EMS_Views:KeyBoard x:Name="kb" Margin="8,0,7,10" Grid.Row="1" VerticalAlignment="Bottom" d:LayoutOverrides="Height" EnterClick="kb_EnterClick"/>
+    	<TextBox x:Name="txt_mcID" Margin="0,149,16,0" CharacterCasing="Upper" TextWrapping="NoWrap" VerticalAlignment="Top" HorizontalAlignment="Right" Grid.Row="1" Width="128">
+    		<TextBox.Effect>
+    			<DropShadowEffect ShadowDepth="0" BlurRadius="8"/>
+    		</TextBox.Effect>
+    	</TextBox>
+    	<Path Data="M16,67.5 L1232.5083,67.5" Fill="{DynamicResource Linear_Blue}" Height="2" Margin="-1,0,0,0" Stretch="Fill" VerticalAlignment="Top" Stroke="{DynamicResource Linear_Blue}" StrokeThickness="2" Grid.Row="1">
+    		<Path.Effect>
+    			<DropShadowEffect Color="#FFB2B2B2" ShadowDepth="2"/>
+    		</Path.Effect>
+    	</Path>
+    	<Path Data="M16,67.5 L1232.5083,67.5" Fill="#FFF4F4F5" Height="2" Margin="-1,0,0,185" Stretch="Fill" VerticalAlignment="Bottom" StrokeThickness="2" Grid.Row="1" Stroke="{DynamicResource Linear_Blue}">
+    		<Path.Effect>
+    			<DropShadowEffect Color="#FFB2B2B2" ShadowDepth="2"/>
+    		</Path.Effect>
+    	</Path>
+    	<TextBlock x:Name="txt_barcodePrinter_comPort" HorizontalAlignment="Right" TextWrapping="Wrap" Text="COM2" VerticalAlignment="Top" Foreground="White" FontSize="12" Margin="0,39.999,97.477,0" Grid.Row="1"/>
+    	<Grid HorizontalAlignment="Left" Width="272.957" Grid.Row="1" Margin="4.046,-0.001,0,185">
+    		<Grid Height="50.5" Margin="0,10.5,25,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="197.957">
+    			<Rectangle Fill="{DynamicResource Linear_Blue}" Stroke="{DynamicResource Linear_BlackSilver}" RadiusY="12.125" RadiusX="12.125" StrokeThickness="2" Margin="8,0"/>
+                <TextBlock TextWrapping="Wrap" Text="{DynamicResource CT_Handle Scanner}" FontWeight="Bold" Foreground="White" Margin="0,5,34.13,18" FontSize="18" HorizontalAlignment="Right"/>
+    			<TextBlock x:Name="txt_handleScanner_comPort" TextWrapping="Wrap" Text="COM4" VerticalAlignment="Bottom" Foreground="White" FontSize="12" Margin="81.457,0,82.763,5.269" d:LayoutOverrides="Width"/>
+    		</Grid>
+    		<ListBox x:Name="lb_handleScanner" Margin="5.621,69.729,5.336,10.999"/>
+    	</Grid>
+        <Label x:Name="lb_sapcode_Copy" Content="{DynamicResource CT_Thawing Time :}" HorizontalAlignment="Right" Margin="0,205,143,0" Grid.Row="1" VerticalAlignment="Top" Width="103" Background="Transparent" Foreground="#FF080808" FontSize="13.333"/>
+    	<TextBox x:Name="txt_thawingTime" Margin="0,209,16,0" CharacterCasing="Upper" TextWrapping="NoWrap" VerticalAlignment="Top" HorizontalAlignment="Right" Grid.Row="1" Width="128">
+    		<TextBox.Effect>
+    			<DropShadowEffect ShadowDepth="0" BlurRadius="8"/>
+    		</TextBox.Effect>
+    	</TextBox>
+        <Label x:Name="lb_sapcode_Copy2" Content="{DynamicResource CT_Sapcode }" HorizontalAlignment="Right" Margin="0,174,147,0" Grid.Row="1" VerticalAlignment="Top" Width="67.906" Background="Transparent" Foreground="#FF080808" FontSize="13.333"/>
+    	<TextBox x:Name="txt_sapcode" Margin="0,179,16,0" CharacterCasing="Upper" TextWrapping="NoWrap" VerticalAlignment="Top" HorizontalAlignment="Right" Grid.Row="1" Width="128">
+    		<TextBox.Effect>
+    			<DropShadowEffect ShadowDepth="0" BlurRadius="8"/>
+    		</TextBox.Effect>
+    	</TextBox>
+        <Label Background="Transparent" Content="{DynamicResource CT_Ready Time :}" FontSize="13.333" Foreground="#FF080808" HorizontalAlignment="Left" Margin="592,235,0,0" Name="label1" VerticalAlignment="Top" Width="90" Grid.Row="1" />
+        <TextBox CharacterCasing="Upper" HorizontalAlignment="Right" Margin="0,239,16,0" Name="txt_readyTime" TextWrapping="NoWrap" VerticalAlignment="Top" Width="128" Grid.Row="1">
+            <TextBox.Effect>
+                <DropShadowEffect BlurRadius="8" ShadowDepth="0" />
+            </TextBox.Effect>
+        </TextBox>
+        <Label Background="Transparent" Content="{DynamicResource CT_Expiry Time :}" FontSize="13.333" Foreground="#FF080808" HorizontalAlignment="Left" Margin="593,264,0,0" Name="label2" VerticalAlignment="Top" Width="85" Grid.Row="1" />
+        <TextBox CharacterCasing="Upper" HorizontalAlignment="Right" Margin="0,268,16,0" Name="txt_expiryTime" TextWrapping="NoWrap" VerticalAlignment="Top" Width="128" Grid.Row="1">
+            <TextBox.Effect>
+                <DropShadowEffect BlurRadius="8" ShadowDepth="0" />
+            </TextBox.Effect>
+        </TextBox>
+    </Grid>
+</UserControl>

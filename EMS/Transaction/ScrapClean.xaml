@@ -1,0 +1,59 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        xmlns:EMS_Views="clr-namespace:EMS.Views" 
+        x:Class="EMS.Transaction.ScrapClean" 
+        mc:Ignorable="d"
+        Title= "" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" Background="#4C000000" AllowsTransparency="True" Width="828" Height="550" Topmost="True">
+    <Grid Margin="0,0,8,0">
+    	<Grid.RowDefinitions>
+    		<RowDefinition/>
+    	</Grid.RowDefinitions>
+    	<Rectangle Margin="8,8,-2,8" Stroke="Black" Fill="{DynamicResource ButtonNormalBackground}">
+    		<Rectangle.Effect>
+    			<DropShadowEffect/>
+    		</Rectangle.Effect>
+    	</Rectangle>
+			<Button x:Name="btn_reset" Margin="186.937,0,0,40.957" Style="{DynamicResource ButtonStyle-Zoom}" Cursor="Hand" Height="40" VerticalAlignment="Bottom" d:LayoutOverrides="HorizontalAlignment, VerticalAlignment, GridBox" Background="{DynamicResource ButtonNormalBackground}" Click="btn_reset_Click" HorizontalAlignment="Left" Width="125">
+    		<Button.Effect>
+    			<DropShadowEffect ShadowDepth="0" BlurRadius="8"/>
+    		</Button.Effect>
+    		<Grid Height="38.5" Width="121">
+    			<Label Content="Reset"  HorizontalContentAlignment="Right" FontSize="18" FontWeight="Bold" Margin="25.664,-1.667,32.836,5.167" d:LayoutOverrides="VerticalAlignment"/>
+    		</Grid>
+    	</Button>
+			<Button x:Name="btn_close" Margin="0,0,191.459,43.123" Style="{DynamicResource ButtonStyle-Zoom}" Cursor="Hand" Height="40" VerticalAlignment="Bottom" d:LayoutOverrides="HorizontalAlignment, VerticalAlignment, GridBox" Background="{DynamicResource ButtonNormalBackground}" HorizontalAlignment="Right" Width="125" Click="btn_close_Click">
+				<Button.Effect>
+					<DropShadowEffect ShadowDepth="0" BlurRadius="8"/>
+				</Button.Effect>
+				<Grid Height="33.333" Width="118.667">
+					<Label Content="Close" FontSize="18" HorizontalContentAlignment="Right" FontWeight="Bold" Margin="27.999,-1.499,29.334,2.499" d:LayoutOverrides="HorizontalAlignment, VerticalAlignment"/>
+				</Grid>
+			</Button>
+			<TextBox x:Name="txt_currentScrapQty" Margin="268.333,203.666,104.78,0" TextWrapping="Wrap" RenderTransformOrigin="0.453,0.425" FontSize="16" IsEnabled="False" Height="30.627" VerticalAlignment="Top">
+				<TextBox.Effect>
+					<DropShadowEffect ShadowDepth="0" BlurRadius="8"/>
+				</TextBox.Effect>
+			</TextBox>
+			<TextBox x:Name="txt_scrapQtyLimit" Margin="269.999,0,105.781,234.705" TextWrapping="Wrap" RenderTransformOrigin="0.453,0.425" FontSize="16" IsEnabled="False" Height="30.627" VerticalAlignment="Bottom">
+				<TextBox.Effect>
+					<DropShadowEffect ShadowDepth="0" BlurRadius="8"/>
+				</TextBox.Effect>
+			</TextBox>
+			<Label Content="Current Scrap Qty :" HorizontalAlignment="Left" Margin="112,204,0,0" Width="146.993" FontSize="16" Foreground="#FF020202" Height="34.96" VerticalAlignment="Top" Background="#000A0A0A"/>
+			<Label Content="Scrap Qty Limit :" HorizontalAlignment="Left" Margin="130.667,0,0,233.371" Width="130.326" FontSize="16" Foreground="#FF0A0A0A" Height="30.96" VerticalAlignment="Bottom"/>
+			<Label Content="Reset Current Scrap Qty " HorizontalAlignment="Left" HorizontalContentAlignment="Center" Margin="110.697,18,0,0" FontSize="52" FontWeight="Bold" Height="88" Width="616.697" VerticalAlignment="Top">
+				<Label.Effect>
+					<DropShadowEffect ShadowDepth="3"/>
+				</Label.Effect>
+				<Label.Foreground>
+					<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+						<GradientStop Color="#FF017269" Offset="0"/>
+						<GradientStop Color="#FF82F5EE" Offset="0.763"/>
+					</LinearGradientBrush>
+				</Label.Foreground>
+			</Label>
+    </Grid>
+</Window>

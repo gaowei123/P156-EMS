@@ -1,0 +1,188 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:local="clr-namespace:EMS"
+	mc:Ignorable="d"
+	x:Class="EMS.InputPage"
+	x:Name="UserControl"
+	d:DesignWidth="825" d:DesignHeight="588">
+	<UserControl.Resources>
+		<Storyboard x:Key="sb_right_1">
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="wrapPanel1">
+				<SplineDoubleKeyFrame KeyTime="0" Value="0"/>
+				<SplineDoubleKeyFrame KeyTime="0:0:1" Value="826.5"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="wrapPanel1">
+				<SplineDoubleKeyFrame KeyTime="0" Value="0"/>
+				<SplineDoubleKeyFrame KeyTime="0:0:1" Value="-1.5"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="wrapPanel2">
+				<SplineDoubleKeyFrame KeyTime="0" Value="0"/>
+				<SplineDoubleKeyFrame KeyTime="0:0:1" Value="825"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="wrapPanel2">
+				<SplineDoubleKeyFrame KeyTime="0" Value="0"/>
+				<SplineDoubleKeyFrame KeyTime="0:0:1" Value="-1.5"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="wrapPanel2">
+				<SplineDoubleKeyFrame KeyTime="0" Value="0"/>
+				<SplineDoubleKeyFrame KeyTime="0:0:1" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="wrapPanel1">
+				<SplineDoubleKeyFrame KeyTime="0" Value="1"/>
+				<SplineDoubleKeyFrame KeyTime="0:0:1" Value="0"/>
+			</DoubleAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="wrapPanel2">
+				<DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:1" Value="{x:Static Visibility.Visible}"/>
+			</ObjectAnimationUsingKeyFrames>
+		</Storyboard>
+		<Storyboard x:Key="sb_left_3">
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="wrapPanel1">
+				<SplineDoubleKeyFrame KeyTime="0" Value="826.5"/>
+				<SplineDoubleKeyFrame KeyTime="0:0:1" Value="0"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="wrapPanel1">
+				<SplineDoubleKeyFrame KeyTime="0" Value="0"/>
+				<SplineDoubleKeyFrame KeyTime="0:0:1" Value="-1.5"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="wrapPanel2">
+				<SplineDoubleKeyFrame KeyTime="0" Value="825"/>
+				<SplineDoubleKeyFrame KeyTime="0:0:1" Value="-1.5"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="wrapPanel2">
+				<SplineDoubleKeyFrame KeyTime="0" Value="-1.5"/>
+				<SplineDoubleKeyFrame KeyTime="0:0:1" Value="-1.5"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="wrapPanel1">
+				<SplineDoubleKeyFrame KeyTime="0" Value="0"/>
+				<SplineDoubleKeyFrame KeyTime="0:0:1" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="wrapPanel2">
+				<DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:1" Value="{x:Static Visibility.Visible}"/>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="wrapPanel2">
+				<SplineDoubleKeyFrame KeyTime="0" Value="1"/>
+				<SplineDoubleKeyFrame KeyTime="0:0:1" Value="0"/>
+			</DoubleAnimationUsingKeyFrames>
+		</Storyboard>
+	</UserControl.Resources>
+	<UserControl.Triggers>
+        <EventTrigger RoutedEvent="FrameworkElement.ToolTipClosing" SourceName="wrapPanel1">
+			<BeginStoryboard  x:Name="sb_right_1" Storyboard="{StaticResource sb_right_1}"/>
+		</EventTrigger>
+        <EventTrigger RoutedEvent="FrameworkElement.ToolTipClosing" SourceName="wrapPanel1">
+			<BeginStoryboard  x:Name="sb_left_3" Storyboard="{StaticResource sb_left_3}"/>
+		</EventTrigger>
+	</UserControl.Triggers>
+	<Grid x:Name="LayoutRoot">
+		<WrapPanel x:Name="wrapPanel2" Margin="-826,12,0,100.5" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" Width="825">
+			<WrapPanel.RenderTransform>
+				<TransformGroup>
+					<ScaleTransform/>
+					<SkewTransform/>
+					<RotateTransform/>
+					<TranslateTransform/>
+				</TransformGroup>
+			</WrapPanel.RenderTransform>
+            <local:InputTemp x:Name="i_2_1" SensorName="X300" Description="{DynamicResource X300}" Height="53.361" Margin="30,5,18,0"/>
+            <local:InputTemp x:Name="i_2_9" SensorName="X308" Description="{DynamicResource X301}" Height="53.361" Margin="0,5,18,0"/>
+            <local:InputTemp x:Name="i_2_17" SensorName="X400" Description="{DynamicResource X302}" Height="53.361" Margin="0,5,18,0"/>
+            <local:InputTemp x:Name="i_2_25" SensorName="X408" Description="{DynamicResource X303}" Height="53.361" Margin="0,5,18,0"/>
+            <local:InputTemp x:Name="i_2_2" SensorName="X301" Description="{DynamicResource X304}" Height="53.361" Margin="30,5,18,0"/>
+            <local:InputTemp x:Name="i_2_10" SensorName="X309" Description="{DynamicResource X305}" Height="53.361" Margin="0,5,18,0"/>
+            <local:InputTemp x:Name="i_2_18" SensorName="X401" Description="{DynamicResource X306}" Height="53.361" Margin="0,5,18,0"/>
+            <local:InputTemp x:Name="i_2_26" SensorName="X409" Description="{DynamicResource X307}" Height="53.361" Margin="0,5,18,0"/>
+            <local:InputTemp x:Name="i_2_3" SensorName="X302" Description="{DynamicResource X308}" Height="53.361" Margin="30,5,18,0"/>
+            <local:InputTemp x:Name="i_2_11" SensorName="X310" Description="{DynamicResource X309}" Height="53.361" Margin="0,5,18,0"/>
+            <local:InputTemp x:Name="i_2_19" SensorName="X402" Description="{DynamicResource X310}" Height="53.361" Margin="0,5,18,0"/>
+            <local:InputTemp x:Name="i_2_27" SensorName="X410" Description="{DynamicResource X311}" Height="53.361" Margin="0,5,18,0"/>
+            <local:InputTemp x:Name="i_2_4" SensorName="X303" Description="{DynamicResource X312}" Height="53.361" Margin="30,5,18,0"/>
+            <local:InputTemp x:Name="i_2_12" SensorName="X311" Description="{DynamicResource X313}" Height="53.361" Margin="0,5,18,0"/>
+            <local:InputTemp x:Name="i_2_20" SensorName="X403" Description="{DynamicResource X314}" Height="53.361" Margin="0,5,18,0"/>
+            <local:InputTemp x:Name="i_2_28" SensorName="X411" Description="{DynamicResource X315}" Height="53.361" Margin="0,5,18,0"/>
+            <local:InputTemp x:Name="i_2_5" SensorName="X304" Description="{DynamicResource X400}" Height="53.361" Margin="30,5,18,0"/>
+            <local:InputTemp x:Name="i_2_13" SensorName="X312" Description="{DynamicResource X401}" Height="53.361" Margin="0,5,18,0"/>
+            <local:InputTemp x:Name="i_2_21" SensorName="X404" Description="{DynamicResource X402}" Height="53.361" Margin="0,5,18,0"/>
+            <local:InputTemp x:Name="i_2_29" SensorName="X412" Description="{DynamicResource X403}" Height="53.361" Margin="0,5,18,0"/>
+            <local:InputTemp x:Name="i_2_6" SensorName="X305" Description="{DynamicResource X404}" Height="53.361" Margin="30,5,18,0"/>
+            <local:InputTemp x:Name="i_2_14" SensorName="X313" Description="{DynamicResource X406}" Height="53.361" Margin="0,5,18,0"/>
+            <local:InputTemp x:Name="i_2_22" SensorName="X405" Description="{DynamicResource X407}" Height="53.361" Margin="0,5,18,0"/>
+            <local:InputTemp x:Name="i_2_30" SensorName="X413" Description="{DynamicResource X408}" Height="53.361" Margin="0,5,18,0"/>
+            <local:InputTemp x:Name="i_2_7" SensorName="X306" Description="{DynamicResource X409}" Height="53.361" Margin="30,5,18,0"/>
+            <local:InputTemp x:Name="i_2_15" SensorName="X314" Description="{DynamicResource X410}" Height="53.361" Margin="0,5,18,0"/>
+            <local:InputTemp x:Name="i_2_23" SensorName="X406" Description="{DynamicResource X411}" Height="53.361" Margin="0,5,18,0"/>
+            <local:InputTemp x:Name="i_2_31" SensorName="X414" Description="{DynamicResource X412}" Height="53.361" Margin="0,5,18,0"/>
+            <local:InputTemp x:Name="i_2_8" SensorName="X307" Description="{DynamicResource X413}" Height="53.361" Margin="30,5,18,0"/>
+            <local:InputTemp x:Name="i_2_16" SensorName="X315" Description="{DynamicResource X414}" Height="53.361" Margin="0,5,18,0"/>
+            <local:InputTemp x:Name="i_2_24" SensorName="X407" Description="{DynamicResource X415}" Height="53.361" Margin="0,5,18,0"/>
+            <local:InputTemp x:Name="i_2_32" SensorName="X415" Description="{DynamicResource X405}" Height="53.361" Margin="0,5,18,0"/>
+		</WrapPanel>
+		<Button x:Name="btn_Left" Style="{DynamicResource ButtonStyle-Zoom}" Focusable="False" IsTabStop="False" FontWeight="Bold" Background="{x:Null}" HorizontalAlignment="Left" Margin="110,0,0,11.5" Width="98" Cursor="Hand" VerticalAlignment="Bottom" BorderBrush="{x:Null}" Foreground="{x:Null}" BorderThickness="0" Click="btn_Left_Click" Height="86" >
+			<Grid Height="79.5" Width="93">
+				<Image Margin="0,9.25,0,8" Source="/EMS;component/Resources/Image/Left.png"/>
+			</Grid>
+		</Button>
+		<Button x:Name="btn_Right" Style="{DynamicResource ButtonStyle-Zoom}" FontWeight="Bold" Background="{x:Null}" Margin="0,0,108,10.668" Cursor="Hand" HorizontalAlignment="Right" Width="98" VerticalAlignment="Bottom" BorderBrush="{x:Null}" Click="btn_Right_Click" Height="86" >
+			<Grid Height="80.333" Width="93">
+				<Image Margin="0,7.668,0,5.332" Source="/EMS;component/Resources/Image/Right.png"/>
+			</Grid>
+		</Button>
+		<Label x:Name="lb_title" Content="Input-1" Margin="212,0,210,11.5" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" VerticalAlignment="Bottom" Height="93.5" FontSize="50">
+			<Label.Effect>
+				<DropShadowEffect/>
+			</Label.Effect>
+			<Label.Foreground>
+				<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+					<GradientStop Color="#FF00C2B5"/>
+					<GradientStop Color="#FFC4FDF9" Offset="0.741"/>
+				</LinearGradientBrush>
+			</Label.Foreground>
+		</Label>
+		<WrapPanel x:Name="wrapPanel1" Margin="0,12,0,100.5" HorizontalAlignment="Right" Width="825" RenderTransformOrigin="0.5,0.5">
+			<WrapPanel.RenderTransform>
+				<TransformGroup>
+					<ScaleTransform/>
+					<SkewTransform/>
+					<RotateTransform/>
+					<TranslateTransform/>
+				</TransformGroup>
+			</WrapPanel.RenderTransform>
+            <local:InputTemp x:Name="i_1_1" SensorName="X100" Description="{DynamicResource X100}" Height="53.361" Margin="30,5,18,0"/>
+            <local:InputTemp x:Name="i_1_9" SensorName="X108" Description="{DynamicResource X101}" Height="53.361" Margin="0,5,18,0"/>
+            <local:InputTemp x:Name="i_1_17" SensorName="X200" Description="{DynamicResource X102}" Height="53.361" Margin="0,5,18,0"/>
+            <local:InputTemp x:Name="i_1_25" SensorName="X208" Description="{DynamicResource X103}" Height="53.361" Margin="0,5,18,0"/>
+            <local:InputTemp x:Name="i_1_2" SensorName="X101" Description="{DynamicResource X104}" Height="53.361" Margin="30,5,18,0"/>
+            <local:InputTemp x:Name="i_1_10" SensorName="X109" Description="{DynamicResource X105}" Height="53.361" Margin="0,5,18,0"/>
+            <local:InputTemp x:Name="i_1_18" SensorName="X201" Description="{DynamicResource X106}" Height="53.361" Margin="0,5,18,0"/>
+            <local:InputTemp x:Name="i_1_26" SensorName="X209" Description="{DynamicResource X107}" Height="53.361" Margin="0,5,18,0"/>
+            <local:InputTemp x:Name="i_1_3" SensorName="X102" Description="{DynamicResource X108}" Height="53.361" Margin="30,5,18,0"/>
+            <local:InputTemp x:Name="i_1_11" SensorName="X110" Description="{DynamicResource X109}" Height="53.361" Margin="0,5,18,0"/>
+            <local:InputTemp x:Name="i_1_19" SensorName="X202" Description="{DynamicResource X110}" Height="53.361" Margin="0,5,18,0"/>
+            <local:InputTemp x:Name="i_1_27" SensorName="X210" Description="{DynamicResource X111}" Height="53.361" Margin="0,5,18,0"/>
+            <local:InputTemp x:Name="i_1_4" SensorName="X103" Description="{DynamicResource X112}" Height="53.361" Margin="30,5,18,0"/>
+            <local:InputTemp x:Name="i_1_12" SensorName="X111" Description="{DynamicResource X113}" Height="53.361" Margin="0,5,18,0"/>
+            <local:InputTemp x:Name="i_1_20" SensorName="X203" Description="{DynamicResource X114}" Height="53.361" Margin="0,5,18,0"/>
+            <local:InputTemp x:Name="i_1_28" SensorName="X211" Description="{DynamicResource X115}" Height="53.361" Margin="0,5,18,0"/>
+            <local:InputTemp x:Name="i_1_5" SensorName="X104" Description="{DynamicResource X200}" Height="53.361" Margin="30,5,18,0"/>
+            <local:InputTemp x:Name="i_1_13" SensorName="X112" Description="{DynamicResource X201}" Height="53.361" Margin="0,5,18,0"/>
+            <local:InputTemp x:Name="i_1_21" SensorName="X204" Description="{DynamicResource X202}" Height="53.361" Margin="0,5,18,0"/>
+            <local:InputTemp x:Name="i_1_29" SensorName="X212" Description="{DynamicResource X203}" Height="53.361" Margin="0,5,18,0"/>
+            <local:InputTemp x:Name="i_1_6" SensorName="X105" Description="{DynamicResource X204}" Height="53.361" Margin="30,5,18,0"/>
+            <local:InputTemp x:Name="i_1_14" SensorName="X113" Description="{DynamicResource X205}" Height="53.361" Margin="0,5,18,0"/>
+            <local:InputTemp x:Name="i_1_22" SensorName="X205" Description="{DynamicResource X206}" Height="53.361" Margin="0,5,18,0"/>
+            <local:InputTemp x:Name="i_1_30" SensorName="X213" Description="{DynamicResource X207}" Height="53.361" Margin="0,5,18,0"/>
+            <local:InputTemp x:Name="i_1_7" SensorName="X106" Description="{DynamicResource X208}" Height="53.361" Margin="30,5,18,0"/>
+            <local:InputTemp x:Name="i_1_15" SensorName="X114" Description="{DynamicResource X209}" Height="53.361" Margin="0,5,18,0"/>
+            <local:InputTemp x:Name="i_1_23" SensorName="X206" Description="{DynamicResource X210}" Height="53.361" Margin="0,5,18,0"/>
+            <local:InputTemp x:Name="i_1_31" SensorName="X214" Description="{DynamicResource X211}" Height="53.361" Margin="0,5,18,0"/>
+            <local:InputTemp x:Name="i_1_8" SensorName="X107" Description="{DynamicResource X212}" Height="53.361" Margin="30,5,18,0"/>
+            <local:InputTemp x:Name="i_1_16" SensorName="X115" Description="{DynamicResource X213}" Height="53.361" Margin="0,5,18,0"/>
+            <local:InputTemp x:Name="i_1_24" SensorName="X207" Description="{DynamicResource X214}" Height="53.361" Margin="0,5,18,0"/>
+            <local:InputTemp x:Name="i_1_32" SensorName="X215" Description="{DynamicResource X215}" Height="53.361" Margin="0,5,18,0"/>
+		</WrapPanel>
+	</Grid>
+</UserControl>
