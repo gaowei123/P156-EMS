@@ -9,3 +9,14 @@ D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\DataProvider\bin\Debug\StaticRes.
 D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\DataProvider\obj\Debug\DataProvider.csprojResolveAssemblyReference.cache
 D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\DataProvider\obj\Debug\DataProvider.dll
 D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\DataProvider\obj\Debug\DataProvider.pdb
+D:\Git SourceCode Storage\VISHAY\P156-EMS\DataProvider\bin\Debug\DataProvider.dll
+D:\Git SourceCode Storage\VISHAY\P156-EMS\DataProvider\bin\Debug\DataProvider.pdb
+D:\Git SourceCode Storage\VISHAY\P156-EMS\DataProvider\bin\Debug\Common.dll
+D:\Git SourceCode Storage\VISHAY\P156-EMS\DataProvider\bin\Debug\ObjectModule.dll
+D:\Git SourceCode Storage\VISHAY\P156-EMS\DataProvider\bin\Debug\StaticRes.dll
+D:\Git SourceCode Storage\VISHAY\P156-EMS\DataProvider\bin\Debug\Common.pdb
+D:\Git SourceCode Storage\VISHAY\P156-EMS\DataProvider\bin\Debug\ObjectModule.pdb
+D:\Git SourceCode Storage\VISHAY\P156-EMS\DataProvider\bin\Debug\StaticRes.pdb
+D:\Git SourceCode Storage\VISHAY\P156-EMS\DataProvider\obj\Debug\DataProvider.csprojResolveAssemblyReference.cache
+D:\Git SourceCode Storage\VISHAY\P156-EMS\DataProvider\obj\Debug\DataProvider.dll
+D:\Git SourceCode Storage\VISHAY\P156-EMS\DataProvider\obj\Debug\DataProvider.pdb

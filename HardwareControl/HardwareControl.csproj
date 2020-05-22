@@ -71,6 +71,10 @@
     <Compile Include="Weighting.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{947d8c0f-67af-44ba-940d-8d1af301924d}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Common\Common.csproj">
       <Project>{07AAE6BE-2BAD-49D4-A765-C7B1E6060C17}</Project>
       <Name>Common</Name>
@@ -86,6 +90,10 @@
     <ProjectReference Include="..\Logic\Logic.csproj">
       <Project>{78567554-F366-4BCF-9522-0308BF6080FE}</Project>
       <Name>Logic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{9b168eff-998f-42df-9043-72edfe09b32b}</Project>
+      <Name>Model</Name>
     </ProjectReference>
     <ProjectReference Include="..\ObjectModule\ObjectModule.csproj">
       <Project>{D387A622-3909-4D96-AC0A-4EFABE5DFA6C}</Project>

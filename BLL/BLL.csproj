@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Binning.cs" />
+    <Compile Include="Configure.cs" />
     <Compile Include="History.cs" />
     <Compile Include="MixHistory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

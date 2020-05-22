@@ -189,6 +189,17 @@ namespace StaticRes
 
         public static class System_Setting
         {
+            
+            public static string SlotScanner_Index1Port = string.Empty;
+            public static string SlotScanner_Index2Port = string.Empty;
+            public static string SlotScanner_Index3Port = string.Empty;
+            public static string SlotScanner_Index4Port = string.Empty;
+            public static int SlotScanner_BaudRate = 0;
+            public static int SlotScanner_DataBits = 0;
+            public static int SlotScanner_ReceivedBytesThreshold = 0;
+            
+
+
             public static string Print_Label_Before_Load = string.Empty;
             public static string Print_Label_After_Unload = string.Empty;
             public static string Weighing_Scale_COM_Port = string.Empty;

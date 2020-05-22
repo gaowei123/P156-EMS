@@ -8,3 +8,13 @@ D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\Hardware\bin\Debug\StaticRes.pdb
 D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\Hardware\bin\Debug\ObjectModule.pdb
 D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\Hardware\obj\Debug\Hardware.dll
 D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\Hardware\obj\Debug\Hardware.pdb
+D:\Git SourceCode Storage\VISHAY\P156-EMS\Hardware\bin\Debug\Hardware.dll
+D:\Git SourceCode Storage\VISHAY\P156-EMS\Hardware\bin\Debug\Hardware.pdb
+D:\Git SourceCode Storage\VISHAY\P156-EMS\Hardware\bin\Debug\Automation.BDaq.dll
+D:\Git SourceCode Storage\VISHAY\P156-EMS\Hardware\bin\Debug\StaticRes.dll
+D:\Git SourceCode Storage\VISHAY\P156-EMS\Hardware\bin\Debug\ObjectModule.dll
+D:\Git SourceCode Storage\VISHAY\P156-EMS\Hardware\bin\Debug\StaticRes.pdb
+D:\Git SourceCode Storage\VISHAY\P156-EMS\Hardware\bin\Debug\ObjectModule.pdb
+D:\Git SourceCode Storage\VISHAY\P156-EMS\Hardware\obj\Debug\Hardware.csprojResolveAssemblyReference.cache
+D:\Git SourceCode Storage\VISHAY\P156-EMS\Hardware\obj\Debug\Hardware.dll
+D:\Git SourceCode Storage\VISHAY\P156-EMS\Hardware\obj\Debug\Hardware.pdb

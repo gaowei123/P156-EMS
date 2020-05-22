@@ -17,9 +17,8 @@
 using System;
 using System.Data;
 using System.Collections.Generic;
-using Maticsoft.Common;
-using Common.Model;
-namespace Common.BLL
+
+namespace BLL
 {
 	/// <summary>
 	/// Configure
@@ -34,7 +33,7 @@ namespace Common.BLL
 		/// <summary>
 		/// 增加一条数据
 		/// </summary>
-		public bool Add(Common.Model.Configure model)
+		public bool Add(Model.Configure model)
 		{
 			return dal.Add(model);
 		}
@@ -42,7 +41,7 @@ namespace Common.BLL
 		/// <summary>
 		/// 更新一条数据
 		/// </summary>
-		public bool Update(Common.Model.Configure model)
+		public bool Update(Model.Configure model)
 		{
 			return dal.Update(model);
 		}
@@ -59,68 +58,33 @@ namespace Common.BLL
 		/// <summary>
 		/// 得到一个对象实体
 		/// </summary>
-		public Common.Model.Configure GetModel()
+		public Model.Configure GetModel()
 		{
 			//该表无主键信息，请自定义主键/条件字段
 			return dal.GetModel();
 		}
 
-		/// <summary>
-		/// 得到一个对象实体，从缓存中
-		/// </summary>
-		public Common.Model.Configure GetModelByCache()
-		{
-			//该表无主键信息，请自定义主键/条件字段
-			string CacheKey = "ConfigureModel-" ;
-			object objModel = Maticsoft.Common.DataCache.GetCache(CacheKey);
-			if (objModel == null)
-			{
-				try
-				{
-					objModel = dal.GetModel();
-					if (objModel != null)
-					{
-						int ModelCache = Maticsoft.Common.ConfigHelper.GetConfigInt("ModelCache");
-						Maticsoft.Common.DataCache.SetCache(CacheKey, objModel, DateTime.Now.AddMinutes(ModelCache), TimeSpan.Zero);
-					}
-				}
-				catch{}
-			}
-			return (Common.Model.Configure)objModel;
-		}
+	
 
+		
 		/// <summary>
 		/// 获得数据列表
 		/// </summary>
-		public DataSet GetList(string strWhere)
+		public List<Model.Configure> GetAllModelList()
 		{
-			return dal.GetList(strWhere);
-		}
-		/// <summary>
-		/// 获得前几行数据
-		/// </summary>
-		public DataSet GetList(int Top,string strWhere,string filedOrder)
-		{
-			return dal.GetList(Top,strWhere,filedOrder);
+			DataTable dt = dal.GetAllList();
+			return DataTableToList(dt);
 		}
 		/// <summary>
 		/// 获得数据列表
 		/// </summary>
-		public List<Common.Model.Configure> GetModelList(string strWhere)
+		public List<Model.Configure> DataTableToList(DataTable dt)
 		{
-			DataSet ds = dal.GetList(strWhere);
-			return DataTableToList(ds.Tables[0]);
-		}
-		/// <summary>
-		/// 获得数据列表
-		/// </summary>
-		public List<Common.Model.Configure> DataTableToList(DataTable dt)
-		{
-			List<Common.Model.Configure> modelList = new List<Common.Model.Configure>();
+			List<Model.Configure> modelList = new List<Model.Configure>();
 			int rowsCount = dt.Rows.Count;
 			if (rowsCount > 0)
 			{
-				Common.Model.Configure model;
+				Model.Configure model;
 				for (int n = 0; n < rowsCount; n++)
 				{
 					model = dal.DataRowToModel(dt.Rows[n]);
@@ -133,40 +97,11 @@ namespace Common.BLL
 			return modelList;
 		}
 
-		/// <summary>
-		/// 获得数据列表
-		/// </summary>
-		public DataSet GetAllList()
-		{
-			return GetList("");
-		}
-
-		/// <summary>
-		/// 分页获取数据列表
-		/// </summary>
-		public int GetRecordCount(string strWhere)
-		{
-			return dal.GetRecordCount(strWhere);
-		}
-		/// <summary>
-		/// 分页获取数据列表
-		/// </summary>
-		public DataSet GetListByPage(string strWhere, string orderby, int startIndex, int endIndex)
-		{
-			return dal.GetListByPage( strWhere,  orderby,  startIndex,  endIndex);
-		}
-		/// <summary>
-		/// 分页获取数据列表
-		/// </summary>
-		//public DataSet GetList(int PageSize,int PageIndex,string strWhere)
-		//{
-			//return dal.GetList(PageSize,PageIndex,strWhere);
-		//}
+		
+	
 
 		#endregion  BasicMethod
-		#region  ExtensionMethod
 
-		#endregion  ExtensionMethod
 	}
 }
 

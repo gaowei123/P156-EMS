@@ -3,3 +3,7 @@ D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\ObjectModule\bin\Debug\ObjectModu
 D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\ObjectModule\obj\Debug\ObjectModule.dll
 D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\ObjectModule\obj\Debug\ObjectModule.pdb
 D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\ObjectModule\obj\Debug\ObjectModule.csprojResolveAssemblyReference.cache
+D:\Git SourceCode Storage\VISHAY\P156-EMS\ObjectModule\bin\Debug\ObjectModule.dll
+D:\Git SourceCode Storage\VISHAY\P156-EMS\ObjectModule\bin\Debug\ObjectModule.pdb
+D:\Git SourceCode Storage\VISHAY\P156-EMS\ObjectModule\obj\Debug\ObjectModule.dll
+D:\Git SourceCode Storage\VISHAY\P156-EMS\ObjectModule\obj\Debug\ObjectModule.pdb

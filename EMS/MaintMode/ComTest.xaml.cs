@@ -50,26 +50,26 @@ namespace EMS.MaintMode
             try
             {
                 //Handle Scanner
-                //Handle_Scanner.BaudRate = StaticRes.Global.System_Setting.Handle_Scanner_BaudRate;
-                //Handle_Scanner.StopBits = System.IO.Ports.StopBits.One;
-                //Handle_Scanner.DataBits = StaticRes.Global.System_Setting.Handle_Scanner_DataBits;
-                //Handle_Scanner.PortName = StaticRes.Global.System_Setting.Handle_Scanner_COM_Port;
-                //if (!Handle_Scanner.IsOpen)
-                //    Handle_Scanner.Open();
-
-
-
-
-                Handle_Scanner.BaudRate = 115200;
+                Handle_Scanner.BaudRate = StaticRes.Global.System_Setting.Handle_Scanner_BaudRate;
                 Handle_Scanner.StopBits = System.IO.Ports.StopBits.One;
-                Handle_Scanner.DataBits = 8;
-                Handle_Scanner.PortName = "COM4";
+                Handle_Scanner.DataBits = StaticRes.Global.System_Setting.Handle_Scanner_DataBits;
+                Handle_Scanner.PortName = StaticRes.Global.System_Setting.Handle_Scanner_COM_Port;
                 if (!Handle_Scanner.IsOpen)
                     Handle_Scanner.Open();
 
-                Handle_Scanner.NewLine = "\r";
 
-                string aaaa = Handle_Scanner.ReadLine();
+
+                //testing
+                //Handle_Scanner.BaudRate = 115200;
+                //Handle_Scanner.StopBits = System.IO.Ports.StopBits.One;
+                //Handle_Scanner.DataBits = 8;
+                //Handle_Scanner.PortName = "COM4";
+                //if (!Handle_Scanner.IsOpen)
+                //    Handle_Scanner.Open();
+
+                //Handle_Scanner.NewLine = "\r";
+
+                //string aaaa = Handle_Scanner.ReadLine();
 
 
                 //Weight Scale

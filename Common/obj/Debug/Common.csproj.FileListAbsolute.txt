@@ -3,3 +3,7 @@ D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\Common\bin\Debug\Common.pdb
 D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\Common\obj\Debug\Common.dll
 D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\Common\obj\Debug\Common.pdb
 D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache
+D:\Git SourceCode Storage\VISHAY\P156-EMS\Common\bin\Debug\Common.dll
+D:\Git SourceCode Storage\VISHAY\P156-EMS\Common\bin\Debug\Common.pdb
+D:\Git SourceCode Storage\VISHAY\P156-EMS\Common\obj\Debug\Common.dll
+D:\Git SourceCode Storage\VISHAY\P156-EMS\Common\obj\Debug\Common.pdb

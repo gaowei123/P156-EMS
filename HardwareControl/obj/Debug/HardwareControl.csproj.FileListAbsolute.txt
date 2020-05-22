@@ -16,3 +16,27 @@ D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\HardwareControl\bin\Debug\ObjectM
 D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\HardwareControl\bin\Debug\StaticRes.pdb
 D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\HardwareControl\obj\Debug\HardwareControl.dll
 D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\HardwareControl\obj\Debug\HardwareControl.pdb
+D:\Git SourceCode Storage\VISHAY\P156-EMS\HardwareControl\bin\Debug\HardwareControl.dll
+D:\Git SourceCode Storage\VISHAY\P156-EMS\HardwareControl\bin\Debug\HardwareControl.pdb
+D:\Git SourceCode Storage\VISHAY\P156-EMS\HardwareControl\bin\Debug\Automation.BDaq.dll
+D:\Git SourceCode Storage\VISHAY\P156-EMS\HardwareControl\bin\Debug\Common.dll
+D:\Git SourceCode Storage\VISHAY\P156-EMS\HardwareControl\bin\Debug\DataProvider.dll
+D:\Git SourceCode Storage\VISHAY\P156-EMS\HardwareControl\bin\Debug\Hardware.dll
+D:\Git SourceCode Storage\VISHAY\P156-EMS\HardwareControl\bin\Debug\Logic.dll
+D:\Git SourceCode Storage\VISHAY\P156-EMS\HardwareControl\bin\Debug\ObjectModule.dll
+D:\Git SourceCode Storage\VISHAY\P156-EMS\HardwareControl\bin\Debug\StaticRes.dll
+D:\Git SourceCode Storage\VISHAY\P156-EMS\HardwareControl\bin\Debug\Common.pdb
+D:\Git SourceCode Storage\VISHAY\P156-EMS\HardwareControl\bin\Debug\DataProvider.pdb
+D:\Git SourceCode Storage\VISHAY\P156-EMS\HardwareControl\bin\Debug\Hardware.pdb
+D:\Git SourceCode Storage\VISHAY\P156-EMS\HardwareControl\bin\Debug\Logic.pdb
+D:\Git SourceCode Storage\VISHAY\P156-EMS\HardwareControl\bin\Debug\ObjectModule.pdb
+D:\Git SourceCode Storage\VISHAY\P156-EMS\HardwareControl\bin\Debug\StaticRes.pdb
+D:\Git SourceCode Storage\VISHAY\P156-EMS\HardwareControl\obj\Debug\HardwareControl.csprojResolveAssemblyReference.cache
+D:\Git SourceCode Storage\VISHAY\P156-EMS\HardwareControl\obj\Debug\HardwareControl.dll
+D:\Git SourceCode Storage\VISHAY\P156-EMS\HardwareControl\obj\Debug\HardwareControl.pdb
+D:\Git SourceCode Storage\VISHAY\P156-EMS\HardwareControl\bin\Debug\BLL.dll
+D:\Git SourceCode Storage\VISHAY\P156-EMS\HardwareControl\bin\Debug\Model.dll
+D:\Git SourceCode Storage\VISHAY\P156-EMS\HardwareControl\bin\Debug\DAL.dll
+D:\Git SourceCode Storage\VISHAY\P156-EMS\HardwareControl\bin\Debug\BLL.pdb
+D:\Git SourceCode Storage\VISHAY\P156-EMS\HardwareControl\bin\Debug\Model.pdb
+D:\Git SourceCode Storage\VISHAY\P156-EMS\HardwareControl\bin\Debug\DAL.pdb

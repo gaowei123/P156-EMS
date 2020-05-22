@@ -30,13 +30,14 @@ namespace HardwareControl
                     throw new System.Exception("Open connection of I/O card PCI-1733 faild !!");
                 if (!HardwareControl.Motion_Control.Open_Connection())
                     throw new System.Exception("Open connection of motion card PCI-1220U failed !!");
+
                 //if (!HardwareControl.Motion_Control.Rotary_Servo_On())
                 //    throw new System.Exception("Turn on rotary servo function failed !!");
                 //if (!HardwareControl.Motion_Control.Arm_X_Servo_On())
                 //    throw new System.Exception("Turn on arm x servo function failed !!");
                 //if (!HardwareControl.Motion_Control.Arm_Y_Servo_On())
                 //    throw new System.Exception("Turn on arm y servo function failed !!");
-                StaticRes.Global.Hardware_Connection = true;              
+                StaticRes.Global.Hardware_Connection = true;
             }
             catch (Exception ee)
             {
@@ -67,12 +68,27 @@ namespace HardwareControl
             DataTable dt_sys = DataProvider.Local.Configure.Select();
             if (dt_sys.Rows.Count == 0)
                 throw new System.Exception("Read system paramater failed , please check with admin !!");
+
             List<ObjectModule.Local.Configure> configure_list = new List<ObjectModule.Local.Configure>();
             foreach (DataRow a in dt_sys.Rows)
             {
                 ObjectModule.Local.Configure sc = new ObjectModule.Local.Configure(a);
                 configure_list.Add(sc);
             }
+
+
+
+
+
+
+            StaticRes.Global.System_Setting.SlotScanner_Index1Port =  (from m in configure_list where m.NAME == "Slot_Index1_Scanner_COM_Port" select m.VALUE).First<string>();
+            StaticRes.Global.System_Setting.SlotScanner_Index2Port =  (from m in configure_list where m.NAME == "Slot_Index2_Scanner_COM_Port" select m.VALUE).First<string>();
+            StaticRes.Global.System_Setting.SlotScanner_Index3Port =  (from m in configure_list where m.NAME == "Slot_Index3_Scanner_COM_Port" select m.VALUE).First<string>();
+            StaticRes.Global.System_Setting.SlotScanner_Index4Port =  (from m in configure_list where m.NAME == "Slot_Index4_Scanner_COM_Port" select m.VALUE).First<string>();
+            StaticRes.Global.System_Setting.SlotScanner_BaudRate = int.Parse((from m in configure_list where m.NAME == "Slot_Scanner_BaudRate" select m.VALUE).First<string>());
+            StaticRes.Global.System_Setting.SlotScanner_DataBits = int.Parse((from m in configure_list where m.NAME == "Slot_Scanner_DataBits" select m.VALUE).First<string>());
+            StaticRes.Global.System_Setting.SlotScanner_ReceivedBytesThreshold = int.Parse((from m in configure_list where m.NAME == "Slot_Scanner_ReceivedBytesThreshold" select m.VALUE).First<string>());
+            
 
             StaticRes.Global.System_Setting.Print_Label_Before_Load = (from m in configure_list where m.NAME == "Print_Label_Before_Load" select m.VALUE).First<string>();
             StaticRes.Global.System_Setting.Print_Label_After_Unload = (from m in configure_list where m.NAME == "Print_Label_After_Unload" select m.VALUE).First<string>();

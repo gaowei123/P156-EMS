@@ -9,3 +9,14 @@ D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\BLL\bin\Debug\Model.pdb
 D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
 D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\BLL\obj\Debug\BLL.dll
 D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\BLL\obj\Debug\BLL.pdb
+D:\Git SourceCode Storage\VISHAY\P156-EMS\BLL\bin\Debug\BLL.dll
+D:\Git SourceCode Storage\VISHAY\P156-EMS\BLL\bin\Debug\BLL.pdb
+D:\Git SourceCode Storage\VISHAY\P156-EMS\BLL\bin\Debug\Common.dll
+D:\Git SourceCode Storage\VISHAY\P156-EMS\BLL\bin\Debug\DAL.dll
+D:\Git SourceCode Storage\VISHAY\P156-EMS\BLL\bin\Debug\Model.dll
+D:\Git SourceCode Storage\VISHAY\P156-EMS\BLL\bin\Debug\Common.pdb
+D:\Git SourceCode Storage\VISHAY\P156-EMS\BLL\bin\Debug\DAL.pdb
+D:\Git SourceCode Storage\VISHAY\P156-EMS\BLL\bin\Debug\Model.pdb
+D:\Git SourceCode Storage\VISHAY\P156-EMS\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+D:\Git SourceCode Storage\VISHAY\P156-EMS\BLL\obj\Debug\BLL.dll
+D:\Git SourceCode Storage\VISHAY\P156-EMS\BLL\obj\Debug\BLL.pdb

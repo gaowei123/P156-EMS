@@ -60,3 +60,12 @@
 20200522 10:54:40 上午 -- Open COM
 20200522 10:54:42 上午 -- Close COM
 20200522 10:54:42 上午 -- Entry maintenance mode page , user: UBCT
+20200522 15:10:25 下午 -- Start System, Version 1 Revision 1 (2019.03.25 A)
+20200522 15:10:40 下午 -- Start System , Error:找不到指定的模块。 (异常来自 HRESULT:0x8007007E)
+20200522 15:11:32 下午 -- Start System, Version 1 Revision 1 (2019.03.25 A)
+20200522 15:11:47 下午 -- Start System , Error:找不到指定的模块。 (异常来自 HRESULT:0x8007007E)
+20200522 15:11:58 下午 -- Open COM
+20200522 15:12:04 下午 -- Close COM
+20200522 15:12:14 下午 -- Open COM
+20200522 15:12:17 下午 -- Close COM
+20200522 15:12:17 下午 -- Exit system , user: UBCT

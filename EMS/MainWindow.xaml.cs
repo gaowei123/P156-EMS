@@ -44,6 +44,7 @@ namespace EMS
                 return;
             }
 
+
             ColorValueInit();
             InitializeComponent();
 
@@ -146,11 +147,7 @@ namespace EMS
                     ge.DEPARTMENT = "NA";
                     new EMS.AlarmWindow(ge).ShowDialog();
                 }
-
-
-               
                 
-
             }
             catch
             {

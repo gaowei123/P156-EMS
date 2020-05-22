@@ -7,3 +7,12 @@ D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\StaticRes\bin\Debug\ObjectModule.
 D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\StaticRes\obj\Debug\StaticRes.csprojResolveAssemblyReference.cache
 D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\StaticRes\obj\Debug\StaticRes.dll
 D:\UBCT SH\VISHAY\Project Source Code\P156-EMS\StaticRes\obj\Debug\StaticRes.pdb
+D:\Git SourceCode Storage\VISHAY\P156-EMS\StaticRes\bin\Debug\StaticRes.dll
+D:\Git SourceCode Storage\VISHAY\P156-EMS\StaticRes\bin\Debug\StaticRes.pdb
+D:\Git SourceCode Storage\VISHAY\P156-EMS\StaticRes\bin\Debug\Common.dll
+D:\Git SourceCode Storage\VISHAY\P156-EMS\StaticRes\bin\Debug\ObjectModule.dll
+D:\Git SourceCode Storage\VISHAY\P156-EMS\StaticRes\bin\Debug\Common.pdb
+D:\Git SourceCode Storage\VISHAY\P156-EMS\StaticRes\bin\Debug\ObjectModule.pdb
+D:\Git SourceCode Storage\VISHAY\P156-EMS\StaticRes\obj\Debug\StaticRes.csprojResolveAssemblyReference.cache
+D:\Git SourceCode Storage\VISHAY\P156-EMS\StaticRes\obj\Debug\StaticRes.dll
+D:\Git SourceCode Storage\VISHAY\P156-EMS\StaticRes\obj\Debug\StaticRes.pdb
