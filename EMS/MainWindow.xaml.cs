@@ -44,20 +44,20 @@ namespace EMS
                 return;
             }
 
-
             ColorValueInit();
             InitializeComponent();
+
             
+
    
 
             StaticRes.Global.CurrentLanguage = "Chinese";
             langRd = System.Windows.Application.LoadComponent(new Uri(@"Language\" + StaticRes.Global.CurrentLanguage + ".xaml", UriKind.Relative)) as ResourceDictionary;
             Resources.MergedDictionaries.Add(langRd);
             StaticRes.Global.CurrentLanguageRes = langRd;
+
             txt_version.Text = StaticRes.Global.Version.GetInfo();
             Common.Reports.LogFile.Log("Start System," + txt_version.Text);
-
-
 
 
             this.pbMainwindowMixing.Visibility = Visibility.Collapsed;
@@ -74,9 +74,6 @@ namespace EMS
                 Common.Reports.LogFile.Log("Start System , Error:" + ee.Message);
                 System.Windows.MessageBox.Show(ee.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
-
-
-
             try
             {
                 tm_expiry.Tick += new EventHandler(Timer_Expiry);
@@ -87,9 +84,6 @@ namespace EMS
             {
                 Common.Reports.LogFile.Log("Start System , Error:" + ee.Message);
             }
-
-
-
             try
             {         
                 HardwareControl.Initial_Hardware.Connect_readParameter();
@@ -126,16 +120,15 @@ namespace EMS
             {
                 //同步process bar 
                 EMS.Transaction.Mix mixPage = Singleton.MixSingleton.GetInstance;
+
                 if (mixPage.onGoing && mixPage.Visibility == Visibility.Hidden)
-                {
                     this.pbMainwindowMixing.Visibility = Visibility.Visible;
-                }
                 else
-                {
                     this.pbMainwindowMixing.Visibility = Visibility.Collapsed;
-                }
+
+
                 this.pbMainwindowMixing.Value = mixPage.runningTime / mixPage.mixTime * 100;
-                //同步process bar 
+
 
 
 
@@ -757,7 +750,11 @@ namespace EMS
             StaticRes.Global.CurrentLanguageRes = langRd;
         }
         #endregion
-        
+
+      
+
+       
+
 
     }
 }
