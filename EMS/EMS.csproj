@@ -169,6 +169,7 @@
     <Compile Include="Report\usage.xaml.cs">
       <DependentUpon>usage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="testing.cs" />
     <Compile Include="Transaction\Load.xaml.cs">
       <DependentUpon>Load.xaml</DependentUpon>
     </Compile>
