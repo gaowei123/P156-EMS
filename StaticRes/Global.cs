@@ -32,7 +32,7 @@ namespace StaticRes
         {
             public const int VersionNumber = 1;
             public const int RevisionNumber = 1;
-            public const string Date = "2019.03.25 A";
+            public const string Date = "2020.05.25";
 
             public static string GetInfo()
             {

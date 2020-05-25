@@ -67,31 +67,14 @@ namespace HardwareControl
         private int targetSlotIndex;
         private bool received = false;
         
-        string Index1Port = "";
-        string Index2Port = "";
-        string Index3Port = "";
-        string Index4Port = "";
-
+      
 
         public Unload()
         {
-
-            //初始化 scanner com port
-
-            BLL.Configure confBLL = new BLL.Configure();
-            List<Model.Configure> confList = confBLL.GetAllModelList();
-
-
-            Index1Port = (from m in confList where m.NAME == "Slot_Index1_Scanner_COM_Port" select m.VALUE).First<string>();
-            Index2Port = (from m in confList where m.NAME == "Slot_Index2_Scanner_COM_Port" select m.VALUE).First<string>();
-            Index3Port = (from m in confList where m.NAME == "Slot_Index3_Scanner_COM_Port" select m.VALUE).First<string>();
-            Index4Port = (from m in confList where m.NAME == "Slot_Index4_Scanner_COM_Port" select m.VALUE).First<string>();
-            
-            soltScanner.BaudRate = int.Parse((from m in confList where m.NAME == "Slot_Scanner_BaudRate" select m.VALUE).First<string>());
+            soltScanner.BaudRate = StaticRes.Global.System_Setting.SlotScanner_BaudRate;
             soltScanner.StopBits = System.IO.Ports.StopBits.One;
-            soltScanner.DataBits = int.Parse((from m in confList where m.NAME == "Slot_Scanner_DataBits" select m.VALUE).First<string>());
-
-
+            soltScanner.DataBits = StaticRes.Global.System_Setting.SlotScanner_DataBits;
+            
             soltScanner.DataReceived += SoltScanner_DataReceived;
         }
 
@@ -99,7 +82,7 @@ namespace HardwareControl
         {
             received = true;
 
-            Common.Reports.LogFile.Log("Scan Barcode slot successful ,current position:" + Motion_Control.Got_Rotary_Position().ToString() + "");
+            //Common.Reports.LogFile.Log("Scan Barcode slot successful ,current position:" + Motion_Control.Got_Rotary_Position().ToString() + "");
 
            
             string currentSlotID = soltScanner.ReadExisting();
@@ -111,15 +94,12 @@ namespace HardwareControl
             }
             else
             {
-                
-
                 StaticRes.Global.IsOnProgress = false;
                 StaticRes.Global.Transaction_Continue = true;
                 StaticRes.Global.Process_Code.Unloading = "U100";
 
                 System.Threading.Thread.Sleep(1000);
                 LogicUnload(targetSlotID, targetSlotIndex);
-
                 
             }
         }
@@ -244,16 +224,16 @@ namespace HardwareControl
                             switch (Slot_Index)
                             {
                                 case 1:
-                                    soltScanner.PortName = StaticRes.Global.SlotScannerPort.Index1Port;
+                                    soltScanner.PortName = StaticRes.Global.System_Setting.SlotScanner_Index1Port;
                                     break;
                                 case 2:
-                                    soltScanner.PortName = StaticRes.Global.SlotScannerPort.Index2Port;
+                                    soltScanner.PortName = StaticRes.Global.System_Setting.SlotScanner_Index2Port;
                                     break;
                                 case 3:
-                                    soltScanner.PortName = StaticRes.Global.SlotScannerPort.Index3Port;
+                                    soltScanner.PortName = StaticRes.Global.System_Setting.SlotScanner_Index3Port;
                                     break;
                                 case 4:
-                                    soltScanner.PortName = StaticRes.Global.SlotScannerPort.Index4Port;
+                                    soltScanner.PortName = StaticRes.Global.System_Setting.SlotScanner_Index4Port;
                                     break;
                             }
 
@@ -261,6 +241,9 @@ namespace HardwareControl
 
 
                             DateTime startScanTime = new DateTime();
+
+                            System.Threading.Thread.Sleep(10000);
+
                             while (!received)
                             {
                                 Motion_Control.Rotary_Move(1000);

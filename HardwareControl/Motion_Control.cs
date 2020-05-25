@@ -887,8 +887,8 @@ namespace HardwareControl
         public static void Read_Motion_Config()
         {
             System.IO.StreamReader sw = new System.IO.StreamReader(".\\motion_setting.cfg");
-            string x = sw.ReadLine();
-            string R_PlsPerUnit = sw.ReadLine(); ;
+            string R_PlsPerUnit = sw.ReadLine();
+
             StaticRes.Global.Rotary_Motor_Parameter.PlsPerUnit = int.Parse(R_PlsPerUnit.Substring(R_PlsPerUnit.IndexOf('=') + 1, R_PlsPerUnit.Length - R_PlsPerUnit.IndexOf('=') - 1));
             string R_MaxAcd = sw.ReadLine();
             StaticRes.Global.Rotary_Motor_Parameter.MaxAcc = int.Parse(R_MaxAcd.Substring(R_MaxAcd.IndexOf('=') + 1, R_MaxAcd.Length - R_MaxAcd.IndexOf('=') - 1));

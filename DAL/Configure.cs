@@ -142,16 +142,21 @@ namespace Common.DAL
 		/// <summary>
 		/// 得到一个对象实体
 		/// </summary>
-		public Model.Configure GetModel()
+		public Model.Configure GetModel(string sName)
 		{
-			//该表无主键信息，请自定义主键/条件字段
-			StringBuilder strSql=new StringBuilder();
+            if (string.IsNullOrEmpty(sName))
+                return null;
+
+            StringBuilder strSql=new StringBuilder();
 			strSql.Append("select  top 1 CATEGORY,NAME,VALUE,UNIT,UPDATED_TIME,USER_ID,USER_GROUP,DEFAULT_VALUE from Configure ");
-			strSql.Append(" where ");
+			strSql.Append(" where NAME = @name ");
 			SqlParameter[] parameters = {
+                new SqlParameter("@name", SqlDbType.VarChar,50)
 			};
 
-			Model.Configure model=new Model.Configure();
+            parameters[0].Value = sName;
+
+		
 			DataTable dt = Common.DB.SqlDB.Query(strSql.ToString(),parameters);
 			if(dt.Rows.Count>0)
 			{

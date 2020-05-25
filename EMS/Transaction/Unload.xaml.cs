@@ -438,6 +438,9 @@ namespace EMS.Transaction
 
                         
                         mixPage.ShowWindow();
+
+
+                        btn_close_Click(null,null);
                     }
                     #endregion
 

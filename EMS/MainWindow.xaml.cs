@@ -28,11 +28,9 @@ namespace EMS
     /// </summary>
     public partial class MainWindow : Window
     {
-        public static ResourceDictionary langRd = null;
+ 
         DispatcherTimer tm = new DispatcherTimer();
         DispatcherTimer tm_expiry = new DispatcherTimer();
-        private delegate void ReadCom();
-        private HardwareControl.Load load = new HardwareControl.Load();
 
         public MainWindow()
         {
@@ -45,23 +43,31 @@ namespace EMS
             }
 
 
-            ColorValueInit();
+         
+
             InitializeComponent();
 
-            
 
-   
+            ColorValueInit();
+
 
             StaticRes.Global.CurrentLanguage = "Chinese";
-            langRd = System.Windows.Application.LoadComponent(new Uri(@"Language\" + StaticRes.Global.CurrentLanguage + ".xaml", UriKind.Relative)) as ResourceDictionary;
+
+            ResourceDictionary langRd = System.Windows.Application.LoadComponent(new Uri(@"Language\" + StaticRes.Global.CurrentLanguage + ".xaml", UriKind.Relative)) as ResourceDictionary;
             Resources.MergedDictionaries.Add(langRd);
             StaticRes.Global.CurrentLanguageRes = langRd;
 
             txt_version.Text = StaticRes.Global.Version.GetInfo();
-            Common.Reports.LogFile.Log("Start System," + txt_version.Text);
+       
 
 
             this.pbMainwindowMixing.Visibility = Visibility.Collapsed;
+
+
+            
+            InitConfiguration();
+
+            InitSlotPosition();
 
 
             try
@@ -75,6 +81,7 @@ namespace EMS
                 Common.Reports.LogFile.Log("Start System , Error:" + ee.Message);
                 System.Windows.MessageBox.Show(ee.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
+
             try
             {
                 tm_expiry.Tick += new EventHandler(Timer_Expiry);
@@ -85,9 +92,14 @@ namespace EMS
             {
                 Common.Reports.LogFile.Log("Start System , Error:" + ee.Message);
             }
+
             try
-            {         
-                HardwareControl.Initial_Hardware.Connect_readParameter();
+            {
+                //HardwareControl.Initial_Hardware.Connect_readParameter();  setting config, slot position, motion config, connecting io card 分开成各个function.
+
+                HardwareControl.Motion_Control.Read_Motion_Config();
+                HardwareControl.Initial_Hardware.ConnectIOCard();
+
                 if (StaticRes.Global.Hardware_Connection)
                 {
                     tm.Tick += new EventHandler(Timer);
@@ -740,9 +752,7 @@ namespace EMS
 
 
 
-            langRd = System.Windows.Application.LoadComponent(
-                                       new Uri(@"Language\" + StaticRes.Global.CurrentLanguage + ".xaml", UriKind.Relative))
-                           as ResourceDictionary;
+            ResourceDictionary langRd = System.Windows.Application.LoadComponent(new Uri(@"Language\" + StaticRes.Global.CurrentLanguage + ".xaml", UriKind.Relative)) as ResourceDictionary;
             Resources.MergedDictionaries.Add(langRd);
             StaticRes.Global.CurrentLanguageRes = langRd;
         }
@@ -751,6 +761,97 @@ namespace EMS
       
 
        
+
+
+
+
+
+
+
+
+        private void InitConfiguration()
+        {
+            BLL.Configure confBLL = new BLL.Configure();
+            List<Model.Configure> confList = confBLL.GetAllModelList();
+            if (confList == null)
+            {
+                System.Windows.MessageBox.Show("Get configuration fail!");
+                Common.Reports.LogFile.Log("[EMS.Mainwindow], InitConfiguration fail, get config table null!");
+            }
+            else
+            {
+                StaticRes.Global.System_Setting.SlotScanner_Index1Port = (from m in confList where m.NAME == "Slot_Index1_Scanner_COM_Port" select m.VALUE).First<string>();
+                StaticRes.Global.System_Setting.SlotScanner_Index2Port = (from m in confList where m.NAME == "Slot_Index2_Scanner_COM_Port" select m.VALUE).First<string>();
+                StaticRes.Global.System_Setting.SlotScanner_Index3Port = (from m in confList where m.NAME == "Slot_Index3_Scanner_COM_Port" select m.VALUE).First<string>();
+                StaticRes.Global.System_Setting.SlotScanner_Index4Port = (from m in confList where m.NAME == "Slot_Index4_Scanner_COM_Port" select m.VALUE).First<string>();
+                StaticRes.Global.System_Setting.SlotScanner_BaudRate = int.Parse((from m in confList where m.NAME == "Slot_Scanner_BaudRate" select m.VALUE).First<string>());
+                StaticRes.Global.System_Setting.SlotScanner_DataBits = int.Parse((from m in confList where m.NAME == "Slot_Scanner_DataBits" select m.VALUE).First<string>());
+                StaticRes.Global.System_Setting.SlotScanner_ReceivedBytesThreshold = int.Parse((from m in confList where m.NAME == "Slot_Scanner_ReceivedBytesThreshold" select m.VALUE).First<string>());
+
+
+                StaticRes.Global.System_Setting.Print_Label_Before_Load = (from m in confList where m.NAME == "Print_Label_Before_Load" select m.VALUE).First<string>();
+                StaticRes.Global.System_Setting.Print_Label_After_Unload = (from m in confList where m.NAME == "Print_Label_After_Unload" select m.VALUE).First<string>();
+                StaticRes.Global.System_Setting.Weighing_Scale_COM_Port = (from m in confList where m.NAME == "Weighing_Scale_COM_Port" select m.VALUE).First<string>();
+                StaticRes.Global.System_Setting.Weighing_Scale_BaudRate = int.Parse((from m in confList where m.NAME == "Weighing_Scale_BaudRate" select m.VALUE).First<string>());
+                StaticRes.Global.System_Setting.Weighing_Scale_DataBits = int.Parse((from m in confList where m.NAME == "Weighing_Scale_DataBits" select m.VALUE).First<string>());
+                StaticRes.Global.System_Setting.Weighing_Scale_ReceivedBytesThreshold = int.Parse((from m in confList where m.NAME == "Weighing_Scale_ReceivedBytesThreshold" select m.VALUE).First<string>());
+
+                StaticRes.Global.System_Setting.Printer_COM_Port = (from m in confList where m.NAME == "Printer_COM_Port" select m.VALUE).First<string>();
+                StaticRes.Global.System_Setting.Printer_BaudRate = int.Parse((from m in confList where m.NAME == "Printer_BaudRate" select m.VALUE).First<string>());
+                StaticRes.Global.System_Setting.Printer_DataBits = int.Parse((from m in confList where m.NAME == "Printer_DataBits" select m.VALUE).First<string>());
+                StaticRes.Global.System_Setting.Printer_ReceivedBytesThreshold = int.Parse((from m in confList where m.NAME == "Printer_ReceivedBytesThreshold" select m.VALUE).First<string>());
+
+                StaticRes.Global.System_Setting.Handle_Scanner_COM_Port = (from m in confList where m.NAME == "Handle_Scanner_COM_Port" select m.VALUE).First<string>();
+                StaticRes.Global.System_Setting.Handle_Scanner_BaudRate = int.Parse((from m in confList where m.NAME == "Handle_Scanner_BaudRate" select m.VALUE).First<string>());
+                StaticRes.Global.System_Setting.Handle_Scanner_DataBits = int.Parse((from m in confList where m.NAME == "Handle_Scanner_DataBits" select m.VALUE).First<string>());
+                StaticRes.Global.System_Setting.Handle_Scanner_ReceivedBytesThreshold = int.Parse((from m in confList where m.NAME == "Handle_Scanner_ReceivedBytesThreshold" select m.VALUE).First<string>());
+
+                StaticRes.Global.System_Setting.Idle_Time_To_Exit = int.Parse((from m in confList where m.NAME == "Idle_Time_To_Exit" select m.VALUE).First<string>());
+                StaticRes.Global.System_Setting.Online_Mode = (from m in confList where m.NAME == "Online_Mode" select m.VALUE).First<string>();
+                StaticRes.Global.System_Setting.Allow_Manual_KeyIn = (from m in confList where m.NAME == "Allow_Manual_KeyIn" select m.VALUE).First<string>();
+                StaticRes.Global.System_Setting.Storage_Pre_Set_Qty = int.Parse((from m in confList where m.NAME == "Storage_Pre_Set_Qty" select m.VALUE).First<string>());
+                StaticRes.Global.System_Setting.One_Cycle_Pulse = int.Parse((from m in confList where m.NAME == "One_Cycle_Pulse" select m.VALUE).First<string>());
+
+                StaticRes.Global.System_Setting.Rotary_Home_Low_Velocity = int.Parse((from m in confList where m.NAME == "Rotary_Home_Low_Velocity" select m.VALUE).First<string>());
+                StaticRes.Global.System_Setting.Rotary_Home_High_Velocity = int.Parse((from m in confList where m.NAME == "Rotary_Home_High_Velocity" select m.VALUE).First<string>());
+                StaticRes.Global.System_Setting.Rotary_Home_Acc = int.Parse((from m in confList where m.NAME == "Rotary_Home_Acc" select m.VALUE).First<string>());
+                StaticRes.Global.System_Setting.Rotary_Home_Dcc = int.Parse((from m in confList where m.NAME == "Rotary_Home_Dcc" select m.VALUE).First<string>());
+                StaticRes.Global.System_Setting.Rotary_Home_Jerk = int.Parse((from m in confList where m.NAME == "Rotary_Home_Jerk" select m.VALUE).First<string>());
+
+                StaticRes.Global.System_Setting.Rotary_Move_Low_Velocity = int.Parse((from m in confList where m.NAME == "Rotary_Move_Low_Velocity" select m.VALUE).First<string>());
+                StaticRes.Global.System_Setting.Rotary_Move_High_Velocity = int.Parse((from m in confList where m.NAME == "Rotary_Move_High_Velocity" select m.VALUE).First<string>());
+                StaticRes.Global.System_Setting.Rotary_Move_Acc = int.Parse((from m in confList where m.NAME == "Rotary_Move_Acc" select m.VALUE).First<string>());
+                StaticRes.Global.System_Setting.Rotary_Move_Dcc = int.Parse((from m in confList where m.NAME == "Rotary_Move_Dcc" select m.VALUE).First<string>());
+                StaticRes.Global.System_Setting.Rotary_Move_Jerk = int.Parse((from m in confList where m.NAME == "Rotary_Move_Jerk" select m.VALUE).First<string>());
+
+                StaticRes.Global.System_Setting.Rotary_Homing_Pitch = int.Parse((from m in confList where m.NAME == "Rotary_Homing_Pitch" select m.VALUE).First<string>());
+
+                StaticRes.Global.System_Setting.Index_1_Capacity = int.Parse((from m in confList where m.NAME == "Index_1_Capacity" select m.VALUE).First<string>());
+                StaticRes.Global.System_Setting.Index_2_Capacity = int.Parse((from m in confList where m.NAME == "Index_2_Capacity" select m.VALUE).First<string>());
+                StaticRes.Global.System_Setting.Index_3_Capacity = int.Parse((from m in confList where m.NAME == "Index_3_Capacity" select m.VALUE).First<string>());
+
+
+                StaticRes.Global.System_Setting.Bypass_Syringe_Top_Cover_Sensor = (from m in confList where m.NAME == "Bypass_Syringe_Top_Cover_Sensor" select m.VALUE).First<string>();
+                StaticRes.Global.System_Setting.Bypass_Syringe_30cc_Cap_Present_Sensor = (from m in confList where m.NAME == "Bypass_Syringe_30cc_Cap_Present_Sensor" select m.VALUE).First<string>();
+                StaticRes.Global.System_Setting.Bypass_Syringe_10cc_Cap_Present_Sensor = (from m in confList where m.NAME == "Bypass_Syringe_10cc_Cap_Present_Sensor" select m.VALUE).First<string>();
+                StaticRes.Global.System_Setting.Bypass_Syringe_5cc_Cap_Present_Sensor = (from m in confList where m.NAME == "Bypass_Syringe_5cc_Cap_Present_Sensor" select m.VALUE).First<string>();
+
+                StaticRes.Global.System_Setting.Time_1 = int.Parse((from m in confList where m.NAME == "Time_1" select m.VALUE).First<string>());
+                StaticRes.Global.System_Setting.Reminder_time = (from m in confList where m.NAME == "Reminder_time" select m.VALUE).First<string>();
+            }
+        }
+
+        private void InitSlotPosition()
+        {           
+            BLL.Slot_Position slotBLL = new BLL.Slot_Position();
+            List<Model.Slot_Position> slotList = slotBLL.GetAllModelList();
+
+            foreach (Model.Slot_Position slot in slotList)
+            {
+                StaticRes.Global.Slot_Position[slot.SLOT_ID.Value - 1] = slot.POSITION.Value;
+            }
+        }
+
 
 
     }

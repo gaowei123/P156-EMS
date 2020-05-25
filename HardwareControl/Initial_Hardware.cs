@@ -46,6 +46,32 @@ namespace HardwareControl
             }
         }
 
+
+        public static void ConnectIOCard()
+        {
+            try
+            {
+                DEVFEATURES devFeatures_IO_1756 = new DEVFEATURES();
+                DEVFEATURES devFeatures_IO_1733 = new DEVFEATURES();
+
+                if (!Hardware.IO_DLL.PCI_1756.Open_Connect(1, ref StaticRes.Global.Device_Handle_IO_PCI1756, ref devFeatures_IO_1756))
+                    throw new System.Exception("Open connection of I/O card PCI-1756 faild !!");
+                if (!Hardware.IO_DLL.PCI_1733.Open_Connect(0, ref StaticRes.Global.Device_Handle_IO_PCI1733, ref devFeatures_IO_1733))
+                    throw new System.Exception("Open connection of I/O card PCI-1733 faild !!");
+                if (!HardwareControl.Motion_Control.Open_Connection())
+                    throw new System.Exception("Open connection of motion card PCI-1220U failed !!");
+
+                StaticRes.Global.Hardware_Connection = true;
+            }
+            catch (Exception ee)
+            {
+                StaticRes.Global.Hardware_Connection = false;
+                throw ee;
+            }
+        }
+
+
+
         public static void Close_Connect()
         {
             try
@@ -145,6 +171,8 @@ namespace HardwareControl
             {
                 StaticRes.Global.Slot_Position[i] = int.Parse(dt.Rows[i]["POSITION"].ToString());
             }
+
+
             Motion_Control.Read_Motion_Config();
         }
 

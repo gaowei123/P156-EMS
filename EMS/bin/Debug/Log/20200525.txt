@@ -1,0 +1,185 @@
+20200525 09:44:25 上午 -- Start System, Version 1 Revision 1 (2019.03.25 A)
+20200525 09:44:42 上午 -- Start System , Error:找不到指定的模块。 (异常来自 HRESULT:0x8007007E)
+20200525 09:44:49 上午 -- Open COM
+20200525 09:44:52 上午 -- Close COM
+20200525 09:44:52 上午 -- Enter homing page , user: UBCT
+20200525 09:45:05 上午 -- Start Homing
+20200525 09:46:00 上午 -- Open COM
+20200525 09:46:14 上午 -- Entry unload page , user: UBCT
+20200525 09:46:19 上午 -- Auto exit unload page becuase idle time achieve setting  , user : UBCT
+20200525 11:24:48 上午 -- Start System , Error:未能找到文件“D:\Git SourceCode Storage\VISHAY\P156-EMS\EMS\bin\Debug\motion_setting.cfg”。
+20200525 11:24:57 上午 -- Start System , Error:找不到指定的模块。 (异常来自 HRESULT:0x8007007E)
+20200525 11:24:58 上午 -- [EMS.Transaction.Mix], Initalize error, exception:System.Data.SqlClient.SqlException: 参数化查询 '(@name varchar(50))select  top 1 CATEGORY,NAME,VALUE,UNIT,UPDATE' 需要参数 '@name'，但未提供该参数。
+   在 Common.DB.SqlDB.Query(String strSql, SqlParameter[] parameters) 位置 D:\Git SourceCode Storage\VISHAY\P156-EMS\Common\DB\SqlDB.cs:行号 96
+   在 Common.DAL.Configure.GetModel(String sName) 位置 D:\Git SourceCode Storage\VISHAY\P156-EMS\DAL\Configure.cs:行号 158
+   在 BLL.Configure.GetModel(String sName) 位置 D:\Git SourceCode Storage\VISHAY\P156-EMS\BLL\Configure.cs:行号 64
+   在 EMS.Transaction.Mix..ctor() 位置 D:\Git SourceCode Storage\VISHAY\P156-EMS\EMS\Transaction\Mix.xaml.cs:行号 78
+20200525 11:25:55 上午 -- Open COM
+20200525 11:25:58 上午 -- Close COM
+20200525 12:09:34 下午 -- Start System , Error:找不到指定的模块。 (异常来自 HRESULT:0x8007007E)
+20200525 12:09:36 下午 -- [EMS.Transaction.Mix], Initalize error, exception:System.Data.SqlClient.SqlException: 参数化查询 '(@name varchar(50))select  top 1 CATEGORY,NAME,VALUE,UNIT,UPDATE' 需要参数 '@name'，但未提供该参数。
+   在 Common.DB.SqlDB.Query(String strSql, SqlParameter[] parameters) 位置 D:\Git SourceCode Storage\VISHAY\P156-EMS\Common\DB\SqlDB.cs:行号 96
+   在 Common.DAL.Configure.GetModel(String sName) 位置 D:\Git SourceCode Storage\VISHAY\P156-EMS\DAL\Configure.cs:行号 158
+   在 BLL.Configure.GetModel(String sName) 位置 D:\Git SourceCode Storage\VISHAY\P156-EMS\BLL\Configure.cs:行号 64
+   在 EMS.Transaction.Mix..ctor() 位置 D:\Git SourceCode Storage\VISHAY\P156-EMS\EMS\Transaction\Mix.xaml.cs:行号 84
+20200525 12:09:41 下午 -- Open COM
+20200525 12:09:44 下午 -- Close COM
+20200525 12:09:51 下午 -- Enter homing page , user: UBCT
+20200525 12:10:18 下午 -- Start Homing
+20200525 12:10:40 下午 -- Open COM
+20200525 12:10:40 下午 -- Entry unload page , user: UBCT
+20200525 12:48:41 下午 -- Start System , Error:找不到指定的模块。 (异常来自 HRESULT:0x8007007E)
+20200525 12:48:46 下午 -- [EMS.Transaction.Mix], Initalize error, exception:System.Data.SqlClient.SqlException: 参数化查询 '(@name varchar(50))select  top 1 CATEGORY,NAME,VALUE,UNIT,UPDATE' 需要参数 '@name'，但未提供该参数。
+   在 Common.DB.SqlDB.Query(String strSql, SqlParameter[] parameters) 位置 D:\Git SourceCode Storage\VISHAY\P156-EMS\Common\DB\SqlDB.cs:行号 96
+   在 Common.DAL.Configure.GetModel(String sName) 位置 D:\Git SourceCode Storage\VISHAY\P156-EMS\DAL\Configure.cs:行号 158
+   在 BLL.Configure.GetModel(String sName) 位置 D:\Git SourceCode Storage\VISHAY\P156-EMS\BLL\Configure.cs:行号 64
+   在 EMS.Transaction.Mix..ctor() 位置 D:\Git SourceCode Storage\VISHAY\P156-EMS\EMS\Transaction\Mix.xaml.cs:行号 84
+20200525 12:48:50 下午 -- Open COM
+20200525 12:48:54 下午 -- Close COM
+20200525 12:51:26 下午 -- Start System , Error:找不到指定的模块。 (异常来自 HRESULT:0x8007007E)
+20200525 12:51:27 下午 -- [EMS.Transaction.Mix], Initalize error, exception:System.Data.SqlClient.SqlException: 参数化查询 '(@name varchar(50))select  top 1 CATEGORY,NAME,VALUE,UNIT,UPDATE' 需要参数 '@name'，但未提供该参数。
+   在 Common.DB.SqlDB.Query(String strSql, SqlParameter[] parameters) 位置 D:\Git SourceCode Storage\VISHAY\P156-EMS\Common\DB\SqlDB.cs:行号 96
+   在 Common.DAL.Configure.GetModel(String sName) 位置 D:\Git SourceCode Storage\VISHAY\P156-EMS\DAL\Configure.cs:行号 158
+   在 BLL.Configure.GetModel(String sName) 位置 D:\Git SourceCode Storage\VISHAY\P156-EMS\BLL\Configure.cs:行号 64
+   在 EMS.Transaction.Mix..ctor() 位置 D:\Git SourceCode Storage\VISHAY\P156-EMS\EMS\Transaction\Mix.xaml.cs:行号 84
+20200525 12:51:31 下午 -- Open COM
+20200525 12:51:35 下午 -- Close COM
+20200525 12:54:15 下午 -- Open COM
+20200525 12:55:50 下午 -- Start System , Error:找不到指定的模块。 (异常来自 HRESULT:0x8007007E)
+20200525 12:55:57 下午 -- Open COM
+20200525 12:56:00 下午 -- Close COM
+20200525 12:56:58 下午 -- Open COM
+20200525 12:57:01 下午 -- Close COM
+20200525 12:57:06 下午 -- Enter homing page , user: UBCT
+20200525 12:58:08 下午 -- Start System , Error:找不到指定的模块。 (异常来自 HRESULT:0x8007007E)
+20200525 12:58:14 下午 -- Open COM
+20200525 12:58:17 下午 -- Close COM
+20200525 13:00:36 下午 -- Start System , Error:找不到指定的模块。 (异常来自 HRESULT:0x8007007E)
+20200525 13:00:41 下午 -- Open COM
+20200525 13:00:44 下午 -- Close COM
+20200525 13:00:44 下午 -- Entry admin mode page , user: UBCT
+20200525 13:00:48 下午 -- Open COM
+20200525 13:00:50 下午 -- Close COM
+20200525 13:02:37 下午 -- Open COM
+20200525 13:02:46 下午 -- Close COM
+20200525 13:02:51 下午 -- Open COM
+20200525 13:02:56 下午 -- Close COM
+20200525 13:03:06 下午 -- Open COM
+20200525 13:03:09 下午 -- Close COM
+20200525 13:03:14 下午 -- Enter homing page , user: UBCT
+20200525 13:03:24 下午 -- Start Homing
+20200525 13:03:49 下午 -- Stop Homing
+20200525 13:03:55 下午 -- Start Homing
+20200525 13:04:55 下午 -- Open COM
+20200525 13:04:58 下午 -- Entry unload page , user: UBCT
+20200525 13:05:23 下午 -- Start System , Error:找不到指定的模块。 (异常来自 HRESULT:0x8007007E)
+20200525 13:05:31 下午 -- Open COM
+20200525 13:05:34 下午 -- Close COM
+20200525 13:05:39 下午 -- Enter homing page , user: UBCT
+20200525 13:06:51 下午 -- Start System , Error:找不到指定的模块。 (异常来自 HRESULT:0x8007007E)
+20200525 13:06:57 下午 -- Open COM
+20200525 13:07:04 下午 -- Close COM
+20200525 13:07:06 下午 -- Enter homing page , user: UBCT
+20200525 13:07:12 下午 -- Start Homing
+20200525 13:07:31 下午 -- Stop Homing
+20200525 13:07:35 下午 -- Close COM
+20200525 13:07:37 下午 -- Enter homing page , user: UBCT
+20200525 13:07:42 下午 -- Start Homing
+20200525 13:08:00 下午 -- Stop Homing
+20200525 13:08:22 下午 -- Homing step -H000 - Turn on green light
+20200525 13:08:30 下午 -- Homing step -H100 - Loading door close and check X102 sensor
+20200525 13:08:43 下午 -- Homing step -H200 - Check thawing door close sensor X103 
+20200525 13:09:00 下午 -- Homing step -H2300 - Homing complete
+20200525 13:09:41 下午 -- Stop Homing
+20200525 13:10:26 下午 -- Open COM
+20200525 13:10:27 下午 -- Close COM
+20200525 13:10:29 下午 -- Enter homing page , user: 
+20200525 13:10:37 下午 -- Start Homing
+20200525 13:11:08 下午 -- Homing step -H2300 - Homing complete
+20200525 13:12:00 下午 -- Open COM
+20200525 13:12:04 下午 -- Close COM
+20200525 13:12:07 下午 -- Enter homing page , user: UBCT
+20200525 13:12:25 下午 -- Start Homing
+20200525 13:12:35 下午 -- Homing step -H2300 - Homing complete
+20200525 13:13:03 下午 -- Open COM
+20200525 13:13:05 下午 -- Entry unload page , user: UBCT
+20200525 13:15:41 下午 -- Auto exit unload page becuase idle time achieve setting  , user : UBCT
+20200525 13:15:41 下午 -- Close COM
+20200525 13:19:00 下午 -- Open COM
+20200525 13:19:04 下午 -- Close COM
+20200525 13:19:33 下午 -- Open COM
+20200525 13:19:34 下午 -- Entry unload page , user: UBCT
+20200525 13:27:05 下午 -- Start Unload , Part ID : 20160106164944 ; Sapcode : AWEAWEF ; Batch No : RW252736.1 ; User ID : UBCT
+20200525 13:27:44 下午 -- Unloading-U000 -  Rotary move to Slot-1,Position:9500
+20200525 13:28:00 下午 -- Unloading-U050 -  Scan Slot-1 Barcode ,Position:9500
+20200525 13:29:21 下午 -- Close COM
+20200525 13:39:21 下午 -- Start System , Error:找不到指定的模块。 (异常来自 HRESULT:0x8007007E)
+20200525 13:39:31 下午 -- Open COM
+20200525 13:39:35 下午 -- Close COM
+20200525 13:39:43 下午 -- Open COM
+20200525 13:39:44 下午 -- Entry unload page , user: UBCT
+20200525 13:40:52 下午 -- Exit unload page  , user : UBCT
+20200525 13:40:52 下午 -- Close COM
+20200525 13:41:19 下午 -- Open COM
+20200525 13:41:23 下午 -- Close COM
+20200525 13:41:30 下午 -- Open COM
+20200525 13:41:31 下午 -- Entry unload page , user: UBCT
+20200525 13:42:20 下午 -- Start Unload , Part ID : 20160106164944 ; Sapcode : AWEAWEF ; Batch No : RW252736.1 ; User ID : UBCT
+20200525 13:42:34 下午 -- Unloading-U000 -  Rotary move to Slot-1,Position:9500
+20200525 13:42:44 下午 -- Unloading-U050 -  Scan Slot-1 Barcode ,Position:9500
+20200525 13:44:42 下午 -- Start System , Error:找不到指定的模块。 (异常来自 HRESULT:0x8007007E)
+20200525 13:44:45 下午 -- Open COM
+20200525 13:44:50 下午 -- Close COM
+20200525 13:44:53 下午 -- Open COM
+20200525 13:44:56 下午 -- Close COM
+20200525 13:45:07 下午 -- Entry unload page , user: UBCT
+20200525 13:45:43 下午 -- Start Unload , Part ID : 20160106164944 ; Sapcode : AWEAWEF ; Batch No : RW252736.1 ; User ID : UBCT
+20200525 13:45:53 下午 -- Unloading-U000 -  Rotary move to Slot-1,Position:9500
+20200525 13:45:59 下午 -- Unloading-U050 -  Scan Slot-1 Barcode ,Position:9500
+20200525 13:49:13 下午 -- Start System , Error:找不到指定的模块。 (异常来自 HRESULT:0x8007007E)
+20200525 13:49:17 下午 -- Open COM
+20200525 13:49:20 下午 -- Close COM
+20200525 13:49:27 下午 -- Open COM
+20200525 13:49:27 下午 -- Entry unload page , user: UBCT
+20200525 13:50:03 下午 -- Start System , Error:找不到指定的模块。 (异常来自 HRESULT:0x8007007E)
+20200525 13:50:06 下午 -- Open COM
+20200525 13:50:10 下午 -- Close COM
+20200525 13:50:25 下午 -- Entry unload page , user: UBCT
+20200525 13:50:42 下午 -- Start Unload , Part ID : 20160106164944 ; Sapcode : AWEAWEF ; Batch No : RW252736.1 ; User ID : UBCT
+20200525 13:50:52 下午 -- Unloading-U000 -  Rotary move to Slot-1,Position:9500
+20200525 13:50:57 下午 -- Unloading-U050 -  Scan Slot-1 Barcode ,Position:9500
+20200525 13:52:15 下午 -- Start System , Error:找不到指定的模块。 (异常来自 HRESULT:0x8007007E)
+20200525 13:52:18 下午 -- Open COM
+20200525 13:52:21 下午 -- Close COM
+20200525 13:52:30 下午 -- Entry unload page , user: UBCT
+20200525 13:52:45 下午 -- Start Unload , Part ID : 20160106164944 ; Sapcode : AWEAWEF ; Batch No : RW252736.1 ; User ID : UBCT
+20200525 13:52:59 下午 -- Unloading-U050 -  Scan Slot-1 Barcode ,Position:9500
+20200525 13:53:39 下午 -- Start System , Error:找不到指定的模块。 (异常来自 HRESULT:0x8007007E)
+20200525 13:53:48 下午 -- Open COM
+20200525 13:53:51 下午 -- Close COM
+20200525 13:54:00 下午 -- Open COM
+20200525 13:54:00 下午 -- Entry unload page , user: UBCT
+20200525 13:54:15 下午 -- Start Unload , Part ID : 20160106164944 ; Sapcode : AWEAWEF ; Batch No : RW252736.1 ; User ID : UBCT
+20200525 13:54:22 下午 -- Unloading-U050 -  Scan Slot-1 Barcode ,Position:9500
+20200525 13:55:22 下午 -- Unloading-U200 - Open Gate A and check X109
+20200525 13:55:47 下午 -- Unloading-U030 - Ejector A Up and check X208
+20200525 13:56:18 下午 -- Start System , Error:找不到指定的模块。 (异常来自 HRESULT:0x8007007E)
+20200525 13:56:25 下午 -- Open COM
+20200525 13:56:29 下午 -- Close COM
+20200525 13:56:39 下午 -- Entry unload page , user: UBCT
+20200525 13:56:55 下午 -- Start Unload , Part ID : 20160106164944 ; Sapcode : AWEAWEF ; Batch No : RW252736.1 ; User ID : UBCT
+20200525 13:57:05 下午 -- Unloading-U050 -  Scan Slot-1 Barcode ,Position:9500
+20200525 13:57:49 下午 -- Unload successful - Part ID:20160106164944 ; Sapcode:AWEAWEF ; MC ID:131 by user UBCT
+20200525 14:03:14 下午 -- Start System , Error:找不到指定的模块。 (异常来自 HRESULT:0x8007007E)
+20200525 14:03:19 下午 -- Open COM
+20200525 14:03:22 下午 -- Close COM
+20200525 14:03:32 下午 -- Open COM
+20200525 14:03:32 下午 -- Entry unload page , user: UBCT
+20200525 14:05:05 下午 -- Start Unload , Part ID : 20160106113736 ; Sapcode : 24-3259-1 ; Batch No : RW251327.1 ; User ID : UBCT
+20200525 14:05:11 下午 -- Unloading-U050 -  Scan Slot-5 Barcode ,Position:238572
+20200525 14:07:11 下午 -- Unloading-U3100 - unload complete
+20200525 14:07:20 下午 -- Unload successful - Part ID:20160106113736 ; Sapcode:24-3259-1 ; MC ID:131 by user UBCT
+20200525 14:07:35 下午 -- Exit unload page  , user : UBCT
+20200525 14:07:35 下午 -- Close COM
+20200525 14:09:08 下午 -- Open COM
+20200525 14:09:10 下午 -- Close COM

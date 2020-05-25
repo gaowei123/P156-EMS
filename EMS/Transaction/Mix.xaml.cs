@@ -44,13 +44,25 @@ namespace EMS.Transaction
             get { return department; }
             set { this.txt_userDepartment.Text = value; }
         }
-        #endregion 
+        #endregion
 
 
+        //判断搅拌机是否在运行
         public bool onGoing { get; set; }
+
+        //搅拌总时长, 在config表中设定, 单位秒
         public readonly double mixTime = 0;
+
+        //搅拌开始后计时 时长, 单位秒
         public double runningTime = 0;
+
         private BackgroundWorker bgwMixing;
+
+
+
+
+
+
 
 
 
@@ -58,44 +70,35 @@ namespace EMS.Transaction
         {
             InitializeComponent();
 
-
-            runningTime = 0;
-            onGoing = false;
-            this.btn_startMix.IsEnabled = false;
-            InitMaterialInfo();
-
-
-
-
-
-
             try
             {
-                DataTable dt = DataProvider.Local.Configure.Select();
-                if (dt == null || dt.Rows.Count == 0)
-                    mixTime = 0;
-                DataRow[] drArr = dt.Select("NAME = 'Mix_Time'");
-                if (drArr.Length == 0)
-                    mixTime = 0;
-                else
-                    mixTime = double.Parse(drArr[0]["VALUE"].ToString());
-            }
-            catch (Exception)
-            {
-                mixTime = 0;
-            }
+                //initalize UI & Parameters
+                runningTime = 0;
+                onGoing = false;
+                this.btn_startMix.IsEnabled = false;
+                InitMaterialInfo();
+
+                
+                //initalize mix time
+                BLL.Configure confBLL = new BLL.Configure();
+                Model.Configure confModel = confBLL.GetModel("Mix_Time");
+                mixTime = confModel == null ? 0 : double.Parse(confModel.VALUE);
             
+                
+                //后台计时, 显示进度条
+                bgwMixing = new BackgroundWorker();
+                bgwMixing.WorkerReportsProgress = true;
+                bgwMixing.WorkerSupportsCancellation = true;
+                bgwMixing.DoWork += BackgroundWorker_DoWork;
+                bgwMixing.RunWorkerCompleted += BackgroundWorker_RunWorkerCompleted;
+                bgwMixing.ProgressChanged += BgwMixing_ProgressChanged;
 
-
-
-            //后台计时, 显示进度条
-            bgwMixing = new BackgroundWorker();
-            bgwMixing.WorkerReportsProgress = true;
-            bgwMixing.WorkerSupportsCancellation = true;
-            bgwMixing.DoWork += BackgroundWorker_DoWork;
-            bgwMixing.RunWorkerCompleted += BackgroundWorker_RunWorkerCompleted;
-            bgwMixing.ProgressChanged += BgwMixing_ProgressChanged;
-
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Initalizing error, Exception:" + ex.ToString());
+                Common.Reports.LogFile.Log("[EMS.Transaction.Mix], Initalize error, exception:" + ex.ToString());
+            }
         }
 
 
@@ -128,11 +131,11 @@ namespace EMS.Transaction
 
             
 
-            //检测 是否把锡膏拿了出来.  
+            //检测 是否把epoxy拿了出来.  
             bool isMaterialIn = Hardware.IO_LIST.Input.X207_Mix_Material_In();
             while (isMaterialIn)
             {
-                MessageBox.Show("Mixing complete, please open door and take out solder paste!");
+                MessageBox.Show("Mixing complete, please open door and take out epoxy!");
                 
                 //重新检下测感应器状态.
                 isMaterialIn = Hardware.IO_LIST.Input.X207_Mix_Material_In();
@@ -182,6 +185,7 @@ namespace EMS.Transaction
             //init ui
             InitMaterialInfo();
             this.txt_partID_input.Text = "";
+            this.txt_partID_input.IsEnabled = true;
             this.txt_partID_input.Focus();
 
         }
@@ -214,7 +218,7 @@ namespace EMS.Transaction
             Model.Tracking trackModel = trackBLL.GetModel(partID);
             if (trackModel == null || trackModel.STATUS != StaticRes.Global.Status.PendingMix)
             {
-                MessageBoxResult result = MessageBox.Show("This solder paste is not got from EMS, are you still need to mix?", "Warning", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                MessageBoxResult result = MessageBox.Show("This epoxy is not got from EMS, are you still need to mix?", "Warning", MessageBoxButton.YesNo, MessageBoxImage.Question);
                 if (result == MessageBoxResult.No || result == MessageBoxResult.Cancel || result == MessageBoxResult.None)
                     return;
             }
@@ -238,11 +242,11 @@ namespace EMS.Transaction
         private void btn_startMix_Click(object sender, RoutedEventArgs e)
         {
 
-            //检测锡膏是否放入
+            //检测epoxy是否放入
             bool isMaterialIn = Hardware.IO_LIST.Input.X207_Mix_Material_In();
             if (!isMaterialIn)
             {
-                MessageBox.Show("Please put in the solder paste!");
+                MessageBox.Show("Please put in the epoxy!");
                 return;
             }
 
@@ -254,8 +258,7 @@ namespace EMS.Transaction
                 MessageBox.Show("Please close the door!");
                 return;
             }
-
-
+            
 
             //触发IO,接通继电器使搅拌机通电.
             bool result = Hardware.IO_LIST.Output.Y204_MixPower_On();
@@ -265,15 +268,14 @@ namespace EMS.Transaction
                 result = Hardware.IO_LIST.Output.Y204_MixPower_On();
             }
 
-
-
+            
 
             this.btn_startMix.IsEnabled = false;
             this.btn_stop.IsEnabled = false;
             this.txt_partID_input.IsEnabled = false;
 
 
-            //后台计时, 显示进度条.
+            //开启后台线程.
             bgwMixing.RunWorkerAsync();
 
         }
@@ -285,14 +287,13 @@ namespace EMS.Transaction
 
         private void btn_close_Click(object sender, RoutedEventArgs e)
         {
-            //没有正在运行的情况下关闭, 初始化界面
+            //没有正在运行的情况下 初始化界面
             if (!onGoing)
             {
                 InitMaterialInfo();
                 InitUserInfo();
 
                 this.txt_partID_input.Text = "";
-
                 this.btn_startMix.IsEnabled = false;
             }
 
@@ -314,7 +315,6 @@ namespace EMS.Transaction
             this.txt_currentWeight.Text = "";
             this.txt_capacity.Text = "";
             this.txt_emptySyringeWeight.Text = "";
-          
         }
 
         private void InitUserInfo()
@@ -351,15 +351,10 @@ namespace EMS.Transaction
             List<SqlCommand> cmdList = new List<SqlCommand>();
 
             if (trackModel != null)
-            {
                 cmdList.Add(trackBLL.UpdateCommand(trackModel));
-            }
 
             if (hisModel != null)
-            {
                 cmdList.Add(hisBLL.AddCommand(hisModel));
-            }
-       
             
             cmdList.Add(mixBLL.AddCommand(mixModel));
 

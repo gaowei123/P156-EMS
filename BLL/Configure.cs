@@ -58,10 +58,10 @@ namespace BLL
 		/// <summary>
 		/// 得到一个对象实体
 		/// </summary>
-		public Model.Configure GetModel()
+		public Model.Configure GetModel(string sName)
 		{
 			//该表无主键信息，请自定义主键/条件字段
-			return dal.GetModel();
+			return dal.GetModel(sName);
 		}
 
 	

@@ -463,8 +463,7 @@ namespace Common.DAL
         public SqlCommand UpdateCommand(Model.Tracking model)
         {
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("update Tracking set ");
-            strSql.Append("PART_ID=@PART_ID,");
+            strSql.Append("update Tracking set ");          
             strSql.Append("SAPCODE=@SAPCODE,");
             strSql.Append("BATCH_NO=@BATCH_NO,");
             strSql.Append("DESCRIPTION=@DESCRIPTION,");
@@ -490,7 +489,7 @@ namespace Common.DAL
             strSql.Append("WEEK=@WEEK,");
             strSql.Append("MONTH=@MONTH,");
             strSql.Append("YEAR=@YEAR");
-            strSql.Append(" where ");
+            strSql.Append(" where  PART_ID=@PART_ID ");
             SqlParameter[] parameters = {
                     new SqlParameter("@PART_ID", SqlDbType.VarChar,50),
                     new SqlParameter("@SAPCODE", SqlDbType.VarChar,50),

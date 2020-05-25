@@ -107,7 +107,7 @@ namespace DataProvider.Local
                 {
                     string sql = "SELECT * FROM EMS.dbo.Tracking where EXPIRY_DATETIME<=@EXPIRY_DATETIME and STATUS='IN_USED' ";
                     System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand(sql);
-                    cmd.Parameters.Add("@EXPIRY_DATETIME", System.Data.SqlDbType.DateTime).Value = System.DateTime.Now.AddHours(time);                    
+                    cmd.Parameters.Add("@EXPIRY_DATETIME", System.Data.SqlDbType.DateTime).Value = System.DateTime.Now.AddHours(time);
                     return Common.DB.SqlDB.GetData(cmd, StaticRes.Local);
                 }
                 catch (SqlException ee)
