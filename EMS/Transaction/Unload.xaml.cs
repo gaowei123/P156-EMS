@@ -430,15 +430,19 @@ namespace EMS.Transaction
                     {
                         Transaction.Mix mixPage = EMS.Singleton.MixSingleton.GetInstance;
 
-                        mixPage.userID = StaticRes.Global.Current_User.USER_ID;
-                        mixPage.userGroup = StaticRes.Global.Current_User.USER_GROUP;
-                        mixPage.userName = StaticRes.Global.Current_User.USER_NAME;
-                        mixPage.department = StaticRes.Global.Current_User.DEPARTMENT;
+                        if (mixPage.onGoing)
+                        {
+                            MessageBox.Show("Mixer is running, please wait!");
+                        }
+                        else
+                        {
+                            mixPage.userID = StaticRes.Global.Current_User.USER_ID;
+                            mixPage.userGroup = StaticRes.Global.Current_User.USER_GROUP;
+                            mixPage.userName = StaticRes.Global.Current_User.USER_NAME;
+                            mixPage.department = StaticRes.Global.Current_User.DEPARTMENT;
+                        }
 
-
-                        
                         mixPage.ShowWindow();
-
 
                         btn_close_Click(null,null);
                     }
