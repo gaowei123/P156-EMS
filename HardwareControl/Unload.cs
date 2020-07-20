@@ -60,51 +60,71 @@ namespace HardwareControl
         private Thread Thread_Unload = null;
 
 
-
-        private System.IO.Ports.SerialPort soltScanner = new System.IO.Ports.SerialPort();
-
+        #region slot scanner
+        private System.IO.Ports.SerialPort slotScanner = new System.IO.Ports.SerialPort();
         private int targetSlotID;
         private int targetSlotIndex;
         private bool received = false;
-        
-      
 
-        public Unload()
+
+        private void InitAndOpen(string comPort)
         {
-            soltScanner.BaudRate = StaticRes.Global.System_Setting.SlotScanner_BaudRate;
-            soltScanner.StopBits = System.IO.Ports.StopBits.One;
-            soltScanner.DataBits = StaticRes.Global.System_Setting.SlotScanner_DataBits;
-            
-            soltScanner.DataReceived += SoltScanner_DataReceived;
+            slotScanner.PortName = comPort;
+            slotScanner.BaudRate = StaticRes.Global.System_Setting.SlotScanner_BaudRate;
+            slotScanner.StopBits = System.IO.Ports.StopBits.One;
+            slotScanner.DataBits = StaticRes.Global.System_Setting.SlotScanner_DataBits;
+            slotScanner.DataReceived += SoltScanner_DataReceived;
+
+            if (!slotScanner.IsOpen)
+                slotScanner.Open();
+        }
+
+        private void CloseSlotScanner()
+        {
+            if (slotScanner.IsOpen)
+                slotScanner.Close();
+
+            slotScanner.DataReceived -= SoltScanner_DataReceived;
         }
 
         private void SoltScanner_DataReceived(object sender, System.IO.Ports.SerialDataReceivedEventArgs e)
         {
+            if (!slotScanner.IsOpen)
+                return;
+
+
             received = true;
+            string currentSlotID = slotScanner.ReadExisting().Replace("\r", "");
 
-            //Common.Reports.LogFile.Log("Scan Barcode slot successful ,current position:" + Motion_Control.Got_Rotary_Position().ToString() + "");
 
-           
-            string currentSlotID = soltScanner.ReadExisting();
+            //一旦扫到立马关闭com口, 避免再次触发.
+            CloseSlotScanner();
 
             if (currentSlotID != targetSlotID.ToString())
             {
                 Error_Throw(StaticRes.Global.Error_List.Motion_failed, "U000");
-                return;
             }
             else
             {
-                StaticRes.Global.IsOnProgress = false;
+                //确保转盘停止. 
+                Motion_Control.Motion_Speed_Checking();
+
+                //从U100开始
+                StaticRes.Global.IsOnProgress = true;
                 StaticRes.Global.Transaction_Continue = true;
                 StaticRes.Global.Process_Code.Unloading = "U100";
-
-                System.Threading.Thread.Sleep(1000);
                 LogicUnload(targetSlotID, targetSlotIndex);
-                
+
+                received = false;
             }
         }
-        
+        #endregion
 
+
+
+        public Unload()
+        { }
+        
 
         public void Stop()
         {
@@ -214,53 +234,54 @@ namespace HardwareControl
                     }
                     #endregion
 
-                    //2020 05 13 by Wei LiJia for Slot Barcode Validation 
+                    //2020 07 19 by Dwyane for Slot Barcode Validation 
                     #region ***(U050)*** Slot Barcode Validation
                     if (StaticRes.Global.Process_Code.Unloading == "U050" && StaticRes.Global.Transaction_Continue)
                     { 
                         step("U050 -  Scan Slot-" + Slot_ID.ToString() + " Barcode ,Position:" + StaticRes.Global.Slot_Position[Slot_ID - 1].ToString() + "");
                         try
                         {
+                            string comPort = string.Empty;
                             switch (Slot_Index)
                             {
                                 case 1:
-                                    soltScanner.PortName = StaticRes.Global.System_Setting.SlotScanner_Index1Port;
+                                    comPort = StaticRes.Global.System_Setting.SlotScanner_Index1Port;
                                     break;
                                 case 2:
-                                    soltScanner.PortName = StaticRes.Global.System_Setting.SlotScanner_Index2Port;
+                                    comPort = StaticRes.Global.System_Setting.SlotScanner_Index2Port;
+
                                     break;
                                 case 3:
-                                    soltScanner.PortName = StaticRes.Global.System_Setting.SlotScanner_Index3Port;
+                                    comPort = StaticRes.Global.System_Setting.SlotScanner_Index3Port;
                                     break;
                                 case 4:
-                                    soltScanner.PortName = StaticRes.Global.System_Setting.SlotScanner_Index4Port;
+                                    comPort = StaticRes.Global.System_Setting.SlotScanner_Index4Port;
                                     break;
                             }
 
-                            soltScanner.Open();
 
+                            //初始化, 并打开com port
+                            InitAndOpen(comPort);
 
-                            DateTime startScanTime = new DateTime();
-
-                            System.Threading.Thread.Sleep(10000);
-
-                            while (!received)
+                            //来回扫描5次, 如果扫到了, 立马break;
+                            for (int i = 0; i < 5; i++)
                             {
-                                Motion_Control.Rotary_Move(1000);
-                                Motion_Control.Motion_Speed_Checking();
-                                Motion_Control.Rotary_Move(-1000);
-                                Motion_Control.Motion_Speed_Checking();
-
-
-                                //超过10s, 还没扫描到则报警.
-                                if ((DateTime.Now - startScanTime).TotalSeconds > 10)
-                                {
-                                    Error_Throw(StaticRes.Global.Error_List.Motion_failed, "U000");
+                                if (received)
                                     return;
-                                }
+
+                                Motion_Control.Rotary_Move(10000);
+                                Motion_Control.Motion_Speed_Checking();
+                                System.Threading.Thread.Sleep(300);
+
+                                Motion_Control.Rotary_Move(-10000);
+                                Motion_Control.Motion_Speed_Checking();
+                                System.Threading.Thread.Sleep(300);
                             }
 
-                          
+
+                            //如果来回5次都没有扫到, 就报警.
+                            if (!received)
+                                Error_Throw(StaticRes.Global.Error_List.Motion_failed, "U000");                            
                         }
                         catch
                         {
@@ -273,11 +294,6 @@ namespace HardwareControl
                     #region ***(U100)*** Check slot index and move to related process
                     if (StaticRes.Global.Process_Code.Unloading == "U100" && StaticRes.Global.Transaction_Continue)
                     {
-                        //关掉扫描枪
-                        received = false;
-                        soltScanner.Close();
-
-
                         switch (Slot_Index)
                         {
                             case 1:
@@ -649,18 +665,6 @@ namespace HardwareControl
             unloaderror(et);
         }
 
-        public void LoadingHandle()
-        {
-            try
-            {
-                HardwareControl.IO_Control.Yellow_Tower_Light_Setting();
-                this.Thread_Unload.Abort();
-            }
-            catch(Exception ee)
-            {
-                Common.Reports.LogFile.Log("Unload error when stop -- " + ee.Message + " , user:" + StaticRes.Global.Current_User.USER_ID);
-                StaticRes.Global.Need_Homing = true;
-            }
-        }
+       
     }
 }

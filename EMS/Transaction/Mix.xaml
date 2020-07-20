@@ -13,7 +13,7 @@
         Background="#4C000000" 
         AllowsTransparency="True" 
         Width="982" Height="650"   
-        Topmost="False"
+        Topmost="True"
         WindowState="Maximized">
 
 
@@ -131,7 +131,7 @@
                 </Grid>
             </Button>
 
-            <Button x:Name="btn_stop" Click="btn_stop_Click" Margin="0,0,285.626,194.79" IsEnabled="False" Style="{DynamicResource ButtonStyle-Zoom}" Cursor="Hand" Height="50" VerticalAlignment="Bottom" d:LayoutOverrides="GridBox" Background="{DynamicResource ButtonNormalBackground}"  HorizontalAlignment="Right" Width="120">
+            <!--<Button x:Name="btn_stop" Click="btn_stop_Click" Margin="0,0,285.626,194.79" IsEnabled="False" Style="{DynamicResource ButtonStyle-Zoom}" Cursor="Hand" Height="50" VerticalAlignment="Bottom" d:LayoutOverrides="GridBox" Background="{DynamicResource ButtonNormalBackground}"  HorizontalAlignment="Right" Width="120">
                 <Button.Effect>
                     <DropShadowEffect ShadowDepth="0" BlurRadius="8"/>
                 </Button.Effect>
@@ -139,7 +139,7 @@
                     <Image  Margin="4,4,80,5" Source="/EMS;component/Resources/Image/Stop.png"/>
                     <Label Content="{DynamicResource TS_stop}" FontSize="14" HorizontalContentAlignment="Right" Margin="59,8,10,10" FontWeight="Bold"/>
                 </Grid>
-            </Button>
+            </Button>-->
 
             
             <Button x:Name="btn_close" Click="btn_close_Click" Width="63" HorizontalAlignment="Right" Margin="0,12.793,9,0" Background="{DynamicResource ButtonNormalBackground}" Style="{DynamicResource ButtonStyle-Zoom}" BorderBrush="Black" Focusable="False" IsTabStop="False" Cursor="Hand" Height="50" VerticalAlignment="Top">
@@ -178,7 +178,7 @@
 
 
 
-            <EMS_Views:KeyBoard x:Name="kb" Margin="75,0,89,12" VerticalAlignment="Bottom" d:LayoutOverrides="Height" />
+            <EMS_Views:KeyBoard x:Name="kb" Margin="75,0,89,12" VerticalAlignment="Bottom" d:LayoutOverrides="Height" EnterClick="kb_EnterClick" />
         </Grid>
 
 

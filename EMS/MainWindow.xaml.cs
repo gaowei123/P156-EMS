@@ -43,9 +43,12 @@ namespace EMS
             }
 
 
-         
+            
 
             InitializeComponent();
+
+            //this.btn_mix.IsEnabled = false;
+
 
 
             ColorValueInit();
@@ -131,7 +134,7 @@ namespace EMS
         {
             try
             {
-                //同步process bar 
+                //同步mix process bar 
                 EMS.Transaction.Mix mixPage = Singleton.MixSingleton.GetInstance;
 
                 if (mixPage.onGoing && mixPage.Visibility == Visibility.Hidden)
@@ -141,7 +144,7 @@ namespace EMS
 
 
                 this.pbMainwindowMixing.Value = mixPage.runningTime / mixPage.mixTime * 100;
-
+                //同步mix process bar 
 
 
 
@@ -217,7 +220,7 @@ namespace EMS
                     Common.Reports.LogFile.Log("Enter homing page , user: " + StaticRes.Global.Current_User.USER_ID);
                     HomingPage xx = new HomingPage(true);
                     xx.BackClick += new HomingPage.BackMaskEventHandler(CloseMask);
-                    xx.HDClick += new HomingPage.HDClickEventHandler(ShowReport); 
+                    xx.HDClick += new HomingPage.HDClickEventHandler(ShowReport);
                     xx.ShowDialog();
                     if (StaticRes.Global.Homing_Complete)
                     {
@@ -226,6 +229,10 @@ namespace EMS
                         x.HDClick += new Transaction.Load.HDClickEventHandler(ShowReport);
                         Common.Reports.LogFile.Log("Entry load page , user: " + StaticRes.Global.Current_User.USER_ID);
                         x.ShowDialog();
+                    }
+                    else {
+                        CloseMask();
+                        System.Windows.MessageBox.Show("Please homing first!!\n 请先初始化！！");
                     }
                 }
                 else if (StaticRes.Global.Current_User.USER_GROUP.Length > 0)
@@ -250,7 +257,8 @@ namespace EMS
                 x.BackClick += new Views.Login.BackMaskEventHandler(CloseMask);
                 MaskActionPage.Visibility = Visibility.Visible;
                 x.ShowDialog();
-                StaticRes.Global.Homing_Complete = false;
+                //StaticRes.Global.Homing_Complete = false;
+
                 #region Rotary_Continue_Move
                 DataTable dt = DataProvider.Local.Binning.Select.Bin_WithMateria();
                 if (dt.Rows.Count > 0)
@@ -271,11 +279,11 @@ namespace EMS
                 if (StaticRes.Global.Current_User.USER_GROUP == StaticRes.Global.User_Group.Admin
                     || StaticRes.Global.Current_User.USER_GROUP == StaticRes.Global.User_Group.Engineer)
                 {
-                    Common.Reports.LogFile.Log("Enter homing page , user: " + StaticRes.Global.Current_User.USER_ID);
-                    HomingPage xx = new HomingPage(true);
-                    xx.BackClick += new HomingPage.BackMaskEventHandler(CloseMask);
-                    xx.HDClick += new HomingPage.HDClickEventHandler(ShowReport); 
-                    xx.ShowDialog();
+                    //Common.Reports.LogFile.Log("Enter homing page , user: " + StaticRes.Global.Current_User.USER_ID);
+                    //HomingPage xx = new HomingPage(true);
+                    //xx.BackClick += new HomingPage.BackMaskEventHandler(CloseMask);
+                    //xx.HDClick += new HomingPage.HDClickEventHandler(ShowReport); 
+                    //xx.ShowDialog();
                     if (StaticRes.Global.Homing_Complete)
                     {
                         Transaction.Remove x = new Transaction.Remove();
@@ -283,6 +291,11 @@ namespace EMS
                         x.HDClick += new Transaction.Remove.HDClickEventHandler(ShowReport);
                         Common.Reports.LogFile.Log("Entry remove page , user: " + StaticRes.Global.Current_User.USER_ID);
                         x.ShowDialog();
+                    }
+                    else
+                    {
+                        CloseMask();
+                        System.Windows.MessageBox.Show("Please homing first!!\n 请先初始化！！");
                     }
                 }
                 else if (StaticRes.Global.Current_User.USER_GROUP.Length > 0)
@@ -307,7 +320,7 @@ namespace EMS
                 x.BackClick += new Views.Login.BackMaskEventHandler(CloseMask);
                 MaskActionPage.Visibility = Visibility.Visible;
                 x.ShowDialog();
-                StaticRes.Global.Homing_Complete = false;
+                //StaticRes.Global.Homing_Complete = false;
                 #region Rotary_Continue_Move
                 DataTable dt = DataProvider.Local.Binning.Select.Bin_WithMateria();
                 if (dt.Rows.Count > 0)
@@ -330,11 +343,11 @@ namespace EMS
                     ||StaticRes.Global.Current_User.USER_GROUP==StaticRes.Global.User_Group.Supervisor
                     || StaticRes.Global.Current_User.USER_GROUP == StaticRes.Global.User_Group.Engineer)
                 {
-                    Common.Reports.LogFile.Log("Enter homing page , user: " + StaticRes.Global.Current_User.USER_ID);
-                    HomingPage xx = new HomingPage(true);
-                    xx.BackClick += new HomingPage.BackMaskEventHandler(CloseMask);
-                    xx.HDClick += new HomingPage.HDClickEventHandler(ShowReport); 
-                    xx.ShowDialog();
+                    //Common.Reports.LogFile.Log("Enter homing page , user: " + StaticRes.Global.Current_User.USER_ID);
+                    //HomingPage xx = new HomingPage(true);
+                    //xx.BackClick += new HomingPage.BackMaskEventHandler(CloseMask);
+                    //xx.HDClick += new HomingPage.HDClickEventHandler(ShowReport); 
+                    //xx.ShowDialog();
                     if (StaticRes.Global.Homing_Complete)
                     {
                         Transaction.Unload x = new Transaction.Unload();
@@ -342,6 +355,11 @@ namespace EMS
                         x.HDClick += new Transaction.Unload.HDClickEventHandler(ShowReport);
                         Common.Reports.LogFile.Log("Entry unload page , user: " + StaticRes.Global.Current_User.USER_ID);
                         x.ShowDialog();
+                    }
+                    else
+                    {
+                        CloseMask();
+                        System.Windows.MessageBox.Show("Please homing first!!\n 请先初始化！！");
                     }
                 }
                 else if (StaticRes.Global.Current_User.USER_GROUP.Length > 0)
@@ -366,7 +384,7 @@ namespace EMS
                 x.BackClick += new Views.Login.BackMaskEventHandler(CloseMask);
                 MaskActionPage.Visibility = Visibility.Visible;
                 x.ShowDialog();
-                StaticRes.Global.Homing_Complete = false;
+                //StaticRes.Global.Homing_Complete = false;
                 #region Rotary_Continue_Move
                 DataTable dt = DataProvider.Local.Binning.Select.Bin_WithMateria();
                 if (dt.Rows.Count > 0)
@@ -389,11 +407,11 @@ namespace EMS
                     || StaticRes.Global.Current_User.USER_GROUP == StaticRes.Global.User_Group.Supervisor
                     || StaticRes.Global.Current_User.USER_GROUP == StaticRes.Global.User_Group.Engineer)
                 {
-                    Common.Reports.LogFile.Log("Enter homing page , user: " + StaticRes.Global.Current_User.USER_ID);
-                    HomingPage xx = new HomingPage(true);
-                    xx.BackClick += new HomingPage.BackMaskEventHandler(CloseMask);
-                    xx.HDClick += new HomingPage.HDClickEventHandler(ShowReport);
-                    xx.ShowDialog();
+                    //Common.Reports.LogFile.Log("Enter homing page , user: " + StaticRes.Global.Current_User.USER_ID);
+                    //HomingPage xx = new HomingPage(true);
+                    //xx.BackClick += new HomingPage.BackMaskEventHandler(CloseMask);
+                    //xx.HDClick += new HomingPage.HDClickEventHandler(ShowReport);
+                    //xx.ShowDialog();
                     if (StaticRes.Global.Homing_Complete)
                     {
                         Transaction.Return x = new Transaction.Return();
@@ -401,6 +419,11 @@ namespace EMS
                         x.HDClick += new Transaction.Return.HDClickEventHandler(ShowReport);
                         Common.Reports.LogFile.Log("Entry return page , user: " + StaticRes.Global.Current_User.USER_ID);
                         x.ShowDialog();
+                    }
+                    else
+                    {
+                        CloseMask();
+                        System.Windows.MessageBox.Show("Please homing first!!\n 请先初始化！！");
                     }
                 }
                 else if (StaticRes.Global.Current_User.USER_GROUP.Length > 0)
@@ -599,6 +622,8 @@ namespace EMS
                     if (StaticRes.Global.Hardware_Connection)
                         HardwareControl.Initial_Hardware.Close_Connect();
                     this.Close();
+
+                    System.Environment.Exit(0);
                 }
                 else
                 {
@@ -696,6 +721,7 @@ namespace EMS
                 {
                     Views.Login x = new Views.Login();
                     x.HDClick += new Views.Login.HDClickEventHandler(x_MixPage);
+                    x.BackClick += new Views.Login.BackMaskEventHandler(CloseMask);
                     x.ShowDialog();
                 }
 

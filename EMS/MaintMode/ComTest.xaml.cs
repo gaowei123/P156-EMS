@@ -55,21 +55,7 @@ namespace EMS.MaintMode
                 Handle_Scanner.DataBits = StaticRes.Global.System_Setting.Handle_Scanner_DataBits;
                 Handle_Scanner.PortName = StaticRes.Global.System_Setting.Handle_Scanner_COM_Port;
                 if (!Handle_Scanner.IsOpen)
-                    Handle_Scanner.Open();
-
-
-
-                //testing
-                //Handle_Scanner.BaudRate = 115200;
-                //Handle_Scanner.StopBits = System.IO.Ports.StopBits.One;
-                //Handle_Scanner.DataBits = 8;
-                //Handle_Scanner.PortName = "COM4";
-                //if (!Handle_Scanner.IsOpen)
-                //    Handle_Scanner.Open();
-
-                //Handle_Scanner.NewLine = "\r";
-
-                //string aaaa = Handle_Scanner.ReadLine();
+                    Handle_Scanner.Open();           
 
 
                 //Weight Scale
@@ -131,6 +117,9 @@ namespace EMS.MaintMode
         }
         #endregion
 
+
+
+
         #region Handle Scanner
         void Handle_Scanner_DataReceived(object sender, System.IO.Ports.SerialDataReceivedEventArgs e)
         {
@@ -147,12 +136,6 @@ namespace EMS.MaintMode
                 int bbb = Handle_Scanner.Read(data, 0, data.Length);
 
                 string sbbbb = Encoding.Default.GetString(data);
-
-
-
-
-
-
 
 
                 this.Dispatcher.Invoke(new Handle_Scanner_Read(Do_Handle_Scanner_Read), null);

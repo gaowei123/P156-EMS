@@ -368,41 +368,101 @@ namespace HardwareControl
             #region
             try
             {
+                #region 2020-07-15 new logic by dwyane
+
+                int Slot_Position = StaticRes.Global.Slot_Position[Slot_ID - 1];
+
                 Rotary_Motion_Stop();
                 Motion_Speed_Checking();
                 System.Threading.Thread.Sleep(500);
-                int Slot_Position = StaticRes.Global.Slot_Position[Slot_ID - 1];
-                double Current_Position = Got_Rotary_Position();
-                Common.Reports.LogFile.Log("Rotary_MoveTo_Slot - Current_Position[1]: " + Current_Position);
-                double Zero_Position = Current_Position % StaticRes.Global.System_Setting.One_Cycle_Pulse;
-                Common.Reports.LogFile.Log("Rotary_MoveTo_Slot - Zero_Position: " + Zero_Position);
-                double Move_Position = (Slot_Position - Zero_Position);
-                Common.Reports.LogFile.Log("Rotary_MoveTo_Slot - Move_Position: " + Move_Position);
-                Rotary_Move(Move_Position - 10000);
+
+
+                //先homing
+                HardwareControl.Motion_Control.Motion_Speed_Checking();
+                HardwareControl.Motion_Control.Rotary_Move(100000);
+                HardwareControl.Motion_Control.Motion_Speed_Checking();
+                HardwareControl.Motion_Control.Rotary_Motor_Homing();
+                HardwareControl.Motion_Control.Motion_Speed_Checking();
+                HardwareControl.Motion_Control.Rotary_Move(-StaticRes.Global.System_Setting.Rotary_Homing_Pitch);
+                HardwareControl.Motion_Control.Motion_Speed_Checking();
+
+                if (HardwareControl.Motion_Control.Rotary_Homing_Sensor_On())
+                    HardwareControl.Motion_Control.Set_Rotary_Zero_Position();
+                else
+                    throw new System.Exception("Rotary Homing Failed !!");
+
+                System.Threading.Thread.Sleep(500);
+
+                Rotary_Move(Slot_Position - 10000);
                 Motion_Speed_Checking();
                 System.Threading.Thread.Sleep(500);
                 Rotary_Move(10000);
                 Motion_Speed_Checking();
                 System.Threading.Thread.Sleep(500);
-                Current_Position = Got_Rotary_Position();
+                double Current_Position = Got_Rotary_Position();
                 Common.Reports.LogFile.Log("Rotary_MoveTo_Slot - Current_Position[2]: " + Current_Position);
-                if (Math.Abs((Current_Position % StaticRes.Global.System_Setting.One_Cycle_Pulse) - Slot_Position) < 1000)
+
+
+                if (Current_Position >= (Slot_Position - 1000) && Current_Position <= (Slot_Position + 1000))
                 {
                     return true;
                 }
                 else
                 {
-                    Check_and_Reset_cmd_Position();
                     throw new System.Exception("Rotary Move Failed !!");
                 }
-                //int Slot_Position = StaticRes.Global.Slot_Position[Slot_ID - 1];
+                #endregion
+
+
+                #region old logic
+                //Rotary_Motion_Stop();
                 //Motion_Speed_Checking();
+                //System.Threading.Thread.Sleep(500);
+                //int Slot_Position = StaticRes.Global.Slot_Position[Slot_ID - 1];
+
+                //double Current_Position = Got_Rotary_Position();
+                //Common.Reports.LogFile.Log("Rotary_MoveTo_Slot - Current_Position[1]: " + Current_Position);
+
+
+                //double Zero_Position = Current_Position % StaticRes.Global.System_Setting.One_Cycle_Pulse;
+                //Common.Reports.LogFile.Log("Rotary_MoveTo_Slot - Zero_Position: " + Zero_Position);
+
+
+                //double Move_Position = (Slot_Position - Zero_Position);
+                //Common.Reports.LogFile.Log("Rotary_MoveTo_Slot - Move_Position: " + Move_Position);
+
+                //Rotary_Move(Move_Position - 10000);
+                //Motion_Speed_Checking();
+                //System.Threading.Thread.Sleep(500);
+                //Rotary_Move(10000);
+                //Motion_Speed_Checking();
+                //System.Threading.Thread.Sleep(500);
+                //Current_Position = Got_Rotary_Position();
+                //Common.Reports.LogFile.Log("Rotary_MoveTo_Slot - Current_Position[2]: " + Current_Position);
+                //if (Math.Abs((Current_Position % StaticRes.Global.System_Setting.One_Cycle_Pulse) - Slot_Position) < 1000)
+                //{
+                //    return true;
+                //}
+                //else
+                //{
+                //    Check_and_Reset_cmd_Position();
+                //    throw new System.Exception("Rotary Move Failed !!");
+                //}
+                #endregion
+
+                #region old old logic
+                //int Slot_Position = StaticRes.Global.Slot_Position[Slot_ID - 1];
+
+                //Motion_Speed_Checking();
+
                 //System.Threading.Thread.Sleep(500);
                 //Rotary_MoveABS(Slot_Position - 10000);
                 //Motion_Speed_Checking();
+
                 //System.Threading.Thread.Sleep(500);
                 //Rotary_MoveABS(Slot_Position);
                 //Motion_Speed_Checking();
+
                 //System.Threading.Thread.Sleep(500);
                 //double Current_Position = Got_Rotary_Position();
                 //if (Current_Position >= (Slot_Position - 1000) && Current_Position <= (Slot_Position + 1000))
@@ -412,14 +472,52 @@ namespace HardwareControl
                 //else
                 //{
                 //    throw new System.Exception("Rotary Move Failed !!");
-                //}                
+                //}
+                #endregion
             }
             catch (Exception ee)
             {
                 throw ee;
             }
             #endregion
-        }          
+        }
+
+        public static bool Rotary_MoveTo_Slot_ABSMode(int Slot_ID)
+        {
+            try
+            {
+                int Slot_Position = StaticRes.Global.Slot_Position[Slot_ID - 1];
+
+                Motion_Speed_Checking();
+
+                System.Threading.Thread.Sleep(500);
+                Rotary_MoveABS(Slot_Position - 10000);
+                Motion_Speed_Checking();
+
+                System.Threading.Thread.Sleep(500);
+                Rotary_MoveABS(Slot_Position);
+                Motion_Speed_Checking();
+
+                System.Threading.Thread.Sleep(500);
+                double Current_Position = Got_Rotary_Position();
+                if (Current_Position >= (Slot_Position - 1000) && Current_Position <= (Slot_Position + 1000))
+                {
+                    return true;
+                }
+                else
+                {
+                    throw new System.Exception("Rotary Move Failed !!");
+                }
+               
+            }
+            catch (Exception ee)
+            {
+                throw ee;
+            }
+        }
+
+
+
 
         public static bool Inventory_Rotary_Move(int Slot_No, int Slot_Level)
         {
@@ -887,6 +985,7 @@ namespace HardwareControl
         public static void Read_Motion_Config()
         {
             System.IO.StreamReader sw = new System.IO.StreamReader(".\\motion_setting.cfg");
+            sw.ReadLine();
             string R_PlsPerUnit = sw.ReadLine();
 
             StaticRes.Global.Rotary_Motor_Parameter.PlsPerUnit = int.Parse(R_PlsPerUnit.Substring(R_PlsPerUnit.IndexOf('=') + 1, R_PlsPerUnit.Length - R_PlsPerUnit.IndexOf('=') - 1));

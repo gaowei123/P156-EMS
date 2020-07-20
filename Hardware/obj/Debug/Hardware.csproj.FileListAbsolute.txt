@@ -18,3 +18,13 @@ D:\Git SourceCode Storage\VISHAY\P156-EMS\Hardware\bin\Debug\ObjectModule.pdb
 D:\Git SourceCode Storage\VISHAY\P156-EMS\Hardware\obj\Debug\Hardware.csprojResolveAssemblyReference.cache
 D:\Git SourceCode Storage\VISHAY\P156-EMS\Hardware\obj\Debug\Hardware.dll
 D:\Git SourceCode Storage\VISHAY\P156-EMS\Hardware\obj\Debug\Hardware.pdb
+E:\Git Source Code Storage\P156-EMS\Hardware\bin\Debug\Hardware.dll
+E:\Git Source Code Storage\P156-EMS\Hardware\bin\Debug\Hardware.pdb
+E:\Git Source Code Storage\P156-EMS\Hardware\bin\Debug\Automation.BDaq.dll
+E:\Git Source Code Storage\P156-EMS\Hardware\bin\Debug\StaticRes.dll
+E:\Git Source Code Storage\P156-EMS\Hardware\bin\Debug\ObjectModule.dll
+E:\Git Source Code Storage\P156-EMS\Hardware\bin\Debug\StaticRes.pdb
+E:\Git Source Code Storage\P156-EMS\Hardware\bin\Debug\ObjectModule.pdb
+E:\Git Source Code Storage\P156-EMS\Hardware\obj\Debug\Hardware.csprojResolveAssemblyReference.cache
+E:\Git Source Code Storage\P156-EMS\Hardware\obj\Debug\Hardware.dll
+E:\Git Source Code Storage\P156-EMS\Hardware\obj\Debug\Hardware.pdb

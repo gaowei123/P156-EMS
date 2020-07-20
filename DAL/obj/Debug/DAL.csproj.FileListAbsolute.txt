@@ -16,3 +16,12 @@ D:\Git SourceCode Storage\VISHAY\P156-EMS\DAL\bin\Debug\Model.pdb
 D:\Git SourceCode Storage\VISHAY\P156-EMS\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
 D:\Git SourceCode Storage\VISHAY\P156-EMS\DAL\obj\Debug\DAL.dll
 D:\Git SourceCode Storage\VISHAY\P156-EMS\DAL\obj\Debug\DAL.pdb
+E:\Git Source Code Storage\P156-EMS\DAL\bin\Debug\DAL.dll
+E:\Git Source Code Storage\P156-EMS\DAL\bin\Debug\DAL.pdb
+E:\Git Source Code Storage\P156-EMS\DAL\bin\Debug\Common.dll
+E:\Git Source Code Storage\P156-EMS\DAL\bin\Debug\Model.dll
+E:\Git Source Code Storage\P156-EMS\DAL\bin\Debug\Common.pdb
+E:\Git Source Code Storage\P156-EMS\DAL\bin\Debug\Model.pdb
+E:\Git Source Code Storage\P156-EMS\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+E:\Git Source Code Storage\P156-EMS\DAL\obj\Debug\DAL.dll
+E:\Git Source Code Storage\P156-EMS\DAL\obj\Debug\DAL.pdb

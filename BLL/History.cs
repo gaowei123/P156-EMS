@@ -151,6 +151,7 @@ namespace BLL
             model.WEEK = trackModel.WEEK;
             model.MONTH = trackModel.MONTH;
             model.YEAR = trackModel.YEAR ;
+            model.LOCID = trackModel.LOCID;
             
             return model;
         }

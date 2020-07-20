@@ -1,0 +1,36 @@
+20200717 14:03:05 下午 -- Start System , Error:未能找到文件“E:\Git Source Code Storage\P156-EMS\EMS\bin\Debug\motion_setting.cfg”。
+20200717 14:03:11 下午 -- Open COM
+20200717 14:03:13 下午 -- Close COM
+20200717 14:45:19 下午 -- Start System , Error:未能找到文件“E:\Git Source Code Storage\P156-EMS\EMS\bin\Debug\motion_setting.cfg”。
+20200717 14:45:24 下午 -- Open COM
+20200717 14:45:27 下午 -- Close COM
+20200717 14:47:27 下午 -- Start System , Error:未能找到文件“E:\Git Source Code Storage\P156-EMS\EMS\bin\Debug\motion_setting.cfg”。
+20200717 14:47:31 下午 -- Open COM
+20200717 14:47:34 下午 -- Close COM
+20200717 15:01:01 下午 -- Start System , Error:找不到指定的模块。 (异常来自 HRESULT:0x8007007E)
+20200717 15:01:05 下午 -- Open COM
+20200717 15:01:07 下午 -- Close COM
+20200717 15:02:46 下午 -- Start System , Error:找不到指定的模块。 (异常来自 HRESULT:0x8007007E)
+20200717 15:02:49 下午 -- Open COM
+20200717 15:02:52 下午 -- Close COM
+20200717 15:05:52 下午 -- Start System , Error:找不到指定的模块。 (异常来自 HRESULT:0x8007007E)
+20200717 15:05:56 下午 -- Open COM
+20200717 15:06:03 下午 -- Close COM
+20200717 15:07:04 下午 -- Start System , Error:找不到指定的模块。 (异常来自 HRESULT:0x8007007E)
+20200717 15:07:08 下午 -- Open COM
+20200717 15:07:10 下午 -- Close COM
+20200717 15:09:37 下午 -- Start System , Error:找不到指定的模块。 (异常来自 HRESULT:0x8007007E)
+20200717 15:09:46 下午 -- Open COM
+20200717 15:09:51 下午 -- Close COM
+20200717 15:09:56 下午 -- Open COM
+20200717 15:11:22 下午 -- Start System , Error:找不到指定的模块。 (异常来自 HRESULT:0x8007007E)
+20200717 15:11:25 下午 -- Open COM
+20200717 15:13:17 下午 -- Start System , Error:找不到指定的模块。 (异常来自 HRESULT:0x8007007E)
+20200717 15:13:20 下午 -- Open COM
+20200717 15:13:22 下午 -- Close COM
+20200717 15:21:59 下午 -- Start System , Error:找不到指定的模块。 (异常来自 HRESULT:0x8007007E)
+20200717 15:22:11 下午 -- Open COM
+20200717 15:22:14 下午 -- Close COM
+20200717 15:23:54 下午 -- Start System , Error:找不到指定的模块。 (异常来自 HRESULT:0x8007007E)
+20200717 15:23:59 下午 -- Open COM
+20200717 15:24:04 下午 -- Close COM

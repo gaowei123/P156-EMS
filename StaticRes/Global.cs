@@ -185,6 +185,11 @@ namespace StaticRes
             public const string Please_homing_first = "Error53";
             public const string Weighing_Failed = "Error54";
             public const string Update_database_failed = "Error55";
+
+
+
+            public const string SlotLabel_scanning_failed = "Error56";
+            public const string MovingSlot_missingPlace = "Error57";
         }
 
         public static class System_Setting

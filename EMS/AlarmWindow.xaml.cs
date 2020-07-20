@@ -21,36 +21,15 @@ namespace EMS
     /// </summary>
     public partial class AlarmWindow : Window
     {
-        public MainWindow xx;
-        ObjectModule.Local.Event ge_global = new ObjectModule.Local.Event();
         DispatcherTimer tm = new DispatcherTimer();
         private bool buzzer_on = true;
 
         public AlarmWindow()
         {
-            //InitializeComponent();
-            //this.image.Source = new BitmapImage(new Uri(@"\Resources\Image\Error2.jpg", UriKind.Relative));
-            //txt_error.Text = "Under testing.....";
-            //txt_ts.Text = "Under testing too.....";
+          
         }
 
-        void Timer(object sender, EventArgs e)
-        {
-            if (buzzer_on)
-            {
-                Hardware.IO_LIST.Output.Y103_Tower_Buzzer_Off();
-                buzzer_on = false;
-                GC.Collect();
-                return;
-            }
-            if(!buzzer_on)
-            {
-                Hardware.IO_LIST.Output.Y103_Tower_Buzzer_On();
-                buzzer_on = true;
-                GC.Collect();
-                return;
-            }
-        }
+        
 
         public AlarmWindow(ObjectModule.Local.Event ge)
         {
@@ -60,8 +39,10 @@ namespace EMS
                 tm.Tick += new EventHandler(Timer);
                 tm.Interval = TimeSpan.FromSeconds(0.5);
                 tm.Start();
-                //***** Display Error information and picture
-                ge_global = ge;
+
+
+
+                //***** Display Error information and picture          
                 txt_error.Text = StaticRes.Global.CurrentLanguageRes[ge.EVENT_NAME + "_Description"].ToString();
                 txt_ts.Text = StaticRes.Global.CurrentLanguageRes[ge.EVENT_NAME + "_TroubleShooting"].ToString();
                 ge.EVENT_NAME = ge.EVENT_NAME;
@@ -118,6 +99,24 @@ namespace EMS
 
         }
 
+
+        void Timer(object sender, EventArgs e)
+        {
+            if (buzzer_on)
+            {
+                Hardware.IO_LIST.Output.Y103_Tower_Buzzer_Off();
+                buzzer_on = false;
+                GC.Collect();
+                return;
+            }
+            if (!buzzer_on)
+            {
+                Hardware.IO_LIST.Output.Y103_Tower_Buzzer_On();
+                buzzer_on = true;
+                GC.Collect();
+                return;
+            }
+        }
         private void btn_continuous_Click(object sender, System.Windows.RoutedEventArgs e)
         {
             try
@@ -177,6 +176,24 @@ namespace EMS
         {
             try
             {
+
+                System.IO.Ports.SerialPort soltScanner_1 = new System.IO.Ports.SerialPort(StaticRes.Global.SlotScannerPort.Index1Port);
+                System.IO.Ports.SerialPort soltScanner_2 = new System.IO.Ports.SerialPort(StaticRes.Global.SlotScannerPort.Index2Port);
+                System.IO.Ports.SerialPort soltScanner_3 = new System.IO.Ports.SerialPort(StaticRes.Global.SlotScannerPort.Index3Port);
+                System.IO.Ports.SerialPort soltScanner_4 = new System.IO.Ports.SerialPort(StaticRes.Global.SlotScannerPort.Index4Port);
+
+                if (soltScanner_1.IsOpen)
+                    soltScanner_1.Close();
+                if (soltScanner_2.IsOpen)
+                    soltScanner_2.Close();
+                if (soltScanner_3.IsOpen)
+                    soltScanner_3.Close();
+                if (soltScanner_4.IsOpen)
+                    soltScanner_4.Close();
+
+
+
+
                 tm.Stop();
                 Hardware.IO_LIST.Output.Y103_Tower_Buzzer_Off();
                 Views.Login_cancel x = new Views.Login_cancel();

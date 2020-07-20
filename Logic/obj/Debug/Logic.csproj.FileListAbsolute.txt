@@ -36,3 +36,22 @@ D:\Git SourceCode Storage\VISHAY\P156-EMS\Logic\bin\Debug\DAL.pdb
 D:\Git SourceCode Storage\VISHAY\P156-EMS\Logic\obj\Debug\Logic.csprojResolveAssemblyReference.cache
 D:\Git SourceCode Storage\VISHAY\P156-EMS\Logic\obj\Debug\Logic.dll
 D:\Git SourceCode Storage\VISHAY\P156-EMS\Logic\obj\Debug\Logic.pdb
+E:\Git Source Code Storage\P156-EMS\Logic\bin\Debug\Logic.dll
+E:\Git Source Code Storage\P156-EMS\Logic\bin\Debug\Logic.pdb
+E:\Git Source Code Storage\P156-EMS\Logic\bin\Debug\BLL.dll
+E:\Git Source Code Storage\P156-EMS\Logic\bin\Debug\Common.dll
+E:\Git Source Code Storage\P156-EMS\Logic\bin\Debug\DataProvider.dll
+E:\Git Source Code Storage\P156-EMS\Logic\bin\Debug\Model.dll
+E:\Git Source Code Storage\P156-EMS\Logic\bin\Debug\ObjectModule.dll
+E:\Git Source Code Storage\P156-EMS\Logic\bin\Debug\StaticRes.dll
+E:\Git Source Code Storage\P156-EMS\Logic\bin\Debug\DAL.dll
+E:\Git Source Code Storage\P156-EMS\Logic\bin\Debug\BLL.pdb
+E:\Git Source Code Storage\P156-EMS\Logic\bin\Debug\Common.pdb
+E:\Git Source Code Storage\P156-EMS\Logic\bin\Debug\DataProvider.pdb
+E:\Git Source Code Storage\P156-EMS\Logic\bin\Debug\Model.pdb
+E:\Git Source Code Storage\P156-EMS\Logic\bin\Debug\ObjectModule.pdb
+E:\Git Source Code Storage\P156-EMS\Logic\bin\Debug\StaticRes.pdb
+E:\Git Source Code Storage\P156-EMS\Logic\bin\Debug\DAL.pdb
+E:\Git Source Code Storage\P156-EMS\Logic\obj\Debug\Logic.csprojResolveAssemblyReference.cache
+E:\Git Source Code Storage\P156-EMS\Logic\obj\Debug\Logic.dll
+E:\Git Source Code Storage\P156-EMS\Logic\obj\Debug\Logic.pdb

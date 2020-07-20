@@ -60,6 +60,7 @@ namespace EMS.Transaction
         DispatcherTimer tm = new DispatcherTimer();
         private DateTime time_start = System.DateTime.Now;
         private bool Transaction_ongoing = false;
+        string _partID = string.Empty;
 
         public Unload()
         {
@@ -197,13 +198,14 @@ namespace EMS.Transaction
         {
             try
             {
-                string a = "TM"; 
+                string a = "TM";
                 string b = "PU";
                 if (a != txt_mesDevice.Text.Substring(0, 2) && b != txt_mesDevice.Text.Substring(0, 2))
                 {
                     MessageBox.Show("Enter the PART number error !!\n输入PART NO号码错误", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                     return;
                 }
+
                 txt_mesDevice.Text = txt_mesDevice.Text.Trim();
                 Logic.Transaction.Unload.mesDevice_Validation(txt_mesDevice.Text);
                // kb.CurrentTextBox = txt_sapcode;
@@ -243,6 +245,9 @@ namespace EMS.Transaction
                 this.txt_readyTime.Text = gb.READY_DATETIME.ToString();
                //this.txt_mesDevice.Text = txt_lotID.Text;
                 this.txt_partID.Text = gb.PART_ID;
+
+                _partID = gb.PART_ID;
+
                 this.txt_description.Text = gb.DESCRIPTION;
                 this.txt_batchNo.Text = gb.BATCH_NO;
                 this.txt_currentWeight.Text = gb.CURRENT_WEIGHT.ToString();
@@ -426,13 +431,13 @@ namespace EMS.Transaction
 
 
                     #region  自动跳转mix page. 
-                    if (MessageBox.Show("Do you need to mix immediately?","Message",MessageBoxButton.YesNo,MessageBoxImage.Question) == MessageBoxResult.Yes)
+                    if (MessageBox.Show("Do you need to mix immediately?\n要立即搅拌吗?", "Message", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
                     {
                         Transaction.Mix mixPage = EMS.Singleton.MixSingleton.GetInstance;
 
                         if (mixPage.onGoing)
                         {
-                            MessageBox.Show("Mixer is running, please wait!");
+                            MessageBox.Show("Mixer is running, please wait!\n搅拌机正在运行, 请等待!");
                         }
                         else
                         {
@@ -444,7 +449,11 @@ namespace EMS.Transaction
 
                         mixPage.ShowWindow();
 
-                        btn_close_Click(null,null);
+                        mixPage.txt_partID_input.Text = _partID;
+
+                        mixPage.validation();
+
+                        btn_close_Click(null, null);
                     }
                     #endregion
 
@@ -494,6 +503,7 @@ namespace EMS.Transaction
                 StaticRes.Global.IsOnProgress = false;
                 CloseComPort();
                 Common.Reports.LogFile.Log("Close COM");
+
                 AlarmWindow aw = new AlarmWindow(ge);
                 if ((bool)aw.ShowDialog())
                 {

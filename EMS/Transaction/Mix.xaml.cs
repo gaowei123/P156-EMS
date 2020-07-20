@@ -23,6 +23,7 @@ namespace EMS.Transaction
     public partial class Mix : Window
     {
 
+      
         #region user info
         public string userID
         {
@@ -93,6 +94,9 @@ namespace EMS.Transaction
                 bgwMixing.RunWorkerCompleted += BackgroundWorker_RunWorkerCompleted;
                 bgwMixing.ProgressChanged += BgwMixing_ProgressChanged;
 
+
+                kb.CurrentTextBox = this.txt_partID_input;
+
             }
             catch (Exception ex)
             {
@@ -129,17 +133,26 @@ namespace EMS.Transaction
             ShowWindow();
 
 
-            
+
 
             //检测 是否把epoxy拿了出来.  
-            bool isMaterialIn = Hardware.IO_LIST.Input.X207_Mix_Material_In();
-            while (isMaterialIn)
-            {
-                MessageBox.Show("Mixing complete, please open door and take out epoxy!");
-                
-                //重新检下测感应器状态.
-                isMaterialIn = Hardware.IO_LIST.Input.X207_Mix_Material_In();
-            }
+            //bool isMaterialIn = Hardware.IO_LIST.Input.X207_Mix_Material_In();
+            //while (isMaterialIn)
+            //{
+            //    MessageBox.Show("Mixing complete, please open door and take out epoxy!");
+
+            //    //重新检下测感应器状态.
+            //    isMaterialIn = Hardware.IO_LIST.Input.X207_Mix_Material_In();
+            //}
+
+
+            //trigger again to stop mixer
+            bool result = Hardware.IO_LIST.Output.Y204_MixPower_On();
+            System.Threading.Thread.Sleep(100);
+            Hardware.IO_LIST.Output.Y204_MixPower_Off();
+
+
+            MessageBox.Show("Mixing complete, please take out epoxy\n搅拌完成,请取出银浆");
 
 
 
@@ -187,6 +200,9 @@ namespace EMS.Transaction
             this.txt_partID_input.Text = "";
             this.txt_partID_input.IsEnabled = true;
             this.txt_partID_input.Focus();
+            this.txt_partID_input.Background = StaticRes.ColorBrushes.Linear_Green;
+            
+            
 
         }
 
@@ -202,7 +218,15 @@ namespace EMS.Transaction
             if (e.Key != Key.Enter)
                 return;
 
-          
+            validation();
+
+
+        }
+
+
+
+        public  void validation()
+        {
             string partID = this.txt_partID_input.Text;
             if (string.IsNullOrEmpty(partID))
             {
@@ -234,7 +258,8 @@ namespace EMS.Transaction
                 this.txt_emptySyringeWeight.Text = trackModel.EMPTY_SYRINGE_WEIGHT.ToString();
             }
 
-            
+
+            this.txt_partID_input.Background = System.Windows.Media.Brushes.White;
             this.btn_startMix.IsEnabled = true;
             this.btn_startMix.Focus();
         }
@@ -242,26 +267,32 @@ namespace EMS.Transaction
         private void btn_startMix_Click(object sender, RoutedEventArgs e)
         {
 
-            //检测epoxy是否放入
-            bool isMaterialIn = Hardware.IO_LIST.Input.X207_Mix_Material_In();
-            if (!isMaterialIn)
-            {
-                MessageBox.Show("Please put in the epoxy!");
-                return;
-            }
+            //检测epoxy是否放入  --无法安装感应器, 屏蔽
+            //bool isMaterialIn = Hardware.IO_LIST.Input.X207_Mix_Material_In();
+            //if (!isMaterialIn)
+            //{
+            //    MessageBox.Show("Please put in the epoxy!");
+            //    return;
+            //}
 
 
-            //检测盖子是否盖上
-            bool isCoverd = Hardware.IO_LIST.Input.X206_Mix_Cover_On();
-            if (!isCoverd)
-            {
-                MessageBox.Show("Please close the door!");
-                return;
-            }
-            
+            //检测盖子是否盖上  --无法安装感应器, 屏蔽
+            //bool isCoverd = Hardware.IO_LIST.Input.X206_Mix_Cover_On();
+            //if (!isCoverd)
+            //{
+            //    MessageBox.Show("Please close the door!");
+            //    return;
+            //}
+
+
+            MessageBox.Show("Please open the cover and put in the epoxy\n请打开门并放入银浆");
+
 
             //触发IO,接通继电器使搅拌机通电.
             bool result = Hardware.IO_LIST.Output.Y204_MixPower_On();
+            System.Threading.Thread.Sleep(100);
+            Hardware.IO_LIST.Output.Y204_MixPower_Off();
+
             while (!result)
             {
                 MessageBox.Show("Mixer power error, please check!", "Error");
@@ -271,7 +302,7 @@ namespace EMS.Transaction
             
 
             this.btn_startMix.IsEnabled = false;
-            this.btn_stop.IsEnabled = false;
+            //this.btn_stop.IsEnabled = false;
             this.txt_partID_input.IsEnabled = false;
 
 
@@ -280,10 +311,10 @@ namespace EMS.Transaction
 
         }
         
-        private void btn_stop_Click(object sender, RoutedEventArgs e)
-        {
+        //private void btn_stop_Click(object sender, RoutedEventArgs e)
+        //{
 
-        }
+        //}
 
         private void btn_close_Click(object sender, RoutedEventArgs e)
         {
@@ -324,6 +355,9 @@ namespace EMS.Transaction
             this.txt_userGroup.Text = "";
             this.txt_userDepartment.Text = "";
         }
+
+
+   
         
         public void ShowWindow()
         {
@@ -331,6 +365,14 @@ namespace EMS.Transaction
             this.Focus();
             this.Visibility = Visibility.Visible;
             this.ShowInTaskbar = true;
+
+            if (!onGoing)
+            {
+                this.txt_partID_input.Background = StaticRes.ColorBrushes.Linear_Green;
+                this.txt_partID_input.Focus();
+
+                kb.CurrentTextBox = this.txt_partID_input;
+            }
         }
                 
         //重写onclosing事件, 避免通过window系统关闭窗口后,再打开界面导致报错
@@ -361,6 +403,18 @@ namespace EMS.Transaction
 
 
             return Common.DB.SqlDB.SetData_Rollback(cmdList, Common.DB.Connection.SqlServer.EMS);
+        }
+
+
+     
+
+        private void kb_EnterClick()
+        {
+            if (this.txt_partID_input.IsFocused && this.txt_partID_input.IsEnabled)
+            {
+                validation();
+                return;
+            }
         }
 
 

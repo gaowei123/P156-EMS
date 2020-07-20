@@ -95,6 +95,11 @@ namespace EMS.Transaction
             kb.CurrentTextBox = txt_sapcode;
             txt_sapcode.Background = StaticRes.ColorBrushes.Linear_Green;
             txt_sapcode.Focus();
+
+            HardwareControl.Motion_Control.Rotary_Motion_Stop();
+            HardwareControl.Motion_Control.Motion_Speed_Checking();
+
+
         }
 
         void Timer(object sender, EventArgs e)
@@ -429,7 +434,8 @@ namespace EMS.Transaction
                         }
                         while (MessageBox.Show(this, "Do you receive the label ?!\n你有看到打印的标签吗？！", "Question", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.No);
                     }
-                }               
+                }
+
                 this.btn_close.IsEnabled = false;
                 this.btn_openScrapBin.IsEnabled = false;
                 this.btn_openScrapBin2.IsEnabled = false;

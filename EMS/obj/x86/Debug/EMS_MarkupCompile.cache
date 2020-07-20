@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-D:\Git SourceCode Storage\VISHAY\P156-EMS\EMS\obj\x86\Debug\
+E:\Git Source Code Storage\P156-EMS\EMS\obj\x86\Debug\
 EMS
 none
 false
 DEBUG;TRACE
-D:\Git SourceCode Storage\VISHAY\P156-EMS\EMS\App.xaml
+E:\Git Source Code Storage\P156-EMS\EMS\App.xaml
 401278534300
 
 411722875546
-29380065940
+291399771008
 AdminMode\AdminPage.xaml;AdminMode\DepartmentDB.xaml;AdminMode\SystemSet.xaml;AlarmWindow.xaml;EngineerMode\EngineerPage.xaml;EngineerMode\EventDB.xaml;EngineerMode\HistoryDB.xaml;EngineerMode\MachineDB.xaml;AdminMode\SapDB.xaml;EngineerMode\TrackingDB.xaml;EngineerMode\UserDB.xaml;HomingPage.xaml;Language\Chinese.xaml;Language\English.xaml;MaintMode\ComTest.xaml;MaintMode\InputPage.xaml;MaintMode\InputTemp.xaml;MaintMode\LoadSlotTeach.xaml;MaintMode\MaintPage.xaml;MaintMode\OutputPage.xaml;MaintMode\OutputTemp.xaml;MainWindow.xaml;Report\logFile.xaml;Report\N2_Report.xaml;Report\SlotTemp.xaml;Report\Slot_Status.xaml;Report\usage.xaml;Resources\ColorResource.xaml;Resources\ControlStyles.xaml;Transaction\Load.xaml;Transaction\Mix.xaml;Transaction\Return.xaml;Transaction\ScrapClean.xaml;Transaction\Unload.xaml;ExpiryAlarm.xaml;Views\KeyBoard.xaml;Views\Login.xaml;Views\Login_cancel.xaml;Views\NumberKeyboard.xaml;Transaction\Remove.xaml;
 
 False

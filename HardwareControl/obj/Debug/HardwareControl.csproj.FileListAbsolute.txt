@@ -40,3 +40,27 @@ D:\Git SourceCode Storage\VISHAY\P156-EMS\HardwareControl\bin\Debug\DAL.dll
 D:\Git SourceCode Storage\VISHAY\P156-EMS\HardwareControl\bin\Debug\BLL.pdb
 D:\Git SourceCode Storage\VISHAY\P156-EMS\HardwareControl\bin\Debug\Model.pdb
 D:\Git SourceCode Storage\VISHAY\P156-EMS\HardwareControl\bin\Debug\DAL.pdb
+E:\Git Source Code Storage\P156-EMS\HardwareControl\bin\Debug\HardwareControl.dll
+E:\Git Source Code Storage\P156-EMS\HardwareControl\bin\Debug\HardwareControl.pdb
+E:\Git Source Code Storage\P156-EMS\HardwareControl\bin\Debug\Automation.BDaq.dll
+E:\Git Source Code Storage\P156-EMS\HardwareControl\bin\Debug\BLL.dll
+E:\Git Source Code Storage\P156-EMS\HardwareControl\bin\Debug\Common.dll
+E:\Git Source Code Storage\P156-EMS\HardwareControl\bin\Debug\DataProvider.dll
+E:\Git Source Code Storage\P156-EMS\HardwareControl\bin\Debug\Hardware.dll
+E:\Git Source Code Storage\P156-EMS\HardwareControl\bin\Debug\Logic.dll
+E:\Git Source Code Storage\P156-EMS\HardwareControl\bin\Debug\Model.dll
+E:\Git Source Code Storage\P156-EMS\HardwareControl\bin\Debug\ObjectModule.dll
+E:\Git Source Code Storage\P156-EMS\HardwareControl\bin\Debug\StaticRes.dll
+E:\Git Source Code Storage\P156-EMS\HardwareControl\bin\Debug\DAL.dll
+E:\Git Source Code Storage\P156-EMS\HardwareControl\bin\Debug\BLL.pdb
+E:\Git Source Code Storage\P156-EMS\HardwareControl\bin\Debug\Common.pdb
+E:\Git Source Code Storage\P156-EMS\HardwareControl\bin\Debug\DataProvider.pdb
+E:\Git Source Code Storage\P156-EMS\HardwareControl\bin\Debug\Hardware.pdb
+E:\Git Source Code Storage\P156-EMS\HardwareControl\bin\Debug\Logic.pdb
+E:\Git Source Code Storage\P156-EMS\HardwareControl\bin\Debug\Model.pdb
+E:\Git Source Code Storage\P156-EMS\HardwareControl\bin\Debug\ObjectModule.pdb
+E:\Git Source Code Storage\P156-EMS\HardwareControl\bin\Debug\StaticRes.pdb
+E:\Git Source Code Storage\P156-EMS\HardwareControl\bin\Debug\DAL.pdb
+E:\Git Source Code Storage\P156-EMS\HardwareControl\obj\Debug\HardwareControl.csprojResolveAssemblyReference.cache
+E:\Git Source Code Storage\P156-EMS\HardwareControl\obj\Debug\HardwareControl.dll
+E:\Git Source Code Storage\P156-EMS\HardwareControl\obj\Debug\HardwareControl.pdb

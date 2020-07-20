@@ -7,3 +7,7 @@ D:\Git SourceCode Storage\VISHAY\P156-EMS\ObjectModule\bin\Debug\ObjectModule.dl
 D:\Git SourceCode Storage\VISHAY\P156-EMS\ObjectModule\bin\Debug\ObjectModule.pdb
 D:\Git SourceCode Storage\VISHAY\P156-EMS\ObjectModule\obj\Debug\ObjectModule.dll
 D:\Git SourceCode Storage\VISHAY\P156-EMS\ObjectModule\obj\Debug\ObjectModule.pdb
+E:\Git Source Code Storage\P156-EMS\ObjectModule\bin\Debug\ObjectModule.dll
+E:\Git Source Code Storage\P156-EMS\ObjectModule\bin\Debug\ObjectModule.pdb
+E:\Git Source Code Storage\P156-EMS\ObjectModule\obj\Debug\ObjectModule.dll
+E:\Git Source Code Storage\P156-EMS\ObjectModule\obj\Debug\ObjectModule.pdb

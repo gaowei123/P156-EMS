@@ -7,3 +7,7 @@ D:\Git SourceCode Storage\VISHAY\P156-EMS\Model\bin\Debug\Model.dll
 D:\Git SourceCode Storage\VISHAY\P156-EMS\Model\bin\Debug\Model.pdb
 D:\Git SourceCode Storage\VISHAY\P156-EMS\Model\obj\Debug\Model.dll
 D:\Git SourceCode Storage\VISHAY\P156-EMS\Model\obj\Debug\Model.pdb
+E:\Git Source Code Storage\P156-EMS\Model\bin\Debug\Model.dll
+E:\Git Source Code Storage\P156-EMS\Model\bin\Debug\Model.pdb
+E:\Git Source Code Storage\P156-EMS\Model\obj\Debug\Model.dll
+E:\Git Source Code Storage\P156-EMS\Model\obj\Debug\Model.pdb

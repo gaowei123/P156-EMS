@@ -1,26 +1,26 @@
-﻿D:\Git SourceCode Storage\VISHAY\P156-EMS\EMS\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs
+﻿E:\Git Source Code Storage\P156-EMS\EMS\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs
 
-FD:\Git SourceCode Storage\VISHAY\P156-EMS\EMS\AdminMode\AdminPage.xaml;;
-FD:\Git SourceCode Storage\VISHAY\P156-EMS\EMS\AdminMode\DepartmentDB.xaml;;
-FD:\Git SourceCode Storage\VISHAY\P156-EMS\EMS\AdminMode\SystemSet.xaml;;
-FD:\Git SourceCode Storage\VISHAY\P156-EMS\EMS\EngineerMode\EngineerPage.xaml;;
-FD:\Git SourceCode Storage\VISHAY\P156-EMS\EMS\EngineerMode\MachineDB.xaml;;
-FD:\Git SourceCode Storage\VISHAY\P156-EMS\EMS\AdminMode\SapDB.xaml;;
-FD:\Git SourceCode Storage\VISHAY\P156-EMS\EMS\EngineerMode\TrackingDB.xaml;;
-FD:\Git SourceCode Storage\VISHAY\P156-EMS\EMS\EngineerMode\UserDB.xaml;;
-FD:\Git SourceCode Storage\VISHAY\P156-EMS\EMS\MaintMode\ComTest.xaml;;
-FD:\Git SourceCode Storage\VISHAY\P156-EMS\EMS\MaintMode\InputPage.xaml;;
-FD:\Git SourceCode Storage\VISHAY\P156-EMS\EMS\MaintMode\LoadSlotTeach.xaml;;
-FD:\Git SourceCode Storage\VISHAY\P156-EMS\EMS\MaintMode\MaintPage.xaml;;
-FD:\Git SourceCode Storage\VISHAY\P156-EMS\EMS\MaintMode\OutputPage.xaml;;
-FD:\Git SourceCode Storage\VISHAY\P156-EMS\EMS\MainWindow.xaml;;
-FD:\Git SourceCode Storage\VISHAY\P156-EMS\EMS\Report\Slot_Status.xaml;;
-FD:\Git SourceCode Storage\VISHAY\P156-EMS\EMS\Transaction\Load.xaml;;
-FD:\Git SourceCode Storage\VISHAY\P156-EMS\EMS\Transaction\Mix.xaml;;
-FD:\Git SourceCode Storage\VISHAY\P156-EMS\EMS\Transaction\Return.xaml;;
-FD:\Git SourceCode Storage\VISHAY\P156-EMS\EMS\Transaction\ScrapClean.xaml;;
-FD:\Git SourceCode Storage\VISHAY\P156-EMS\EMS\Transaction\Unload.xaml;;
-FD:\Git SourceCode Storage\VISHAY\P156-EMS\EMS\Views\Login.xaml;;
-FD:\Git SourceCode Storage\VISHAY\P156-EMS\EMS\Views\Login_cancel.xaml;;
-FD:\Git SourceCode Storage\VISHAY\P156-EMS\EMS\Transaction\Remove.xaml;;
+FE:\Git Source Code Storage\P156-EMS\EMS\AdminMode\AdminPage.xaml;;
+FE:\Git Source Code Storage\P156-EMS\EMS\AdminMode\DepartmentDB.xaml;;
+FE:\Git Source Code Storage\P156-EMS\EMS\AdminMode\SystemSet.xaml;;
+FE:\Git Source Code Storage\P156-EMS\EMS\EngineerMode\EngineerPage.xaml;;
+FE:\Git Source Code Storage\P156-EMS\EMS\EngineerMode\MachineDB.xaml;;
+FE:\Git Source Code Storage\P156-EMS\EMS\AdminMode\SapDB.xaml;;
+FE:\Git Source Code Storage\P156-EMS\EMS\EngineerMode\TrackingDB.xaml;;
+FE:\Git Source Code Storage\P156-EMS\EMS\EngineerMode\UserDB.xaml;;
+FE:\Git Source Code Storage\P156-EMS\EMS\MaintMode\ComTest.xaml;;
+FE:\Git Source Code Storage\P156-EMS\EMS\MaintMode\InputPage.xaml;;
+FE:\Git Source Code Storage\P156-EMS\EMS\MaintMode\LoadSlotTeach.xaml;;
+FE:\Git Source Code Storage\P156-EMS\EMS\MaintMode\MaintPage.xaml;;
+FE:\Git Source Code Storage\P156-EMS\EMS\MaintMode\OutputPage.xaml;;
+FE:\Git Source Code Storage\P156-EMS\EMS\MainWindow.xaml;;
+FE:\Git Source Code Storage\P156-EMS\EMS\Report\Slot_Status.xaml;;
+FE:\Git Source Code Storage\P156-EMS\EMS\Transaction\Load.xaml;;
+FE:\Git Source Code Storage\P156-EMS\EMS\Transaction\Mix.xaml;;
+FE:\Git Source Code Storage\P156-EMS\EMS\Transaction\Return.xaml;;
+FE:\Git Source Code Storage\P156-EMS\EMS\Transaction\ScrapClean.xaml;;
+FE:\Git Source Code Storage\P156-EMS\EMS\Transaction\Unload.xaml;;
+FE:\Git Source Code Storage\P156-EMS\EMS\Views\Login.xaml;;
+FE:\Git Source Code Storage\P156-EMS\EMS\Views\Login_cancel.xaml;;
+FE:\Git Source Code Storage\P156-EMS\EMS\Transaction\Remove.xaml;;
 

@@ -1,0 +1,12 @@
+20200714 13:58:36 下午 -- Open COM
+20200714 13:58:44 下午 -- Close COM
+20200714 13:58:44 下午 -- Entry maintenance mode page , user: UBCT
+20200714 13:58:46 下午 -- Open COM port error in COM test page :端口“COM4”不存在。
+20200714 13:58:47 下午 -- Open COM
+20200714 14:00:42 下午 -- Open COM
+20200714 14:00:50 下午 -- Close COM
+20200714 14:00:50 下午 -- Entry maintenance mode page , user: UBCT
+20200714 14:00:52 下午 -- Open COM port error in COM test page :端口“COM4”不存在。
+20200714 14:00:53 下午 -- Open COM
+20200714 14:29:05 下午 -- Open COM
+20200714 14:29:08 下午 -- Close COM

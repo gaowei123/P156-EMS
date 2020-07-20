@@ -20,3 +20,14 @@ D:\Git SourceCode Storage\VISHAY\P156-EMS\BLL\bin\Debug\Model.pdb
 D:\Git SourceCode Storage\VISHAY\P156-EMS\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
 D:\Git SourceCode Storage\VISHAY\P156-EMS\BLL\obj\Debug\BLL.dll
 D:\Git SourceCode Storage\VISHAY\P156-EMS\BLL\obj\Debug\BLL.pdb
+E:\Git Source Code Storage\P156-EMS\BLL\bin\Debug\BLL.dll
+E:\Git Source Code Storage\P156-EMS\BLL\bin\Debug\BLL.pdb
+E:\Git Source Code Storage\P156-EMS\BLL\bin\Debug\Common.dll
+E:\Git Source Code Storage\P156-EMS\BLL\bin\Debug\DAL.dll
+E:\Git Source Code Storage\P156-EMS\BLL\bin\Debug\Model.dll
+E:\Git Source Code Storage\P156-EMS\BLL\bin\Debug\Common.pdb
+E:\Git Source Code Storage\P156-EMS\BLL\bin\Debug\DAL.pdb
+E:\Git Source Code Storage\P156-EMS\BLL\bin\Debug\Model.pdb
+E:\Git Source Code Storage\P156-EMS\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+E:\Git Source Code Storage\P156-EMS\BLL\obj\Debug\BLL.dll
+E:\Git Source Code Storage\P156-EMS\BLL\obj\Debug\BLL.pdb

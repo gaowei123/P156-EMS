@@ -1,0 +1,5 @@
+20200716 15:31:31 下午 -- Start System , Error:未能找到文件“E:\Git Source Code Storage\P156-EMS\EMS\bin\Debug\motion_setting.cfg”。
+20200716 16:32:47 下午 -- Start System , Error:未能找到文件“E:\Git Source Code Storage\P156-EMS\EMS\bin\Debug\motion_setting.cfg”。
+20200716 16:32:53 下午 -- Open COM
+20200716 16:32:56 下午 -- Close COM
+20200716 16:32:56 下午 -- Exit system , user: UBCT

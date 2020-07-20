@@ -1,0 +1,5 @@
+20200715 16:27:37 下午 -- Open COM
+20200715 16:27:41 下午 -- Close COM
+20200715 16:34:48 下午 -- Start System , Error:未能找到文件“E:\Git Source Code Storage\P156-EMS\EMS\bin\Debug\motion_setting.cfg”。
+20200715 16:34:55 下午 -- Open COM
+20200715 16:35:02 下午 -- Close COM

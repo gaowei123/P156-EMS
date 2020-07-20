@@ -123,6 +123,22 @@ namespace HardwareControl
             try
             {
                 
+                System.IO.Ports.SerialPort soltScanner_1 = new System.IO.Ports.SerialPort(StaticRes.Global.SlotScannerPort.Index1Port);
+                System.IO.Ports.SerialPort soltScanner_2 = new System.IO.Ports.SerialPort(StaticRes.Global.SlotScannerPort.Index2Port);
+                System.IO.Ports.SerialPort soltScanner_3 = new System.IO.Ports.SerialPort(StaticRes.Global.SlotScannerPort.Index3Port);
+                System.IO.Ports.SerialPort soltScanner_4 = new System.IO.Ports.SerialPort(StaticRes.Global.SlotScannerPort.Index4Port);
+
+                if (soltScanner_1.IsOpen)
+                    soltScanner_1.Close();
+                if (soltScanner_2.IsOpen)
+                    soltScanner_2.Close();
+                if (soltScanner_3.IsOpen)
+                    soltScanner_3.Close();
+                if (soltScanner_4.IsOpen)
+                    soltScanner_4.Close();
+
+
+
                 if (!StaticRes.Global.Hardware_Connection)
                 {
                     homecomplete();
