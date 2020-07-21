@@ -44,5 +44,28 @@ namespace Common.Reports
                 ; // .
             }
         }
+
+        public static void DebugLog(string sClass, string sFunction, string sMsg)
+        {
+           string path = ".\\DebugLog\\";
+
+            if (!Directory.Exists(path))
+                System.IO.Directory.CreateDirectory(path);
+
+            string file = path + DateTime.Now.ToString("yyyyMMdd") + ".txt";
+
+          
+
+            StreamWriter tw = File.AppendText(file);
+
+
+            string logText = string.Format("[{0}] -- [{1}]-[{2}],  {3}", DateTime.Now.ToString("yyyyMMdd HH:mm:ss tt"), sClass, sFunction, sMsg);
+
+            tw.WriteLine(logText);
+
+            // Close the stream.
+            tw.Flush();
+            tw.Close();
+        }
     }
 }

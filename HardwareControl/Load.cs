@@ -75,6 +75,9 @@ namespace HardwareControl
             
             if (!slotScanner.IsOpen)
                 slotScanner.Open();
+
+            string msg = string.Format("init slot scanner,  portName:{0} baudRate:{1} stopBits:{2} dataBits:{3}", slotScanner.PortName, slotScanner.BaudRate, slotScanner.StopBits, slotScanner.DataBits);
+            Common.Reports.LogFile.DebugLog("Load", "InitAndOpen", msg);
         }
 
         private void CloseSlotScanner()
@@ -83,27 +86,46 @@ namespace HardwareControl
                 slotScanner.Close();
 
             slotScanner.DataReceived -= SoltScanner_DataReceived;
+
+            string msg = string.Format("close com port {0}", slotScanner.PortName);
+            Common.Reports.LogFile.DebugLog("Load", "CloseSlotScanner", msg);
         }
 
         private void SoltScanner_DataReceived(object sender, System.IO.Ports.SerialDataReceivedEventArgs e)
         {
+            
+            Common.Reports.LogFile.DebugLog("Load", "SoltScanner_DataReceived", "In Function");
+
             if (!slotScanner.IsOpen)
+            {
+                Common.Reports.LogFile.DebugLog("Load", "SoltScanner_DataReceived", "Port " + slotScanner.PortName +" is closed ,  return;");
                 return;
+            }
+               
 
 
             received = true;
+
            
 
-
             string currentSlotID = slotScanner.ReadExisting().Replace("\r", "");
+            Common.Reports.LogFile.DebugLog("Load", "SoltScanner_DataReceived", "receive true, msg: " + currentSlotID+",  target slot: "+ targetSlotID.ToString());
+
 
 
             if (currentSlotID != targetSlotID.ToString())
             {
-                Error_Throw(StaticRes.Global.Error_List.Motion_failed, "L000");             
+
+                Common.Reports.LogFile.DebugLog("Load", "SoltScanner_DataReceived", "slot place is wrong, start alarming");
+
+                Error_Throw(StaticRes.Global.Error_List.Motion_failed, "L000");  
+                           
             }
             else
             {
+
+                Common.Reports.LogFile.DebugLog("Load", "SoltScanner_DataReceived", "slot place is right, start into load L200");
+
                 //确保转盘停止.                
                 Motion_Control.Motion_Speed_Checking();
 
@@ -127,6 +149,8 @@ namespace HardwareControl
             slotScanner.StopBits = System.IO.Ports.StopBits.One;
             slotScanner.DataBits = StaticRes.Global.System_Setting.SlotScanner_DataBits;
             slotScanner.DataReceived += SoltScanner_DataReceived;
+
+           
         }
 
       
@@ -214,16 +238,21 @@ namespace HardwareControl
                     return;
                 }
                 if (!StaticRes.Global.Need_Homing)
-                {              
+                {
+
+                   
 
                     #region  ***(L000)*** Rotary move to point position
                     if (StaticRes.Global.Process_Code.Loading == "L000" && StaticRes.Global.Transaction_Continue)
-                    {                        
+                    {
+                        Common.Reports.LogFile.DebugLog("Load", "LogicLoad", "In L000");
+
                         IO_Control.Green_Tower_Light_Setting();
                         step("L000 - Rotary move to Slot-" + Slot_ID.ToString() + ",Position:" + StaticRes.Global.Slot_Position[Slot_ID - 1].ToString() + "");//" + StaticRes.Global.Slot_Position[Slot_ID - 1].ToString + "
                         try
                         {
                             Motion_Control.Rotary_MoveTo_Slot_ABSMode(Slot_ID);
+                            Common.Reports.LogFile.DebugLog("Load", "LogicLoad", "In L100, load move to slot successful ,current position:" + Motion_Control.Got_Rotary_Position().ToString());
                             Common.Reports.LogFile.Log("load move to slot successful ,current position:" + Motion_Control.Got_Rotary_Position().ToString() + ""  );
                             Motion_Control.Motion_Speed_Checking();                          
                             StaticRes.Global.Process_Code.Loading = "L100";
@@ -243,7 +272,7 @@ namespace HardwareControl
                     if (StaticRes.Global.Process_Code.Loading == "L100" && StaticRes.Global.Transaction_Continue)
                     {
                         step("L100 -  Scan Slot-" + Slot_ID.ToString() + " Barcode ,Position:" + StaticRes.Global.Slot_Position[Slot_ID - 1].ToString() + "");
-
+                        Common.Reports.LogFile.DebugLog("Load", "LogicLoad", "In L100");
                         try
                         {
                             string comPort = string.Empty;
@@ -264,7 +293,8 @@ namespace HardwareControl
                                     break;
                             }
 
-                            
+                            Common.Reports.LogFile.DebugLog("Load", "LogicLoad", "L100, start init & open com port");
+
                             //初始化, 并打开com port
                             InitAndOpen(comPort);
 
@@ -273,7 +303,11 @@ namespace HardwareControl
                             for (int i = 0; i < 5; i++)
                             {
                                 if (received)
+                                {
+                                    Common.Reports.LogFile.DebugLog("Load", "LogicLoad", "L100, received scanner msg, return;");
                                     return;
+                                }
+                                    
 
                                 Motion_Control.Rotary_Move(10000);
                                 Motion_Control.Motion_Speed_Checking();
@@ -282,12 +316,18 @@ namespace HardwareControl
                                 Motion_Control.Rotary_Move(-10000);
                                 Motion_Control.Motion_Speed_Checking();
                                 System.Threading.Thread.Sleep(300);
+
+                                Common.Reports.LogFile.DebugLog("Load", "LogicLoad", "L100, move and back time-"+ i.ToString());
                             }
 
 
                             //如果来回5次都没有扫到, 就报警.
                             if (!received)
+                            {
+                                Common.Reports.LogFile.DebugLog("Load", "LogicLoad", "L100, 5 times moving come and back still can not read slot barcode, start alarming");
                                 Error_Throw(StaticRes.Global.Error_List.Motion_failed, "L000");
+                            }
+                                
 
                             return;
 

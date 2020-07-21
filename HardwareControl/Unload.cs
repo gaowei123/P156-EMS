@@ -77,6 +77,9 @@ namespace HardwareControl
 
             if (!slotScanner.IsOpen)
                 slotScanner.Open();
+
+            string msg = string.Format("init slot scanner,  portName:{0} baudRate:{1} stopBits:{2} dataBits:{3}", slotScanner.PortName, slotScanner.BaudRate, slotScanner.StopBits, slotScanner.DataBits);
+            Common.Reports.LogFile.DebugLog("Unload", "InitAndOpen", msg);
         }
 
         private void CloseSlotScanner()
@@ -85,27 +88,40 @@ namespace HardwareControl
                 slotScanner.Close();
 
             slotScanner.DataReceived -= SoltScanner_DataReceived;
+
+            string msg = string.Format("close com port {0}", slotScanner.PortName);
+            Common.Reports.LogFile.DebugLog("Unload", "CloseSlotScanner", msg);
         }
 
         private void SoltScanner_DataReceived(object sender, System.IO.Ports.SerialDataReceivedEventArgs e)
         {
+
+            Common.Reports.LogFile.DebugLog("Unload", "SoltScanner_DataReceived", "In Function");
+
             if (!slotScanner.IsOpen)
+            {
+                Common.Reports.LogFile.DebugLog("Unload", "SoltScanner_DataReceived", "Port " + slotScanner.PortName + " is closed ,  return;");
                 return;
+            }
 
 
             received = true;
+
+
             string currentSlotID = slotScanner.ReadExisting().Replace("\r", "");
+            Common.Reports.LogFile.DebugLog("Unload", "SoltScanner_DataReceived", "receive true, msg: " + currentSlotID + ",  target slot: " + targetSlotID.ToString());
 
-
-            //一旦扫到立马关闭com口, 避免再次触发.
-            CloseSlotScanner();
 
             if (currentSlotID != targetSlotID.ToString())
             {
+                Common.Reports.LogFile.DebugLog("Unload", "SoltScanner_DataReceived", "slot place is wrong, start alarming");
+
                 Error_Throw(StaticRes.Global.Error_List.Motion_failed, "U000");
             }
             else
             {
+                Common.Reports.LogFile.DebugLog("Unload", "SoltScanner_DataReceived", "slot place is right, start into unload U100");
+
                 //确保转盘停止. 
                 Motion_Control.Motion_Speed_Checking();
 
@@ -209,6 +225,7 @@ namespace HardwareControl
                     #region ***(U000)*** Move to pointed position
                     if (StaticRes.Global.Process_Code.Unloading == "U000" && StaticRes.Global.Transaction_Continue)
                     {
+                        Common.Reports.LogFile.DebugLog("Unload", "LogicUnload", "In U000");
                         IO_Control.Green_Tower_Light_Setting();
                         step("U000 -  Rotary move to Slot-" + Slot_ID.ToString() + ",Position:"+StaticRes.Global.Slot_Position[Slot_ID-1].ToString()+"");
                         try
@@ -220,6 +237,7 @@ namespace HardwareControl
                             //    return;
                             //}
                             Motion_Control.Rotary_MoveTo_Slot(Slot_ID);
+                            Common.Reports.LogFile.DebugLog("Unload", "LogicUnload", "In U100, Unload move to slot successful, current position: " + Motion_Control.Got_Rotary_Position().ToString());
                             Common.Reports.LogFile.Log("Unload move to slot successful ,current position:" + Motion_Control.Got_Rotary_Position().ToString() +"");
                             Motion_Control.Motion_Speed_Checking();
                            
@@ -234,11 +252,13 @@ namespace HardwareControl
                     }
                     #endregion
 
+
                     //2020 07 19 by Dwyane for Slot Barcode Validation 
                     #region ***(U050)*** Slot Barcode Validation
                     if (StaticRes.Global.Process_Code.Unloading == "U050" && StaticRes.Global.Transaction_Continue)
                     { 
                         step("U050 -  Scan Slot-" + Slot_ID.ToString() + " Barcode ,Position:" + StaticRes.Global.Slot_Position[Slot_ID - 1].ToString() + "");
+                        Common.Reports.LogFile.DebugLog("Unload", "LogicUnload", "In U050");
                         try
                         {
                             string comPort = string.Empty;
@@ -259,6 +279,8 @@ namespace HardwareControl
                                     break;
                             }
 
+                            Common.Reports.LogFile.DebugLog("Unload", "LogicUnload", "U050, start init & open com port");
+
 
                             //初始化, 并打开com port
                             InitAndOpen(comPort);
@@ -267,7 +289,10 @@ namespace HardwareControl
                             for (int i = 0; i < 5; i++)
                             {
                                 if (received)
+                                {
+                                    Common.Reports.LogFile.DebugLog("Unload", "LogicUnload", "U050, received scanner msg, return;");
                                     return;
+                                }
 
                                 Motion_Control.Rotary_Move(10000);
                                 Motion_Control.Motion_Speed_Checking();
@@ -276,12 +301,20 @@ namespace HardwareControl
                                 Motion_Control.Rotary_Move(-10000);
                                 Motion_Control.Motion_Speed_Checking();
                                 System.Threading.Thread.Sleep(300);
+                                Common.Reports.LogFile.DebugLog("Unload", "LogicUnload", "U050, move and back time-" + i.ToString());
                             }
+
 
 
                             //如果来回5次都没有扫到, 就报警.
                             if (!received)
-                                Error_Throw(StaticRes.Global.Error_List.Motion_failed, "U000");                            
+                            {
+                                Common.Reports.LogFile.DebugLog("Unload", "LogicLoad", "U050, 5 times moving come and back still can not read slot barcode, start alarming");
+                                Error_Throw(StaticRes.Global.Error_List.Motion_failed, "U000");
+                            }
+                            
+
+                            return ;
                         }
                         catch
                         {
@@ -294,6 +327,11 @@ namespace HardwareControl
                     #region ***(U100)*** Check slot index and move to related process
                     if (StaticRes.Global.Process_Code.Unloading == "U100" && StaticRes.Global.Transaction_Continue)
                     {
+
+                        //关闭com口, 避免再次触发.
+                        CloseSlotScanner();
+
+
                         switch (Slot_Index)
                         {
                             case 1:

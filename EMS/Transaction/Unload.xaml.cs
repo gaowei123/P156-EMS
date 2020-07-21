@@ -445,15 +445,15 @@ namespace EMS.Transaction
                             mixPage.userGroup = StaticRes.Global.Current_User.USER_GROUP;
                             mixPage.userName = StaticRes.Global.Current_User.USER_NAME;
                             mixPage.department = StaticRes.Global.Current_User.DEPARTMENT;
+
+                            mixPage.txt_partID_input.Text = _partID;
+                            mixPage.validation();
                         }
 
-                        mixPage.ShowWindow();
-
-                        mixPage.txt_partID_input.Text = _partID;
-
-                        mixPage.validation();
-
                         btn_close_Click(null, null);
+
+                        System.Threading.Thread.Sleep(100);
+                        mixPage.ShowWindow();
                     }
                     #endregion
 
