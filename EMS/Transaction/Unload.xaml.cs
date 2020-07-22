@@ -430,31 +430,31 @@ namespace EMS.Transaction
 
 
 
-                    #region  自动跳转mix page. 
-                    if (MessageBox.Show("Do you need to mix immediately?\n要立即搅拌吗?", "Message", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
-                    {
-                        Transaction.Mix mixPage = EMS.Singleton.MixSingleton.GetInstance;
+                    #region  自动跳转mix page.   
+                    //if (MessageBox.Show("Do you need to mix immediately?\n要立即搅拌吗?", "Message", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+                    //{
+                    //    Transaction.Mix mixPage = EMS.Singleton.MixSingleton.GetInstance;
 
-                        if (mixPage.onGoing)
-                        {
-                            MessageBox.Show("Mixer is running, please wait!\n搅拌机正在运行, 请等待!");
-                        }
-                        else
-                        {
-                            mixPage.userID = StaticRes.Global.Current_User.USER_ID;
-                            mixPage.userGroup = StaticRes.Global.Current_User.USER_GROUP;
-                            mixPage.userName = StaticRes.Global.Current_User.USER_NAME;
-                            mixPage.department = StaticRes.Global.Current_User.DEPARTMENT;
+                    //    if (mixPage.onGoing)
+                    //    {
+                    //        MessageBox.Show("Mixer is running, please wait!\n搅拌机正在运行, 请等待!");
+                    //    }
+                    //    else
+                    //    {
+                    //        mixPage.userID = StaticRes.Global.Current_User.USER_ID;
+                    //        mixPage.userGroup = StaticRes.Global.Current_User.USER_GROUP;
+                    //        mixPage.userName = StaticRes.Global.Current_User.USER_NAME;
+                    //        mixPage.department = StaticRes.Global.Current_User.DEPARTMENT;
 
-                            mixPage.txt_partID_input.Text = _partID;
-                            mixPage.validation();
-                        }
+                    //        mixPage.txt_partID_input.Text = _partID;
+                    //        mixPage.validation();
+                    //    }
 
-                        btn_close_Click(null, null);
+                    //    btn_close_Click(null, null);
 
-                        System.Threading.Thread.Sleep(100);
-                        mixPage.ShowWindow();
-                    }
+                    //    System.Threading.Thread.Sleep(100);
+                    //    mixPage.ShowWindow();
+                    //}
                     #endregion
 
                 }
@@ -616,5 +616,11 @@ namespace EMS.Transaction
            
         }
         #endregion
+
+        private void btn_Mix_Click(object sender, RoutedEventArgs e)
+        {
+            Transaction.Mix mixPage = EMS.Singleton.MixSingleton.GetInstance;
+            mixPage.ShowWindow();
+        }
     }
 }

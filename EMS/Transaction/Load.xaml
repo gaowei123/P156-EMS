@@ -241,5 +241,7 @@
     		</Button.Effect>
     	</Button>
     	<EMS_Views:KeyBoard x:Name="kb" Margin="75,0,89,12" VerticalAlignment="Bottom" d:LayoutOverrides="Height" EnterClick="kb_EnterClick" UndoClick="kb_UndoClick"/>
+        <Button x:Name="btn_Mix" Content="Mix" FontSize="20" Margin="0,12.966,82,0" Width="63" HorizontalAlignment="Right" Background="{x:Null}" Style="{DynamicResource ButtonStyle-Zoom}" BorderBrush="Black" Focusable="False" IsTabStop="False" Click="btn_Mix_Click" Cursor="Hand" Height="50" VerticalAlignment="Top"/>
+
     </Grid>
 </Window>

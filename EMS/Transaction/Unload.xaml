@@ -8,161 +8,164 @@
         Title= "" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" Topmost="True"
     Background="#4C000000" AllowsTransparency="True" Width="982" Height="650">
     <Grid Margin="0,0,8,0">
-    	<Grid.RowDefinitions>
-    		<RowDefinition/>
-    	</Grid.RowDefinitions>
-    	<Rectangle Margin="10,8,-2,8" Stroke="Black" Fill="{DynamicResource ButtonNormalBackground}"/>
-    	<TextBlock Margin="10,7,287.903,0" TextWrapping="Wrap" Text="{DynamicResource TS_unloadPage}" FontSize="50.667" VerticalAlignment="Top" FontFamily="Arial">
-    		<TextBlock.Foreground>
-    			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-    				<GradientStop Color="#FF009B97" Offset="0"/>
-    				<GradientStop Color="#FF7BFDF5" Offset="1"/>
-    			</LinearGradientBrush>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Rectangle Margin="10,8,-2,8" Stroke="Black" Fill="{DynamicResource ButtonNormalBackground}"/>
+        <TextBlock Margin="10,7,287.903,0" TextWrapping="Wrap" Text="{DynamicResource TS_unloadPage}" FontSize="50.667" VerticalAlignment="Top" FontFamily="Arial">
+            <TextBlock.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF009B97" Offset="0"/>
+                    <GradientStop Color="#FF7BFDF5" Offset="1"/>
+                </LinearGradientBrush>
 
-    		</TextBlock.Foreground>
-    		<TextBlock.Effect>
-    			<DropShadowEffect ShadowDepth="3"/>
-    		</TextBlock.Effect>
-    	</TextBlock>
-    	<GroupBox Header="{DynamicResource TS_userInfor}" Margin="20,70.966,0,0" Foreground="#FF101010" HorizontalAlignment="Left" Width="285.437" Height="151.244" VerticalAlignment="Top" BorderBrush="{DynamicResource Linear_Blue}">
-    		<GroupBox.Effect>
-    			<DropShadowEffect/>
-    		</GroupBox.Effect>
-    	</GroupBox>
-		<StackPanel Margin="39.217,93.011,0,0" Height="133.199" VerticalAlignment="Top" HorizontalAlignment="Left" Width="89.437">
-			<TextBlock TextWrapping="Wrap" Text="{DynamicResource TS_userID}" Height="19.837" Foreground="#FF060606" FontSize="14.667"/>
-			<TextBlock TextWrapping="Wrap" Text="{DynamicResource TS_userName}" Height="19.837" Foreground="#FF060606" Margin="0,13,0,0" FontSize="14.667"/>
-			<TextBlock TextWrapping="Wrap" Text="{DynamicResource TS_userGroup}" Height="19.837" Foreground="#FF060606" Margin="0,13,0,0" FontSize="14.667"/>
-			<TextBlock TextWrapping="Wrap" Text="{DynamicResource TS_department}" Height="19.837" Foreground="#FF060606" Margin="0,13,0,0" FontSize="14.667"/>
-		</StackPanel>
-		<StackPanel Margin="132.654,94.011,0,0" HorizontalAlignment="Left" Width="155.771" Height="127.199" VerticalAlignment="Top">
-			<TextBlock x:Name="txt_userID" TextWrapping="NoWrap" Height="19.837" FontSize="14.667" Foreground="#FF080808"/>
-			<TextBlock x:Name="txt_userName" TextWrapping="NoWrap" Height="19.837" Margin="0,13,0,0" FontSize="14.667" Foreground="#FF080808"/>
-			<TextBlock x:Name="txt_userGroup" TextWrapping="NoWrap" Height="19.837" Margin="0,13,0,0" FontSize="14.667" Foreground="#FF080808"/>
-			<TextBlock x:Name="txt_userDepartment" TextWrapping="NoWrap" Height="19.837" Margin="0,13,0,0" FontSize="14.667" Foreground="#FF080808"/>
-		</StackPanel>
-		<GroupBox Header="{DynamicResource TS_inputInfor}" Margin="20,223.21,0,189.428" Foreground="#FF0C0C0C" HorizontalAlignment="Left" Width="285.437" BorderBrush="{DynamicResource Linear_Blue}">
-			<GroupBox.Effect>
-				<DropShadowEffect/>
-			</GroupBox.Effect>
-		</GroupBox>
-		<GroupBox Header="{DynamicResource TS_materialInfor}" Margin="316.405,71.632,261.594,252.428" Foreground="#FF0A0A0A" BorderBrush="{DynamicResource Linear_Blue}" Width="396">
-			<GroupBox.Effect>
-				<DropShadowEffect/>
-			</GroupBox.Effect>
-		</GroupBox>
-                <Path Data="M16,67.5 L1232.5083,67.5" Fill="#FFF4F4F5" Height="2" Margin="12,0,-2,180.534" Stretch="Fill" VerticalAlignment="Bottom" StrokeThickness="2" Stroke="{DynamicResource Linear_Blue}">
-                	<Path.Effect>
-                		<DropShadowEffect Color="#FFB2B2B2" ShadowDepth="2"/>
-                	</Path.Effect>
-                </Path>
-                <StackPanel Margin="39.217,243.371,0,196.431" HorizontalAlignment="Left" Width="89.437">
-                	<TextBlock TextWrapping="Wrap" Text="{DynamicResource TS_mcID}" Height="19.837" Foreground="#FF060606" FontSize="14.667"/>
-                	<TextBlock TextWrapping="Wrap" Text="LOCID :" Height="19.837" Foreground="#FF060606" Margin="0,12,0,0" FontSize="14.667"/>
-                	<TextBlock TextWrapping="Wrap" Text="{DynamicResource TS_lotNo}" Height="19.837" Foreground="#FF060606" Margin="0,12,0,0" FontSize="14.667"/>
-                	<TextBlock TextWrapping="Wrap" Text="{DynamicResource TS_sapcode}" Height="19.837" Foreground="#FF060606" Margin="0,12,0,0" FontSize="14.667"/>
-                	<TextBlock TextWrapping="Wrap" Text="Status :" Height="19.837" Foreground="#FF060606" Margin="0,12,0,0" FontSize="14.667"/>
-                	<TextBlock TextWrapping="Wrap" Text="Slot ID :" Height="19.837" Foreground="#FF060606" Margin="0,12,0,0" FontSize="14.667"/>
-                	<TextBlock TextWrapping="Wrap" Text="Slot Index :" Height="19.837" Foreground="#FF060606" Margin="0,12,0,0" FontSize="14.667"/>
-                </StackPanel>
-                <StackPanel Margin="132.654,244.037,0,192.431" HorizontalAlignment="Left" Width="160.771">
-                	<TextBox x:Name="txt_mcID" TextWrapping="NoWrap" CharacterCasing="Upper" d:LayoutOverrides="Width" KeyDown="txt_mcID_KeyDown">
-                		<TextBox.Effect>
-                			<DropShadowEffect ShadowDepth="0" BlurRadius="8"/>
-                		</TextBox.Effect>
-                	</TextBox>
-                	<TextBlock TextWrapping="NoWrap" x:Name="txt_locID" Height="19.837" Margin="0,10,0,0" FontSize="14.667" Foreground="#FF0E0E0E"/>
-                	<TextBox TextWrapping="NoWrap" x:Name="txt_lotID" CharacterCasing="Upper" Margin="0,10,0,0" d:LayoutOverrides="Width" KeyDown="txt_lotID_KeyDown" IsEnabled="False">
-                		<TextBox.Effect>
-                			<DropShadowEffect ShadowDepth="0" BlurRadius="8"/>
-                		</TextBox.Effect>
-                	</TextBox>
-                	<TextBox TextWrapping="NoWrap" x:Name="txt_sapcode" CharacterCasing="Upper" Margin="0,10,0,0" KeyDown="txt_sapcode_KeyDown" IsEnabled="False" d:LayoutOverrides="Width">
-                		<TextBox.Effect>
-                			<DropShadowEffect ShadowDepth="0" BlurRadius="8"/>
-                		</TextBox.Effect>
-                	</TextBox>
-                	<TextBlock TextWrapping="NoWrap" x:Name="txt_status" Height="19.837" Margin="0,12,0,0" FontSize="14.667" Foreground="#FF0E0E0E"/>
-                	<TextBlock TextWrapping="NoWrap" x:Name="txt_slotID" Height="19.837" Margin="0,11,-0.282,0" FontSize="14.667" Foreground="#FF0E0E0E"/>
-                	<TextBlock TextWrapping="NoWrap" x:Name="txt_slotIndex" Height="19.837" Margin="0,11,-1.282,0" FontSize="14.667" Foreground="#FF0C0C0C"/>
-                </StackPanel>
-                <StackPanel Margin="330.217,94.011,0,252.428" HorizontalAlignment="Left" Width="134.271">
-                	<TextBlock TextWrapping="Wrap" Text="PartNo :" Height="19.837" Foreground="#FF060606" FontSize="14.667"/>
-                	<TextBlock TextWrapping="Wrap" Text="{DynamicResource TS_partID}" Height="19.837" Foreground="#FF060606" Margin="0,8,0,0" FontSize="14.667"/>
-                	<TextBlock TextWrapping="Wrap" Text="{DynamicResource TS_description}" Height="19.837" Foreground="#FF060606" Margin="0,8,0,0" FontSize="14.667"/>
-                	<TextBlock TextWrapping="Wrap" Text="Batch No :" Height="19.837" Foreground="#FF060606" Margin="0,8,0,0" FontSize="14.667"/>
-                	<TextBlock TextWrapping="Wrap" Text="Start Weight(g) :" Height="19.837" Foreground="#FF060606" Margin="0,8,0,0" FontSize="14.667"/>
-                	<TextBlock TextWrapping="Wrap" Text="Current Weight(g) :" Height="19.837" Foreground="#FF060606" Margin="0,8,0,0" FontSize="14.667"/>
-                	<TextBlock TextWrapping="Wrap" Text="Thawing Time :" Height="19.837" Foreground="#FF060606" Margin="0,8,0,0" FontSize="14.667"/>
-                	<TextBlock TextWrapping="Wrap" Text="Ready Time :" Height="19.837" Foreground="#FF060606" Margin="0,8,0,0" FontSize="14.667"/>
-					<TextBlock TextWrapping="Wrap" Text="Expiry Time :" Height="19.837" Foreground="#FF060606" Margin="0,8,0,0" FontSize="14.667"/>
-					<TextBlock TextWrapping="Wrap" Text="Syringe Weight(g) :" Height="19.837" Foreground="#FF060606" Margin="0,8,0,0" FontSize="14.667"/>
-					<TextBlock TextWrapping="Wrap" Text="Capacity(cc) :" Height="19.837" Foreground="#FF060606" Margin="0,8,0,0" FontSize="14.667"/>
-                </StackPanel>
-                <StackPanel Margin="467.321,94.011,267.626,252.428">
-                	<!--<TextBlock TextWrapping="NoWrap" x:Name="txt_mesDevice" Height="19.837" FontSize="14.667" Foreground="Black"/>-->
+            </TextBlock.Foreground>
+            <TextBlock.Effect>
+                <DropShadowEffect ShadowDepth="3"/>
+            </TextBlock.Effect>
+        </TextBlock>
+        <GroupBox Header="{DynamicResource TS_userInfor}" Margin="20,70.966,0,0" Foreground="#FF101010" HorizontalAlignment="Left" Width="285.437" Height="151.244" VerticalAlignment="Top" BorderBrush="{DynamicResource Linear_Blue}">
+            <GroupBox.Effect>
+                <DropShadowEffect/>
+            </GroupBox.Effect>
+        </GroupBox>
+        <StackPanel Margin="39.217,93.011,0,0" Height="133.199" VerticalAlignment="Top" HorizontalAlignment="Left" Width="89.437">
+            <TextBlock TextWrapping="Wrap" Text="{DynamicResource TS_userID}" Height="19.837" Foreground="#FF060606" FontSize="14.667"/>
+            <TextBlock TextWrapping="Wrap" Text="{DynamicResource TS_userName}" Height="19.837" Foreground="#FF060606" Margin="0,13,0,0" FontSize="14.667"/>
+            <TextBlock TextWrapping="Wrap" Text="{DynamicResource TS_userGroup}" Height="19.837" Foreground="#FF060606" Margin="0,13,0,0" FontSize="14.667"/>
+            <TextBlock TextWrapping="Wrap" Text="{DynamicResource TS_department}" Height="19.837" Foreground="#FF060606" Margin="0,13,0,0" FontSize="14.667"/>
+        </StackPanel>
+        <StackPanel Margin="132.654,94.011,0,0" HorizontalAlignment="Left" Width="155.771" Height="127.199" VerticalAlignment="Top">
+            <TextBlock x:Name="txt_userID" TextWrapping="NoWrap" Height="19.837" FontSize="14.667" Foreground="#FF080808"/>
+            <TextBlock x:Name="txt_userName" TextWrapping="NoWrap" Height="19.837" Margin="0,13,0,0" FontSize="14.667" Foreground="#FF080808"/>
+            <TextBlock x:Name="txt_userGroup" TextWrapping="NoWrap" Height="19.837" Margin="0,13,0,0" FontSize="14.667" Foreground="#FF080808"/>
+            <TextBlock x:Name="txt_userDepartment" TextWrapping="NoWrap" Height="19.837" Margin="0,13,0,0" FontSize="14.667" Foreground="#FF080808"/>
+        </StackPanel>
+        <GroupBox Header="{DynamicResource TS_inputInfor}" Margin="20,223.21,0,189.428" Foreground="#FF0C0C0C" HorizontalAlignment="Left" Width="285.437" BorderBrush="{DynamicResource Linear_Blue}">
+            <GroupBox.Effect>
+                <DropShadowEffect/>
+            </GroupBox.Effect>
+        </GroupBox>
+        <GroupBox Header="{DynamicResource TS_materialInfor}" Margin="316.405,71.632,261.594,252.428" Foreground="#FF0A0A0A" BorderBrush="{DynamicResource Linear_Blue}" Width="396">
+            <GroupBox.Effect>
+                <DropShadowEffect/>
+            </GroupBox.Effect>
+        </GroupBox>
+        <Path Data="M16,67.5 L1232.5083,67.5" Fill="#FFF4F4F5" Height="2" Margin="12,0,-2,180.534" Stretch="Fill" VerticalAlignment="Bottom" StrokeThickness="2" Stroke="{DynamicResource Linear_Blue}">
+            <Path.Effect>
+                <DropShadowEffect Color="#FFB2B2B2" ShadowDepth="2"/>
+            </Path.Effect>
+        </Path>
+        <StackPanel Margin="39.217,243.371,0,196.431" HorizontalAlignment="Left" Width="89.437">
+            <TextBlock TextWrapping="Wrap" Text="{DynamicResource TS_mcID}" Height="19.837" Foreground="#FF060606" FontSize="14.667"/>
+            <TextBlock TextWrapping="Wrap" Text="LOCID :" Height="19.837" Foreground="#FF060606" Margin="0,12,0,0" FontSize="14.667"/>
+            <TextBlock TextWrapping="Wrap" Text="{DynamicResource TS_lotNo}" Height="19.837" Foreground="#FF060606" Margin="0,12,0,0" FontSize="14.667"/>
+            <TextBlock TextWrapping="Wrap" Text="{DynamicResource TS_sapcode}" Height="19.837" Foreground="#FF060606" Margin="0,12,0,0" FontSize="14.667"/>
+            <TextBlock TextWrapping="Wrap" Text="Status :" Height="19.837" Foreground="#FF060606" Margin="0,12,0,0" FontSize="14.667"/>
+            <TextBlock TextWrapping="Wrap" Text="Slot ID :" Height="19.837" Foreground="#FF060606" Margin="0,12,0,0" FontSize="14.667"/>
+            <TextBlock TextWrapping="Wrap" Text="Slot Index :" Height="19.837" Foreground="#FF060606" Margin="0,12,0,0" FontSize="14.667"/>
+        </StackPanel>
+        <StackPanel Margin="132.654,244.037,0,192.431" HorizontalAlignment="Left" Width="160.771">
+            <TextBox x:Name="txt_mcID" TextWrapping="NoWrap" CharacterCasing="Upper" d:LayoutOverrides="Width" KeyDown="txt_mcID_KeyDown">
+                <TextBox.Effect>
+                    <DropShadowEffect ShadowDepth="0" BlurRadius="8"/>
+                </TextBox.Effect>
+            </TextBox>
+            <TextBlock TextWrapping="NoWrap" x:Name="txt_locID" Height="19.837" Margin="0,10,0,0" FontSize="14.667" Foreground="#FF0E0E0E"/>
+            <TextBox TextWrapping="NoWrap" x:Name="txt_lotID" CharacterCasing="Upper" Margin="0,10,0,0" d:LayoutOverrides="Width" KeyDown="txt_lotID_KeyDown" IsEnabled="False">
+                <TextBox.Effect>
+                    <DropShadowEffect ShadowDepth="0" BlurRadius="8"/>
+                </TextBox.Effect>
+            </TextBox>
+            <TextBox TextWrapping="NoWrap" x:Name="txt_sapcode" CharacterCasing="Upper" Margin="0,10,0,0" KeyDown="txt_sapcode_KeyDown" IsEnabled="False" d:LayoutOverrides="Width">
+                <TextBox.Effect>
+                    <DropShadowEffect ShadowDepth="0" BlurRadius="8"/>
+                </TextBox.Effect>
+            </TextBox>
+            <TextBlock TextWrapping="NoWrap" x:Name="txt_status" Height="19.837" Margin="0,12,0,0" FontSize="14.667" Foreground="#FF0E0E0E"/>
+            <TextBlock TextWrapping="NoWrap" x:Name="txt_slotID" Height="19.837" Margin="0,11,-0.282,0" FontSize="14.667" Foreground="#FF0E0E0E"/>
+            <TextBlock TextWrapping="NoWrap" x:Name="txt_slotIndex" Height="19.837" Margin="0,11,-1.282,0" FontSize="14.667" Foreground="#FF0C0C0C"/>
+        </StackPanel>
+        <StackPanel Margin="330.217,94.011,0,252.428" HorizontalAlignment="Left" Width="134.271">
+            <TextBlock TextWrapping="Wrap" Text="PartNo :" Height="19.837" Foreground="#FF060606" FontSize="14.667"/>
+            <TextBlock TextWrapping="Wrap" Text="{DynamicResource TS_partID}" Height="19.837" Foreground="#FF060606" Margin="0,8,0,0" FontSize="14.667"/>
+            <TextBlock TextWrapping="Wrap" Text="{DynamicResource TS_description}" Height="19.837" Foreground="#FF060606" Margin="0,8,0,0" FontSize="14.667"/>
+            <TextBlock TextWrapping="Wrap" Text="Batch No :" Height="19.837" Foreground="#FF060606" Margin="0,8,0,0" FontSize="14.667"/>
+            <TextBlock TextWrapping="Wrap" Text="Start Weight(g) :" Height="19.837" Foreground="#FF060606" Margin="0,8,0,0" FontSize="14.667"/>
+            <TextBlock TextWrapping="Wrap" Text="Current Weight(g) :" Height="19.837" Foreground="#FF060606" Margin="0,8,0,0" FontSize="14.667"/>
+            <TextBlock TextWrapping="Wrap" Text="Thawing Time :" Height="19.837" Foreground="#FF060606" Margin="0,8,0,0" FontSize="14.667"/>
+            <TextBlock TextWrapping="Wrap" Text="Ready Time :" Height="19.837" Foreground="#FF060606" Margin="0,8,0,0" FontSize="14.667"/>
+            <TextBlock TextWrapping="Wrap" Text="Expiry Time :" Height="19.837" Foreground="#FF060606" Margin="0,8,0,0" FontSize="14.667"/>
+            <TextBlock TextWrapping="Wrap" Text="Syringe Weight(g) :" Height="19.837" Foreground="#FF060606" Margin="0,8,0,0" FontSize="14.667"/>
+            <TextBlock TextWrapping="Wrap" Text="Capacity(cc) :" Height="19.837" Foreground="#FF060606" Margin="0,8,0,0" FontSize="14.667"/>
+        </StackPanel>
+        <StackPanel Margin="467.321,94.011,267.626,252.428">
+            <!--<TextBlock TextWrapping="NoWrap" x:Name="txt_mesDevice" Height="19.837" FontSize="14.667" Foreground="Black"/>-->
             <TextBox x:Name="txt_mesDevice" TextWrapping="NoWrap" CharacterCasing="Upper" d:LayoutOverrides="Width" KeyDown="txt_mesDevice_KeyDown">
                 <TextBox.Effect>
                     <DropShadowEffect ShadowDepth="0" BlurRadius="8"/>
                 </TextBox.Effect>
             </TextBox>
             <TextBlock TextWrapping="NoWrap" x:Name="txt_partID" Height="19.837" Margin="0,8,0,0" FontSize="14.667" Foreground="#FF0A0A0A"/>
-                	<TextBlock TextWrapping="NoWrap" x:Name="txt_description" Height="19.837" Margin="0,8,0,0" FontSize="14.667" Foreground="#FF080808"/>
-                	<TextBlock TextWrapping="NoWrap" x:Name="txt_batchNo" Height="19.837" Margin="0,8,0,0" FontSize="14.667" Foreground="#FF080808"/>
-                	<TextBlock TextWrapping="NoWrap" x:Name="txt_startWeight" Height="19.837" Margin="0,8,0,0" FontSize="14.667" Foreground="#FF060606"/>
-                	<TextBlock TextWrapping="NoWrap" x:Name="txt_currentWeight" Height="19.837" Margin="0,8,0,0" FontSize="14.667" Foreground="#FF040404"/>
-                	<TextBlock TextWrapping="NoWrap" x:Name="txt_thawingTime" Height="19.837" Margin="0,8,0,0" FontSize="14.667" Foreground="#FF0C0C0C"/>
-                	<TextBlock TextWrapping="NoWrap" x:Name="txt_readyTime" Height="19.837" Margin="0,8,0,0" FontSize="14.667" Foreground="#FF0C0C0C"/>
-                	<TextBlock TextWrapping="NoWrap" x:Name="txt_expiryTime" Height="19.837" Margin="0,8,0,0" FontSize="14.667" Foreground="#FF0C0C0C"/>
-                	<TextBlock TextWrapping="NoWrap" x:Name="txt_syringeWeight" Height="19.837" Margin="0,8,0,0" FontSize="14.667" Foreground="#FF0C0C0C"/>
-                	<TextBlock TextWrapping="NoWrap" x:Name="txt_capacity" Height="19.837" Margin="0,8,0,0" FontSize="14.667" Foreground="#FF0C0C0C"/>
-                </StackPanel>
-			<Button x:Name="btn_unload" IsEnabled="False" Margin="329.1,0,494.899,190.093" Style="{DynamicResource ButtonStyle-Zoom}" Cursor="Hand" Height="50" VerticalAlignment="Bottom" d:LayoutOverrides="GridBox" Background="{x:Null}" Click="btn_unload_Click" Width="150">
-    		<Button.Effect>
-    			<DropShadowEffect ShadowDepth="0" BlurRadius="8"/>
-    		</Button.Effect>
-    		<Grid Height="46" Width="148.333">
-    			<Image  Margin="0,4,95,5" Source="/EMS;component/Resources/Image/confirm.png"/>
-    			<Label Content="{DynamicResource TS_startUnload}" HorizontalContentAlignment="Right" FontSize="14" Margin="34,7.666,2.667,10.334" FontWeight="Bold" d:LayoutOverrides="VerticalAlignment"/>
-    		</Grid>
-    	</Button>
-			<Button x:Name="btn_stop" IsEnabled="False" Margin="0,0,268.625,189.761" Style="{DynamicResource ButtonStyle-Zoom}" Cursor="Hand" HorizontalAlignment="Right" Width="150" Height="50" VerticalAlignment="Bottom" d:LayoutOverrides="GridBox" Background="{x:Null}" Click="btn_stop_Click">
-				<Button.Effect>
-					<DropShadowEffect ShadowDepth="0" BlurRadius="8"/>
-				</Button.Effect>
-				<Grid Height="46" Width="126">
-					<Image  Margin="4,4,82,5" Source="/EMS;component/Resources/Image/Stop.png"/>
-					<Label Content="{DynamicResource TS_stop}" HorizontalContentAlignment="Right" FontSize="14" Margin="61.332,7,7.668,8" FontWeight="Bold" d:LayoutOverrides="VerticalAlignment"/>
-				</Grid>
-			</Button>
-			<Button x:Name="btn_close" Width="63" HorizontalAlignment="Right" Margin="0,12.966,10,0" Background="{x:Null}" Style="{DynamicResource ButtonStyle-Zoom}" BorderBrush="Black" Focusable="False" IsTabStop="False" Click="btn_close_Click" Cursor="Hand" Height="50" VerticalAlignment="Top">
-				<Image Height="42" Width="55" Source="/EMS;component/Resources/Image/Close.png"/>
-			</Button>
-    	
-    	<Path Data="M16,67.5 L1232.5083,67.5" Fill="#FFF4F4F5" Height="2" Margin="12,70.966,-2,0" Stretch="Fill" VerticalAlignment="Top" StrokeThickness="2" Stroke="{DynamicResource Linear_Blue}">
-    		<Path.Effect>
-    			<DropShadowEffect Color="#FFB2B2B2" ShadowDepth="2"/>
-    		</Path.Effect>
-    	</Path>
-    	<ProgressBar x:Name="pb" Margin="0,409.983,21.868,193.183" Value="0" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Right" Width="217.633">
-    		<ProgressBar.Effect>
-    			<DropShadowEffect/>
-    		</ProgressBar.Effect>
-    		<ProgressBar.RenderTransform>
-    			<TransformGroup>
-    				<ScaleTransform/>
-    				<SkewTransform AngleX="1.102"/>
-    				<RotateTransform Angle="-0.106"/>
-    				<TranslateTransform Y="-0.481"/>
-    			</TransformGroup>
-    		</ProgressBar.RenderTransform>
-    	</ProgressBar>
-    	<GroupBox Header="Real Time Message" Margin="0,72.632,7.594,251.428" Foreground="#FF181817" BorderBrush="{DynamicResource Linear_Blue}" Width="245" HorizontalAlignment="Right">
-    		<GroupBox.Effect>
-    			<DropShadowEffect/>
-    		</GroupBox.Effect>
-    		<ListBox x:Name="event_list" Margin="6,5,4,6" Background="{DynamicResource Linear_RainySky}" Foreground="#FFF9F5F5"/>
-    	</GroupBox>
-    	<EMS_Views:KeyBoard x:Name="kb" Margin="82,0,82,5.534" VerticalAlignment="Bottom" d:LayoutOverrides="Height" UndoClick="kb_UndoClick" EnterClick="kb_EnterClick"/>
+            <TextBlock TextWrapping="NoWrap" x:Name="txt_description" Height="19.837" Margin="0,8,0,0" FontSize="14.667" Foreground="#FF080808"/>
+            <TextBlock TextWrapping="NoWrap" x:Name="txt_batchNo" Height="19.837" Margin="0,8,0,0" FontSize="14.667" Foreground="#FF080808"/>
+            <TextBlock TextWrapping="NoWrap" x:Name="txt_startWeight" Height="19.837" Margin="0,8,0,0" FontSize="14.667" Foreground="#FF060606"/>
+            <TextBlock TextWrapping="NoWrap" x:Name="txt_currentWeight" Height="19.837" Margin="0,8,0,0" FontSize="14.667" Foreground="#FF040404"/>
+            <TextBlock TextWrapping="NoWrap" x:Name="txt_thawingTime" Height="19.837" Margin="0,8,0,0" FontSize="14.667" Foreground="#FF0C0C0C"/>
+            <TextBlock TextWrapping="NoWrap" x:Name="txt_readyTime" Height="19.837" Margin="0,8,0,0" FontSize="14.667" Foreground="#FF0C0C0C"/>
+            <TextBlock TextWrapping="NoWrap" x:Name="txt_expiryTime" Height="19.837" Margin="0,8,0,0" FontSize="14.667" Foreground="#FF0C0C0C"/>
+            <TextBlock TextWrapping="NoWrap" x:Name="txt_syringeWeight" Height="19.837" Margin="0,8,0,0" FontSize="14.667" Foreground="#FF0C0C0C"/>
+            <TextBlock TextWrapping="NoWrap" x:Name="txt_capacity" Height="19.837" Margin="0,8,0,0" FontSize="14.667" Foreground="#FF0C0C0C"/>
+        </StackPanel>
+        <Button x:Name="btn_unload" IsEnabled="False" Margin="329.1,0,494.899,190.093" Style="{DynamicResource ButtonStyle-Zoom}" Cursor="Hand" Height="50" VerticalAlignment="Bottom" d:LayoutOverrides="GridBox" Background="{x:Null}" Click="btn_unload_Click" Width="150">
+            <Button.Effect>
+                <DropShadowEffect ShadowDepth="0" BlurRadius="8"/>
+            </Button.Effect>
+            <Grid Height="46" Width="148.333">
+                <Image  Margin="0,4,95,5" Source="/EMS;component/Resources/Image/confirm.png"/>
+                <Label Content="{DynamicResource TS_startUnload}" HorizontalContentAlignment="Right" FontSize="14" Margin="34,7.666,2.667,10.334" FontWeight="Bold" d:LayoutOverrides="VerticalAlignment"/>
+            </Grid>
+        </Button>
+        <Button x:Name="btn_stop" IsEnabled="False" Margin="0,0,268.625,189.761" Style="{DynamicResource ButtonStyle-Zoom}" Cursor="Hand" HorizontalAlignment="Right" Width="150" Height="50" VerticalAlignment="Bottom" d:LayoutOverrides="GridBox" Background="{x:Null}" Click="btn_stop_Click">
+            <Button.Effect>
+                <DropShadowEffect ShadowDepth="0" BlurRadius="8"/>
+            </Button.Effect>
+            <Grid Height="46" Width="126">
+                <Image  Margin="4,4,82,5" Source="/EMS;component/Resources/Image/Stop.png"/>
+                <Label Content="{DynamicResource TS_stop}" HorizontalContentAlignment="Right" FontSize="14" Margin="61.332,7,7.668,8" FontWeight="Bold" d:LayoutOverrides="VerticalAlignment"/>
+            </Grid>
+        </Button>
+        <Button x:Name="btn_close" Width="63" HorizontalAlignment="Right" Margin="0,12.966,10,0" Background="{x:Null}" Style="{DynamicResource ButtonStyle-Zoom}" BorderBrush="Black" Focusable="False" IsTabStop="False" Click="btn_close_Click" Cursor="Hand" Height="50" VerticalAlignment="Top">
+            <Image Height="42" Width="55" Source="/EMS;component/Resources/Image/Close.png"/>
+        </Button>
+
+
+        <Path Data="M16,67.5 L1232.5083,67.5" Fill="#FFF4F4F5" Height="2" Margin="12,70.966,-2,0" Stretch="Fill" VerticalAlignment="Top" StrokeThickness="2" Stroke="{DynamicResource Linear_Blue}">
+            <Path.Effect>
+                <DropShadowEffect Color="#FFB2B2B2" ShadowDepth="2"/>
+            </Path.Effect>
+        </Path>
+        <ProgressBar x:Name="pb" Margin="0,409.983,21.868,193.183" Value="0" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Right" Width="217.633">
+            <ProgressBar.Effect>
+                <DropShadowEffect/>
+            </ProgressBar.Effect>
+            <ProgressBar.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="1.102"/>
+                    <RotateTransform Angle="-0.106"/>
+                    <TranslateTransform Y="-0.481"/>
+                </TransformGroup>
+            </ProgressBar.RenderTransform>
+        </ProgressBar>
+        <GroupBox Header="Real Time Message" Margin="0,72.632,7.594,251.428" Foreground="#FF181817" BorderBrush="{DynamicResource Linear_Blue}" Width="245" HorizontalAlignment="Right">
+            <GroupBox.Effect>
+                <DropShadowEffect/>
+            </GroupBox.Effect>
+            <ListBox x:Name="event_list" Margin="6,5,4,6" Background="{DynamicResource Linear_RainySky}" Foreground="#FFF9F5F5"/>
+        </GroupBox>
+        <EMS_Views:KeyBoard x:Name="kb" Margin="82,0,82,5.534" VerticalAlignment="Bottom" d:LayoutOverrides="Height" UndoClick="kb_UndoClick" EnterClick="kb_EnterClick"/>
+
+        <Button x:Name="btn_Mix" Content="Mix" FontSize="20" Margin="0,12.966,82,0" Width="63" HorizontalAlignment="Right" Background="{x:Null}" Style="{DynamicResource ButtonStyle-Zoom}" BorderBrush="Black" Focusable="False" IsTabStop="False" Click="btn_Mix_Click" Cursor="Hand" Height="50" VerticalAlignment="Top"/>
     </Grid>
 </Window>

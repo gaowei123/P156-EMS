@@ -118,22 +118,27 @@ namespace EMS.Transaction
                 System.Threading.Thread.Sleep(1000);
                 bgwMixing.ReportProgress(1);
             }
+
+            bgwMixing.ReportProgress(100);
         }
 
 
         private void BgwMixing_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
             this.pb.Value = runningTime / mixTime * 100;
+            this.txt_Msg.Text = string.Format("正在搅拌,还有{0}秒, 请等待... ", mixTime - runningTime);
+            
+
+            if (e.ProgressPercentage==100)
+            {
+                this.txt_Msg.Text = "正在停止, 请等待...";
+            }
         }
         
 
         private void BackgroundWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            
-            ShowWindow();
-
-
-
+          
 
             //检测 是否把epoxy拿了出来.  
             //bool isMaterialIn = Hardware.IO_LIST.Input.X207_Mix_Material_In();
@@ -150,11 +155,6 @@ namespace EMS.Transaction
             bool result = Hardware.IO_LIST.Output.Y204_MixPower_On();
             System.Threading.Thread.Sleep(100);
             Hardware.IO_LIST.Output.Y204_MixPower_Off();
-
-
-            MessageBox.Show("Mixing complete, please take out epoxy\n搅拌完成,请取出银浆");
-
-
 
 
 
@@ -201,9 +201,13 @@ namespace EMS.Transaction
             this.txt_partID_input.IsEnabled = true;
             this.txt_partID_input.Focus();
             this.txt_partID_input.Background = StaticRes.ColorBrushes.Linear_Green;
-            
-            
 
+
+            ShowWindow();
+
+           
+            System.Threading.Thread.Sleep(2000);            
+            this.txt_Msg.Text = "搅拌完成, 请取出后关闭或继续搅拌.";
         }
 
         
@@ -219,8 +223,6 @@ namespace EMS.Transaction
                 return;
 
             validation();
-
-
         }
 
 
@@ -299,7 +301,7 @@ namespace EMS.Transaction
                 result = Hardware.IO_LIST.Output.Y204_MixPower_On();
             }
 
-            
+
 
             this.btn_startMix.IsEnabled = false;
             //this.btn_stop.IsEnabled = false;
@@ -311,10 +313,7 @@ namespace EMS.Transaction
 
         }
         
-        //private void btn_stop_Click(object sender, RoutedEventArgs e)
-        //{
-
-        //}
+      
 
         private void btn_close_Click(object sender, RoutedEventArgs e)
         {
@@ -326,6 +325,8 @@ namespace EMS.Transaction
 
                 this.txt_partID_input.Text = "";
                 this.btn_startMix.IsEnabled = false;
+
+                this.txt_Msg.Text = string.Empty;
             }
 
             this.Visibility = Visibility.Hidden;
@@ -372,6 +373,7 @@ namespace EMS.Transaction
                 this.txt_partID_input.Focus();
 
                 kb.CurrentTextBox = this.txt_partID_input;
+                this.txt_Msg.Text = string.Empty;
             }
         }
                 
@@ -417,6 +419,10 @@ namespace EMS.Transaction
             }
         }
 
-
+        private void kb_UndoClick()
+        {
+            this.txt_partID_input.Text = string.Empty;
+            this.txt_partID_input.Focus();
+        }
     }
 }

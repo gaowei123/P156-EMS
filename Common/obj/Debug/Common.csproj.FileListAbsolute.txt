@@ -11,4 +11,3 @@ E:\Git Source Code Storage\P156-EMS\Common\bin\Debug\Common.dll
 E:\Git Source Code Storage\P156-EMS\Common\bin\Debug\Common.pdb
 E:\Git Source Code Storage\P156-EMS\Common\obj\Debug\Common.dll
 E:\Git Source Code Storage\P156-EMS\Common\obj\Debug\Common.pdb
-E:\Git Source Code Storage\P156-EMS\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache

@@ -123,9 +123,10 @@ namespace HardwareControl
             }
             else
             {
-
                 Common.Reports.LogFile.DebugLog("Load", "SoltScanner_DataReceived", "slot place is right, start into load L200");
 
+
+                System.Threading.Thread.Sleep(2000);
                 //确保转盘停止.                
                 Motion_Control.Motion_Speed_Checking();
 
@@ -299,7 +300,7 @@ namespace HardwareControl
                             InitAndOpen(comPort);
 
 
-                            //来回扫描5次, 如果扫到了, 立马break;
+                            //来回扫描5次, 如果扫到了, 立马return;
                             for (int i = 0; i < 5; i++)
                             {
                                 if (received)
@@ -312,12 +313,11 @@ namespace HardwareControl
                                 Motion_Control.Rotary_Move(10000);
                                 Motion_Control.Motion_Speed_Checking();
                                 System.Threading.Thread.Sleep(300);
-
                                 Motion_Control.Rotary_Move(-10000);
                                 Motion_Control.Motion_Speed_Checking();
                                 System.Threading.Thread.Sleep(300);
 
-                                Common.Reports.LogFile.DebugLog("Load", "LogicLoad", "L100, move and back time-"+ i.ToString());
+                                Common.Reports.LogFile.DebugLog("Load", "LogicLoad", "L100, move and back, time-"+ i.ToString());
                             }
 
 
@@ -327,10 +327,8 @@ namespace HardwareControl
                                 Common.Reports.LogFile.DebugLog("Load", "LogicLoad", "L100, 5 times moving come and back still can not read slot barcode, start alarming");
                                 Error_Throw(StaticRes.Global.Error_List.Motion_failed, "L000");
                             }
-                                
-
+                            
                             return;
-
                         }
                         catch
                         {

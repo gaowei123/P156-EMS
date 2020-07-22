@@ -195,7 +195,7 @@ namespace EMS
                 x.BackClick += new Views.Login.BackMaskEventHandler(CloseMask);
                 MaskActionPage.Visibility = Visibility.Visible;
                 x.ShowDialog();
-                StaticRes.Global.Homing_Complete = false;
+                //StaticRes.Global.Homing_Complete = false;
 
                 #region Rotary_Continue_Move
                 DataTable dt = DataProvider.Local.Binning.Select.Bin_WithMateria();

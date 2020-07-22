@@ -821,5 +821,11 @@ namespace EMS.Transaction
             btn_to.Focus();
         }
 
+        private void btn_Mix_Click(object sender, RoutedEventArgs e)
+        {
+            Transaction.Mix mixPage = EMS.Singleton.MixSingleton.GetInstance;
+            mixPage.ShowWindow();
+        }
+
     }
 }

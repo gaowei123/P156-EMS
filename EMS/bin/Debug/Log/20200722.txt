@@ -1,0 +1,12 @@
+20200722 14:23:29 下午 -- Start System , Error:找不到指定的模块。 (异常来自 HRESULT:0x8007007E)
+20200722 14:23:33 下午 -- Open COM
+20200722 14:23:36 下午 -- Close COM
+20200722 14:25:48 下午 -- Start System , Error:找不到指定的模块。 (异常来自 HRESULT:0x8007007E)
+20200722 14:25:53 下午 -- Open COM
+20200722 14:25:59 下午 -- Close COM
+20200722 14:27:27 下午 -- Start System , Error:找不到指定的模块。 (异常来自 HRESULT:0x8007007E)
+20200722 14:27:52 下午 -- Open COM
+20200722 14:27:59 下午 -- Close COM
+20200722 14:29:59 下午 -- Start System , Error:找不到指定的模块。 (异常来自 HRESULT:0x8007007E)
+20200722 14:30:07 下午 -- Open COM
+20200722 14:30:10 下午 -- Close COM

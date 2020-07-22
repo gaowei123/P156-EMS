@@ -78,7 +78,7 @@
                     <DropShadowEffect/>
                 </GroupBox.Effect>
             </GroupBox>
-            <GroupBox Header="{DynamicResource TS_materialInfor}" Margin="319.437,71.632,258.626,256.29" Foreground="#FF060606" BorderBrush="#FF074CF5">
+            <GroupBox Header="{DynamicResource TS_materialInfor}" Margin="319.437,71.632,258.626,338.29" Foreground="#FF060606" BorderBrush="#FF074CF5">
                 <GroupBox.Effect>
                     <DropShadowEffect/>
                 </GroupBox.Effect>
@@ -88,10 +88,10 @@
                     <DropShadowEffect Color="#FFB2B2B2" ShadowDepth="2"/>
                 </Path.Effect>
             </Path>
-            <StackPanel Margin="31.217,251.676,0,257.958" HorizontalAlignment="Left" Width="108.437">               
+            <StackPanel Margin="31.217,251.676,0,257.958" HorizontalAlignment="Left" Width="108.437">
                 <TextBlock TextWrapping="NoWrap" Margin="0,6,0,0" Text="{DynamicResource TS_partID}" Height="19.837" Foreground="Black" FontSize="14.667"/>
             </StackPanel>
-            <StackPanel Margin="140.654,252.179,0,253.622" HorizontalAlignment="Left" Width="156.771">                
+            <StackPanel Margin="140.654,252.179,0,253.622" HorizontalAlignment="Left" Width="156.771">
                 <TextBox x:Name="txt_partID_input" KeyDown="txt_partID_input_KeyDown" CharacterCasing="Upper" TextWrapping="NoWrap" Margin="0,6,0,0" >
                     <TextBox.Effect>
                         <DropShadowEffect ShadowDepth="0" BlurRadius="8"/>
@@ -107,7 +107,7 @@
                 <TextBlock TextWrapping="NoWrap" Text="Current Weight :" Height="19.837" Foreground="Black" Margin="0,8,0,0" FontSize="14.667"/>
                 <TextBlock TextWrapping="NoWrap" Text="Capacity(cc) :" Height="19.837" Foreground="Black" Margin="0,8,0,0" FontSize="14.667"/>
                 <TextBlock TextWrapping="NoWrap" Text="Syringe Weight:" Height="19.837" Foreground="Black" Margin="0,8,0,0" FontSize="14.667"/>
-               
+
             </StackPanel>
             <StackPanel Margin="478.821,91.011,264.626,259.29">
                 <TextBlock TextWrapping="NoWrap" x:Name="txt_partID" Height="19.837" Margin="0,0,0,0" FontSize="14.667" Foreground="#FF0C0C0C"/>
@@ -118,7 +118,7 @@
                 <TextBlock TextWrapping="NoWrap" x:Name="txt_currentWeight" Height="19.837" Margin="0,8,0,0" FontSize="14.667" Foreground="#FF0C0C0C"/>
                 <TextBlock TextWrapping="NoWrap" x:Name="txt_capacity" Height="19.837" Margin="0,8,0,0" FontSize="14.667" Foreground="#FF0C0C0C"/>
                 <TextBlock TextWrapping="NoWrap" x:Name="txt_emptySyringeWeight" Height="19.837" Margin="0,8,0,0" FontSize="14.667" Foreground="#FF0C0C0C"/>
-             
+
             </StackPanel>
 
             <Button x:Name="btn_startMix" Click="btn_startMix_Click"  Margin="426.604,0,427.396,194.79" Style="{DynamicResource ButtonStyle-Zoom}" Cursor="Hand" Height="50" VerticalAlignment="Bottom" d:LayoutOverrides="GridBox" Background="{DynamicResource ButtonNormalBackground}" >
@@ -141,7 +141,7 @@
                 </Grid>
             </Button>-->
 
-            
+
             <Button x:Name="btn_close" Click="btn_close_Click" Width="63" HorizontalAlignment="Right" Margin="0,12.793,9,0" Background="{DynamicResource ButtonNormalBackground}" Style="{DynamicResource ButtonStyle-Zoom}" BorderBrush="Black" Focusable="False" IsTabStop="False" Cursor="Hand" Height="50" VerticalAlignment="Top">
                 <Image Height="42" Width="55" Source="/EMS;component/Resources/Image/Close.png"/>
             </Button>
@@ -178,11 +178,17 @@
 
 
 
-            <EMS_Views:KeyBoard x:Name="kb" Margin="75,0,89,12" VerticalAlignment="Bottom" d:LayoutOverrides="Height" EnterClick="kb_EnterClick" />
+            <EMS_Views:KeyBoard x:Name="kb" Margin="75,0,89,12" VerticalAlignment="Bottom" d:LayoutOverrides="Height" EnterClick="kb_EnterClick" UndoClick="kb_UndoClick" />
+            <GroupBox Header="Message" Margin="319.437,316.71,0,0" Foreground="#FF141413" HorizontalAlignment="Left" Width="403.937" Height="75.332" VerticalAlignment="Top" BorderBrush="{DynamicResource Linear_Blue}">
+                <GroupBox.Effect>
+                    <DropShadowEffect/>
+                </GroupBox.Effect>
+            </GroupBox>
+            <TextBlock TextWrapping="NoWrap" x:Name="txt_Msg" Margin="330.217,340.708,264.626,259.29" FontSize="18" Foreground="Red" Text="" FontWeight="Bold"/>
         </Grid>
 
 
 
     </Grid>
-   
+
 </Window>
