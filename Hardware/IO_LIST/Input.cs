@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using StaticRes;
+using System.Reflection;
 
 namespace Hardware.IO_LIST
 {
@@ -298,7 +299,13 @@ namespace Hardware.IO_LIST
 
         public static bool X208_Ejector_A_Up()
         {
-            if (IO_DLL.PCI_1756.Input_Status(3, 0, Global.Device_Handle_IO_PCI1756) == 0)
+            Common.Reports.LogFile.DebugLog(MethodBase.GetCurrentMethod(), "In Function");
+
+            int result = IO_DLL.PCI_1756.Input_Status(3, 0, Global.Device_Handle_IO_PCI1756);
+
+            Common.Reports.LogFile.DebugLog(MethodBase.GetCurrentMethod(), "IO Result: " + result);
+
+            if (result == 0)
             {
                 return false;
             }
@@ -310,7 +317,13 @@ namespace Hardware.IO_LIST
 
         public static bool X209_Ejector_A_Down()
         {
-            if (IO_DLL.PCI_1756.Input_Status(3, 1, Global.Device_Handle_IO_PCI1756) == 0)
+            Common.Reports.LogFile.DebugLog(MethodBase.GetCurrentMethod(), "In Function");
+
+            int result = IO_DLL.PCI_1756.Input_Status(3, 1, Global.Device_Handle_IO_PCI1756);
+
+            Common.Reports.LogFile.DebugLog(MethodBase.GetCurrentMethod(), "IO Result: "+ result);
+
+            if (result == 0)
             {
                 return false;
             }
@@ -318,6 +331,9 @@ namespace Hardware.IO_LIST
             {
                 return true;
             }
+
+
+          
         }
 
         public static bool X210_Ejector_B_Up()

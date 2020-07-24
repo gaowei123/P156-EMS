@@ -97,7 +97,7 @@ namespace StaticRes
         {
             public const string Load = "NEW";
             public const string PendingMix = "PENDING_MIX";
-            public const string Unload = "IN_USED";
+            public const string Unload = "IN_USED"; 
             public const string Reuse = "REUSE";
             public const string Scrap = "SCRAP";
             public const string Remove = "REMOVE";
@@ -188,8 +188,8 @@ namespace StaticRes
 
 
 
-            public const string SlotLabel_scanning_failed = "Error56";
-            public const string MovingSlot_missingPlace = "Error57";
+            public const string SlotBarcode_Read_Fail = "Error56";
+            public const string MissingPlace = "Error57";
         }
 
         public static class System_Setting

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Advantech.Motion;
 using System.Runtime.InteropServices;
+using System.Reflection;
 
 
 namespace HardwareControl
@@ -365,12 +366,17 @@ namespace HardwareControl
 
         public static bool Rotary_MoveTo_Slot(int Slot_ID)//yakun.2016-01-08
         {
+            Common.Reports.LogFile.DebugLog(MethodBase.GetCurrentMethod(),"In Function");
+
             #region
             try
             {
                 #region 2020-07-15 new logic by dwyane
 
                 int Slot_Position = StaticRes.Global.Slot_Position[Slot_ID - 1];
+                Common.Reports.LogFile.DebugLog(MethodBase.GetCurrentMethod(), string.Format("Slot_ID:{0}, Slot_Position:{1}", Slot_ID, Slot_Position));
+
+
 
                 Rotary_Motion_Stop();
                 Motion_Speed_Checking();
@@ -378,8 +384,6 @@ namespace HardwareControl
 
 
                 //先homing
-                HardwareControl.Motion_Control.Motion_Speed_Checking();
-                HardwareControl.Motion_Control.Rotary_Move(100000);
                 HardwareControl.Motion_Control.Motion_Speed_Checking();
                 HardwareControl.Motion_Control.Rotary_Motor_Homing();
                 HardwareControl.Motion_Control.Motion_Speed_Checking();
@@ -389,7 +393,11 @@ namespace HardwareControl
                 if (HardwareControl.Motion_Control.Rotary_Homing_Sensor_On())
                     HardwareControl.Motion_Control.Set_Rotary_Zero_Position();
                 else
+                {
+                    Common.Reports.LogFile.DebugLog(  MethodBase.GetCurrentMethod(),"Rotary Homing Failed");
                     throw new System.Exception("Rotary Homing Failed !!");
+                }
+                   
 
                 System.Threading.Thread.Sleep(500);
 
@@ -401,6 +409,7 @@ namespace HardwareControl
                 System.Threading.Thread.Sleep(500);
                 double Current_Position = Got_Rotary_Position();
                 Common.Reports.LogFile.Log("Rotary_MoveTo_Slot - Current_Position[2]: " + Current_Position);
+                Common.Reports.LogFile.DebugLog(MethodBase.GetCurrentMethod(), "Rotary_MoveTo_Slot - Current_Position[2]: " + Current_Position);
 
 
                 if (Current_Position >= (Slot_Position - 1000) && Current_Position <= (Slot_Position + 1000))
@@ -409,6 +418,7 @@ namespace HardwareControl
                 }
                 else
                 {
+                    Common.Reports.LogFile.DebugLog(MethodBase.GetCurrentMethod(), "Rotary Move Failed");
                     throw new System.Exception("Rotary Move Failed !!");
                 }
                 #endregion
@@ -477,6 +487,7 @@ namespace HardwareControl
             }
             catch (Exception ee)
             {
+                Common.Reports.LogFile.DebugLog(MethodBase.GetCurrentMethod(), "Catch Exception:" + ee.ToString());
                 throw ee;
             }
             #endregion
@@ -484,9 +495,14 @@ namespace HardwareControl
 
         public static bool Rotary_MoveTo_Slot_ABSMode(int Slot_ID)
         {
+            Common.Reports.LogFile.DebugLog(MethodBase.GetCurrentMethod(), "In Function:");
+
             try
             {
                 int Slot_Position = StaticRes.Global.Slot_Position[Slot_ID - 1];
+
+
+                Common.Reports.LogFile.DebugLog(MethodBase.GetCurrentMethod(),string.Format("Slot_ID:{0}, Slot_Position:{1}", Slot_ID, Slot_Position));
 
                 Motion_Speed_Checking();
 
@@ -500,18 +516,24 @@ namespace HardwareControl
 
                 System.Threading.Thread.Sleep(500);
                 double Current_Position = Got_Rotary_Position();
+
+
+                Common.Reports.LogFile.DebugLog(MethodBase.GetCurrentMethod(), string.Format("Move complete, Current_Position:{0}", Current_Position));
+
                 if (Current_Position >= (Slot_Position - 1000) && Current_Position <= (Slot_Position + 1000))
                 {
                     return true;
                 }
                 else
                 {
+                    Common.Reports.LogFile.DebugLog(MethodBase.GetCurrentMethod(), "Rotary Move Failed:");
                     throw new System.Exception("Rotary Move Failed !!");
                 }
                
             }
             catch (Exception ee)
             {
+                Common.Reports.LogFile.DebugLog(MethodBase.GetCurrentMethod(), "Catch Exception:" + ee.ToString());
                 throw ee;
             }
         }

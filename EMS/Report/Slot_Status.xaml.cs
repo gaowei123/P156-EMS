@@ -111,18 +111,62 @@ namespace EMS.Report
                 this.MyChart.Series.Clear();
                 DataSeries dataSeries = new DataSeries();
                 dataSeries.RenderAs = RenderAs.Pie;
-                DataTable dt = DataProvider.Local.Binning.Select.Inventory();
-                foreach (DataRow a in dt.Rows)
+
+
+
+
+
+                BLL.Binning binBLL = new BLL.Binning();
+                List<Model.Binning> binList = binBLL.GetModelList();
+                if (binList == null)
+                    return;
+
+
+                var sapGrouped = from a in binList
+                                 where a.STATUS == "NEW" || a.STATUS == "REUSED"
+                                 group a by new { a.SAPCODE, a.STATUS } into b
+                                 orderby b.Key.SAPCODE ascending, b.Key.STATUS ascending
+                                 select new
+                                 {
+                                     b.Key.SAPCODE,
+                                     b.Key.STATUS,
+                                     countQty = b.Count()
+                                 };
+                foreach (var item in sapGrouped)
                 {
+                    string sapCode = item.SAPCODE;
+                    int countQty = item.countQty;
+                    string status = item.STATUS;
+
                     DataPoint dataPoint = new DataPoint();
-                    dataPoint.AxisXLabel = a["SAPCODE"].ToString();
-                    dataPoint.YValue = int.Parse(a["QTY"].ToString());
+                    dataPoint.AxisXLabel = string.Format("{0}({1})", sapCode, status);
+                    dataPoint.YValue = countQty;
                     dataSeries.DataPoints.Add(dataPoint);
                 }
-                DataPoint dp = new DataPoint();
-                dp.AxisXLabel = "Empty Slot";
-                dp.YValue = DataProvider.Local.Binning.Select.Empty_Positon_Count();
-                dataSeries.DataPoints.Add(dp);
+
+
+                var statusGrouped = from a in binList
+                                    where a.STATUS == "EMPTY" || a.STATUS == "DISABLED"
+                                    group a by a.STATUS into b
+                                    select new
+                                    {
+                                        STATUS = b.Key,
+                                        countQty = b.Count()
+                                    };
+                foreach (var item in statusGrouped)
+                {
+                
+                    int countQty = item.countQty;
+                    string status = item.STATUS;
+
+                    DataPoint dp = new DataPoint();
+                    dp.AxisXLabel = status;
+                    dp.YValue = countQty;
+                    dataSeries.DataPoints.Add(dp);
+                }
+
+
+              
                 this.MyChart.Series.Add(dataSeries);
             }
             catch (Exception ee)

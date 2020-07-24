@@ -1,0 +1,7 @@
+20200724 10:42:21 上午 -- Start System , Error:找不到指定的模块。 (异常来自 HRESULT:0x8007007E)
+20200724 11:25:08 上午 -- Start System , Error:找不到指定的模块。 (异常来自 HRESULT:0x8007007E)
+20200724 11:25:33 上午 -- Open COM
+20200724 11:25:35 上午 -- Close COM
+20200724 11:25:35 上午 -- Exit system , user: UBCT
+20200724 11:27:07 上午 -- Start System , Error:找不到指定的模块。 (异常来自 HRESULT:0x8007007E)
+20200724 11:28:20 上午 -- Start System , Error:找不到指定的模块。 (异常来自 HRESULT:0x8007007E)

@@ -1486,6 +1486,28 @@
         2. Contact with admin
     </sys:String>
 
+
+    <sys:String x:Key="Error56_Name">
+        Slot Barcode Read Fail!
+    </sys:String>
+    <sys:String x:Key="Error56_Description">
+        Slot Barcode Read Fail!
+    </sys:String>
+    <sys:String x:Key="Error56_TroubleShooting">
+        1. Please check the label is broken or not
+        2. Please check the scanner is open or not
+    </sys:String>
+
+    <sys:String x:Key="Error57_Name">
+        Missing Slot Place
+    </sys:String>
+    <sys:String x:Key="Error57_Description">
+        Missing Slot Place
+    </sys:String>
+    <sys:String x:Key="Error57_TroubleShooting">
+        1. Please click Teminate button to exit, and do homing.
+    </sys:String>
+
     <!--================================================== Trouble Shooting List End ================================================-->
 
 </ResourceDictionary>

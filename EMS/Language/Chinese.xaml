@@ -1479,5 +1479,34 @@
          2.联系管理员
     </sys:String>
 
+
+
+    <sys:String x:Key="Error56_Name">
+        Slot Barcode Read Fail!
+    </sys:String>
+    <sys:String x:Key="Error56_Description">
+        槽位位置标签读取超时.
+    </sys:String>
+    <sys:String x:Key="Error56_TroubleShooting">
+        1. 请查看标签是否完整.
+        2. 请查看扫描枪是否开启.
+        
+        点击continue, 重新扫描.
+    </sys:String>
+
+    <sys:String x:Key="Error57_Name">
+        Missing Slot Place
+    </sys:String>
+    <sys:String x:Key="Error57_Description">
+        槽位位置错误.
+    </sys:String>
+    <sys:String x:Key="Error57_TroubleShooting">
+        1. 请点击Teminate退出, 并重新初始化.
+    </sys:String>
+
+
+
+
+
     <!--================================================== Trouble Shooting List End ================================================-->
 </ResourceDictionary>

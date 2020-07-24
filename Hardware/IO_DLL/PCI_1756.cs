@@ -5,6 +5,7 @@ using System.Text;
 using AdvantechDAC.Device;
 using AdvantechDAC.Others;
 using AdvantechDAC.DIO;
+using System.Reflection;
 
 namespace Hardware.IO_DLL
 {
@@ -35,6 +36,8 @@ namespace Hardware.IO_DLL
 
         public static int Input_Status(int Port_No, int IO_No, int Device_Handle)
         {
+            Common.Reports.LogFile.DebugLog(MethodBase.GetCurrentMethod(), "In Function");
+
             //0-Light is Off
             //defult-Light is On
             int Read_Byte = 0;
@@ -45,6 +48,9 @@ namespace Hardware.IO_DLL
             Read_Byte = ptDioReadPortByte.Value;
             int maskA = (int)Math.Pow(2, IO_No);
             int result = Read_Byte & maskA;
+
+            Common.Reports.LogFile.DebugLog(MethodBase.GetCurrentMethod(), string.Format("maskA:{0}, Read_Byte:{1}", maskA, Read_Byte));
+
             return result;
         }
 

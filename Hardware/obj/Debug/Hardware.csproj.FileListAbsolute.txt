@@ -28,3 +28,5 @@ E:\Git Source Code Storage\P156-EMS\Hardware\bin\Debug\ObjectModule.pdb
 E:\Git Source Code Storage\P156-EMS\Hardware\obj\Debug\Hardware.csprojResolveAssemblyReference.cache
 E:\Git Source Code Storage\P156-EMS\Hardware\obj\Debug\Hardware.dll
 E:\Git Source Code Storage\P156-EMS\Hardware\obj\Debug\Hardware.pdb
+E:\Git Source Code Storage\P156-EMS\Hardware\bin\Debug\Common.dll
+E:\Git Source Code Storage\P156-EMS\Hardware\bin\Debug\Common.pdb

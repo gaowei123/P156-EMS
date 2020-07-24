@@ -25,37 +25,8 @@ namespace DataProvider.Local
                 }
             }
 
-            public static DataTable Search_bySlot(int Slot_ID, int Slot_Index)
-            {
-                try
-                {
-                    string sql = @"Select * from Binning where SLOT_INDEX=@SLOT_INDEX and SLOT_ID=@SLOT_ID and STATUS in ('NEW','REUSE') order by SLOT_ID";
-                    SqlCommand cmd = new SqlCommand(sql);
-                    cmd.Parameters.Add("@SLOT_ID", System.Data.SqlDbType.Int).Value = Slot_ID;
-                    cmd.Parameters.Add("@SLOT_INDEX", System.Data.SqlDbType.Int).Value = Slot_Index;
-                    return Common.DB.SqlDB.GetData(cmd, StaticRes.Local);
-                }
-                catch (SqlException ee)
-                {
-                    throw ee;
-                }
-            }
-
-            public static DataTable Search_Inventory_SlotNo(int Slot_ID)
-            {
-                try
-                {
-                    string sql = @"Select * from Binning where SLOT_ID=@SLOT_ID order by SLOT_INDEX";
-                    SqlCommand cmd = new SqlCommand(sql);
-                    cmd.Parameters.Add("@SLOT_ID", System.Data.SqlDbType.Int).Value = Slot_ID;
-                    return Common.DB.SqlDB.GetData(cmd, StaticRes.Local);
-                }
-                catch (SqlException ee)
-                {
-                    throw ee;
-                }
-            }
-
+   
+          
             public static int Search_Empty()
             {
                 try
@@ -201,49 +172,11 @@ namespace DataProvider.Local
                     throw ee;
                 }
             }
+            
 
-            public static DataTable Empty_Slot_No()
-            {
-                try
-                {
-                    string sql = "select distinct(SLOT_ID) from BINNING WHERE STATUS='EMPTY' ORDER BY SLOT_ID ";
-                    System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand(sql);
-                    return Common.DB.SqlDB.GetData(cmd, StaticRes.Local);
-                }
-                catch (SqlException ee)
-                {
-                    throw ee;
-                }
-            }
+       
 
-            public static DataTable Inventory()
-            {
-                try
-                {
-                    string sql = "select SAPCODE , count(*) as QTY from BINNING where STATUS IN ('NEW','REUSE') Group by SAPCODE  ";
-                    System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand(sql);
-                    return Common.DB.SqlDB.GetData(cmd, StaticRes.Local);
-                }
-                catch (SqlException ee)
-                {
-                    throw ee;
-                }
-            }
-
-            public static DataTable Material_Positon_Count()
-            {
-                try
-                {
-                    string sql = "select count(*) as QTY from BINNING where STATUS in ('NEW','REUSE') ";
-                    System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand(sql);
-                    return Common.DB.SqlDB.GetData(cmd, StaticRes.Local);
-                }
-                catch (SqlException ee)
-                {
-                    throw ee;
-                }
-            }
-
+           
             public static DataTable Mateiral_in_Index(int Slot_Index)
             {
                 try

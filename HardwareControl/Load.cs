@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading;
 using ObjectModule.Local;
 using StaticRes;
+using System.Reflection;
+
 
 namespace HardwareControl
 {
@@ -60,13 +62,20 @@ namespace HardwareControl
         #region slot scanner
 
         private System.IO.Ports.SerialPort slotScanner = new System.IO.Ports.SerialPort();
-        private int targetSlotID;
-        private int targetSlotIndex;
-        private bool received = false;
+        private string receivedSlotID = string.Empty;
 
 
         private void InitAndOpen(string comPort)
         {
+            Common.Reports.LogFile.DebugLog(MethodBase.GetCurrentMethod(),"In Func");
+
+            if (slotScanner.IsOpen)
+            {
+                Common.Reports.LogFile.DebugLog(MethodBase.GetCurrentMethod(), "com port is already opened.");
+                return;
+            }
+              
+
             slotScanner.PortName = comPort;
             slotScanner.BaudRate = StaticRes.Global.System_Setting.SlotScanner_BaudRate;
             slotScanner.StopBits = System.IO.Ports.StopBits.One;
@@ -77,7 +86,7 @@ namespace HardwareControl
                 slotScanner.Open();
 
             string msg = string.Format("init slot scanner,  portName:{0} baudRate:{1} stopBits:{2} dataBits:{3}", slotScanner.PortName, slotScanner.BaudRate, slotScanner.StopBits, slotScanner.DataBits);
-            Common.Reports.LogFile.DebugLog("Load", "InitAndOpen", msg);
+            Common.Reports.LogFile.DebugLog(MethodBase.GetCurrentMethod(),msg);
         }
 
         private void CloseSlotScanner()
@@ -88,57 +97,25 @@ namespace HardwareControl
             slotScanner.DataReceived -= SoltScanner_DataReceived;
 
             string msg = string.Format("close com port {0}", slotScanner.PortName);
-            Common.Reports.LogFile.DebugLog("Load", "CloseSlotScanner", msg);
+            Common.Reports.LogFile.DebugLog(MethodBase.GetCurrentMethod(), msg);
         }
 
         private void SoltScanner_DataReceived(object sender, System.IO.Ports.SerialDataReceivedEventArgs e)
         {
-            
-            Common.Reports.LogFile.DebugLog("Load", "SoltScanner_DataReceived", "In Function");
+
+            Common.Reports.LogFile.DebugLog(MethodBase.GetCurrentMethod(), "In Function");
+
 
             if (!slotScanner.IsOpen)
             {
-                Common.Reports.LogFile.DebugLog("Load", "SoltScanner_DataReceived", "Port " + slotScanner.PortName +" is closed ,  return;");
+                Common.Reports.LogFile.DebugLog(MethodBase.GetCurrentMethod(), "Port " + slotScanner.PortName + " is closed ,  return;");             
                 return;
             }
                
 
+            receivedSlotID = slotScanner.ReadExisting().Replace("\r", "");
 
-            received = true;
-
-           
-
-            string currentSlotID = slotScanner.ReadExisting().Replace("\r", "");
-            Common.Reports.LogFile.DebugLog("Load", "SoltScanner_DataReceived", "receive true, msg: " + currentSlotID+",  target slot: "+ targetSlotID.ToString());
-
-
-
-            if (currentSlotID != targetSlotID.ToString())
-            {
-
-                Common.Reports.LogFile.DebugLog("Load", "SoltScanner_DataReceived", "slot place is wrong, start alarming");
-
-                Error_Throw(StaticRes.Global.Error_List.Motion_failed, "L000");  
-                           
-            }
-            else
-            {
-                Common.Reports.LogFile.DebugLog("Load", "SoltScanner_DataReceived", "slot place is right, start into load L200");
-
-
-                System.Threading.Thread.Sleep(2000);
-                //确保转盘停止.                
-                Motion_Control.Motion_Speed_Checking();
-
-
-                //从L200步开始.
-                StaticRes.Global.IsOnProgress = true;
-                StaticRes.Global.Transaction_Continue = true;
-                StaticRes.Global.Process_Code.Loading = "L200";
-                LogicLoad(targetSlotID, targetSlotIndex);
-
-                received = false;
-            }
+            Common.Reports.LogFile.DebugLog(MethodBase.GetCurrentMethod(), "scanned barcode successfully, barcode id: " + receivedSlotID);         
         }
 
         #endregion
@@ -146,12 +123,7 @@ namespace HardwareControl
 
         public Load()
         {
-            slotScanner.BaudRate = StaticRes.Global.System_Setting.SlotScanner_BaudRate;
-            slotScanner.StopBits = System.IO.Ports.StopBits.One;
-            slotScanner.DataBits = StaticRes.Global.System_Setting.SlotScanner_DataBits;
-            slotScanner.DataReceived += SoltScanner_DataReceived;
-
-           
+                       
         }
 
       
@@ -185,11 +157,6 @@ namespace HardwareControl
 
         public int Start_Load(int Slot_ID,int Slot_Index)
         {
-
-            targetSlotID = Slot_ID;
-            targetSlotIndex = Slot_Index;
-
-
             if (StaticRes.Global.IsOnProgress)
             {
                 loaderror(et);
@@ -231,6 +198,9 @@ namespace HardwareControl
 
         private void LogicLoad(int Slot_ID, int Slot_Index)
         {
+
+            Common.Reports.LogFile.DebugLog(MethodBase.GetCurrentMethod(), "In Function");
+
             try
             {
                 if (!StaticRes.Global.Hardware_Connection)
@@ -246,20 +216,26 @@ namespace HardwareControl
                     #region  ***(L000)*** Rotary move to point position
                     if (StaticRes.Global.Process_Code.Loading == "L000" && StaticRes.Global.Transaction_Continue)
                     {
-                        Common.Reports.LogFile.DebugLog("Load", "LogicLoad", "In L000");
+                        Common.Reports.LogFile.DebugLog(MethodBase.GetCurrentMethod(), "In L000");
 
                         IO_Control.Green_Tower_Light_Setting();
                         step("L000 - Rotary move to Slot-" + Slot_ID.ToString() + ",Position:" + StaticRes.Global.Slot_Position[Slot_ID - 1].ToString() + "");//" + StaticRes.Global.Slot_Position[Slot_ID - 1].ToString + "
                         try
                         {
+                            Common.Reports.LogFile.DebugLog(MethodBase.GetCurrentMethod(), "L000, Start Move to slot");
+
                             Motion_Control.Rotary_MoveTo_Slot_ABSMode(Slot_ID);
-                            Common.Reports.LogFile.DebugLog("Load", "LogicLoad", "In L100, load move to slot successful ,current position:" + Motion_Control.Got_Rotary_Position().ToString());
+
+                            Common.Reports.LogFile.DebugLog(MethodBase.GetCurrentMethod(), "L000, move complete, current position:" + Motion_Control.Got_Rotary_Position().ToString());
+
+
                             Common.Reports.LogFile.Log("load move to slot successful ,current position:" + Motion_Control.Got_Rotary_Position().ToString() + ""  );
                             Motion_Control.Motion_Speed_Checking();                          
                             StaticRes.Global.Process_Code.Loading = "L100";
                         }
-                        catch
+                        catch(Exception ex)
                         {
+                            Common.Reports.LogFile.DebugLog(MethodBase.GetCurrentMethod(), "L000, Catch Exception:"+ ex.ToString());
                             Error_Throw(StaticRes.Global.Error_List.Motion_failed, "L000");
                             return;
                         }
@@ -272,10 +248,13 @@ namespace HardwareControl
                     #region ***(L100)*** Slot Barcode Validation
                     if (StaticRes.Global.Process_Code.Loading == "L100" && StaticRes.Global.Transaction_Continue)
                     {
+                        Common.Reports.LogFile.DebugLog(MethodBase.GetCurrentMethod(), "In L100");
                         step("L100 -  Scan Slot-" + Slot_ID.ToString() + " Barcode ,Position:" + StaticRes.Global.Slot_Position[Slot_ID - 1].ToString() + "");
-                        Common.Reports.LogFile.DebugLog("Load", "LogicLoad", "In L100");
+                   
                         try
                         {
+
+                            Common.Reports.LogFile.DebugLog(MethodBase.GetCurrentMethod(), "L100, slot index:"+Slot_Index);
                             string comPort = string.Empty;
                             switch (Slot_Index)
                             {
@@ -284,7 +263,6 @@ namespace HardwareControl
                                     break;
                                 case 2:
                                     comPort = StaticRes.Global.System_Setting.SlotScanner_Index2Port;
-
                                     break;
                                 case 3:
                                     comPort = StaticRes.Global.System_Setting.SlotScanner_Index3Port;
@@ -294,21 +272,29 @@ namespace HardwareControl
                                     break;
                             }
 
-                            Common.Reports.LogFile.DebugLog("Load", "LogicLoad", "L100, start init & open com port");
+
+
+                         
+                            Common.Reports.LogFile.DebugLog(MethodBase.GetCurrentMethod(), "L100, start init & open com port" );
+
 
                             //初始化, 并打开com port
                             InitAndOpen(comPort);
 
 
-                            //来回扫描5次, 如果扫到了, 立马return;
+
+
+                            //转盘来回摆动5次
                             for (int i = 0; i < 5; i++)
                             {
-                                if (received)
+                                //一旦扫到barcode, 就立马跳出循环并关闭com口
+                                if (receivedSlotID != "")
                                 {
-                                    Common.Reports.LogFile.DebugLog("Load", "LogicLoad", "L100, received scanner msg, return;");
-                                    return;
+                                    Common.Reports.LogFile.DebugLog(MethodBase.GetCurrentMethod(), "L100, received scanner msg, break");
+                                    CloseSlotScanner();
+                                    break;
                                 }
-                                    
+
 
                                 Motion_Control.Rotary_Move(10000);
                                 Motion_Control.Motion_Speed_Checking();
@@ -317,21 +303,39 @@ namespace HardwareControl
                                 Motion_Control.Motion_Speed_Checking();
                                 System.Threading.Thread.Sleep(300);
 
-                                Common.Reports.LogFile.DebugLog("Load", "LogicLoad", "L100, move and back, time-"+ i.ToString());
+
+                                Common.Reports.LogFile.DebugLog(MethodBase.GetCurrentMethod(), "L100, move come and back, time" + i.ToString());
                             }
 
 
-                            //如果来回5次都没有扫到, 就报警.
-                            if (!received)
-                            {
-                                Common.Reports.LogFile.DebugLog("Load", "LogicLoad", "L100, 5 times moving come and back still can not read slot barcode, start alarming");
-                                Error_Throw(StaticRes.Global.Error_List.Motion_failed, "L000");
-                            }
                             
-                            return;
+                            if (receivedSlotID == "")
+                            {
+                                //来回5次都没扫到报警.
+                                Common.Reports.LogFile.DebugLog(MethodBase.GetCurrentMethod(), "L100, 5 times moving come and back still can not read slot barcode, start alarming");                            
+                                Error_Throw(StaticRes.Global.Error_List.SlotBarcode_Read_Fail, "L000");
+                                return;
+                            }
+                            else
+                            {
+                                if (receivedSlotID == Slot_ID.ToString())
+                                {
+                                    //进入下一步
+                                    StaticRes.Global.Process_Code.Loading = "L200";
+                                    receivedSlotID = "";
+                                }
+                                else
+                                {
+                                    //扫到的位置不是目标位置则报错.
+                                    Common.Reports.LogFile.DebugLog(MethodBase.GetCurrentMethod(), "L100, received wrong place received slot id:" + "receivedSlotID" + ", tartget slot id:" + Slot_ID);
+                                    Error_Throw(StaticRes.Global.Error_List.MissingPlace, "L000");
+                                    return;
+                                }
+                            }
                         }
-                        catch
+                        catch(Exception ex)
                         {
+                            Common.Reports.LogFile.DebugLog(MethodBase.GetCurrentMethod(), "L100, Catch Exception:" + ex.ToString());
                             Error_Throw(StaticRes.Global.Error_List.Motion_failed, "L000");
                             return;
                         }
@@ -345,11 +349,6 @@ namespace HardwareControl
                     #region ***(L200)*** Check slot index and move to related process
                     if (StaticRes.Global.Process_Code.Loading == "L200" && StaticRes.Global.Transaction_Continue)
                     {
-
-                        //关闭com口, 避免再次触发.
-                        CloseSlotScanner();
-
-
                         switch (Slot_Index)
                         {
                             case 1:

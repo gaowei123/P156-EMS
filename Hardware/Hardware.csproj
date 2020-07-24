@@ -73,6 +73,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{07aae6be-2bad-49d4-a765-c7b1e6060c17}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\StaticRes\StaticRes.csproj">
       <Project>{0AF99380-D78F-45DA-9451-6957BC590183}</Project>
       <Name>StaticRes</Name>

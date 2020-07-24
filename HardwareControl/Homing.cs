@@ -530,8 +530,9 @@ namespace HardwareControl
                             HardwareControl.Motion_Control.Rotary_Continue_Move();
                         }
                     }
-                    catch
+                    catch(Exception ex)
                     {
+                        Common.Reports.LogFile.Log("Homing H2300 Exception, Msg:" + ex.ToString());
                         Error_Throw(StaticRes.Global.Error_List.Motion_failed, "H2300");
                         return;
                     }

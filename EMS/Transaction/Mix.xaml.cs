@@ -112,6 +112,7 @@ namespace EMS.Transaction
         {
             onGoing = true;
 
+            //跑到设定时间测退出. 
             while (runningTime < mixTime)
             {
                 runningTime = runningTime + 1;
@@ -119,19 +120,30 @@ namespace EMS.Transaction
                 bgwMixing.ReportProgress(1);
             }
 
+
+            //等mixtime时间到了, 在发一次信号让搅拌机停止
+            bool result = Hardware.IO_LIST.Output.Y204_MixPower_On();
+            System.Threading.Thread.Sleep(100);
+            Hardware.IO_LIST.Output.Y204_MixPower_Off();
+
+
+            
             bgwMixing.ReportProgress(100);
+
+            System.Threading.Thread.Sleep(3000);
         }
 
 
         private void BgwMixing_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
-            this.pb.Value = runningTime / mixTime * 100;
-            this.txt_Msg.Text = string.Format("正在搅拌,还有{0}秒, 请等待... ", mixTime - runningTime);
-            
-
-            if (e.ProgressPercentage==100)
+            if (e.ProgressPercentage == 1)
             {
-                this.txt_Msg.Text = "正在停止, 请等待...";
+                this.pb.Value = runningTime / mixTime * 100;
+                this.txt_Msg.Text = string.Format("正在搅拌,还有{0}秒, 请等待... ", mixTime - runningTime);
+            }
+            else if (e.ProgressPercentage == 100)
+            {
+                this.txt_Msg.Text = string.Format("正在停止, 请等待...");
             }
         }
         
@@ -151,10 +163,7 @@ namespace EMS.Transaction
             //}
 
 
-            //trigger again to stop mixer
-            bool result = Hardware.IO_LIST.Output.Y204_MixPower_On();
-            System.Threading.Thread.Sleep(100);
-            Hardware.IO_LIST.Output.Y204_MixPower_Off();
+         
 
 
 
@@ -205,8 +214,6 @@ namespace EMS.Transaction
 
             ShowWindow();
 
-           
-            System.Threading.Thread.Sleep(2000);            
             this.txt_Msg.Text = "搅拌完成, 请取出后关闭或继续搅拌.";
         }
 

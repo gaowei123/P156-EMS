@@ -152,8 +152,9 @@ namespace HardwareControl
                             Motion_Control.Motion_Speed_Checking();
                             StaticRes.Global.Process_Code.Returning = "R200";
                         }
-                        catch
+                        catch(Exception ex)
                         {
+                            Common.Reports.LogFile.Log("Return R000, Exception:" + ex.ToString());
                             Error_Throw(StaticRes.Global.Error_List.Motion_failed, "R000");
                             return;
                         }
@@ -441,8 +442,9 @@ namespace HardwareControl
                             returncomplete(true);
                             return;
                         }
-                        catch
+                        catch(Exception ex)
                         {
+                            Common.Reports.LogFile.Log("Return R1900, Exception:" + ex.ToString());
                             Error_Throw(StaticRes.Global.Error_List.Motion_failed, "R1900");
                             return;
                         }

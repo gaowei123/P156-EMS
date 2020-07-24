@@ -401,6 +401,37 @@ namespace Common.DAL
 
 
 
+        public DataTable GetAll()
+        {
+            StringBuilder strSql = new StringBuilder();
+
+            strSql.Append(@"SELECT
+      [SLOT_ID]
+      ,[SLOT_INDEX]
+      ,[CAPACITY]
+      ,[PART_ID]
+      ,[SAPCODE]
+      ,[DESCRIPTION]
+      ,[BATCH_NO]
+      ,[STATUS]
+      ,[START_WEIGHT]
+      ,[CURRENT_WEIGHT]
+      ,[THAWING_DATETIME]
+      ,[READY_DATETIME]
+      ,[EXPIRY_DATETIME]
+      ,[MF_EXPIRY_DATE]
+      ,[USER_ID]
+      ,[USER_NAME]
+      ,[USER_GROUP]
+      ,[DEPARTMENT]
+      ,[UPDATED_TIME]
+  FROM Binning");
+
+            System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand(strSql.ToString());
+            return Common.DB.SqlDB.GetData(cmd, Common.DB.Connection.SqlServer.EMS);
+        }
+
+
 
 
 

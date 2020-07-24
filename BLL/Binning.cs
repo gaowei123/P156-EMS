@@ -112,6 +112,96 @@ namespace BLL
         {
             return dal.UpdateCommand(model);
         }
+
+      
+
+
+
+        public List<Model.Binning> GetModelList()
+        {
+            DataTable dt = dal.GetAll();
+            if (dt == null || dt.Rows.Count == 0)
+                return null;
+
+
+
+            List<Model.Binning> modelList = new List<Model.Binning>();
+            foreach (DataRow dr in dt.Rows)
+            {
+                modelList.Add(DataRowToModel(dr));
+            }
+
+            return modelList;
+        }
+
+
+
+
+        public Model.Binning DataRowToModel(DataRow dr)
+        {
+            if (dr == null)
+                return null;
+
+
+            Model.Binning model = new Model.Binning();
+            if (dr["SLOT_ID"].ToString() !="" || dr["SLOT_ID"] != null)
+                model.SLOT_ID = int.Parse(dr["SLOT_ID"].ToString());
+
+            if (dr["SLOT_INDEX"].ToString() != "" || dr["SLOT_INDEX"] != null)
+                model.SLOT_INDEX = int.Parse(dr["SLOT_INDEX"].ToString());
+
+            if (dr["CAPACITY"].ToString() != "" || dr["CAPACITY"] != null)
+                model.CAPACITY = int.Parse(dr["CAPACITY"].ToString());
+
+
+
+            model.PART_ID = dr["PART_ID"].ToString();
+            model.SAPCODE = dr["SAPCODE"].ToString();
+            model.DESCRIPTION = dr["DESCRIPTION"].ToString();
+            model.BATCH_NO = dr["BATCH_NO"].ToString();
+            model.STATUS = dr["STATUS"].ToString();
+
+
+
+            if (dr["START_WEIGHT"].ToString() != "" || dr["START_WEIGHT"] != null)
+                model.START_WEIGHT = decimal.Parse(dr["START_WEIGHT"].ToString());
+
+            if (dr["CURRENT_WEIGHT"].ToString() != "" || dr["CURRENT_WEIGHT"] != null)
+                model.CURRENT_WEIGHT = decimal.Parse(dr["CURRENT_WEIGHT"].ToString());
+
+
+
+
+            if (dr["THAWING_DATETIME"].ToString() != "" || dr["THAWING_DATETIME"] != null)
+                model.THAWING_DATETIME = DateTime.Parse(dr["THAWING_DATETIME"].ToString());
+
+            if (dr["READY_DATETIME"].ToString() != "" || dr["READY_DATETIME"] != null)
+                model.READY_DATETIME = DateTime.Parse(dr["READY_DATETIME"].ToString());
+
+            if (dr["EXPIRY_DATETIME"].ToString() != "" || dr["EXPIRY_DATETIME"] != null)
+                model.EXPIRY_DATETIME = DateTime.Parse(dr["EXPIRY_DATETIME"].ToString());
+
+            if (dr["MF_EXPIRY_DATE"].ToString() != "" || dr["MF_EXPIRY_DATE"] != null)
+                model.MF_EXPIRY_DATE = DateTime.Parse(dr["MF_EXPIRY_DATE"].ToString());
+
+
+
+
+            model.USER_ID = dr["USER_ID"].ToString();
+            model.USER_NAME = dr["USER_NAME"].ToString();
+            model.USER_GROUP = dr["USER_GROUP"].ToString();
+            model.DEPARTMENT = dr["DEPARTMENT"].ToString();
+
+
+
+            if (dr["UPDATED_TIME"].ToString() != "" || dr["UPDATED_TIME"] != null)
+                model.UPDATED_TIME = DateTime.Parse(dr["UPDATED_TIME"].ToString());
+
+
+
+            return model;
+        }
+
 	}
 }
 

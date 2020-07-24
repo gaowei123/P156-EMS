@@ -137,12 +137,18 @@ namespace Logic
             {
                 if (Equip_ID.Length == 0)
                     throw new System.Exception("Please input Equip ID first !!\n请先输入装备ID!!");
+
+
                 DataTable dt = DataProvider.Local.Equipment.Select(Equip_ID);
                 if (dt.Rows.Count == 0)
                     throw new System.Exception("Invalid Equip ID !!\n无效的装备ID!!");
-                DataTable dt_tracking = DataProvider.Local.Tracking.Equip_Status_Check(Equip_ID, StaticRes.Global.Status.Unload);
+
+
+                DataTable dt_tracking = DataProvider.Local.Tracking.Equip_Status_Check(Equip_ID);
                 if (dt_tracking.Rows.Count > 0)
                     throw new System.Exception("This machine already withdraw one epoxy , please return \n这台机器已经撤出一个环氧树脂,请返回！！" + dt_tracking.Rows[0]["PART_ID"].ToString() + " first !!");
+
+
                 ObjectModule.Local.Equipment ge = new ObjectModule.Local.Equipment(dt.Rows[0]);
                 return ge;
             }

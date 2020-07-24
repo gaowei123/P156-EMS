@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.IO;
+using System.Reflection;
 
 namespace Common.Reports
 {
@@ -45,7 +46,7 @@ namespace Common.Reports
             }
         }
 
-        public static void DebugLog(string sClass, string sFunction, string sMsg)
+        public static void DebugLog(MethodBase methodBase, string sMsg)
         {
            string path = ".\\DebugLog\\";
 
@@ -59,11 +60,13 @@ namespace Common.Reports
             StreamWriter tw = File.AppendText(file);
 
 
-            string logText = string.Format("[{0}] -- [{1}]-[{2}],  {3}", DateTime.Now.ToString("yyyyMMdd HH:mm:ss tt"), sClass, sFunction, sMsg);
+            string nameSpace = methodBase.DeclaringType.Namespace;
+            string functionName = methodBase.Name;
 
+            string logText = string.Format("[{0}] -- [{1}]-[{2}],  {3}", DateTime.Now.ToString("yyyyMMdd HH:mm:ss tt"), nameSpace, functionName, sMsg);
             tw.WriteLine(logText);
 
-            // Close the stream.
+           
             tw.Flush();
             tw.Close();
         }

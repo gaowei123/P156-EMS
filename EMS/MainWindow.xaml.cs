@@ -42,13 +42,7 @@ namespace EMS
                 return;
             }
 
-
-            
-
             InitializeComponent();
-
-            //this.btn_mix.IsEnabled = false;
-
 
 
             ColorValueInit();
@@ -98,8 +92,6 @@ namespace EMS
 
             try
             {
-                //HardwareControl.Initial_Hardware.Connect_readParameter();  setting config, slot position, motion config, connecting io card 分开成各个function.
-
                 HardwareControl.Motion_Control.Read_Motion_Config();
                 HardwareControl.Initial_Hardware.ConnectIOCard();
 
@@ -138,12 +130,12 @@ namespace EMS
                 EMS.Transaction.Mix mixPage = Singleton.MixSingleton.GetInstance;
 
                 if (mixPage.onGoing && mixPage.Visibility == Visibility.Hidden)
+                {
+                    this.pbMainwindowMixing.Value = mixPage.runningTime / mixPage.mixTime * 100;
                     this.pbMainwindowMixing.Visibility = Visibility.Visible;
+                }                   
                 else
                     this.pbMainwindowMixing.Visibility = Visibility.Collapsed;
-
-
-                this.pbMainwindowMixing.Value = mixPage.runningTime / mixPage.mixTime * 100;
                 //同步mix process bar 
 
 

@@ -117,14 +117,16 @@ namespace DataProvider.Local
             }
         }
 
-        public static DataTable Equip_Status_Check(string Equip_ID, string Status)
+        public static DataTable Equip_Status_Check(string Equip_ID)
         {
             try
             {
-                string sql = "Select * from Tracking where EQUIP_ID=@EQUIP_ID and STATUS=@STATUS";
+                string sql = "Select * from Tracking where EQUIP_ID=@EQUIP_ID and ( STATUS=@STATUS1 or STATUS=@STATUS2 ) ";
                 System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand(sql);
                 cmd.Parameters.Add("@EQUIP_ID", System.Data.SqlDbType.VarChar).Value = Equip_ID;
-                cmd.Parameters.Add("@STATUS", System.Data.SqlDbType.VarChar).Value = Status;
+                cmd.Parameters.Add("@STATUS1", System.Data.SqlDbType.VarChar).Value = "PENDING_MIX";
+                cmd.Parameters.Add("@STATUS2", System.Data.SqlDbType.VarChar).Value = "IN_USED";
+                
                 return Common.DB.SqlDB.GetData(cmd, StaticRes.Local);
             }
             catch (SqlException ee)

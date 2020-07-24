@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using StaticRes;
+using System.Reflection;
 
 namespace Hardware.IO_LIST
 {
@@ -299,10 +300,16 @@ namespace Hardware.IO_LIST
         #region Y200_Ejector_A_Up/Down
         public static bool Y200_Ejector_A_Up()
         {
-            if (IO_DLL.PCI_1758.Output_Excut(2, 0, 1, Global.Device_Handle_IO_PCI1756))
-                return true;
-            else
-                return false;
+
+            Common.Reports.LogFile.DebugLog(MethodBase.GetCurrentMethod(), "In Function");
+
+
+            bool result = IO_DLL.PCI_1758.Output_Excut(2, 0, 1, Global.Device_Handle_IO_PCI1756);
+
+            Common.Reports.LogFile.DebugLog(MethodBase.GetCurrentMethod(), "IO Result:"+ result);
+
+            return result;
+           
         }
 
         public static bool Y200_Ejector_A_Down()

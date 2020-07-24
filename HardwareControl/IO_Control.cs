@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Hardware;
+using System.Reflection;
 
 namespace HardwareControl
 {
@@ -331,13 +332,30 @@ namespace HardwareControl
 
         public static bool X208_Ejector_A_Up_and_Check()
         {
+            Common.Reports.LogFile.DebugLog(MethodBase.GetCurrentMethod(), "In Function");
+
             if (Motion_Control.Got_Rotary_Speed() > 0)
+            {
+                Common.Reports.LogFile.DebugLog(MethodBase.GetCurrentMethod(), "Motor still running, speed:"+ Motion_Control.Got_Rotary_Speed());
                 return false;
+            }
+
+
+
+            Common.Reports.LogFile.DebugLog(MethodBase.GetCurrentMethod(), "X208_Ejector_A_Up");
             if (Hardware.IO_LIST.Input.X208_Ejector_A_Up())
             {
+                Common.Reports.LogFile.DebugLog(MethodBase.GetCurrentMethod(), "X208_Ejector_A_Up, result true");
                 if (!Hardware.IO_LIST.Input.X209_Ejector_A_Down())
+                {
+                    Common.Reports.LogFile.DebugLog(MethodBase.GetCurrentMethod(), "X209_Ejector_A_Down, result false");
                     return true;
+                }
+                   
             }
+
+
+            Common.Reports.LogFile.DebugLog(MethodBase.GetCurrentMethod(), "X208_Ejector_A_Up, result false.  continue Y200_Ejector_A_Up");
             DateTime Start_Time = System.DateTime.Now;
             if (Hardware.IO_LIST.Output.Y200_Ejector_A_Up())
             {
@@ -346,6 +364,7 @@ namespace HardwareControl
                     TimeSpan ts = System.DateTime.Now - Start_Time;
                     if (ts.TotalMilliseconds > 2000)
                     {
+                        Common.Reports.LogFile.DebugLog(MethodBase.GetCurrentMethod(), "Y200_Ejector_A_Up time out");
                         Hardware.IO_LIST.Output.Y200_Ejector_A_Down();
                         return false;
                     }
